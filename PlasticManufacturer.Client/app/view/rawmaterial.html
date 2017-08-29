@@ -1,0 +1,181 @@
+﻿<div id="content" ng-controller="RawMaterialController as vm">
+    <!-- Shell -->
+    <div class="shell">
+        <!-- White Box -->
+        <div class="white-box">
+            <div class="cnt">
+
+                <form name="customerForm" class="form-inline" ng-submit="submit()">
+                    <div class="row table-responsive col-xs-6 " style="padding-top:5px;">
+                        <table class="table table-striped table-bordered table-hover">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <label>Code</label>
+                                        <input type="text" class="form-control" id="code" name="code" ng-model="vm.rawMaterial.Code" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>Description: </label>
+                                        <input type="text" name="description" id="description" class="form-control" ng-model="vm.rawMaterial.Description" style="width:300px">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>Notes: </label>
+                                        <input type="text" name="note" id="note" class="form-control" ng-model="vm.rawMaterial.Note" style="width:300px">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>Status: </label>
+                                        <select name="status" id="status" class="form-control" style="width:200px">
+                                            <option value="">Active</option>
+                                            <option value="">Inactive</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>Chemical Name: </label>
+                                        <input type="text" name="chemicalName" id="chemicalName" class="form-control" ng-model="vm.rawMaterial.ChemicalName" style="width:300px">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>Operation Type: </label>
+                                        <select name="operationType" id="operationType" class="form-control" style="width:200px">
+                                            <option value="">Both</option>
+                                            <option value="">Sales</option>
+                                            <option value="">Purchases</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>Category: </label>
+                                        <select name="category" id="category" class="form-control" style="width:200px">
+                                            <option value="">Pigment</option>
+                                            <option value="">Resin</option>
+                                            <option value="">Additive</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label> Comnound? </label>
+                                        <select name="comnound" id="comnound" class="form-control" style="width:200px">
+                                            <option value="">Yes</option>
+                                            <option value="">No</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>Main Supplier: </label>
+                                        <input type="text" name="mainSupplier" id="mainSupplier" class="form-control" ng-model="vm.rawMaterial.MainSupplier" style="width:300px">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>Main Customer: </label>
+                                        <input type="text" name="mainCustomer" id="mainCustomer" class="form-control" ng-model="vm.rawMaterial.MainCustomer" style="width:300px">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>Cost: </label>
+                                        <input type="text" name="cost" id="cost" class="form-control" ng-model="vm.rawMaterial.Costs.Value" style="width:300px">
+                                        <select name="currecy"  id="currecy" class="form-control" style="width:200px">
+                                            <option value=1>US$</option>
+                                            <option value=2>CA$</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>Heat Stability: </label>
+                                        <input type="text" name="heatStability" id="heatStability" class="form-control" ng-model="vm.rawMaterial.HeatStability" style="width:300px">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>Light Stability: </label>
+                                        <input type="text" name="lightStability" id="lightStability" class="form-control" ng-model="vm.rawMaterial.LightSatability" style="width:300px">
+                                    </td>
+                                </tr>
+
+
+                                <tr>
+                                    <td>
+                                        <div class="checkbox-nice checkbox-inline">
+                                            <input type="checkbox" id="checkbox-inl-1" />
+                                            <label for="checkbox-inl-1">
+                                                FDA
+                                            </label>
+                                        </div>
+                                        <div class="checkbox-nice checkbox-inline">
+                                            <input type="checkbox" id="checkbox-inl-2" />
+                                            <label for="checkbox-inl-2">
+                                                HBFB
+                                            </label>
+                                        </div>
+                                        <div class="checkbox-nice checkbox-inline">
+                                            <input type="checkbox" id="checkbox-inl-3" />
+                                            <label for="checkbox-inl-3">
+                                                QC Required
+                                            </label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>Barcode: </label>
+                                        <input type="text" name="barcode" id="barcode" class="form-control" ng-model="vm.rawMaterial.BarCode" style="width:300px">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <button type="button" class="form-control btn btn-success" ng-click="vm.submit()">Save</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </form>
+
+
+                <div class="row table-responsive col-xs-10 " style="padding-top:15px">
+                    <table class="table table-striped table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>Code</th>
+                                <th>Name</th>
+                                <th align="center" colspan="5">
+                                    Cost
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="rawMaterial in vm.rawMaterials">
+                                <td>{{rawMaterial.code}}</td>
+                                <td>{{rawMaterial.id}}</td>
+                                <td ng-repeat="cost in rawMaterial.costs">{{cost.value}}</td>
+                                <td ng-repeat="cost in rawMaterial.costs">{{cost.id}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- END Panel -->
+               
+                <div class="cl">&nbsp;</div>
+            </div>
+        </div>
+        <!-- END White Box -->
+    </div>
+    <!-- END Shell -->
+</div>
+        
+       
+ 

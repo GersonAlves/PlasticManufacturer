@@ -1,0 +1,524 @@
+<form name="ColorMatchRequest" action="" method="post">
+	<fieldset id="ShippingAddres">
+		<legend>Ship To</legend>
+		<label>
+			<span>Local</span>
+			<input type="text" id="shipLocal"/>
+		</label>		
+		<label>
+			<span>Street</span>
+			<input type="text" id="shipLocal"/>
+		</label>
+		<label>
+			<span>City/State/ZipCode</span>
+			<input type="text" id="shipLocal"/>
+		</label>
+		<label>
+			<span>Phone</span>
+			<input type="text" id="shipLocal"/>
+		</label>
+	</fieldset>
+	<fieldset id="BillingAddres">
+		<legend>Bill To</legend>
+		<label>
+			<span>Local</span>
+			<input type="text" id="shipLocal"/>
+		</label>		
+		<label>
+			<span>Street</span>
+			<input type="text" id="shipLocal"/>
+		</label>
+		<label>
+			<span>City/State/ZipCode</span>
+			<input type="text" id="shipLocal"/>
+		</label>
+		<label>
+			<span>Phone</span>
+			<input type="text" id="shipLocal"/>
+		</label>
+	</fieldset>
+	<fieldset id="Customer">
+		<legend>Customer</legend>
+		<label>
+			<span>PO#</span>
+			<input type="text" id="shipLocal"/>
+		</label>
+		<label>
+			<span>Contact</span>
+			<input type="text" id="shipLocal"/>
+		</label>		
+		<label>
+			<span>Attention</span>
+			<input type="text" id="shipLocal"/>
+		</label>
+		<label>
+			<span>Terms</span>
+			<input type="text" id="shipLocal"/>
+		</label>
+		<label>
+			<span>Freight</span>
+			<input type="text" id="shipLocal"/>
+		</label>
+		<label>
+			<span>Sales Person</span>
+			<input type="text" id="shipLocal"/>
+		</label>
+		<label>
+			<span>Written by</span>
+			<input type="text" id="shipLocal"/>
+		</label>
+	</fieldset>
+	<fieldset id="Product">
+		<legend>Product</legend>
+		<label>
+			<span>Product Description</span>
+			<input type="text" id="shipLocal"/>
+		</label>		
+		<label>
+			<span>Product Application</span>
+			<input type="text" id="shipLocal"/>
+		</label>
+		<label>
+			<span>End Use Market</span>
+			<input type="text" id="shipLocal"/>
+		</label>
+		<label>
+			<span>Target Type</span>
+			<input type="text" id="shipLocal"/>
+		</label>
+		<label>
+			<span>Price Quote Required</span>
+			<input type="text" id="shipLocal"/>
+		</label>
+	</fieldset>
+	<fieldset id="Surface">
+		<legend>Surface</legend>
+		<label>
+			<span>Wall Thickness</span>
+			<input type="text" id="shipLocal"/>
+		</label>
+		<label>
+			<span>Cross Reference</span>
+			<input type="text" id="shipLocal"/>
+		</label>
+		<fieldset id="Opacity">
+			<legend>Opacity</legend>
+			<label>
+				<span>Matte</span>
+				<input type="checkbox" id="shipLocal"/>
+			</label>		
+			<label>
+				<span>Glossy</span>
+				<input type="checkbox" id="shipLocal"/>
+			</label>
+			<label>
+				<span>Others</span>
+				<input type="text" id="shipLocal"/>
+			</label>
+		</fieldset>
+	</fieldset>
+	<fieldset id="ProcessRequirement">
+		<legend>Processing Requirement</legend>
+		<label>
+			<span>Injection</span>
+			<input type="checkbox" id="shipLocal"/>
+		</label>		
+		<label>
+			<span>Blow</span>
+			<input type="checkbox" id="shipLocal"/>
+		</label>
+		<label>
+			<span>Compression</span>
+			<input type="checkbox" id="shipLocal"/>
+		</label>
+		<label>
+			<span>Extrusion</span>
+			<input type="checkbox" id="shipLocal"/>
+		</label>
+		<label>
+			<span>Fiber Denier</span>
+			<input type="checkbox" id="shipLocal"/>
+		</label>
+		<label>
+			<span>Film</span>
+			<input type="checkbox" id="shipLocal"/>
+		</label>
+		<label>
+			<span>Sheet</span>
+			<input type="checkbox" id="shipLocal"/>
+		</label>
+		<label>
+			<span>Rotational</span>
+			<input type="checkbox" id="shipLocal"/>
+		</label>
+		<label>
+			<span>CO-EX</span>
+			<input type="checkbox" id="shipLocal"/>
+		</label>
+		<label>
+			<span>Gas Assit Injection</span>
+			<input type="checkbox" id="shipLocal"/>
+		</label>
+	</fieldset>
+
+      <tbody><tr>
+		 	 <td colspan="6" align="center"><b>Resin Specification</b></td>
+		</tr>
+ 		<tr>
+ 		    <td align="Right"><b>MFG:</b></td>
+			 <td><input type="Text" name="cmr_ds_mfg" size="15" maxlength="15" value=""></input></td>
+			 <td align="Right"><b>Melt Index:</b></td>
+			 <td><input type="Text" name="cmr_ds_meltindex" size="15" maxlength="15" value=""></input></td>
+		</tr>
+ 		<tr>
+			 <td align="right"><b>Customer Resin:</b></td>
+			 <td colspan="4">
+			 	
+	         </td>
+ 		</tr>
+ 		<tr>
+			 <td align="right"><b>Type:</b></td>
+			 <td colspan="4">
+			 	
+	         </td>
+ 		</tr>
+	</tbody></table></td></tr>
+
+	<tr><td><table valign="Middle" border="0" width="700">
+	   <tbody><tr>
+		 	 <td colspan="9" align="center"><b>Color Tolerance</b></td>
+		</tr>
+		<tr>
+			 <td><input type="checkbox" name="cmr_st_exact" ><b>Exact</b></input></td>
+			 <td><input type="checkbox" name="cmr_st_commercial" ><b>Commercial</b></input></td>
+			 <td align="Right"><b>Closest STD:</b></td>
+			 <td><input type="Text" name="cmr_ds_closeststd" size="15" maxlength="15" value=""></input></td>
+			 <td align="Right"><b>+DE:</b></td>
+			 <td><input type="Text" name="cmr_ds_de" size="15" maxlength="15" value=""></input></td>
+		</tr>
+		<tr>
+			 <td><b>FMC-2:</b>
+			     <input type="Text" name="cmr_ds_fmc2" size="15" maxlength="15" value=""></input></td>
+			 <td><input type="checkbox" name="cmr_ds_cielab" ><b>CIELAB</b></input></td>
+		</tr>
+	</tbody></table></td></tr>
+
+	<tr><td><table valign="Middle" border="0" width="700">
+	   <tbody>
+		 <tr>	 <td colspan="6"><b>Illumination:</b>
+
+			
+		<input type="checkbox" name="cmr_st_illuminationd65" ><b>D-65</b></input>
+		<input type="checkbox" name="cmr_st_illuminationcfw" ><b>CFW</b></input>
+		<input type="checkbox" name="cmr_st_illuminationa" ><b>A</b></input></td>
+			</td>
+		</tr>
+	</tbody></table></td></tr>
+
+	<tr><td><table valign="Middle" border="0" width="700">
+	   <tbody><tr>
+		 	 <td colspan="9" align="center"><b>Sample Concentrate</b></td>
+		</tr>
+		<tr>
+			 <td align="Right"><b>Chips Qty:<font size="0" color="Red"><BR>(Numeric Only)</font></b></td>
+			 <td><input type="Text" name="cmr_qt_chips" size="15" maxlength="15" value=""></input></td>
+			 <td></td>
+			 <td><input type="checkbox" name="cmr_st_blown_film" value="Y" ><b>Extruded Strip Piece</b></input></td>
+			 <td></td>
+			 <td><input type="checkbox" name="cmr_st_blown_film_piece" value="Y" ><b>Blown Film Piece</b></input></td>
+		</tr>
+		<tr>
+			 <td></td>
+			 <td></td>
+			 <td></td>
+			 <td><input type="checkbox" name="cmr_st_matchmake" value="Y" ><b>Match and Make</b></input></td>
+			 <td></td>
+			 <td><input type="checkbox" name="cmr_st_pressout" value="Y" ><b>Press Out</b></input></td>
+		</tr>
+		<tr>
+			 <td></td>
+			 <td></td>
+			 <td></td>
+			 <td><input type="checkbox" name="cmr_st_tube_sample" value="Y" ><b>Tube Sample</b></input></td>
+			 <td></td>
+			 <td><input type="checkbox" name="cmr_st_sheet_extrusion_sample" value="Y" ><b>Sheet Extrusion Sample</b></input></td>
+		</tr>
+		<tr>
+			 <td align="Right"><b>Concentrate Qty:<font size="0" color="Red"><BR>(Numeric Only)</font></b></td>
+			 <td><input type="Text" name="cmr_qt_concentrate" size="15" maxlength="15" value=""></input></td>
+			 <td align="Right"><b>Units Qty:<font size="0" color="Red"><BR>(Numeric Only)</font></b></td>
+			 <td><input type="Text" name="cmr_qt_units" size="15" maxlength="15" value=""></input></td>
+		</tr>
+		<tr>
+			 <td align="Right"><b>Package:</b></td>
+			 <td></td>
+			 <td align="Right"><b>Pellet Size:</b></td>
+			 <td></td>
+			 <td align="Right"><b>Carrier:</b></td>
+			 <td></td>
+		</tr>
+		<tr>
+			 <td align="right"><b>Required Ratio:</b></td>
+			 <td><input type="Text" name="cmr_ds_requiredretio" size="15" maxlength="15" value=""></input></td>
+			 <td align="Right"><b>Roto Let Down Sample:<font size="0" color="Red"><BR>(Numeric Only)</font></b></td>
+			 <td><input type="Text" name="cmr_qt_roto" size="15" maxlength="15" value=""></input></td>
+		</tr>
+		<tr>
+			 <td align="right"><b>Roto Cute:</b></td>
+			 <td colspan="3"><input type="Text" name="cmr_ds_rotocube" size="50" maxlength="50" value=""></input></td>
+		</tr>
+	</tbody></table></td></tr>
+
+	<tr><td><table valign="Middle" border="0" width="700">
+	   <tbody><tr>
+		 	 <td colspan="10" align="center"><b>Exposure</b></td><td>
+	   </td></tr>
+	   <tr>
+			 <td><input type="checkbox" name="cmr_st_interior" ><b>Interior</b></input></td>
+			 <td><input type="checkbox" name="cmr_st_exterior" ><b>Exterior</b></input></td>
+			 <td align="Right"><b>Light Fastener:&nbsp&nbsp</b><input type="Text" name="cmr_ds_lightfastness" size="15" maxlength="15" value=""></input></td>
+			 <td align="Right"><b>Hours:</b>&nbsp&nbsp<input type="Text" name="cmr_ds_hours" size="15" maxlength="15" value=""></input></td>
+		</tr>
+	</tbody></table></td></tr>
+
+	<tr><td><table valign="Middle" border="0" width="700">
+	   <tbody><tr>
+		 	 <td colspan="6" align="center"><b>Purpose for Match</b></td><td>
+	   </td></tr>
+	   <tr>
+			 <td><input type="checkbox" name="cmr_st_new" ><b>New</b></input></td>
+	   </tr>
+	   <tr>
+			 <td align="right"><b>Reformulation:</b></td>
+			 <td>
+			 	<input type="hidden" name="cmr_id_reformulation" value=""></input>
+			 	<div name="reformulation_div" id="reformulation_div">
+			 	
+				 </div>
+				<button type="button" class="button" style="border:none; background-color:#ffffff; margin:none; width:65px; height:18px;" onClick="newWindow('reformulationpopup.php','window3')"><img src="../../images/browserazul.gif" /></button>&nbsp;
+          </td>
+			 <td align="right"><b>Reason:</b></td>
+			 <td><input type="Text" name="cmr_ds_whyreformulation" size="22" maxlength="60" value=""></input></td>
+	   </tr>
+	   <tr>
+			 <td align="right"><b>Rematch:</b></td>
+			 <td>
+			 	<input type="hidden" name="cmr_id_rematch" value=""></input>
+			 	<div name="rematch_div" id="rematch_div">
+			 	
+				 </div>
+						<button type="button" class="button" style="border:none; background-color:#ffffff; margin:none; width:65px; height:18px;" onClick="newWindow('rematchpopup.php','window4')"><img src="../../images/browserazul.gif" /></button>&nbsp;
+          </td>
+			 <td align="right"><b>Reason:</b></td>
+			 <td><input type="Text" name="cmr_ds_whyrematch" size="22" maxlength="60" value=""></input></td>
+		</tr>
+	</tbody></table></td></tr>
+
+	<tr><td><table valign="Middle" border="0" width="700">
+	   <tbody><tr>
+		 	 <td colspan="3" align="center"><b>Special Additives</b></td><td>
+	   </td></tr>
+	   <tr>
+			 <td><input type="checkbox" name="cmr_st_uv" ><b>UV</b></input></td>
+			 <td><b>UV Package:</b>
+ 			     <input type="Text" name="cmr_ds_uvpackage" size="15" maxlength="15" value=""></input></td>
+			 <td><b>Amount:</b>
+			     <input type="Text" name="cmr_ds_amount" size="15" maxlength="15" value=""></input></td>
+	   </tr>
+	   <tr>
+			 <td><input type="checkbox" name="cmr_st_antioxidants" ><b>Antioxidants:</b></input>
+			     <input type="Text" name="cmr_ds_antioxidants" size="15" maxlength="15" value=""></input></td>
+			 <td><input type="checkbox" name="cmr_st_antistat" ><b>Antistat:</b></input>
+  		        <input type="Text" name="cmr_ds_antistat" size="15" maxlength="15" value=""></input></td>
+		<td><input type="checkbox" name="cmr_st_specialaddnone" ><b>None</b></input></td></tr>
+			 <td><input type="checkbox" name="cmr_st_lubricant" ><b>Lubrificant:</b></input>
+ 			      <input type="Text" name="cmr_ds_lubricant" size="15" maxlength="15" value=""></input></td>
+			 <td><b>Other:</b> <input type="Text" name="cmr_ds_others_special_additives" size="15" maxlength="20" value=""></input></td>
+		</tr>
+		<tr>
+			 <td><input type="checkbox" name="cmr_st_check_best_additive" ><b>Lab to check application for best additive</b></input></td>
+			 <td><input type="checkbox" name="cmr_st_slip" ><b>Slip</b></input></td>
+		</tr>
+	</tbody></table></td></tr>
+
+	<tr><td><table valign="Middle" border="0" width="700">
+	   <tbody><tr>
+		 	 <td colspan="9" align="center"><b>Customer Major Concern</b></td>
+		</tr>
+		<tr>
+			 <td><b>Price:</b>
+			     <input type="Text" name="cmr_st_price" size="1" maxlength="1" value=""></input></td>
+			 <td><b>Accuracy:</b>
+			     <input type="Text" name="cmr_st_accuracy" size="1" maxlength="1" value=""></input></td>
+			 <td><b>Turnaround:</b>
+			     <input type="Text" name="cmr_st_turnaround" size="1" maxlength="1" value=""></input></td>
+			 <td><input type="checkbox" name="cmr_st_none" ><b>None</b></input></td>
+			 <td align="Right"><b>Other:</b></td>
+			 <td><input type="Text" name="cmr_ds_othermc" size="15" maxlength="15" value=""></input></td>
+		</tr>
+		<tr>
+			 <td colspan="3"><b>Current Supplier:</b>
+			     <input type="Text" name="cmr_ds_currentsupplier" size="20" maxlength="20" value=""></input></td>
+			 <td><b>Qty:<font size="0" color="Red"><BR>(Numeric Only)</font></b>
+			     <input type="Text" name="cmr_qt" size="5" maxlength="5" value=""></input></td>
+			 <td align="Right"><b>Frequency:</b></td>
+			 <td></td>
+		</tr>
+	</tbody></table></td></tr>
+
+	<tr><td><table valign="Middle" border="0" width="700">
+	   <tbody><tr>
+		 	 <td colspan="9" align="center"><b>Regularity Requirement</b></td>
+		</tr>
+		<tr>
+			 <td><input type="checkbox" name="cmr_st_fda" ><b>FDA</b></input></td>
+			 <td><input type="checkbox" name="cmr_st_non" ><b>NON h/m</b></input></td>
+			 <td><input type="checkbox" name="cmr_st_nonerr" ><b>None</b></input></td>
+			 <td><b>Other:</b>
+			     <input type="Text" name="cmr_ds_otherrr" size="15" maxlength="15" value=""></input></td>
+		</tr>
+	</tbody></table></td></tr>
+
+	<tr><td><table valign="Middle" border="0" width="700">
+	   <tbody><tr>
+		 	 <td colspan="9" align="center"><b>Processing Information</b></td>
+		</tr>
+		<tr>
+			 <td align="Right"><b>Maximum Heat:</b></td>
+			 <td><input type="Text" name="cmr_ds_maximumheat" size="15" maxlength="15" value=""></input></td>
+			 <td align="Right"><b>Shot Size:</b></td>
+			 <td><input type="Text" name="cmr_ds_shotsize" size="15" maxlength="15" value=""></input></td>
+			 <td align="Right"><b>Barrel Cap:</b></td>
+			 <td><input type="Text" name="cmr_ds_barrelcap" size="15" maxlength="15" value=""></input></td>
+		</tr>
+		<tr>
+			 <td align="Right"><b>Dwell Time:</b></td>
+			 <td><input type="Text" name="cmr_ds_dwelltime" size="15" maxlength="15" value=""></input></td>
+			 <td align="Right"><b>Cycle Time:</b></td>
+			 <td><input type="Text" name="cmr_ds_cycletime" size="15" maxlength="15" value=""></input></td>
+		</tr>
+		<tr>
+			 <td><input type="checkbox" name="cmr_st_coa" ><b>COA</b></input></td>
+			 <td><input type="checkbox" name="cmr_st_msds" ><b>MSDS</b></input></td>
+			 <td><input type="checkbox" name="cmr_st_cie" ><b>CIE</b></input></td>
+			 <td><input type="checkbox" name="cmr_st_materialsheet"><b>Material Sheet</b></input></td>
+		</tr>
+		<tr>
+			 <td><input type="checkbox" name="cmr_st_fdaletter" ><b>FDA Letter</b></input></td>
+			 <td><input type="checkbox" name="cmr_st_uvletter" ><b>UV Letter</b></input></td>
+			 <td><input type="checkbox" name="cmr_st_logochips" ><b>No Logo Chips</b></input></td>
+		</tr>
+	</tbody></table></td></tr>
+
+	<tr><td><input name="cmr_cd_item" size="15" maxlength="15" value=" " type="hidden">
+			 <table valign="Middle" border="0" width="700">
+	   <tbody><tr>
+		 	 <td colspan="9" align="center"><b>Product Information</b></td>
+		</tr>
+		<tr>
+			 <input type="hidden" name="cmr_cd_item" size="15" maxlength="15" value=""></input>
+			 <td align="Right"><div name="NOTNULL"><b><font color="RED">Item Name: *</font></div></b></td>
+			 <td><input type="Text" name="cmr_nm_item" size="35" maxlength="35" value=""></input></td>
+			 <td><b>Ratio:</b>
+              <input type="Text" name="cmr_ds_ratio" size="15" maxlength="15" value=""></input></td>
+		</tr>
+		<tr>
+			 <td align="Right"><b>Price:<font size="0" color="Red"><BR>(Numeric Only)</font></b></td>
+			 <td><input type="Text" name="cmr_vl_price" size="15" maxlength="15" value="">
+		     </input></td>
+			 <td><b>Compound:</b>
+	   	     </td>
+			 <script for="cmr_st_compound" event="onchange">
+     	    		   compound();
+			 </script>
+			 <td width="250">
+			 <span id="section_cmr_st_provideresin"><input type="checkbox" name="cmr_st_provideresin" ><b>Will Customer provide resin?</b></input></span>
+			 </td>
+		</tr>
+	</tbody></table></td></tr>
+
+	<tr>
+	  <td><table valign="Middle" border="0" width="700">
+        <tbody><tr>
+          <td colspan="9" align="center"><b>Shipping Information</b></td>
+        </tr>
+        <tr>
+          <td width="86"><div align="right" class="style1"><b>Ship Date:</b></div></td>
+          <td width="152">    <input type="Text" name="cmr_dt_doneon_month" size="2" maxlength="2" value="">
+      /
+      <input type="Text" name="cmr_dt_doneon_day" size="2" maxlength="2" value="">
+      /
+      <input type="Text" name="cmr_dt_doneon_year" size="4" maxlength="4" value="">
+          </td>
+          <td  width="140" align="Right"><b>Customer Due Date:</b></td>
+          <td  width="330" align="Right"><div align="left">
+            <input name="cmr_dt_customerpo" type="text" maxlength="15" value="" size="50">
+          </div></td>
+
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td align="right">&nbsp;</td>
+          <td align="right">&nbsp;</td>
+        </tr>
+      </tbody></table>
+    </td>
+    </tr>
+	<tr>
+	  <td><table valign="Middle" border="0" width="700">
+    <tbody><tr>
+      <td width="84" align="Right"><b>Shipped Via:</b></td>
+      <td width="123"></td>
+      <td width="101" align="Right"><b>Account:</b></td>
+      <td width="210"><input type="Text" name="cmr_cd_acctosend" size="15" maxlength="15" value=""></td>
+
+      <td width="210" colspan="2"><input type="Radio" name="cmr_st_return" value="1" >
+          <b>Return Target<b></b></b></td>
+    </tr>
+    <tr>
+
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td colspan="2"><input type="Radio" name="cmr_st_return" value="2" >
+          <b>Return 1/2 Target<b></b></b></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td colspan="2"><input type="Radio" name="cmr_st_return" value="" >
+          <b>None<b></b></b></td>
+    </tr>
+  </tbody></table>
+  </td></tr>
+  <tr><td><table valign="Middle" border="0" width="500">
+	   <tbody><tr>
+		 	 <td colspan="9" align="center"><b>Notes LAB</b></td>
+		</tr>
+		<tr>
+
+            <td height="32">
+
+<textarea name="cmr_ds_notes" cols="80" rows="5" onkeydown="limitText(this.form.cmr_ds_notes,this.form.countdown,2000);" onkeyup="limitText(this.form.cmr_ds_notes,this.form.countdown,2000);"></textarea>
+
+</td>
+		</tr>	   <tr>
+		 	 <td colspan="9" align="center"><b>Notes Shipping</b></td>
+		</tr>
+		<tr>
+
+            <td height="32">
+              <textarea name="cmr_ds_noteshipping" onKeyDown="limitText(this.form.cmr_ds_noteshipping,this.form.countdown,2000);" onKeyUp="limitText(this.form.cmr_ds_noteshipping,this.form.countdown,2000);"  cols="80" rows="4"></textarea>
+              </td>
+		</tr></tbody></table>
+<br>
+<table valign="Middle" border="0" width="670">
+  <tbody><tr>
+	  
+  </tr>
+</tbody></table>
+</td></tr></tbody></table></form>
