@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PlasticManufacturer.Domain.Entities.Produto
+namespace PlasticManufacturer.Domain.Entities.Common
 {
-    public class Product: Entity
+    public class TargetType: Entity
     {
     }
 }

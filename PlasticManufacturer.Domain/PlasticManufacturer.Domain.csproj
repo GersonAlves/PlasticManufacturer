@@ -42,7 +42,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\Color Match Request\ColorMatchRequest.cs" />
+    <Compile Include="Entities\Common\Carrier.cs" />
     <Compile Include="Entities\Common\Currency.cs" />
+    <Compile Include="Entities\Common\Opacity.cs" />
+    <Compile Include="Entities\Common\Packaging.cs" />
+    <Compile Include="Entities\Common\Pellet.cs" />
+    <Compile Include="Entities\Common\TargetType.cs" />
     <Compile Include="Entities\Customer\CustomerAddress.cs" />
     <Compile Include="Entities\Address\AddressType.cs" />
     <Compile Include="Entities\Address\City.cs" />
@@ -50,6 +55,7 @@
     <Compile Include="Entities\Customer\Customer.cs" />
     <Compile Include="Entities\Customer\Contacted\CustomerContacted.cs" />
     <Compile Include="Entities\Customer\CustomerDefaults.cs" />
+    <Compile Include="Entities\Customer\CustomerResion.cs" />
     <Compile Include="Entities\Customer\Rating\CustomerRating.cs" />
     <Compile Include="Entities\Customer\CustomerShipViaAccount.cs" />
     <Compile Include="Entities\Customer\Status\CustomerStatus.cs" />
@@ -57,7 +63,7 @@
     <Compile Include="Entities\Customer\SecondLabel.cs" />
     <Compile Include="Entities\Employee\Employee.cs" />
     <Compile Include="Entities\Entity.cs" />
-    <Compile Include="Entities\Produto\Product.cs" />
+    <Compile Include="Entities\Products\Product.cs" />
     <Compile Include="Entities\RawMaterial\Category.cs" />
     <Compile Include="Entities\RawMaterial\Cost.cs" />
     <Compile Include="Entities\RawMaterial\OperationType.cs" />
