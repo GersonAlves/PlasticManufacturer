@@ -1,5 +1,5 @@
 ﻿using PlasticManufacturer.Domain.Entities.Common;
-using PlasticManufacturer.Domain.Entities.Customer;
+using PlasticManufacturer.Domain.Entities.Customers;
 using PlasticManufacturer.Domain.Entities.Products;
 using System;
 using System.Collections.Generic;
@@ -10,7 +10,10 @@ using System.Threading.Tasks;
 namespace PlasticManufacturer.Domain.Entities.Color_Match_Request
 {
     public class ColorMatchRequest: Entity      
-    {
+    {       
+        public virtual Customer Customer { get; set; }
+        public virtual int LoteId { get; set; }
+        public virtual IList<ColorCustomerAddress> ColorCustomerAdresses { get; set; }
         public virtual string ProductDescription { get; set; }
         public virtual string ProductAplication { get; set; }
         public virtual bool PriceQuoteRequired { get; set; }
@@ -27,12 +30,12 @@ namespace PlasticManufacturer.Domain.Entities.Color_Match_Request
         public virtual bool Extrusion { get; set; }
         public virtual bool FiberDenier    { get; set; }
         public virtual bool CoEx { get; set; }
-        public virtual CustomerResion CustomerResion { get; set; }
+        public virtual CustomerResin CustomerResin { get; set; }
         public virtual string MeltIndex { get; set; }
         public virtual bool Film { get; set; }
         public virtual bool Sheet { get; set; }
         public virtual bool Rotational { get; set; }
-        public virtual bool Mfg { get; set; }
+        public virtual string Mfg { get; set; }
         public virtual bool GasAssitInjection { get; set; }
         public virtual bool Exact { get; set; }
         public virtual bool Commercial { get; set; }
@@ -45,7 +48,7 @@ namespace PlasticManufacturer.Domain.Entities.Color_Match_Request
         public virtual int ChipsQty { get; set; }      
         public virtual bool TubeSample { get; set; }
         public virtual bool SheetExtrusionSample { get; set; }
-        public virtual decimal ConcentrateQty { get; set; }
+        public virtual decimal RequiredCustomerQty { get; set; }
         public virtual decimal UnitQty { get; set; }
         public virtual Packaging Packaging { get; set; }
         public virtual Carrier Carrier { get; set; }
@@ -55,10 +58,10 @@ namespace PlasticManufacturer.Domain.Entities.Color_Match_Request
         public virtual bool Interior { get; set; }
         public virtual bool Exterior { get; set; }
         public virtual string LightLastness { get; set; }
-        public virtual DateTime Hour { get; set; }
+        public virtual DateTime? Hour { get; set; }
         //Purpose
         public virtual bool New { get; set; }
-        public virtual Product Reformulation { get; set; } // Conversar com aulus na telas deonde vem esses dados.
+        public virtual Product Reformulation { get; set; } // Conversar com aulus na telas de onde vem esses dados.
         public virtual string Reason { get; set; }
         public virtual bool Uv { get; set; }
         public virtual string UvPackage { get; set; }
@@ -68,6 +71,7 @@ namespace PlasticManufacturer.Domain.Entities.Color_Match_Request
         public virtual string AntiStat { get; set; }
         public virtual bool AdditiveNone { get; set; }
         public virtual bool IsLubricant { get; set; }
+        public virtual string Lubricant { get; set; }
         public virtual string Amount { get; set; }
         public virtual string AdditiveOther { get; set; }
         public virtual bool BestAdditive { get; set; }
@@ -91,6 +95,6 @@ namespace PlasticManufacturer.Domain.Entities.Color_Match_Request
         public virtual bool LogoChips { get; set; }
         public virtual Product Product { get; set; }
         public virtual CustomerShipViaAccount CustomerShipViaAccount { get; set; }
-        public virtual DateTime CustomerDueDate { get; set; }
+        public virtual DateTime? CustomerDueDate { get; set; }
     }
 }

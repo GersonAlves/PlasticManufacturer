@@ -1,4 +1,6 @@
-﻿namespace PlasticManufacturer.Domain.Entities.Common
+﻿using PlasticManufacturer.Domain.Entities.Common;
+
+namespace PlasticManufacturer.Domain.Entities.Customers
 {
     public class CustomerDefault : Entity
     {

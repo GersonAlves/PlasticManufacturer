@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations.Schema;
 
 
-namespace PlasticManufacturer.Domain.Entities.Common
+namespace PlasticManufacturer.Domain.Entities.Customers
 {
     public class Customer:Entity    
     {

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using PlasticManufacturer.Domain.Entities.Common;
+using PlasticManufacturer.Domain.Entities.Customers;
 using PlasticManufacturer.InfraStructure.Context;
 
 namespace ViewAulus.Controllers

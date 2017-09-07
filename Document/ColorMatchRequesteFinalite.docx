@@ -1,0 +1,956 @@
+@model PlasticManufacturer.Domain.Entities.Color_Match_Request.ColorMatchRequest
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="panel spacer-20">
+    <div class="panel-heading no-padding">
+        <a href="#" class="panel-expander notext fr">&nbsp;</a>
+        <h2 class="clipboard">Color Match Request</h2>
+    </div>
+    <div class="panel-container">
+        <div class="options">
+            <ul>
+                <li><a href="#" class="post">Post</a></li>
+                <li><a href="Inbox2.html" class="send">Send</a></li>
+                <li><a href="#" class="resin">Customer Resin</a></li>
+                <li><a href="#" class="labels">See Notes</a></li>
+                <li><a href="#" class="labels">Variation</a></li>
+                <li><a href="#" class="labels">Advisory Lette</a></li>
+                <li><a href="#" class="exit">Exit</a></li>
+            </ul>
+        </div>
+
+        <div class="technical-info">
+            <div class="order-info">
+                <div class="fields-row">
+                    <div class="fields-bar">
+                        <div class="col">
+                            <label>Costumer:</label>
+                            <input type="text" class="form-control" title="CC6029087-00" value="CC6029087-00" />
+                        </div>
+                        <div class="col">
+                            <label> &nbsp; </label>
+                            <input type="text" class="form-control" value="" />
+                            <div class="cl">&nbsp;</div>
+                        </div>
+                        <div class="col">
+                            <label> CMR#: </label>
+                            <input type="text" class="form-control" title="" value="" />
+                            <div class="cl">&nbsp;</div>
+                        </div>
+                        <div class="col">
+                            <label>Credit limit:</label>
+                            <input type="text" class="form-control" placeholder="0.00" />
+                            <div class="cl">&nbsp;</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="technical-info">
+            <div class="fields-row">
+                <div class="fields-bar">
+                    <div class="col">
+                        <h2 class="m-b-20">Ship from </h2>
+                        <label>F&D Plastics, Inc</label>
+                        <label>23 jytek Dr.</label>
+                        <label>Leominster MA 01453</label>
+                        <label>Phone (978)534-8999</label>
+                    </div>
+                    <div class="col">
+                        <div class="date fl">
+                            <label>Date</label>
+                            <input type="text" class="form-control" placeholder="00/00/0000" />
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="markup fl">
+                            <label>Status:</label>
+                            <select name="select-markup">
+                                <option value="option1">Sim</option>
+                                <option value="option2">option2</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="buttons-margin"><a href="#" class="fr button button-orange">Recreate</a> </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="fields-row">
+                <div class="fields-bar">
+                    <div class="col">
+                        <h2>Bill to: </h2>
+                        <select name="billTo" class="custom-select">
+                            <option value="option1">- Select One -</option>
+                            <option value="option2">Xpto</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <label>&nbsp;</label>
+                        <input type="text" class="form-control" />
+                    </div>
+                    <div class="col">
+                        <label>&nbsp;</label>
+                        <input type="text" class="form-control" />
+                    </div>
+                    <div class="col">
+                        <label>&nbsp;</label>
+                        <input type="text" class="form-control" />
+                    </div>
+                    <div class="col">
+                        <label>&nbsp;</label>
+                        <input type="text" class="form-control" />
+                    </div>
+                </div>
+                <div class="fields-bar">
+                    <div class="col">
+                        <label>Phone:</label>
+                        <input type="text" class="form-control" />
+                    </div>
+                    <div class="col">
+                        <label>Fax</label>
+                        <input type="text" class="form-control" />
+                    </div>
+                </div>
+                <div class="fields-bar">
+                    <div class="col">
+                        <h2>Ship to:</h2>
+                        <select name="select-resin" class="custom-select">
+                            <option value="option1">- Select One -</option>
+                            <option value="option2">option2</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <label>&nbsp;</label>
+                        <input type="text" class="form-control" />
+                    </div>
+                    <div class="col">
+                        <label>&nbsp;</label>
+                        <input type="text" class="form-control" />
+                    </div>
+                    <div class="col">
+                        <label>&nbsp;</label>
+                        <input type="text" class="form-control" />
+                    </div>
+                    <div class="col">
+                        <label>&nbsp;</label>
+                        <input type="text" class="form-control" />
+                    </div>
+                </div>
+                <div class="fields-bar">
+                    <div class="col">
+                        <label>Phone:</label>
+                        <input type="text" class="form-control" />
+                    </div>
+                    <div class="col">
+                        <label>Fax</label>
+                        <input type="text" class="form-control" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel-container">
+                <div class="color-match">
+                    <table class="gn-table">
+                        <thead>
+                            <tr>
+                                <th>PO #</th>
+                                <th>Contact</th>
+                                <th>Attention</th>
+                                <th>Terms</th>
+                                <th>Freight</th>
+                                <th>Sales Person</th>
+                                <th class="last">Written by</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-title="PO #"><label>&nbsp&nbsp</label></td>
+                                <td data-title="Contact"><label>Barry Criangan</label></td>
+                                <td data-title="Attention"><label>Barry Criangan</label></td>
+                                <td data-title="Terms"><label>1.00% 10, Net 30 Days</label></td>
+                                <td data-title="Freight"><label>Prepaid</label></td>
+                                <td data-title="Sales Person"><label>Jena</label></td>
+                                <td data-title="Written by" class="last"><label>Aulus</label></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            @using (Html.BeginForm())
+            {
+                @*@Html.AntiForgeryToken()*@
+               
+                <div class="fields-row form-group">
+                    <div class="bar">
+                        <div class="bar-col">
+                            <label class="m-t-20" for="ProductDescription">Product Description</label>
+                            @Html.EditorFor(model => model.ProductDescription, new { htmlAttributes = new { @class = "form-control" } })
+                            
+                        </div>
+                        <div class="bar-col">
+                            <div class="col">
+                                <label class="m-t-20">Product Application</label>
+                                @Html.EditorFor(model => model.ProductAplication, new { htmlAttributes = new { @class = "form-control" } })
+                            </div>
+                            <div class="col txt-center">
+                                <label class="m-t-20">Price Quote Required</label>
+                                <div class="chk-box">
+                                    @Html.EditorFor(model => model.PriceQuoteRequired)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bar">
+                        <div class="bar-col">
+                            <label class="m-t-20">Target Type</label>
+                            <select name="TargetTypeField" id="TargetTypeField">
+                                <option value="0"></option>
+                                <option value="1">Other</option>
+                                <option value="2">Part</option>
+                                <option value="3">F&D Color</option>
+                                <option value="4">Pantone</option>
+                                <option value="5">Competitor Concentrate</option>
+                                <option value="6">Competitor Color Chip</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="bar">
+                        <div class="col f-left">
+                            <label class="m-t-20">Opacity</label>
+                            <input type="text" class="form-control" />
+                        </div>
+                        <div class="col f-left">
+                            <span class="m-t-20 label">Surface</span>
+                                 <div class="box">
+                                    <label class="m-t-20">Matt</label>
+                                    <input name="SurfaceMatte" class="checkbox" id="SurfaceMatte" type="checkbox" checked="checked" value="true" data-val-required="The SurfaceMatte field is required." data-val="true"><input name="SurfaceMatte" type="hidden" value="false">
+                                    <span class="field-validation-valid text-danger" data-valmsg-replace="true" data-valmsg-for="SurfaceMatte"></span>
+                                </div>
+                            <div class="box">
+                                <label class="m-t-20">Glossy</label>
+                                <input name="SurfaceGlossy" class="checkbox" id="SurfaceGlossy" type="checkbox" value="true" data-val-required="The SurfaceGlossy field is required." data-val="true"><input name="SurfaceGlossy" type="hidden" value="false">
+                                <span class="field-validation-valid text-danger" data-valmsg-replace="true" data-valmsg-for="SurfaceGlossy"></span>
+                            </div>
+                        </div>
+                        <div class="col f-left">
+                            <label class="m-t-20">Others</label>
+                            @Html.EditorFor(model => model.SurfaceOthers, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                        <div class="col f-left">
+                            <label class="m-t-20">Wall Thickness</label>
+                            @Html.EditorFor(model => model.WallThickness, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel-container">
+                    <div class="color-match">
+                        <table class="gn-table eq-table">
+                            <thead>
+                                <tr>
+                                    <th>Processing Requirements</th>
+                                    <th class="last">Resin Specification</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td data-title="Processing Requirements">
+                                        <ul class="selection-list">
+                                            <li>
+                                                <label class="m-t-20">Injection</label>
+                                                <div class="chk-box">
+                                                    @*<input type="checkbox" class="checkbox" />*@
+                                                    @Html.EditorFor(model => model.Injection)
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <label class="m-t-20">Blow</label>
+                                                <div class="chk-box">
+                                                    @*<input type="checkbox" class="checkbox" />*@
+                                                    @Html.EditorFor(model => model.Blow)
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <label class="m-t-20">Compression</label>
+                                                <div class="chk-box">
+                                                    @*<input type="checkbox" class="checkbox" />*@
+                                                    @Html.EditorFor(model => model.Compression)
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <label class="m-t-20">Extrusion</label>
+                                                <div class="chk-box">
+                                                    @*<input type="checkbox" class="checkbox" />*@
+                                                    @Html.EditorFor(model => model.Extrusion)
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <label class="m-t-20">Fiber Denier</label>
+                                                <div class="chk-box">
+                                                    @*<input type="checkbox" class="checkbox" />*@
+                                                    @Html.EditorFor(model => model.FiberDenier)
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <label class="m-t-20">CO-EX</label>
+                                                <div class="chk-box">
+                                                    @*<input type="checkbox" class="checkbox" />*@
+                                                    @Html.EditorFor(model => model.CoEx)
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <label class="m-t-20">Films</label>
+                                                <div class="chk-box">
+                                                    @*<input type="checkbox" class="checkbox" />*@
+                                                    @Html.EditorFor(model => model.Film)
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <label class="m-t-20">Sheet</label>
+                                                <div class="chk-box">
+                                                    @*<input type="checkbox" class="checkbox" />*@
+                                                    @Html.EditorFor(model => model.Sheet)
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <label class="m-t-20">Rotational</label>
+                                                <div class="chk-box">
+                                                    @*<input type="checkbox" class="checkbox" />*@
+                                                    @Html.EditorFor(model => model.Rotational)
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <label class="m-t-20">MFG</label>
+                                                <div class="chk-box">
+                                                    @*<input type="text" class="form-control" />*@
+                                                    @Html.EditorFor(model => model.Mfg, new { htmlAttributes = new { @class = "form-control" } })
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <label class="m-t-20">Gas Assit Injection</label>
+                                                <div class="chk-box">
+                                                    @*<input type="checkbox" class="checkbox" />*@
+                                                    @Html.EditorFor(model => model.GasAssitInjection)
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                    <td data-title="Resin Specification" class="last">
+                                        <div class="bar">
+                                            <div class="block">
+                                                <label class="b-padding">Customer Resin</label>
+                                                <select name="select-markup">
+                                                    <option value=""></option>
+                                                    <option value="FPPP">FPPP</option>
+                                                    <option value="CLIF01">CUST ABS ( CLIF01 Cont# 1863)</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="bar">
+                                            <div class="block">
+                                                <label class="b-padding">Melt Index</label>
+                                                @*<input type="text" class="form-control" />*@
+                                                @Html.EditorFor(model => model.MeltIndex, new { htmlAttributes = new { @class = "form-control" } })
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="fields-row no-margin">
+                    <div class="bar">
+                        <span class="label m-t-20">Color Tolerance:</span>
+                        <div class="boxes-holder">
+                            <div class="box">
+                                <label>Exact</label>
+                                <div class="chk-box">
+                                    @*<input type="checkbox" class="checkbox" />*@
+                                    @Html.EditorFor(model => model.Exact)
+                                </div>
+                            </div>
+                            <div class="box">
+                                <label>Commercial</label>
+                                <div class="chk-box">
+                                    @*<input type="checkbox" class="checkbox" />*@
+                                    @Html.EditorFor(model => model.Commercial)
+                                </div>
+                            </div>
+                            <div class="box">
+                                <label>Closest STD</label>
+                                @*<input type="text" class="form-control" />*@
+                                @Html.EditorFor(model => model.ClosestSTD, new { htmlAttributes = new { @class = "form-control" } })
+                            </div>
+                            <div class="box">
+                                <label>+DE</label>
+                                @*<input type="text" class="form-control" />*@
+                                @Html.EditorFor(model => model.MoreDe, new { htmlAttributes = new { @class = "form-control" } })
+                            </div>
+                            <div class="box">
+                                <label>CIELAB</label>
+                                <div class="chk-box">
+                                    @*<input type="checkbox" class="checkbox" />*@
+                                    @Html.EditorFor(model => model.CieLab)
+                                </div>
+                            </div>
+                            <div class="box">
+                                <label>Call sales if is expensive</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bar">
+                        <span class="label m-t-20">Illumination:</span>
+                        <div class="boxes-holder box-frm">
+                            <div class="chk-hldr">
+                                @Html.EditorFor(model => model.D65)
+                                <label>D-65</label>
+                            </div>
+                            <div class="chk-hldr">
+                                @Html.EditorFor(model => model.Cfw)
+                                <label>CFW</label>
+                            </div>
+                            <div class="chk-hldr">
+                                @Html.EditorFor(model => model.A)
+                                <label>A</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel-container spacer-20">
+                    <div class="color-match">
+                        <table class="gn-table eq-table">
+                            <thead>
+                                <tr>
+                                    <th class="last">Sample Concentrate</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td data-title="Sample Concentrate" class="last">
+                                        <ul class="info-list">
+                                            <li>
+                                                <label>Chip Qty</label>
+                                                <div class="chk-box">
+                                                    @Html.EditorFor(model => model.ChipsQty, new { htmlAttributes = new { @class = "form-control" } })
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <label>Tube Sample</label>
+                                                <div class="chk-box">
+                                                    @Html.EditorFor(model => model.TubeSample)
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <label>Sheet Extrusion Sample</label>
+                                                <div class="chk-box">
+                                                    @Html.EditorFor(model => model.SheetExtrusionSample)
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <label>Required Customer Qty</label>
+                                                <div class="chk-box txt">
+                                                    @Html.EditorFor(model => model.RequiredCustomerQty, new { htmlAttributes = new { @class = "form-control" } })
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <label>Units Qty</label>
+                                                <div class="chk-box">
+                                                    @Html.EditorFor(model => model.UnitQty, new { htmlAttributes = new { @class = "form-control" } })                                                </div>
+                                            </li>
+                                        </ul>
+                                        <ul class="info-list">
+                                            <li>
+                                                <label>Packaging</label>
+                                                <select name="select-markup">
+                                                    <option value="">Box</option>
+                                                    <option value="Box">Box</option>
+                                                    <option value="Bucket">Bucket</option>
+                                                </select>
+                                            </li>                                           
+                                            <li>
+                                                <label>Carrier</label>
+                                                <select name="select-markup">
+                                                    <option value=""></option>
+                                                    <option value="9307">9307 ILLUSION26</option>
+                                                    <option value="BEST">BEST</option>
+                                                </select>
+                                            </li>
+                                            <li>
+                                                <label>Required Ratio</label>
+                                                @Html.EditorFor(model => model.RequiredRatio, new { htmlAttributes = new { @class = "form-control" } })
+                                            </li>
+                                            <li>
+                                                <label>Pellet Size</label>
+                                                <select name="select-markup">
+                                                    <option value=""></option>
+                                                    <option value="ANY">ANY</option>
+                                                    <option value="option2">MICRO </option>
+                                                </select>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <!-- EXPOSURE -->
+                                <tr>
+                                    <td>
+                                        <table class="gn-table in-table">
+                                            <tbody>
+                                                <tr>
+                                                    <th class="in-title">
+                                                        Exposure
+                                                    </th>
+                                                    <td data-title="Sample Concentrate" class="last">
+                                                        <ul class="info-list">
+                                                            <li>
+                                                                <label>Interior</label>
+                                                                <div class="chk-box">
+                                                                    @Html.EditorFor(model => model.Interior)
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <label>Exterior</label>
+                                                                <div class="chk-box">
+                                                                    @Html.EditorFor(model => model.Exterior)
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <label>Light Fasteness </label>
+                                                                @Html.EditorFor(model => model.LightLastness, new { htmlAttributes = new { @class = "form-control" } })
+                                                            </li>
+                                                            <li>
+                                                                <label>Hours </label>
+                                                                @Html.EditorFor(model => model.Hour, new { htmlAttributes = new { @class = "form-control" } })
+                                                            </li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <!-- PURPOSE FOR MATCH -->
+                                <tr>
+                                    <td>
+                                        <table class="gn-table in-table">
+                                            <tbody>
+                                                <tr>
+                                                    <th class="in-title">
+                                                        Purpose for Match
+                                                    </th>
+                                                    <td data-title="Sample Concentrate" class="last">
+                                                        <ul class="info-list">
+                                                            <li>
+                                                                <label>New</label>
+                                                                <div class="chk-box">
+                                                                    @Html.EditorFor(model => model.New)
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <label>Reformulation</label>
+                                                                <select name="select-markup">
+                                                                    <option value=""></option>
+                                                                    <option value="CC3217376">CC3217376</option>
+                                                                    <option value="CC3217387">CC3217387</option>
+                                                                </select>
+                                                            </li>
+                                                            <li>
+                                                                <label>Reason </label>
+                                                                @Html.EditorFor(model => model.Reason, new { htmlAttributes = new { @class = "form-control" } })
+                                                            </li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <!-- SPECIAL ADDITIVIES -->
+                                <tr>
+                                    <td>
+                                        <table class="gn-table in-table">
+                                            <tbody>
+                                                <tr>
+                                                    <th class="in-title">
+                                                        Special Additives
+                                                    </th>
+                                                    <td data-title="Sample Concentrate" class="last">
+                                                        <ul class="info-list">
+                                                            <li>
+                                                                <label>UV</label>
+                                                                <div class="chk-box">
+                                                                    @Html.EditorFor(model => model.Uv)
+                                                                </div>
+                                                      
+                                                                @Html.EditorFor(model => model.UvPackage, new { htmlAttributes = new { @class = "form-control" } })
+                                                            </li>
+                                                            <li>
+                                                                <label>Antioxidants </label>
+                                                                <div class="chk-box fl">
+                                                                    @Html.EditorFor(model => model.IsAntiOxidant)
+                                                                </div>
+                                                                @Html.EditorFor(model => model.AntiOxidant, new { htmlAttributes = new { @class = "form-control" } })
+                                                            </li>
+                                                            <li>
+                                                                <label>Antistat</label>
+                                                                <div class="chk-box fl">
+                                                                    @Html.EditorFor(model => model.IsAntiStat)
+                                                                </div>
+                                                                @Html.EditorFor(model => model.AntiStat, new { htmlAttributes = new { @class = "form-control" } })
+                                                            </li>
+                                                            <li>
+                                                                <label>None</label>
+                                                                <div class="chk-box">
+                                                                    @Html.EditorFor(model => model.AdditiveNone)
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <label>Lubricant</label>
+                                                                <div class="chk-box fl">
+                                                                    @Html.EditorFor(model => model.IsLubricant)
+                                                                </div>
+                                                                @Html.EditorFor(model => model.Lubricant, new { htmlAttributes = new { @class = "form-control" } })
+                                                            </li>
+                                                            <li>
+                                                                <label>Amount</label>
+                                                                @Html.EditorFor(model => model.Amount, new { htmlAttributes = new { @class = "form-control" } })
+                                                            </li>
+                                                            <li>
+                                                                <label>Other</label>
+                                                                @Html.EditorFor(model => model.AdditiveOther, new { htmlAttributes = new { @class = "form-control" } })
+                                                            </li>
+                                                            <li>
+                                                                <label>Lab to check application for best additive</label>
+                                                                <div class="chk-box">
+                                                                    @Html.EditorFor(model => model.BestAdditive)
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <label>Slip</label>
+                                                                <div class="chk-box">
+                                                                    @Html.EditorFor(model => model.Slip)
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <!-- CUSTOMER MAJOR CONCERN -->
+                                <tr>
+                                    <td>
+                                        <table class="gn-table in-table">
+                                            <tbody>
+                                                <tr>
+                                                    <th class="in-title">
+                                                        Customer Major Concern
+                                                    </th>
+                                                    <td data-title="Sample Concentrate" class="last">
+                                                        <ul class="info-list">
+                                                            <li>
+                                                                <label>Price</label>
+                                                                <div class="chk-box">
+                                                                    @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control" } })
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <label>Accuracy</label>
+                                                                <div class="chk-box">
+                                                                    @Html.EditorFor(model => model.Accuracy, new { htmlAttributes = new { @class = "form-control" } })
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <label>Turnaround</label>
+                                                                <div class="chk-box">
+                                                                    @Html.EditorFor(model => model.Turnaround, new { htmlAttributes = new { @class = "form-control" } })
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <label>None</label>
+                                                                <div class="chk-box">
+                                                                    @Html.EditorFor(model => model.ConcernNone)
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <label>Other </label>
+                                                                @Html.EditorFor(model => model.ConcernOther, new { htmlAttributes = new { @class = "form-control" } })
+                                                            </li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <!-- REGULARITY REQUIREMENT -->
+                                <tr>
+                                    <td>
+                                        <table class="gn-table in-table">
+                                            <tbody>
+                                                <tr>
+                                                    <th class="in-title">
+                                                        Regularity Requirement
+                                                    </th>
+                                                    <td data-title="Sample Concentrate" class="last">
+                                                        <ul class="info-list">
+                                                            <li>
+                                                                <label>FDA</label>
+                                                                <div class="chk-box">
+                                                                    @Html.EditorFor(model => model.Fda)
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <label>NON h/m</label>
+                                                                <div class="chk-box">
+                                                                    @Html.EditorFor(model => model.NonHm)
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <label>None</label>
+                                                                <div class="chk-box">
+                                                                    @Html.EditorFor(model => model.RequirementNone)
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <label>Other </label>
+                                                                @Html.EditorFor(model => model.RequirementOther, new { htmlAttributes = new { @class = "form-control" } })
+                                                            </li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <!-- PROCESSING INFORMATION -->
+                                <tr>
+                                    <td>
+                                        <table class="gn-table in-table">
+                                            <tbody>
+                                                <tr>
+                                                    <th class="in-title">
+                                                        Processing Information
+                                                    </th>
+                                                    <td data-title="Sample Concentrate" class="last">
+                                                        <ul class="info-list">
+                                                            <li>
+                                                                <label>Maximum Heat </label>
+                                                                @Html.EditorFor(model => model.MaximumHeat, new { htmlAttributes = new { @class = "form-control" } })
+                                                            </li>
+                                                            <li>
+                                                                <label>COA</label>
+                                                                <div class="chk-box">
+                                                                    @Html.EditorFor(model => model.Coa)
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <label>MSDS</label>
+                                                                <div class="chk-box">
+                                                                    @Html.EditorFor(model => model.Msds)
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <label>CIE</label>
+                                                                <div class="chk-box">
+                                                                    @Html.EditorFor(model => model.Cie)
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <label>Material Sheet</label>
+                                                                <div class="chk-box">
+                                                                    @Html.EditorFor(model => model.MateriaSeet)
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <label>FDA Letter</label>
+                                                                <div class="chk-box">
+                                                                    @Html.EditorFor(model => model.FdaLetter)
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <label>UV Letter</label>
+                                                                <div class="chk-box">
+                                                                    @Html.EditorFor(model => model.UvLetter)
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <label>No Logo Chips</label>
+                                                                <div class="chk-box">
+                                                                    @Html.EditorFor(model => model.LogoChips)
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="panel-container spacer-20">
+                    <div class="color-match">
+                        <table class="gn-table eq-table">
+                            <thead>
+                                <tr>
+                                    <th class="last">Product Information</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td data-title="Sample Concentrate" class="last">
+                                        <ul class="info-list">
+                                            <li>
+                                                <label>Item</label>
+                                                <input type="text" class="form-control" />
+                                            </li>
+                                            <li>
+                                                <label>Name</label>
+                                                <input type="text" class="form-control" />
+                                            </li>
+                                            <li>
+                                                <label>Ratio</label>
+                                                <input type="text" class="form-control" />
+                                            </li>
+                                            <li>
+                                                <label>Compound</label>
+                                                <select name="select-markup">
+                                                    <option value="option1">option1</option>
+                                                    <option value="option2">option2</option>
+                                                </select>
+                                            </li>
+                                            <li class="fr">
+                                                <label>Price</label>
+                                                <input type="text" class="form-control" placeholder="0.00" />
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="panel-container spacer-20">
+                    <div class="color-match">
+                        <table class="gn-table eq-table">
+                            <thead>
+                                <tr>
+                                    <th class="last">Shipping Information</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td data-title="Sample Concentrate" class="last">
+                                        <ul class="info-list">
+                                            <li>
+                                                <label>Shipped Via</label>
+                                                <select name="select-markup">
+                                                    <option value="option1">option1</option>
+                                                    <option value="option2">option2</option>
+                                                </select>
+                                            </li>
+                                            <li>
+                                                <label>Account</label>
+                                                <input type="text" class="form-control" />
+                                            </li>
+                                            <li>
+                                                <label>Send On</label>
+                                                <input type="text" class="form-control" placeholder="00/00/0000" />
+                                            </li>
+                                            <li>
+                                                <label>Customer Due Date</label>
+                                                <input type="text" class="form-control" />
+                                            </li>
+                                            <li>
+                                                <label>Return Target?</label>
+                                                <select name="select-markup">
+                                                    <option value="option1">option1</option>
+                                                    <option value="option2">option2</option>
+                                                </select>
+                                            </li>
+                                        </ul>
+                                        <ul class="info-list">
+                                            <li>
+                                                <label>Date Send</label>
+                                                <input type="text" class="form-control" placeholder="00/00/0000" />
+                                            </li>
+                                            <li>
+                                                <label>Chip Sent</label>
+                                                <input type="text" class="form-control" />
+                                            </li>
+                                            <li>
+                                                <label>Conc. Sent</label>
+                                                <input type="text" class="form-control" />
+                                            </li>
+                                            <li>
+                                                <label>Qty Units Sent</label>
+                                                <input type="text" class="form-control" />
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="panel-container">
+                    <div class="color-match">
+                        <table class="gn-table ta-table">
+                            <thead>
+                                <tr>
+                                    <th>Lab Notes</th>
+                                    <th>Shipping Notes</th>
+                                    <th>Label</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <textarea></textarea>
+                                    </td>
+                                    <td>
+                                        <textarea></textarea>
+                                    </td>
+                                    <td>
+                                        <textarea></textarea>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Create" class="class="fr button button-green br"" />
+                    </div>
+                </div>
+
+            }
+
+        </div>
+    </div>
+</div>
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+
+
+

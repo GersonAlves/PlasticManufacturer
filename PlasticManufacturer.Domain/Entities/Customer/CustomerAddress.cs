@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PlasticManufacturer.Domain.Entities.Common
+namespace PlasticManufacturer.Domain.Entities.Customers
 {
     public class CustomerAddress : Entity
     {

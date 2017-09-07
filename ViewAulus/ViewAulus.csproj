@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -70,10 +69,6 @@
     </Reference>
     <Reference Include="Microsoft.ApplicationInsights, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
@@ -209,11 +204,18 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CarriersController.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
+    <Compile Include="Controllers\ColorMatchRequestsController.cs" />
+    <Compile Include="Controllers\CustomerResinsController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\OpacitiesController.cs" />
+    <Compile Include="Controllers\PackagingsController.cs" />
+    <Compile Include="Controllers\PelletsController.cs" />
     <Compile Include="Controllers\RawMaterialsController.cs" />
+    <Compile Include="Controllers\TargetTypesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -382,6 +384,8 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="Properties\PublishProfiles\DevPlastic.pubxml" />
+    <None Include="Properties\PublishProfiles\LocalDeploy.pubxml" />
     <None Include="Scripts\jquery-2.2.4.intellisense.js" />
     <Content Include="Scripts\jquery-2.2.4.js" />
     <Content Include="Scripts\jquery-2.2.4.min.js" />
@@ -407,14 +411,18 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Views\Web.config" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -450,6 +458,41 @@
     <Content Include="Views\Customers\Create.cshtml" />
     <Content Include="Views\Customers\Edit.cshtml" />
     <Content Include="Views\Customers\Index.cshtml" />
+    <Content Include="Views\ColorMatchRequests\Create.cshtml" />
+    <Content Include="Views\ColorMatchRequests\Delete.cshtml" />
+    <Content Include="Views\ColorMatchRequests\Details.cshtml" />
+    <Content Include="Views\ColorMatchRequests\Edit.cshtml" />
+    <Content Include="Views\ColorMatchRequests\Index.cshtml" />
+    <Content Include="Views\TargetTypes\Create.cshtml" />
+    <Content Include="Views\TargetTypes\Delete.cshtml" />
+    <Content Include="Views\TargetTypes\Details.cshtml" />
+    <Content Include="Views\TargetTypes\Edit.cshtml" />
+    <Content Include="Views\TargetTypes\Index.cshtml" />
+    <Content Include="Views\Opacities\Create.cshtml" />
+    <Content Include="Views\Opacities\Delete.cshtml" />
+    <Content Include="Views\Opacities\Details.cshtml" />
+    <Content Include="Views\Opacities\Edit.cshtml" />
+    <Content Include="Views\Opacities\Index.cshtml" />
+    <Content Include="Views\CustomerResins\Create.cshtml" />
+    <Content Include="Views\CustomerResins\Delete.cshtml" />
+    <Content Include="Views\CustomerResins\Details.cshtml" />
+    <Content Include="Views\CustomerResins\Edit.cshtml" />
+    <Content Include="Views\CustomerResins\Index.cshtml" />
+    <Content Include="Views\Packagings\Create.cshtml" />
+    <Content Include="Views\Packagings\Delete.cshtml" />
+    <Content Include="Views\Packagings\Details.cshtml" />
+    <Content Include="Views\Packagings\Edit.cshtml" />
+    <Content Include="Views\Packagings\Index.cshtml" />
+    <Content Include="Views\Carriers\Create.cshtml" />
+    <Content Include="Views\Carriers\Delete.cshtml" />
+    <Content Include="Views\Carriers\Details.cshtml" />
+    <Content Include="Views\Carriers\Edit.cshtml" />
+    <Content Include="Views\Carriers\Index.cshtml" />
+    <Content Include="Views\Pellets\Create.cshtml" />
+    <Content Include="Views\Pellets\Delete.cshtml" />
+    <Content Include="Views\Pellets\Details.cshtml" />
+    <Content Include="Views\Pellets\Edit.cshtml" />
+    <Content Include="Views\Pellets\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -502,7 +545,6 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
-    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

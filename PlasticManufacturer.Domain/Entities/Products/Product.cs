@@ -8,5 +8,6 @@ namespace PlasticManufacturer.Domain.Entities.Products
 {
     public class Product: Entity
     {
+        public virtual Formula Formula { get; set; }
     }
 }

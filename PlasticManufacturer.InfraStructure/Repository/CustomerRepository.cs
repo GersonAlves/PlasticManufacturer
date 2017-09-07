@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using PlasticManufacturer.Domain.Entities.Common;
+using PlasticManufacturer.Domain.Entities.Customers;
 using PlasticManufacturer.InfraStructure.Context;
 using System.Data.Entity;
 

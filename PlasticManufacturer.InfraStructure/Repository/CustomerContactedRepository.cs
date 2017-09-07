@@ -1,4 +1,4 @@
-﻿using PlasticManufacturer.Domain.Entities.Common;
+﻿using PlasticManufacturer.Domain.Entities.Customers;
 using PlasticManufacturer.Domain.Repository;
 using PlasticManufacturer.InfraStructure.Context;
 using System;

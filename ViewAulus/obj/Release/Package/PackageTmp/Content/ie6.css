@@ -1,0 +1,17 @@
+h1#logo a { background-image: none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='css/images/logo.png', sizingMethod='image'); } 
+.white-box .top { background-image: none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='css/images/whitebox-top.png', sizingMethod='image'); }
+.white-box .bottom { background-image: none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='css/images/whitebox-bottom.png', sizingMethod='image'); }
+.white-box .cnt { background-image: none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='css/images/whitebox-bg.png', sizingMethod='scale'); }
+
+.technical-info .checkboxes { margin-right: -35px; }
+.technical-info .checkboxes .checkbox { margin-right: 30px; }
+
+.technical-info .date .field { width: 129px; }
+.technical-info .date .field-r { width: 129px; }
+
+.technical-info .ratio .field { width: 68px; }
+.formula .col input { margin-top: 5px; }
+.field input { margin-top: 8px; }
+
+.header-right .menu .drop-down .dd-top { background-image: none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='css/images/dd-top.png', sizingMethod='image'); }
+.header-right .menu .drop-down .dd-bottom { background-image: none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='css/images/dd-bottom.png', sizingMethod='image'); }

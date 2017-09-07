@@ -1,6 +1,6 @@
 ﻿using PlasticManufacturer.Domain.Entities.ShippingMethods;
 
-namespace PlasticManufacturer.Domain.Entities.Common
+namespace PlasticManufacturer.Domain.Entities.Customers
 {
     public class CustomerShipViaAccount : Entity
     {

@@ -1,0 +1,60 @@
+﻿@model IEnumerable<PlasticManufacturer.Domain.Entities.RawMaterial.Category>
+
+@{
+    ViewBag.Title = "Category";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="panel spacer-20">
+    <div class="panel-heading no-padding">
+        <a href="#" class="panel-expander notext fr">&nbsp;</a>
+        <h2 class="clipboard">Category</h2>
+    </div>
+    <div class="panel-container">
+        <div class="options">
+            <ul>
+                <li>@Html.ActionLink("New", "Create", "", new { @class = "new" })</li>
+            </ul>
+        </div>
+        <table class="table2 gn-table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>
+                <th colspan="2"></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td align="center">
+                        <a href="/Categories/Edit/@item.Id">Edit</a>
+                    </td>
+                    <td align="left">
+                        <form action="/Categories/Delete/@item.Id " method="post">
+                            @Html.AntiForgeryToken()
+
+                            <a href="#" class="delete" onclick="this.parentNode.submit(); return confirm('Do you really want delete the category: @item.Name ?');"> Delete</a>
+
+                        </form>
+                    </td>
+                </tr>
+
+            }
+            <tr>
+                <td colspan="4" align="left"></td>
+            </tr>
+        </table>
+
+    </div>
+</div>
+        

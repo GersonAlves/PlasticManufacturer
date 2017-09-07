@@ -1,4 +1,4 @@
-﻿using PlasticManufacturer.Domain.Entities.Common;
+﻿using PlasticManufacturer.Domain.Entities.Customers;
 using System;
 using System.Collections.Generic;
 using System.Linq;

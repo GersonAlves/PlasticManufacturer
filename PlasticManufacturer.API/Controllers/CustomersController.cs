@@ -9,7 +9,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
-using PlasticManufacturer.Domain.Entities.Common;
+using PlasticManufacturer.Domain.Entities.Customers;
 using PlasticManufacturer.InfraStructure.Context;
 
 namespace PlasticManufacturer.API.Controllers

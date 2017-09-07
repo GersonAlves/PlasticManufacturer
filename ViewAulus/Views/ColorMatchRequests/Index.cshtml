@@ -1,0 +1,466 @@
+﻿@model IEnumerable<PlasticManufacturer.Domain.Entities.Color_Match_Request.ColorMatchRequest>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductAplication)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.PriceQuoteRequired)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TargetTypeField)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SurfaceMatte)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SurfaceGlossy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SurfaceOthers)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WallThickness)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Injection)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Blow)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Compression)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Extrusion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FiberDenier)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CoEx)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MeltIndex)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Film)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sheet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rotational)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mfg)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GasAssitInjection)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Exact)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Commercial)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ClosestSTD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MoreDe)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CieLab)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.D65)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cfw)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.A)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ChipsQty)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TubeSample)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SheetExtrusionSample)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UnitQty)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RequiredRatio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Interior)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Exterior)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LightLastness)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hour)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.New)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Reason)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Uv)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UvPackage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsAntiOxidant)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AntiOxidant)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsAntiStat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AntiStat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AdditiveNone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsLubricant)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Amount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AdditiveOther)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BestAdditive)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Slip)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Accuracy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Turnaround)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ConcernNone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ConcernOther)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fda)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NonHm)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RequirementNone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RequirementOther)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaximumHeat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Coa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Msds)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cie)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MateriaSeet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FdaLetter)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UvLetter)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LogoChips)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerDueDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreationDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastUpdate)
+        </th>*@
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductAplication)
+        </td>
+ @*       <td>
+        @Html.DisplayFor(modelItem => item.PriceQuoteRequired)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TargetTypeField)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.SurfaceMatte)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.SurfaceGlossy)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.SurfaceOthers)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.WallThickness)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Injection)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Blow)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Compression)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Extrusion)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.FiberDenier)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CoEx)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.MeltIndex)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Film)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Sheet)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Rotational)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Mfg)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.GasAssitInjection)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Exact)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Commercial)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ClosestSTD)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.MoreDe)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CieLab)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.D65)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Cfw)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.A)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ChipsQty)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TubeSample)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.SheetExtrusionSample)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.UnitQty)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.RequiredRatio)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Interior)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Exterior)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.LightLastness)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Hour)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.New)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Reason)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Uv)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.UvPackage)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.IsAntiOxidant)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.AntiOxidant)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.IsAntiStat)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.AntiStat)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.AdditiveNone)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.IsLubricant)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Amount)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.AdditiveOther)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.BestAdditive)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Slip)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Price)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Accuracy)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Turnaround)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ConcernNone)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ConcernOther)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Fda)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.NonHm)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.RequirementNone)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.RequirementOther)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.MaximumHeat)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Coa)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Msds)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Cie)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.MateriaSeet)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.FdaLetter)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.UvLetter)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.LogoChips)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CustomerDueDate)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Description)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CreationDate)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.LastUpdate)
+    </td>*@
+        <td>
+            @*@Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })*@
+        </td>
+    </tr>
+}
+
+</table>
