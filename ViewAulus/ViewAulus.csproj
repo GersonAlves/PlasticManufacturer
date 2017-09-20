@@ -484,8 +484,6 @@
     <Content Include="Views\Packagings\Edit.cshtml" />
     <Content Include="Views\Packagings\Index.cshtml" />
     <Content Include="Views\Carriers\Create.cshtml" />
-    <Content Include="Views\Carriers\Delete.cshtml" />
-    <Content Include="Views\Carriers\Details.cshtml" />
     <Content Include="Views\Carriers\Edit.cshtml" />
     <Content Include="Views\Carriers\Index.cshtml" />
     <Content Include="Views\Pellets\Create.cshtml" />
