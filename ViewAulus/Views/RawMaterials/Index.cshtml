@@ -13,7 +13,17 @@
     <title>Index</title>
 </head>
 <body>
-    <div><h4>List of Raw Materials</h4></div>
+    <div class="panel spacer-20">
+        <div class="panel-heading no-padding">
+            <a href="#" class="panel-expander notext fr">&nbsp;</a>
+            <h2 class="clipboard">Raw Material</h2>
+        </div>
+<div class="panel-container">
+    <div class="options">
+        <ul>
+            <li>@Html.ActionLink("New", "Create", "", new { @class = "new" })</li>
+        </ul>
+    </div>
     <table class="form-horizontal table2 gn-table">
         <tr>
             <th>
@@ -32,15 +42,12 @@
                 Is Active?
             </th>
             <th>
-                    @Html.DisplayNameFor(model => model.Category)
-                </th>
-
-            <th></th>
-            <th></th>
+                @Html.DisplayNameFor(model => model.Category)
+            </th>
         </tr>
 
         @foreach (var item in Model)
-        {
+            {
             <tr>
                 <td>
                     @Html.DisplayFor(modelItem => item.Code)
@@ -58,15 +65,15 @@
                     @Html.DisplayFor(modelItem => item.Status)
                 </td>
                 <td>
-                        @Html.DisplayFor(modelItem => item.Category.Name)
-                    </td>
-                <td align="right">
+                    @Html.DisplayFor(modelItem => item.Category.Name)
+                </td>
+                <td align="center">
                     <div class="btn btn-default">
                         @Html.ActionLink("Edit", "Edit", new { id = item.Id })
                     </div>
                 </td>
                 <td align="left">
-                    <form action="/RawMaterials/Delete/@item.Id " method="post" >
+                    <form action="/RawMaterials/Delete/@item.Id " method="post">
                         @Html.AntiForgeryToken()
 
                         <a href="#" class="delete" onclick="this.parentNode.submit(); return confirm('Do you really want delete the Raw Material: @item.Name ?');"> Delete</a>
@@ -75,16 +82,10 @@
                 </td>
 
             </tr>
+           
         }
-
     </table>
-
-    <div class="form-group">
-        <div class="btn btn-default">
-            @Html.ActionLink("Create New", "Create")
-        </div>
-    </div>
-
-
+    </div> @*end container*@
+</div>@*end panel*@
 </body>
 </html>

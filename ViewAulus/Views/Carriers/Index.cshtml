@@ -36,6 +36,8 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.Description)
                     </td>
+
+
                     <td align="center">
                         <a href="/Carriers/Edit/@item.Id">Edit</a>
                     </td>
@@ -43,7 +45,7 @@
                         <form action="/Carriers/Delete/@item.Id " method="post">
                             @Html.AntiForgeryToken()
 
-                            <a href="#" class="delete" onclick="this.parentNode.submit(); return confirm('Do you really want delete the carrier: @item.Name ?');"> Delete</a>
+                            <a href="#" class="delete" onclick="this.parentNode.submit(); return confirm('Do you really want delete the carrier: @item.Name? ');"> Delete </a>
 
                         </form>
                     </td>
