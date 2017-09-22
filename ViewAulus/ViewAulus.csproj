@@ -209,6 +209,7 @@
     <Compile Include="Controllers\ColorMatchRequestsController.cs" />
     <Compile Include="Controllers\CustomerResinsController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
+    <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\OpacitiesController.cs" />
@@ -491,6 +492,11 @@
     <Content Include="Views\Pellets\Details.cshtml" />
     <Content Include="Views\Pellets\Edit.cshtml" />
     <Content Include="Views\Pellets\Index.cshtml" />
+    <Content Include="Views\Employees\Create.cshtml" />
+    <Content Include="Views\Employees\Delete.cshtml" />
+    <Content Include="Views\Employees\Details.cshtml" />
+    <Content Include="Views\Employees\Edit.cshtml" />
+    <Content Include="Views\Employees\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
