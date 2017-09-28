@@ -1,0 +1,366 @@
+﻿@model IEnumerable<PlasticManufacturer.Domain.Entities.RawMaterial.Category>
+
+@{
+    ViewBag.Title = "Tela2";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>F&amp;D PLASTICS | Exellence In Color</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/css/images/favicon.ico" />
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" type="text/css" media="all" />
+
+
+    <link rel="stylesheet" href="/css/style.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="/css/facebox.css" type="text/css" media="all" />
+    <!--[if IE 6]><link rel="stylesheet" href="~/css/ie6.css" type="text/css" media="all" /><![endif]-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- <script src="js/jquery.js" type="text/javascript"></script> -->
+    <script src="/js/facebox.js" type="text/javascript"></script>
+    <script src="/js/jquery-fns.js" type="text/javascript"></script>
+
+
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.0/js/dataTables.responsive.min.js"></script>
+
+    <script type="text/javascript">
+    $(function () {
+        $('#ch').change(function () {
+            var value = $(this).val();
+            if (value == '0') {
+                $('#div_dch').show();
+
+            } else {
+                $('#div_dch').hide();
+            }
+        });
+    });
+    </script>
+
+</head>
+<body>
+    <div id="wrapper">
+        <div class="shell">
+            <div class="white-box">
+                <div class="cnt">
+                    <div class="panel spacer-20">
+
+                        <div class="panel-heading no-padding">
+                            <a href="#" class="panel-expander notext fr">&nbsp;</a>
+                            <h2 class="clipboard">Tela 2</h2>
+                        </div>
+
+                        <div class="panel-container">
+                            <div class="options">
+                                <ul>
+                                    <li><a href="#" class="post">Post</a></li>
+                                    <li>@Html.ActionLink("Cancel", "Index", "", new { @class = "cancel" })</li>
+                                    <li><a href="#" class="new">New</a></li>
+                                    <li><a href="#" class="delete">Delete</a></li>
+                                    <li><a href="#" class="search">Search</a></li>
+                                    <li><a href="#" class="formula">Formula</a></li>
+                                    <li><a href="#" class="label">Label</a></li>
+                                    <li><a href="#" class="send">Send</a></li>
+                                    <li><a href="#" class="exit">Exit</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="fields-row">
+                                <div class="fields-bar">
+                                    <div class="form-group">
+                                        <div class="col">
+                                            <label class="custom-select">Resin</label>
+                                            <select>
+                                                <option></option>
+                                                <option></option>
+                                            </select>
+                                        </div>
+                                        <div class="col">
+                                            <label>Date</label>
+                                            <input class="form-control" placeholder="" type="text">
+                                        </div>
+                                        <div class="col">
+                                            <label>Due Date</label>
+                                            <input class="form-control" placeholder="" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>  
+                        
+                            <div class="fields-row">
+                                <div class="fields-bar">
+                                    <div class="form-group">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="fields-row">
+                                <div class="fields-bar">
+                                    <div class="form-group">
+                                        <div class= " col">
+                                            <label>Customer</label>
+                                            <input class="form-control" placeholder="" type="text">
+                                        </div>
+                                        <div class="col">
+                                            <label>&nbsp;</label>
+                                            <input class="form-control" placeholder="" type="text">
+                                        </div>
+                                    </div>                                 
+                                </div>
+                            </div>
+                            <div class="fields-row">
+                                <div class="fields-bar">
+                                    <div class="form-group">
+                                        <div class=" col">
+                                            <label>Address</label>
+                                            <input class="form-control" placeholder="" type="text">
+                                        </div>
+                                        <div class="col">
+                                            <label>&nbsp;</label>
+                                            <input class="form-control" placeholder="" type="text">
+                                        </div>
+                                        <div class="col">
+                                            <label>&nbsp;</label>
+                                            <input class="form-control" placeholder="" type="text">
+                                        </div>                                    
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fields-row">
+                                <div class="fields-bar">
+                                    <div class="form-group">
+                                        <div class=" col">
+                                            <label>&nbsp;</label>
+                                            <input class="form-control" placeholder="" type="text">
+                                        </div>
+                                        <div class="col">
+                                            <label>&nbsp;</label>
+                                            <input class="form-control" placeholder="" type="text">
+                                        </div>    
+                                        <div class="col">
+                                            <label>&nbsp;</label>
+                                            <input class="form-control" placeholder="" type="text">
+                                        </div>                                   
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fields-row">
+                                <div class="fields-bar">
+                                    <div class="form-group">
+                                        <div class=" col">
+                                            <label>Tell</label>
+                                            <input class="form-control" placeholder="" type="text">
+                                        </div>
+                                        <div class="col">
+                                            <label>Fax</label>
+                                            <input class="form-control" placeholder="" type="text">
+                                        </div>                                   
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fields-row">
+                                <div class="fields-bar">
+                                    <div class="form-group">
+                                        <div class=" col">
+                                            <label>Item ID</label>
+                                            <input class="form-control" placeholder="" type="text">
+                                        </div>
+                                        <div class=" col">
+                                            <label>&nbsp;</label>
+                                            <input class="form-control" placeholder="" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fields-row">
+                                <div class="fields-bar">
+                                    <div class="form-group">
+                                        <div class=" col">
+                                            <h4>Notes</h4>
+                                            <table class="gn-table">
+                                                <thead>
+                                                    <tr></tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <textarea></textarea>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fields-row">
+                                <div class="fields-bar">
+                                    <div class="form-group">
+                                        <div class=" col">
+                                            <label>Last Update</label>
+                                            <input class="form-control" placeholder="" type="text">
+                                        </div>
+                                        <div class=" col">                                                                                 
+                                                <label>&nbsp;</label>
+                                               <h3>Status:</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>    
+                            <div class="fields-row">
+                                <div class="fields-bar">
+                                    <div class="form-group">
+                                        <div class=" col">
+                                            <label>Sales Rep</label>
+                                            <input class="form-control" placeholder="" type="text">
+                                        </div>
+                                     
+                                        <div class=" col">
+                                            <label>Did RMC Chang? Chips Only</label>
+                                            <div class="chk-box">
+                                                <input class="check-box" type="checkbox" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+                                    <div class="fields-row">
+                                <div class="fields-bar">
+                                    <div class="form-group">
+                                        <div class=" col">
+                                            <label>Color Match Customer</label>
+                                            <input class="form-control" placeholder="" type="text">
+                                        </div>
+                                        <div class=" col">                                                                                 
+                                            <label>Carrier Resin</label>
+                                            <div class="chk-box">
+                                                <input class="check-box" type="checkbox" />
+                                            </div>
+                                          </div>                                        
+                                        </div>
+                                    </div>
+                                </div> 
+                            <div class="fields-row">
+                                <div class="fields-bar">
+                                    <div class="form-group">
+                                        <div class=" col">
+                                            <label>Suggested Price</label>
+                                            <input class="form-control" placeholder="" type="text">
+                                        </div>                                     
+                                        <div class=" col">
+                                            <label>LatDown Resin</label>
+                                            <div class="chk-box">
+                                                <input class="check-box" type="checkbox" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>       
+                            <div class="fields-row">
+                                <div class="fields-bar">
+                                    <div class="form-group">
+                                        <div class=" col">
+                                            <h4>Notes</h4>
+                                            <table class="gn-table">
+                                                <thead>
+                                                    <tr></tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <textarea></textarea>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                                        <!--last box-->
+                                            <div class="white-box">
+                                                <div class="panel-container">
+                                                    <h2>Notes:</h2>
+                                                    <h2>&nbsp;</h2>
+                                                    <h4>Ratio 50/1  </h4>
+                                                    <h4 class="center-text ">Ratio 50/1  </h4>
+                                                    <table class="gn-table m-b-20">
+                                                        <thead>
+                                                            <tr class="">
+                                                                <th>ITEM ID</th>
+                                                                <th>CALC?</th>
+                                                                <th>QTY</th>
+                                                                <th>PERCENT %</th>
+                                                                <th>New Cost</th>
+                                                                <th>Today New Cost</th>
+                                                                <th>Cost CANADA</th>
+                                                                <th>US$ LB(s)</th>
+                                                                <th>%COST</th>                                                              
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr class="">
+                                                                <td></td>
+                                                                <td data-title="" class="last"><input class="checkbox" type="checkbox"></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                            </tr>                                                
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                           </div>
+                                        <!--end last box-->
+
+                            <div class="panel-container">
+
+                                <div class="fields-row">
+                                    <div class="fields-bar">
+                                        <div class="form-group">
+                                          
+                                            <div class="box">
+                                                <label>&nbsp;</label>
+                                                <input class="form-control" placeholder="" type="text">
+                                            </div>
+                                            <div class="col">
+                                                <label>&nbsp;</label>
+                                                <input class="form-control" placeholder="" type="text">
+                                            </div>
+                                            <div class="col">
+                                                <label>&nbsp;</label>
+                                                <input class="form-control" placeholder="" type="text">
+                                            </div>
+                                            <div class="col">
+                                                <label>&nbsp;</label>
+                                                <input class="form-control" placeholder="" type="text">
+                                            </div>
+                                            <div class="col">
+                                                <label>&nbsp;</label>
+                                                <input class="form-control" placeholder="" type="text">
+                                            </div>  
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+
+
+                            </div> <!--end container-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+</html>

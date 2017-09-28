@@ -22,6 +22,20 @@ namespace ViewAulus.Controllers
             return View(await db.Categories.ToListAsync());
         }
 
+        public ActionResult Tela()
+        {
+            return View();
+        }
+
+        public ActionResult Tela2()
+        {
+            return View();
+        }
+        public ActionResult Tela3()
+        {
+            return View();
+        }
+
         // GET: Categories/Details/5
         public async Task<ActionResult> Details(int? id)
         {

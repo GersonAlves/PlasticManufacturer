@@ -156,3 +156,9 @@ E:\Projects\PlasticManufacturer\ViewAulus\obj\Debug\ViewAulus.csprojResolveAssem
 E:\Projects\PlasticManufacturer\ViewAulus\obj\Debug\ViewAulus.csproj.CoreCompileInputs.cache
 E:\Projects\PlasticManufacturer\ViewAulus\obj\Debug\ViewAulus.dll
 E:\Projects\PlasticManufacturer\ViewAulus\obj\Debug\ViewAulus.pdb
+E:\Projects\PlasticManufacturer\ViewAulus\bin\pt-br\System.Web.Helpers.resources.dll
+E:\Projects\PlasticManufacturer\ViewAulus\bin\pt-br\System.Web.Mvc.resources.dll
+E:\Projects\PlasticManufacturer\ViewAulus\bin\pt-br\System.Web.Razor.resources.dll
+E:\Projects\PlasticManufacturer\ViewAulus\bin\pt-br\System.Web.WebPages.resources.dll
+E:\Projects\PlasticManufacturer\ViewAulus\bin\pt-br\System.Web.WebPages.Deployment.resources.dll
+E:\Projects\PlasticManufacturer\ViewAulus\bin\pt-br\System.Web.WebPages.Razor.resources.dll
