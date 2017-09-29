@@ -73,6 +73,12 @@ D:\Projects\PlasticManufacturer\ViewAulus\bin\Microsoft.Owin.Security.OAuth.xml
 D:\Projects\PlasticManufacturer\ViewAulus\bin\Microsoft.Owin.Security.Google.xml
 D:\Projects\PlasticManufacturer\ViewAulus\bin\Microsoft.Owin.Security.Twitter.xml
 D:\Projects\PlasticManufacturer\ViewAulus\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-D:\Projects\PlasticManufacturer\ViewAulus\obj\Release\ViewAulus.csprojResolveAssemblyReference.cache
+D:\Projects\PlasticManufacturer\ViewAulus\bin\pt-br\System.Web.Helpers.resources.dll
+D:\Projects\PlasticManufacturer\ViewAulus\bin\pt-br\System.Web.Mvc.resources.dll
+D:\Projects\PlasticManufacturer\ViewAulus\bin\pt-br\System.Web.Razor.resources.dll
+D:\Projects\PlasticManufacturer\ViewAulus\bin\pt-br\System.Web.WebPages.resources.dll
+D:\Projects\PlasticManufacturer\ViewAulus\bin\pt-br\System.Web.WebPages.Deployment.resources.dll
+D:\Projects\PlasticManufacturer\ViewAulus\bin\pt-br\System.Web.WebPages.Razor.resources.dll
 D:\Projects\PlasticManufacturer\ViewAulus\obj\Release\ViewAulus.dll
 D:\Projects\PlasticManufacturer\ViewAulus\obj\Release\ViewAulus.pdb
+D:\Projects\PlasticManufacturer\ViewAulus\obj\Release\ViewAulus.csprojResolveAssemblyReference.cache

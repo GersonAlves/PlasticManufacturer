@@ -291,8 +291,6 @@
     <Content Include="Content\images\whitebox-bottom.png" />
     <Content Include="Content\images\whitebox-top.png" />
     <Content Include="Content\style.css" />
-    <Content Include="css\bootstrap.css" />
-    <Content Include="css\bootstrap.min.css" />
     <Content Include="css\facebox.css" />
     <Content Include="css\ie6.css" />
     <Content Include="css\images\arr-1.gif" />
@@ -368,7 +366,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\images\facebox\Thumbs.db" />
-    <Content Include="Content\images\Thumbs.db" />
     <Content Include="css\images\facebox\Thumbs.db" />
     <Content Include="css\images\Thumbs.db" />
     <Content Include="Scripts\angular-resource.min.js.map" />
@@ -501,6 +498,7 @@
     <Content Include="Views\Categories\Tela.cshtml" />
     <Content Include="Views\Categories\Tela2.cshtml" />
     <Content Include="Views\Categories\Tela3.cshtml" />
+    <Content Include="Views\Categories\SalesOrder.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

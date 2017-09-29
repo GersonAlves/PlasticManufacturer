@@ -6,7 +6,4 @@
   <parameter name="PlasticManufacturer-Web.config Connection String" description="PlasticManufacturer Connection String used in web.config by the application to access the database." defaultValue="Data Source=184.168.194.53; Initial Catalog=PlasticManufacturerDev; User Id=plasticDev; Password=plasticDev; MultipleActiveResultSets=True" tags="SqlConnectionString">
     <parameterEntry kind="XmlFile" scope="D:\\Projects\\PlasticManufacturer\\ViewAulus\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='PlasticManufacturer']/@connectionString" />
   </parameter>
-  <parameter name="PlasticManufacturer.InfraStructure.Context.PlasticManufacturerContext-Web.config Connection String" description="PlasticManufacturer.InfraStructure.Context.PlasticManufacturerContext Connection String used in web.config by the application to access the database." defaultValue="PlasticManufacturer.InfraStructure.Context.PlasticManufacturerContext_ConnectionString" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="D:\\Projects\\PlasticManufacturer\\ViewAulus\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='PlasticManufacturer.InfraStructure.Context.PlasticManufacturerContext']/@connectionString" />
-  </parameter>
 </parameters>

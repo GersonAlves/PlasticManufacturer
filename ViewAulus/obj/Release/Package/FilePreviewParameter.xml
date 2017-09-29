@@ -4,13 +4,10 @@
     <parameterEntry kind="ProviderPath" scope="IisApp" match="^D:\\Projects\\PlasticManufacturer\\ViewAulus\\obj\\Release\\Package\\PackageTmp$" />
     <parameterEntry kind="ProviderPath" scope="setAcl" match="^D:\\Projects\\PlasticManufacturer\\ViewAulus\\obj\\Release\\Package\\PackageTmp$" />
   </parameter>
-  <parameter name="DefaultConnection-Web.config Connection String" description="" value="Data Source=184.168.194.53;Initial Catalog=PlasticManufacturerHom;User ID=plasticHom;Password=@plasticHom!;MultipleActiveResultSets=True" tags="">
+  <parameter name="DefaultConnection-Web.config Connection String" description="" value="Data Source=184.168.194.53;Initial Catalog=PlasticManufacturerDev;User ID=plasticDev;Password=plasticDev;MultipleActiveResultSets=True" tags="">
     <parameterEntry kind="XmlFile" scope="D:\\Projects\\PlasticManufacturer\\ViewAulus\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
   </parameter>
-  <parameter name="PlasticManufacturer-Web.config Connection String" description="" value="Data Source=184.168.194.53; Initial Catalog=PlasticManufacturerDev; User Id=plasticDev; Password=plasticDev; MultipleActiveResultSets=True" tags="">
+  <parameter name="PlasticManufacturer-Web.config Connection String" description="" value="Data Source=184.168.194.53;Initial Catalog=PlasticManufacturerDev;User ID=plasticDev;Password=plasticDev;MultipleActiveResultSets=True" tags="">
     <parameterEntry kind="XmlFile" scope="D:\\Projects\\PlasticManufacturer\\ViewAulus\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='PlasticManufacturer']/@connectionString" />
-  </parameter>
-  <parameter name="PlasticManufacturer.InfraStructure.Context.PlasticManufacturerContext-Web.config Connection String" description="" value="Data Source=184.168.194.53;Initial Catalog=PlasticManufacturerHom;User ID=plasticHom;Password=@plasticHom!;MultipleActiveResultSets=True" tags="">
-    <parameterEntry kind="XmlFile" scope="D:\\Projects\\PlasticManufacturer\\ViewAulus\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='PlasticManufacturer.InfraStructure.Context.PlasticManufacturerContext']/@connectionString" />
   </parameter>
 </parameters>

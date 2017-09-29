@@ -264,3 +264,9 @@ E:\Projects\PlasticManufacturer\PlasticManufacturer.API\obj\Debug\PlasticManufac
 E:\Projects\PlasticManufacturer\PlasticManufacturer.API\obj\Debug\PlasticManufacturer.API.csproj.CoreCompileInputs.cache
 E:\Projects\PlasticManufacturer\PlasticManufacturer.API\obj\Debug\PlasticManufacturer.API.dll
 E:\Projects\PlasticManufacturer\PlasticManufacturer.API\obj\Debug\PlasticManufacturer.API.pdb
+D:\Projects\PlasticManufacturer\PlasticManufacturer.API\bin\pt-br\System.Web.Helpers.resources.dll
+D:\Projects\PlasticManufacturer\PlasticManufacturer.API\bin\pt-br\System.Web.Mvc.resources.dll
+D:\Projects\PlasticManufacturer\PlasticManufacturer.API\bin\pt-br\System.Web.Razor.resources.dll
+D:\Projects\PlasticManufacturer\PlasticManufacturer.API\bin\pt-br\System.Web.WebPages.resources.dll
+D:\Projects\PlasticManufacturer\PlasticManufacturer.API\bin\pt-br\System.Web.WebPages.Deployment.resources.dll
+D:\Projects\PlasticManufacturer\PlasticManufacturer.API\bin\pt-br\System.Web.WebPages.Razor.resources.dll

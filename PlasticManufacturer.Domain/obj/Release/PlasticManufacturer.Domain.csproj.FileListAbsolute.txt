@@ -1,5 +1,4 @@
 D:\Projects\PlasticManufacturer\PlasticManufacturer.Domain\bin\Release\PlasticManufacturer.Domain.dll
 D:\Projects\PlasticManufacturer\PlasticManufacturer.Domain\bin\Release\PlasticManufacturer.Domain.pdb
-D:\Projects\PlasticManufacturer\PlasticManufacturer.Domain\obj\Release\PlasticManufacturer.Domain.csprojResolveAssemblyReference.cache
 D:\Projects\PlasticManufacturer\PlasticManufacturer.Domain\obj\Release\PlasticManufacturer.Domain.dll
 D:\Projects\PlasticManufacturer\PlasticManufacturer.Domain\obj\Release\PlasticManufacturer.Domain.pdb

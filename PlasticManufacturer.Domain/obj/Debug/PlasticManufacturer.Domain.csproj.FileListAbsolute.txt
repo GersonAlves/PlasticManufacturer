@@ -1,10 +1,9 @@
-D:\Projects\PlasticManufacturer\PlasticManufacturer.Domain\bin\Debug\PlasticManufacturer.Domain.dll
-D:\Projects\PlasticManufacturer\PlasticManufacturer.Domain\bin\Debug\PlasticManufacturer.Domain.pdb
-D:\Projects\PlasticManufacturer\PlasticManufacturer.Domain\obj\Debug\PlasticManufacturer.Domain.dll
-D:\Projects\PlasticManufacturer\PlasticManufacturer.Domain\obj\Debug\PlasticManufacturer.Domain.pdb
-D:\Projects\PlasticManufacturer\PlasticManufacturer.Domain\obj\Debug\PlasticManufacturer.Domain.csprojResolveAssemblyReference.cache
 E:\Projects\PlasticManufacturer\PlasticManufacturer.Domain\bin\Debug\PlasticManufacturer.Domain.dll
 E:\Projects\PlasticManufacturer\PlasticManufacturer.Domain\bin\Debug\PlasticManufacturer.Domain.pdb
 E:\Projects\PlasticManufacturer\PlasticManufacturer.Domain\obj\Debug\PlasticManufacturer.Domain.csproj.CoreCompileInputs.cache
 E:\Projects\PlasticManufacturer\PlasticManufacturer.Domain\obj\Debug\PlasticManufacturer.Domain.dll
 E:\Projects\PlasticManufacturer\PlasticManufacturer.Domain\obj\Debug\PlasticManufacturer.Domain.pdb
+D:\Projects\PlasticManufacturer\PlasticManufacturer.Domain\bin\Debug\PlasticManufacturer.Domain.dll
+D:\Projects\PlasticManufacturer\PlasticManufacturer.Domain\bin\Debug\PlasticManufacturer.Domain.pdb
+D:\Projects\PlasticManufacturer\PlasticManufacturer.Domain\obj\Debug\PlasticManufacturer.Domain.dll
+D:\Projects\PlasticManufacturer\PlasticManufacturer.Domain\obj\Debug\PlasticManufacturer.Domain.pdb
