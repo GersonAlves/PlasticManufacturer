@@ -58,45 +58,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context\PlasticManufacturerContext.cs" />
-    <Compile Include="Migrations\201708251311229_start.cs" />
-    <Compile Include="Migrations\201708251311229_start.Designer.cs">
-      <DependentUpon>201708251311229_start.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201708271702059_Categories_OperationTypes.cs" />
-    <Compile Include="Migrations\201708271702059_Categories_OperationTypes.Designer.cs">
-      <DependentUpon>201708271702059_Categories_OperationTypes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201708300133117_ColorMatchRequest.cs" />
-    <Compile Include="Migrations\201708300133117_ColorMatchRequest.Designer.cs">
-      <DependentUpon>201708300133117_ColorMatchRequest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201708311456053_teste.cs" />
-    <Compile Include="Migrations\201708311456053_teste.Designer.cs">
-      <DependentUpon>201708311456053_teste.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201708312357414_CorrecaoMatch.cs" />
-    <Compile Include="Migrations\201708312357414_CorrecaoMatch.Designer.cs">
-      <DependentUpon>201708312357414_CorrecaoMatch.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201709011310478_correcao.cs" />
-    <Compile Include="Migrations\201709011310478_correcao.Designer.cs">
-      <DependentUpon>201709011310478_correcao.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201709052058087_correcao-CMR.cs" />
-    <Compile Include="Migrations\201709052058087_correcao-CMR.Designer.cs">
-      <DependentUpon>201709052058087_correcao-CMR.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201709061847532_correcao-CMR-customer.cs" />
-    <Compile Include="Migrations\201709061847532_correcao-CMR-customer.Designer.cs">
-      <DependentUpon>201709061847532_correcao-CMR-customer.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201709061850238_correcao-CMR-customer2.cs" />
-    <Compile Include="Migrations\201709061850238_correcao-CMR-customer2.Designer.cs">
-      <DependentUpon>201709061850238_correcao-CMR-customer2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201709071453365_correcao3.cs" />
-    <Compile Include="Migrations\201709071453365_correcao3.Designer.cs">
-      <DependentUpon>201709071453365_correcao3.cs</DependentUpon>
+    <Compile Include="Migrations\201709302214171_StartModel.cs" />
+    <Compile Include="Migrations\201709302214171_StartModel.Designer.cs">
+      <DependentUpon>201709302214171_StartModel.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -123,35 +87,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201708251311229_start.resx">
-      <DependentUpon>201708251311229_start.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708271702059_Categories_OperationTypes.resx">
-      <DependentUpon>201708271702059_Categories_OperationTypes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708300133117_ColorMatchRequest.resx">
-      <DependentUpon>201708300133117_ColorMatchRequest.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708311456053_teste.resx">
-      <DependentUpon>201708311456053_teste.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708312357414_CorrecaoMatch.resx">
-      <DependentUpon>201708312357414_CorrecaoMatch.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201709011310478_correcao.resx">
-      <DependentUpon>201709011310478_correcao.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201709052058087_correcao-CMR.resx">
-      <DependentUpon>201709052058087_correcao-CMR.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201709061847532_correcao-CMR-customer.resx">
-      <DependentUpon>201709061847532_correcao-CMR-customer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201709061850238_correcao-CMR-customer2.resx">
-      <DependentUpon>201709061850238_correcao-CMR-customer2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201709071453365_correcao3.resx">
-      <DependentUpon>201709071453365_correcao3.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201709302214171_StartModel.resx">
+      <DependentUpon>201709302214171_StartModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

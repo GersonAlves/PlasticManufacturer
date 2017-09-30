@@ -2,5 +2,6 @@
 {
     public class CustomerRating : Entity
     {
+        //public virtual Customer Customer { get; set; }
     }
 }

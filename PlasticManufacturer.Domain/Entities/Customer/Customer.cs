@@ -10,15 +10,15 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PlasticManufacturer.Domain.Entities.Customers
 {
-    public class Customer:Entity    
+    public class Customer : Entity
     {
         public virtual string LastName { get; set; }
 
         public virtual string Code { get; set; }
 
-        public virtual CustomerRating Rating { get; }
+        public virtual CustomerRating Rating { get; set; }
 
-        public virtual CustomerStatus Status { get; }
+        public virtual CustomerStatus Status { get; set; }
 
         public virtual bool Prospect { get; set; }
 
