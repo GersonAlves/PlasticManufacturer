@@ -1,70 +1,257 @@
-﻿@model PlasticManufacturer.Domain.Entities.Employees.Employee
+﻿@model IEnumerable<PlasticManufacturer.Domain.Entities.Employees.Employee>
+
 
 @{
     ViewBag.Title = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Create</h2>
-
-
-@using (Html.BeginForm()) 
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>Employee</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.CreationDate, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.CreationDate, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.CreationDate, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.LastUpdate, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.LastUpdate, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.LastUpdate, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
-        </div>
+<div class="panel spacer-20">
+    <div class="panel-heading no-padding">
+        <a href="#" class="panel-expander notext fr">&nbsp;</a>
+        <h2 class="clipboard">Create Employee</h2>
     </div>
-}
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
+    <form action="/Employees/Create" method="post">
+        <input name="__RequestVerificationToken" type="hidden" value="0bGOlBeXSwNB7apfysSHMvITI0tgdpFp66kPMiSozHrktCkrFz_BhDC8grAnbzbcY4dodOyRrabtSlzohuUcVyr0qBcs1QM0LhS--r-cb1k1" />
+
+        <div class="panel-container">
+            <div class="fields-row">
+                <div class="fields-bar">
+                    <div class="form-group">
+                        <div class="col" style="width: 100px;">
+                            <label class="custom-select">Status</label>
+                            <select>
+                                <option>Active</option>
+                                <option>Off</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="border-top:2px ; padding:15px 0"></div>
+
+            <div class="fields-row">
+                <div class="fields-bar">
+                    <div class="form-group">
+                        <div class="col">
+                            <label class="control-label " for="Email">First Name</label>
+                            <input class="form-control text-box single-line" id="Email" name="Name" type="text" value="" />
+                            <span class="field-validation-valid text-danger" data-valmsg-for="Email" data-valmsg-replace="true"></span>
+                        </div>
+                        <div class="col">
+                            <label class="control-label" for="Name">Middle</label>
+                            <input class="form-control text-box single-line" id="Name" name="Middle" type="text" value="" />
+                            <span class="field-validation-valid text-danger" data-valmsg-for="Name" data-valmsg-replace="true"></span>
+                        </div>
+                        <div class="col">
+                            <label class="control-label " for="Description">Last</label>
+                            <input class="form-control text-box single-line" id="Description" name="Last" type="text" value="" />
+                            <span class="field-validation-valid text-danger" data-valmsg-for="Description" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="fields-row">
+                <div class="fields-bar">
+                    <div class="form-group">
+                        <div class="col">
+                            <label class="control-label " for="Email">Birthday</label>
+                            <input class="form-control text-box single-line" placeholder="00/00/00" id="Email" name="Birthday" type="text" value="" />
+                            <span class="field-validation-valid text-danger" data-valmsg-for="Email" data-valmsg-replace="true"></span>
+                        </div>
+                        <div class="col">
+                            <label class="custom-select">Sex</label>
+                            <select>
+                                <option></option>
+                                <option></option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <label class="custom-select">Marital Status</label>
+                            <select>
+                                <option></option>
+                                <option></option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="fields-row">
+                <div class="fields-bar">
+                    <div class="form-group">
+                        <div class="col" style="width: 565px;">
+                            <label class="control-label " for="Email">Address</label>
+                            <input class="form-control text-box single-line" id="Email" name="Address" type="text" value="" />
+                            <span class="field-validation-valid text-danger" data-valmsg-for="Email" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="fields-row">
+                <div class="fields-bar">
+                    <div class="form-group">
+                        <div class="col" style="width: 300px;">
+                            <label class="control-label " for="Email">City</label>
+                            <input class="form-control text-box single-line" id="Email" name="City" type="text" value="" />
+                            <span class="field-validation-valid text-danger" data-valmsg-for="Email" data-valmsg-replace="true"></span>
+                        </div>
+                        <div class="col" style="width: 75px;">
+                            <label class="control-label" for="Name">State</label>
+                            <input class="form-control text-box single-line" id="Name" name="State" type="text" value="" />
+                            <span class="field-validation-valid text-danger" data-valmsg-for="Name" data-valmsg-replace="true"></span>
+                        </div>
+                        <div class="col">
+                            <label class="control-label " for="Description">Zip</label>
+                            <input class="form-control text-box single-line" id="Description" name="Zip" type="text" value="" />
+                            <span class="field-validation-valid text-danger" data-valmsg-for="Description" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="fields-row">
+                <div class="fields-bar">
+                    <div class="form-group">
+                        <div class="col">
+                            <label class="control-label " for="Email">Tel</label>
+                            <input class="form-control text-box single-line" id="Email" name="Tel" type="text" value="" />
+                            <span class="field-validation-valid text-danger" data-valmsg-for="Email" data-valmsg-replace="true"></span>
+                        </div>
+                        <div class="col">
+                            <label class="control-label" for="Name">SS#</label>
+                            <input class="form-control text-box single-line" id="Name" name="SS#" type="text" value="" />
+                            <span class="field-validation-valid text-danger" data-valmsg-for="Name" data-valmsg-replace="true"></span>
+                        </div>
+                        <div class="col">
+                            <label class="control-label " for="Description">E-mail</label>
+                            <input class="form-control text-box single-line" id="Description" name="E-mail" type="text" value="" />
+                            <span class="field-validation-valid text-danger" data-valmsg-for="Description" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div style="border-top:2px solid #c6ddeb; padding:10px 0"></div>
+
+            <div class="fields-row">
+                <div class="fields-bar">
+                    <div class="form-group">
+                        <div class="col" style="width: 100px;">
+                            <label class="control-label " for="Email">Sales Rep</label>
+                            <input class="form-control text-box single-line" id="Email" name="Sales Rep" type="text" value="" />
+                            <span class="field-validation-valid text-danger" data-valmsg-for="Email" data-valmsg-replace="true"></span>
+                        </div>
+                        <div class="col" style="width: 80px;">
+                            <label class="control-label" for="Name">Commission%</label>
+                            <input class="form-control text-box single-line" id="Name" placeholder=".00%" name="SS#" type="text" value="" />
+                            <span class="field-validation-valid text-danger" data-valmsg-for="Name" data-valmsg-replace="true"></span>
+                        </div>
+                        <div class="col" style="width: 200px;">
+                            <label class="custom-select">Title</label>
+                            <select>
+                                <option></option>
+                                <option></option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="border-top:2px; padding:15px 0"></div>
+
+            <div class="fields-row">
+                <div class="fields-bar">
+                    <div class="form-group">
+                        <div class="col">
+                            <label class="control-label " for="Email">Access Level</label>
+                            <input class="form-control text-box single-line" id="Email" name="Access Level" type="text" value="" />
+                            <span class="field-validation-valid text-danger" data-valmsg-for="Email" data-valmsg-replace="true"></span>
+                        </div>
+                        <div class="col">
+                            <label class="control-label " for="Email">Hire Date</label>
+                            <input class="form-control text-box single-line" id="Email" name="Hire Date" placeholder="00/00/00" type="text" value="" />
+                            <span class="field-validation-valid text-danger" data-valmsg-for="Email" data-valmsg-replace="true"></span>
+                        </div>
+                        <div class="col">
+                            <label class="custom-select">Title</label>
+                            <select>
+                                <option></option>
+                                <option></option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="fields-row">
+                <div class="fields-bar">
+                    <div class="form-group">
+                        <div class="col" style="width: 282.05px;">
+                            <label class="custom-select">Department</label>
+                            <select>
+                                <option></option>
+                                <option></option>
+                            </select>
+                        </div>
+                        <div class="col" style="width: 282.05px;">
+                            <label class="custom-select">Shift</label>
+                            <select>
+                                <option></option>
+                                <option></option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="fields-row">
+                <div class="fields-bar">
+                    <div class="form-group">
+                        <div class="col">
+                            <label class="control-label " for="Email">Last Raise</label>
+                            <input class="form-control text-box single-line" placeholder="00/00/00" id="Email" name="Last Raise" type="text" value="" />
+                            <span class="field-validation-valid text-danger" data-valmsg-for="Email" data-valmsg-replace="true"></span>
+                        </div>
+                        <div class="col">
+                            <label class="control-label " for="Email">Termination Date</label>
+                            <input class="form-control text-box single-line" placeholder="00/00/00" id="Email" name="Termination Date" type="text" value="" />
+                            <span class="field-validation-valid text-danger" data-valmsg-for="Email" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="fields-row">
+                <div class="fields-bar">
+                    <div class="form-group">
+                        <div class="col">
+                            <label class="control-label " for="Email">Markup Manager</label>
+                            <div class="chk-box">
+                                <input class="check-box" type="checkbox" />
+                            </div>
+                        </div>
+                        <div class="col">
+                            <label class="control-label " for="Email">Carrier Resin</label>
+                            <div class="chk-box">
+                                <input class="check-box" type="checkbox" />
+                            </div>
+                        </div>
+                        <div class="col">
+                            <label class="control-label " for="Email">LetDown Resin</label>
+                            <div class="chk-box">
+                                <input class="check-box" type="checkbox" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
 </div>
-

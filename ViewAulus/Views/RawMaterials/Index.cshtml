@@ -5,14 +5,10 @@
 
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<!DOCTYPE html>
 
-<html>
-<head>
+
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
-</head>
-<body>
     <div class="panel spacer-20">
         <div class="panel-heading no-padding">
             <a href="#" class="panel-expander notext fr">&nbsp;</a>
@@ -44,6 +40,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.Category)
             </th>
+            <th colspan="2"></th>
         </tr>
 
         @foreach (var item in Model)
@@ -87,5 +84,4 @@
     </table>
     </div> @*end container*@
 </div>@*end panel*@
-</body>
-</html>
+

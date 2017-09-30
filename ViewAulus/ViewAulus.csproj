@@ -353,6 +353,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="js\facebox.js" />
+    <Content Include="js\validation.js" />
     <Content Include="js\jquery-fns.js" />
     <Content Include="js\jquery.js" />
     <Content Include="Scripts\angular-mocks.js" />
