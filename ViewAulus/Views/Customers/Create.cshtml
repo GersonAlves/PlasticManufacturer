@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="panel spacer-20">
+<div class="panel spacer-20" ng-app="plasticManufacturer" ng-controller="CustomerController">
     <div class="panel-heading no-padding">
         <a href="#" class="panel-expander notext fr">&nbsp;</a>
         <h2 class="clipboard">Create Costumer</h2>
@@ -55,37 +55,59 @@
                                                     <div class="form-group">
                                                         <div class="col">
                                                             <label>Name</label>
-                                                            <input type="text" class="form-control" />
+                                                            <input type="text" name="Name" ng-model="Code" class="form-control" />
+                                                            
                                                         </div>
                                                         <div class="col">
                                                             <label>Status</label>
-                                                            <input type="text" class="form-control" />
+                                                            <select class="form-control">
+                                                                <option value="true">Active</option>
+                                                                <option value="false">Inactive</option>
+                                                            </select>
                                                         </div>
                                                         <div class="col">
                                                             <label>Prospect</label>
-                                                            <input type="text" class="form-control" />
+                                                            <select class="form-control">
+                                                                <option value="true">Yes</option>
+                                                                <option value="false">No</option>
+                                                            </select>
                                                         </div>
                                                         <div class="col">
                                                             <label>Sales Rep</label>
-                                                            <input type="text" class="form-control" />
+                                                            <select class="form-control">
+                                                                <option value="true">Gerson Alves </option>
+                                                                <option value="false">Aulus Argolo</option>
+                                                            </select>
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
                                                         <div class="col">
                                                             <label>Lead</label>
-                                                            <input type="text" class="form-control" />
+                                                            <select class="form-control">
+                                                                <option value="true">Gerson Alves </option>
+                                                                <option value="false">Aulus Argolo</option>
+                                                            </select>
                                                         </div>
                                                         <div class="col">
                                                             <label>Authorized by</label>
-                                                            <input type="text" class="form-control" />
+                                                            <select class="form-control">
+                                                                <option value="true">Gerson Alves </option>
+                                                                <option value="false">Aulus Argolo</option>
+                                                            </select>
                                                         </div>
                                                         <div class="col">
                                                             <label>Rating</label>
-                                                            <input type="text" class="form-control" />
+                                                            <select class="form-control">
+                                                                <option value="true">Canada </option>
+                                                                <option value="false">Good</option>
+                                                            </select>
                                                         </div>
                                                         <div class="col">
                                                             <label>Contacted by</label>
-                                                            <input type="text" class="form-control" />
+                                                            <select class="form-control">
+                                                                <option value="true">Company </option>
+                                                                <option value="false">Friends</option>
+                                                            </select>
                                                         </div>
                                                         <div class="col">
                                                             <label>FED ID#</label>
@@ -420,7 +442,3 @@
     }
 
 </div>
-
-@*@section Scripts {
-        @Scripts.Render("~/bundles/jqueryval")
-    }*@

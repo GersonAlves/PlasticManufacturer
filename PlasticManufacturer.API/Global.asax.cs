@@ -6,6 +6,9 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using System.Data.Entity;
+using PlasticManufacturer.InfraStructure.Context;
+
 
 namespace PlasticManufacturer.API
 {
@@ -18,6 +21,8 @@ namespace PlasticManufacturer.API
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            Database.SetInitializer<PlasticManufacturerContext>(new DropCreateDatabaseIfModelChanges<PlasticManufacturerContext>());
         }
     }
 }
