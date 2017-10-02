@@ -41,7 +41,7 @@ namespace PlasticManufacturer.InfraStructure.Repository
         {
             using (var context = new PlasticManufacturerContext())
             {
-                return context.RawMateials.Include("Costs").ToList();
+                return context.RawMateials.Include("Costs").Include("Category").ToList();
             }
 
         }

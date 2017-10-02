@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<parameters>
-  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\aspnet-PlasticManufacturer.API-20170822105113.mdf;Initial Catalog=aspnet-PlasticManufacturer.API-20170822105113;Integrated Security=True" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="D:\\Projects\\PlasticManufacturer\\PlasticManufacturer\.API\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
-  </parameter>
-  <parameter name="PlasticManufacturerDev-Web.config Connection String" description="PlasticManufacturerDev Connection String used in web.config by the application to access the database." defaultValue="Data Source=184.168.194.53; Initial Catalog=PlasticManufacturerDev; User Id=plasticDev; Password=plasticDev; MultipleActiveResultSets=True" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="D:\\Projects\\PlasticManufacturer\\PlasticManufacturer\.API\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='PlasticManufacturerDev']/@connectionString" />
-  </parameter>
-</parameters>

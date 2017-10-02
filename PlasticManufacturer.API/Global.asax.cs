@@ -22,7 +22,7 @@ namespace PlasticManufacturer.API
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            Database.SetInitializer<PlasticManufacturerContext>(new DropCreateDatabaseIfModelChanges<PlasticManufacturerContext>());
+           // Database.SetInitializer<PlasticManufacturerContext>(new DropCreateDatabaseIfModelChanges<PlasticManufacturerContext>());
         }
     }
 }

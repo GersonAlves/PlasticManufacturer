@@ -63,7 +63,11 @@
     <Compile Include="Entities\Customer\Status\CustomerStatus.cs" />
     <Compile Include="Entities\Common\Freight.cs" />
     <Compile Include="Entities\Customer\SecondLabel.cs" />
+    <Compile Include="Entities\Employee\Department.cs" />
     <Compile Include="Entities\Employee\Employee.cs" />
+    <Compile Include="Entities\Employee\Gender.cs" />
+    <Compile Include="Entities\Employee\MaritalStatus.cs" />
+    <Compile Include="Entities\Employee\Title.cs" />
     <Compile Include="Entities\Entity.cs" />
     <Compile Include="Entities\Products\Formula.cs" />
     <Compile Include="Entities\Products\FormulaLine.cs" />

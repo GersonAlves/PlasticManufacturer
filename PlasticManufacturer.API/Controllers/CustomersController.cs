@@ -11,9 +11,11 @@ using System.Web.Http;
 using System.Web.Http.Description;
 using PlasticManufacturer.Domain.Entities.Customers;
 using PlasticManufacturer.InfraStructure.Context;
+using System.Web.Http.Cors;
 
 namespace PlasticManufacturer.API.Controllers
 {
+    [EnableCorsAttribute("*", "*", "*")]
     public class CustomersController : ApiController
     {
         private PlasticManufacturerContext db = new PlasticManufacturerContext();
@@ -21,6 +23,7 @@ namespace PlasticManufacturer.API.Controllers
         // GET: api/Customers
         public IQueryable<Customer> GetCustomers()
         {
+            //var customer = db.Customers;
             return db.Customers;
         }
 

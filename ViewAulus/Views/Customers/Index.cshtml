@@ -4,7 +4,7 @@
     ViewBag.Title = "List of Customer";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div class="panel spacer-20">
+<div class="panel spacer-20" ng-app="plasticManufacturer" ng-controller="CustomerController">
     <div class="panel-heading no-padding">
         <a href="#" class="panel-expander notext fr">&nbsp;</a>
         <h2 class="clipboard">Customer</h2>
@@ -33,51 +33,52 @@
                     @Html.DisplayNameFor(model => model.Description)
                 </th>
 
-                <th colspan="2"></th>   
+                <th colspan="2"> <input type="text"/></th>   
             </tr>
 
-            @foreach (var item in Model)
-            {
-                <tr>
+
+                <tr ng-repeat="customer in Customers">
                     <td>
-                        @Html.DisplayFor(modelItem => item.Code)
+                        {{customer.code}}
                     </td>
 
                     <td>
-                        @Html.DisplayFor(modelItem => item.Name)
+                        {{customer.name}}
                     </td>
 
                     <td>
-                        @Html.DisplayFor(modelItem => item.LastName)
+                        {{customer.lastName}}
                     </td>
                     
-
                     <td>
-                        @Html.DisplayFor(modelItem => item.Notes)
+                        {{customer.notes}}
                     </td>
 
                     <td>
-                        @Html.DisplayFor(modelItem => item.Description)
+                        {{customer.description}}
                     </td>
 
 
                     <td align="center">
                         <div class="btn btn-default">
-                            @Html.ActionLink("Edit", "Edit", new { id = item.Id })
+                            <a href="/Customers/Edit/{{customer.id}}">Edit</a> 
                         </div>
                     </td>
-                    <td align="left">
+                    @*<td align="left">
                        
-                        <form action="/Customers/Delete/@item.Id " method="post" onsubmit="return confirm('Do you really want delete the Customer : @item.Name ?');">
+                       <form action= {{customer.id}}   method="post">
                             @Html.AntiForgeryToken()
                        
-                            <a href="#" class="delete" onclick="this.parentNode.submit(); return confirm('Do you really want delete the Customer : @item.Name ?');"> Delete</a>
+                            <a href="#" class="delete" onclick="this.parentNode.submit(); return confirm('Do you really want delete the Customer ?');"> Delete</a>
 
                         </form>
                            
-                    </td>
+                    </td>*@
                 </tr>
-            }
+
+
+
+
             <tr>
                 <td colspan="4" align="left"></td>
             </tr>
