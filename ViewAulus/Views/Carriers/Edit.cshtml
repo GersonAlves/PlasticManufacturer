@@ -10,41 +10,42 @@
         <a href="#" class="panel-expander notext fr">&nbsp;</a>
         <h2 class="clipboard">Edit Carrier</h2>
     </div>
-    @using (Html.BeginForm("Edit", "Carriers", FormMethod.Post, new { id = "create" }))
-    {
-        <div class="panel-container">
-            <div class="options">
-                <ul>
-                    <li>
-                        @*@Html.ActionLink("Post", "Create", "", new { @class = "post" })*@
-                        <a class="post" href='javascript:create.submit()'>Post</a>
-                    </li>
+    <form action="/Carriers/Edit/7" id="create" method="post">
+     
+            <div class="panel-container">
+                <div class="options">
+                    <ul>
+                        <li>
+                            @*@Html.ActionLink("Post", "Create", "", new { @class = "post" })*@
+                            <a class="post" href='javascript:create.submit()'>Post</a>
+                        </li>
 
-                    <li>@Html.ActionLink("Cancel", "Index", "", new { @class = "cancel" })</li>
-                </ul>
-            </div>
-            @Html.AntiForgeryToken()
+                        <li><a class="cancel" href="/Carriers?Length=0">Cancel</a></li>
+                    </ul>
+                </div>
+                <input name="__RequestVerificationToken" type="hidden" value="3WuNTDKG8M5colN8qig6jy0pNwOV5gMLjsAy5yDKBLmLpXsVqr2NVcPvw6jWsLOraVKRkibGu5fNJUnHRdP-Mkp3l81xDF2FRrFMjlsv4wA1" />
 
-            <div class="form-horizontal">
-                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                @Html.HiddenFor(model => model.Id)
+                <div class="form-horizontal">
+                    <input data-val="true" data-val-number="O campo Id deve ser um número." data-val-required="O campo Id é obrigatório." id="Id" name="Id" type="hidden" value="7" />
 
-                <div class="form-group">
-                    @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+
+                    <div class="form-group">
+                        <label class="control-label col-md-2" for="Name">Name</label>
+                        <div class="col-md-10">
+                            <input class="form-control text-box single-line" id="Name" name="Name" type="text" value="J" />
+                            <span class="field-validation-valid text-danger" data-valmsg-for="Name" data-valmsg-replace="true"></span>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-md-2" for="Description">Description</label>
+                        <div class="col-md-10">
+                            <input class="form-control text-box single-line" id="Description" name="Description" type="text" value="asa" />
+                            <span class="field-validation-valid text-danger" data-valmsg-for="Description" data-valmsg-replace="true"></span>
+                        </div>
                     </div>
                 </div>
-
-                <div class="form-group">
-                    @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
-                    </div>
-                </div>
             </div>
-        </div>
-    }
+    </form>
 </div>

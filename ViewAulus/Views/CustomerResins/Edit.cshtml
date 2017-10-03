@@ -10,72 +10,75 @@
         <h2 class="clipboard">Edit Customer Resin</h2>
     </div>
 
-    @using (Html.BeginForm("Edit", "CustomerResins", FormMethod.Post, new { id = "create" }))
-    {
+    <form action="/CustomerResins/Edit/1" id="create" method="post">
         <div class="panel-container">
-            <div class="options">
-                <ul>
-                    <li>
-                        @*@Html.ActionLink("Post", "Create", "", new { @class = "post" })*@
-                        <a class="post" href='javascript:create.submit()'>Post</a>
-                    </li>
+            <div class="panel-container">
+                <div class="options">
+                    <ul>
+                        <li>
+                            @*@Html.ActionLink("Post", "Create", "", new { @class = "post" })*@
+                            <a class="post" href='javascript:create.submit()'>Post</a>
+                        </li>
 
-                    <li>@Html.ActionLink("Cancel", "Index", "", new { @class = "cancel" })</li>
-                </ul>
+                        <li><a class="cancel" href="/RawMaterials?Length=0">Cancel</a></li>
+                    </ul>
+                </div>
+                <input name="__RequestVerificationToken" type="hidden" value="eZ2HKHwkTBlPUSSjJpas9YM0BkX-T8CMxa31sPcvhFNnZz5g3rBmeXb-wHCguRzZfgiM-GKEqH-FGqtftqTGTDPcDMU1JuAVmWTC_-jdvKI1" />
+
+
+                <div class="form-horizontal">
+
+
+
+                    <input data-val="true" data-val-number="O campo Id deve ser um número." data-val-required="O campo Id é obrigatório." id="Id" name="Id" type="hidden" value="2" />
+
+                    <div class="form-group">
+                        <label class="control-label col-md-2" for="ResinType">ResinType</label>
+                        <div class="col-md-10">
+                            <input class="form-control text-box single-line" id="ResinType" name="ResinType" type="text" value="teste" />
+                            <span class="field-validation-valid text-danger" data-valmsg-for="ResinType" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-md-2" for="Quantidade">Quantidade</label>
+                        <div class="col-md-10">
+                            <input class="form-control text-box single-line" data-val="true" data-val-number="O campo Quantidade deve ser um número." data-val-required="O campo Quantidade é obrigatório." id="Quantidade" name="Quantidade" type="number" value="-2" />
+                            <span class="field-validation-valid text-danger" data-valmsg-for="Quantidade" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-md-2" for="Code">Code</label>
+                        <div class="col-md-10">
+                            <input class="form-control text-box single-line" id="Code" name="Code" type="text" value="zxzx" />
+                            <span class="field-validation-valid text-danger" data-valmsg-for="Code" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-md-2" for="Name">Name</label>
+                        <div class="col-md-10">
+                            <input class="form-control text-box single-line" id="Name" name="Name" type="text" value="zx" />
+                            <span class="field-validation-valid text-danger" data-valmsg-for="Name" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-2" for="Description">Description</label>
+                    <div class="col-md-10">
+                        <input class="form-control text-box single-line" id="Description" name="Description" type="text" value="zx" />
+                        <span class="field-validation-valid text-danger" data-valmsg-for="Description" data-valmsg-replace="true"></span>
+                    </div>
+                </div>
+
+
+
             </div>
-            @Html.AntiForgeryToken()
-
-            <div class="form-horizontal">
-               
-
-                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                @Html.HiddenFor(model => model.Id)
-
-                <div class="form-group">
-                    @Html.LabelFor(model => model.ResinType, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.ResinType, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.ResinType, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    @Html.LabelFor(model => model.Quantidade, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.Quantidade, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.Quantidade, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    @Html.LabelFor(model => model.Code, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.Code, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.Code, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-
-            
-            
-            </div>
-         </div>  
-            }
-    </div>
+        </div>
+    </form>
+  </div>
+  
 
 

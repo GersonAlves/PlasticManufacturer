@@ -4,55 +4,82 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<div class="panel spacer-20">
+    <div class="panel-heading no-padding">
+        <a href="#" class="panel-expander notext fr">&nbsp;</a>
+        <h2 class="clipboard">Employee</h2>
+    </div>
 
-<h2>Index</h2>
+    <div class="panel-container">
+        <div class="options">
+            <ul>
+                <li>@Html.ActionLink("New", "Create", "", new { @class = "new" })</li>
+            </ul>
+        </div>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Email)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CreationDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.LastUpdate)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CreationDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.LastUpdate)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
+        <table class="table gn-table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CreationDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LastUpdate)
+                </th>
+                <th colspan="2"></th>
+            </tr>
 
-</table>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreationDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LastUpdate)
+                    </td>
+
+                    <td align="center">
+                        <div class="btn btn-default">
+                            @Html.ActionLink("Edit", "Edit", new { id = item.Id })
+                        </div>
+                    </td>
+                    <td align="left">
+
+                        <form action="/Customers/Delete/@item.Id " method="post" onsubmit="return confirm('Do you really want delete the Employee: @item.Name ?');">
+                            @Html.AntiForgeryToken()
+
+                            <a href="#" class="delete" onclick="this.parentNode.submit(); return confirm('Do you really want delete the Employee : @item.Name ?');"> Delete</a>
+
+                        </form>
+
+                    </td>
+
+                </tr>
+            }
+
+            <tr>
+                <td colspan="4" align="left"></td>
+            </tr>
+
+        </table>
+    </div>
+ </div>

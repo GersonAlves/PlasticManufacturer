@@ -6,45 +6,47 @@
 }
 
 <div class="panel spacer-20">
-<div class="panel-heading no-padding">
-    <a href="#" class="panel-expander notext fr">&nbsp;</a>
-    <h2 class="clipboard">Edit Opacity</h2>
-</div>
-@using (Html.BeginForm("Edit", "Opacities", FormMethod.Post, new { id = "create" }))
-{
-    <div class="panel-container">
-        <div class="options">
-            <ul>
-                <li>
-                    @*@Html.ActionLink("Post", "Create", "", new { @class = "post" })*@
-                    <a class="post" href='javascript:create.submit()'>Post</a>
-                </li>
-
-                <li>@Html.ActionLink("Cancel", "Index", "", new { @class = "cancel" })</li>
-            </ul>
-        </div>
-        @Html.AntiForgeryToken()
-
-        <div class="form-horizontal">
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            @Html.HiddenFor(model => model.Id)
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
+    <div class="panel-heading no-padding">
+        <a href="#" class="panel-expander notext fr">&nbsp;</a>
+        <h2 class="clipboard">Edit Opacity</h2>
     </div>
-}
-</div>
+
+    <form action="/Opacities/Edit/9" id="create" method="post">
+ 
+
+            <div class="panel-container">
+                <div class="options">
+                    <ul>
+                        <li>
+                            @*@Html.ActionLink("Post", "Create", "", new { @class = "post" })*@
+                            <a class="post" href='javascript:create.submit()'>Post</a>
+                        </li>
+
+                        <li><a class="cancel" href="/Opacities?Length=0">Cancel</a></li>
+                    </ul>
+                </div>
+                <input name="__RequestVerificationToken" type="hidden" value="0SPZFAJzKKMeD-_IMMOMZXZP7_sdJq-EXmuxqQPSELpjQ8iysDNQo_Nz0uA3nB3LRVW3VqmrScqtKQnKkkeC4IC4T2xVxwBjB_nFhbz8LQA1" />
+
+                <div class="form-horizontal">
+                    <input data-val="true" data-val-number="O campo Id deve ser um número." data-val-required="O campo Id é obrigatório." id="Id" name="Id" type="hidden" value="11" />
+
+                    <div class="form-group">
+                        <label class="control-label col-md-2" for="Name">Name</label>
+                        <div class="col-md-10">
+                            <input class="form-control text-box single-line" id="Name" name="Name" type="text" value="a" />
+                            <span class="field-validation-valid text-danger" data-valmsg-for="Name" data-valmsg-replace="true"></span>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-md-2" for="Description">Description</label>
+                        <div class="col-md-10">
+                            <input class="form-control text-box single-line" id="Description" name="Description" type="text" value="as" />
+                            <span class="field-validation-valid text-danger" data-valmsg-for="Description" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                </div>
+          </form>
+        </div>
+    
