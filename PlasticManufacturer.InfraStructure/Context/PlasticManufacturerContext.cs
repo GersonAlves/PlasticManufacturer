@@ -70,6 +70,7 @@ namespace PlasticManufacturer.InfraStructure.Context
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            Database.SetInitializer<PlasticManufacturerContext>(null);
             base.OnModelCreating(modelBuilder);
         }
     }

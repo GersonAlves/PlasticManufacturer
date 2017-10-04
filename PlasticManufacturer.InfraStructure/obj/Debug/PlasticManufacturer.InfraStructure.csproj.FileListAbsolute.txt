@@ -38,7 +38,7 @@ D:\Projects\PlasticManufacturer\PlasticManufacturer.InfraStructure\bin\Debug\Ent
 D:\Projects\PlasticManufacturer\PlasticManufacturer.InfraStructure\bin\Debug\EntityFramework.SqlServer.xml
 D:\Projects\PlasticManufacturer\PlasticManufacturer.InfraStructure\bin\Debug\log4net.xml
 D:\Projects\PlasticManufacturer\PlasticManufacturer.InfraStructure\obj\Debug\PlasticManufacturer.InfraStructure.csprojResolveAssemblyReference.cache
-D:\Projects\PlasticManufacturer\PlasticManufacturer.InfraStructure\obj\Debug\PlasticManufacturer.InfraStructure.dll
-D:\Projects\PlasticManufacturer\PlasticManufacturer.InfraStructure\obj\Debug\PlasticManufacturer.InfraStructure.pdb
 D:\Projects\PlasticManufacturer\PlasticManufacturer.InfraStructure\obj\Debug\PlasticManufacturer.InfraStructure.Migrations.StartModel.resources
 D:\Projects\PlasticManufacturer\PlasticManufacturer.InfraStructure\obj\Debug\PlasticManufacturer.InfraStructure.csproj.GenerateResource.Cache
+D:\Projects\PlasticManufacturer\PlasticManufacturer.InfraStructure\obj\Debug\PlasticManufacturer.InfraStructure.dll
+D:\Projects\PlasticManufacturer\PlasticManufacturer.InfraStructure\obj\Debug\PlasticManufacturer.InfraStructure.pdb

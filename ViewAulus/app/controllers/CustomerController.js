@@ -3,8 +3,8 @@
 angular.module('plasticManufacturer')
     .controller("CustomerController", function ($scope, $http) {
 
-        $http.get("welcome.htm").then(function (response) {
-            $scope.customer = response.data;
+        $http.get("http://localhost:55751/api/Customers").then(function (response) {
+            $scope.Customers = response.data;
         });
 
     });
