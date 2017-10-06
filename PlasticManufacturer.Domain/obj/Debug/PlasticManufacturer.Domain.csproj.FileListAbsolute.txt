@@ -8,3 +8,4 @@ D:\Projects\PlasticManufacturer\PlasticManufacturer.Domain\bin\Debug\PlasticManu
 D:\Projects\PlasticManufacturer\PlasticManufacturer.Domain\obj\Debug\PlasticManufacturer.Domain.csprojResolveAssemblyReference.cache
 D:\Projects\PlasticManufacturer\PlasticManufacturer.Domain\obj\Debug\PlasticManufacturer.Domain.dll
 D:\Projects\PlasticManufacturer\PlasticManufacturer.Domain\obj\Debug\PlasticManufacturer.Domain.pdb
+E:\Projects\PlasticManufacturer\PlasticManufacturer.Domain\obj\Debug\PlasticManufacturer.Domain.csprojResolveAssemblyReference.cache

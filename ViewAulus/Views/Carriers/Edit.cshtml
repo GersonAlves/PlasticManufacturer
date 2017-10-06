@@ -23,8 +23,8 @@
                         <li><a class="cancel" href="/Carriers?Length=0">Cancel</a></li>
                     </ul>
                 </div>
-                <input name="__RequestVerificationToken" type="hidden" value="3WuNTDKG8M5colN8qig6jy0pNwOV5gMLjsAy5yDKBLmLpXsVqr2NVcPvw6jWsLOraVKRkibGu5fNJUnHRdP-Mkp3l81xDF2FRrFMjlsv4wA1" />
 
+      @Html.AntiForgeryToken()
                 <div class="form-horizontal">
                     <input data-val="true" data-val-number="O campo Id deve ser um número." data-val-required="O campo Id é obrigatório." id="Id" name="Id" type="hidden" value="7" />
 

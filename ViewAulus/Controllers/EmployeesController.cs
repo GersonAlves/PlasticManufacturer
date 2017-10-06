@@ -9,12 +9,15 @@ using System.Web;
 using System.Web.Mvc;
 using PlasticManufacturer.Domain.Entities.Employees;
 using PlasticManufacturer.InfraStructure.Context;
+using System.Globalization;
 
 namespace ViewAulus.Controllers
 {
     public class EmployeesController : Controller
     {
         private PlasticManufacturerContext db = new PlasticManufacturerContext();
+        private object dt;
+        private DateTime date;
 
         // GET: Employees
         public async Task<ActionResult> Index()
@@ -48,10 +51,16 @@ namespace ViewAulus.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "Id,Email,Name,Description,CreationDate,LastUpdate")] Employee employee)
+        public async Task<ActionResult> Create(Employee employee)
         {
             if (ModelState.IsValid)
             {
+                employee.Birthday = Convert.ToDateTime(employee.Birthday);
+                employee.HireDate = Convert.ToDateTime(employee.HireDate);
+
+                employee.LastUpdate = DateTime.UtcNow;
+                employee.CreationDate = DateTime.UtcNow;
+
                 db.Employees.Add(employee);
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
@@ -80,10 +89,12 @@ namespace ViewAulus.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "Id,Email,Name,Description,CreationDate,LastUpdate")] Employee employee)
+        public async Task<ActionResult> Edit(Employee employee)
         {
             if (ModelState.IsValid)
             {
+                employee.Birthday = DateTime.UtcNow;
+                employee.HireDate = DateTime.UtcNow;
                 db.Entry(employee).State = EntityState.Modified;
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");

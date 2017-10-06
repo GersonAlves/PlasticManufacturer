@@ -7,6 +7,7 @@
 }
 
 
+<script src="~/js/validation.js" type="text/javascript"></script>
 
 <div class="panel spacer-20">
     <div class="panel-heading no-padding">
@@ -23,7 +24,7 @@
                                  <a class="post" onclick="return validation();" href='javascript:create.submit()'>Post</a>                        
                               </li>
 
-                        <li><a class="cancel" href="/RawMaterials?Length=0">Cancel</a></li>
+                        <li>@Html.ActionLink("Cancel", "Index", "", new { @class = "cancel" })</li>
                     </ul>
                 </div>
                 @Html.AntiForgeryToken()
