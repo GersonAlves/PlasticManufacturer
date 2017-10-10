@@ -89,7 +89,7 @@ namespace ViewAulus.Controllers
         {
             if (ModelState.IsValid)
             {
-                rawMaterial.LastUpdate = DateTime.UtcNow;
+               // rawMaterial.LastUpdate = DateTime.UtcNow;
 
                 db.Entry(rawMaterial).State = EntityState.Modified;
                 await db.SaveChangesAsync();

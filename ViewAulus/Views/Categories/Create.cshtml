@@ -11,22 +11,24 @@
         <h2 class="clipboard">Create Category</h2>
     </div>
     <form action="/Categories/Create" id="create" method="post">
+
         <div class="panel-container">
             <div class="options">
                 <ul>
                     <li>
-
+                        @*@Html.ActionLink("Post", "Create", "", new { @class = "post" })*@
                         <a class="post" href='javascript:create.submit()'>Post</a>
                     </li>
-
                     <li><a class="cancel" href="/Categories?Length=0">Cancel</a></li>
                 </ul>
             </div>
 
 
             @Html.AntiForgeryToken()
-            <div class="form-horizontal">
 
+
+            <div class="form-horizontal">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 <div class="form-group">
                     <label class="control-label col-md-2" for="Name">Name</label>
                     <div class="col-md-10">
@@ -46,5 +48,3 @@
         </div>
     </form>
 </div>
-
-

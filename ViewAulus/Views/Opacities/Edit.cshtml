@@ -11,7 +11,7 @@
         <h2 class="clipboard">Edit Opacity</h2>
     </div>
 
-    <form action="/Opacities/Edit/9" id="create" method="post">
+    <form action="/Opacities/Edit/@Model.Id" id="create" method="post">
  
 
             <div class="panel-container">
@@ -25,16 +25,16 @@
                         <li><a class="cancel" href="/Opacities?Length=0">Cancel</a></li>
                     </ul>
                 </div>
-                <input name="__RequestVerificationToken" type="hidden" value="0SPZFAJzKKMeD-_IMMOMZXZP7_sdJq-EXmuxqQPSELpjQ8iysDNQo_Nz0uA3nB3LRVW3VqmrScqtKQnKkkeC4IC4T2xVxwBjB_nFhbz8LQA1" />
+
+                @Html.AntiForgeryToken()
 
                 <div class="form-horizontal">
-                    <input data-val="true" data-val-number="O campo Id deve ser um número." data-val-required="O campo Id é obrigatório." id="Id" name="Id" type="hidden" value="11" />
+                    <input data-val="true" data-val-number="O campo Id deve ser um número." data-val-required="O campo Id é obrigatório." id="Id" name="Id" type="hidden" value="@Model.Id" />
 
                     <div class="form-group">
                         <label class="control-label col-md-2" for="Name">Name</label>
                         <div class="col-md-10">
-                            <input class="form-control text-box single-line" id="Name" name="Name" type="text" value="a" />
-                            <span class="field-validation-valid text-danger" data-valmsg-for="Name" data-valmsg-replace="true"></span>
+                            <input class="form-control text-box single-line" id="Name" name="Name" type="text" value="@Model.Name" />
                         </div>
                         </div>
                     </div>
@@ -42,8 +42,7 @@
                     <div class="form-group">
                         <label class="control-label col-md-2" for="Description">Description</label>
                         <div class="col-md-10">
-                            <input class="form-control text-box single-line" id="Description" name="Description" type="text" value="as" />
-                            <span class="field-validation-valid text-danger" data-valmsg-for="Description" data-valmsg-replace="true"></span>
+                            <input class="form-control text-box single-line" id="Description" name="Description" type="text" value="@Model.Description" />
                         </div>
                     </div>
                 </div>

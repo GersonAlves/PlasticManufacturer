@@ -5,50 +5,48 @@
 
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 <div class="panel spacer-20">
     <div class="panel-heading no-padding">
         <a href="#" class="panel-expander notext fr">&nbsp;</a>
-        <h2 class="clipboard">Edit Employee</h2>
+        <h2 class="clipboard">Edit Category</h2>
     </div>
 
 
-    <form action="/Categories/Edit/1" id="create" method="post">
-            <div class="panel-container">
-                <div class="options">
-                    <ul>
-                        <li>
-                            @*@Html.ActionLink("Post", "Create", "", new { @class = "post" })*@
-                            <a class="post" href='javascript:create.submit()'>Post</a>
-                        </li>
+    <form action="/Categories/Edit/@Model.Id" id="create" method="post">
+        <div class="panel-container">
+            <div class="options">
+                <ul>
+                    <li>
 
-                        <li><a class="cancel" href="/Categories?Length=0">Cancel</a></li>
-                    </ul>
+                        <a class="post" href='javascript:create.submit()'>Post</a>
+                    </li>
+
+                    <li><a class="cancel" href="/Categories?Length=0">Cancel</a></li>
+                </ul>
+            </div>
+            @Html.AntiForgeryToken()
+
+
+            <div class="form-horizontal">
+
+                <input data-val="true" data-val-number="O campo Id deve ser um número." data-val-required="O campo Id é obrigatório." id="Id" name="Id" type="hidden" value= "@Model.Id" />
+
+                <div class="form-group">
+                    <label class="control-label col-md-2" for="Name">Name</label>
+                    <div class="col-md-10">
+                        <input class="form-control text-box single-line" id="Name" name="Name" type="text" value="@Model.Name" />
+                    </div>
                 </div>
-                <input name="__RequestVerificationToken" type="hidden" value="XqCaFt7GUO3Q3BHB84ppTzo_GiDmHzL-RBm6k81-22Pr0cRxjaKknN3042aHWK7eTvRnE8Tl557MgQjrCbVqb4VmlmNglh0fwa_qCA1jm0I1" />
 
-
-                <div class="form-horizontal">
-
-                    <input data-val="true" data-val-number="O campo Id deve ser um número." data-val-required="O campo Id é obrigatório." id="Id" name="Id" type="hidden" value="1" />
-
-
-                    <div class="form-group">
-                        <label class="control-label col-md-2" for="Name">Name</label>
-                        <div class="col-md-10">
-                            <input class="form-control text-box single-line" id="Name" name="Name" type="text" value="Tes" />
-                        </div>
+                <div class="form-group">
+                    <label class="control-label col-md-2" for="Description">Description</label>
+                    <div class="col-md-10">
+                        <input class="form-control text-box single-line" id="Description" name="Description" type="text" value="@Model.Description" />
                     </div>
-
-                    <div class="form-group">
-                        <label class="control-label col-md-2" for="Description">Description</label>
-                        <div class="col-md-10">
-                            <input class="form-control text-box single-line" id="Description" name="Description" type="text" value="ggfgf" />
-                            <span class="field-validation-valid text-danger" data-valmsg-for="Description" data-valmsg-replace="true"></span>
-                        </div>
-                    </div>
-
                 </div>
             </div>
-         </form>
-      </div>
+        </div>
+    </form>
+</div>
 

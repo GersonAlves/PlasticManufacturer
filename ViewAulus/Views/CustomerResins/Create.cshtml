@@ -25,8 +25,7 @@
                                             <li><a class="cancel" href="/CustomerResins?Length=0">Cancel</a></li>
                                         </ul>
                                     </div>
-                                    <input name="__RequestVerificationToken" type="hidden" value="X3xMoSy6wra8zvYbMcJ6WkmDB3n4GGDYud83flEzuym5TCSBseXBUf8-YI571r_LkK8AlmxubmlHuyYgwp2Z46xV14QRgS5SyyUIJdGoH7I1" />
-
+                                @Html.AntiForgeryToken()
 
                                     <div class="form-horizontal">
 
@@ -35,7 +34,6 @@
                                             <label class="control-label col-md-2" for="ResinType">ResinType</label>
                                             <div class="col-md-10">
                                                 <input class="form-control text-box single-line" id="ResinType" name="ResinType" type="text" value="" />
-                                                <span class="field-validation-valid text-danger" data-valmsg-for="ResinType" data-valmsg-replace="true"></span>
                                             </div>
                                         </div>
 
@@ -43,7 +41,6 @@
                                             <label class="control-label col-md-2" for="Quantidade">Quantidade</label>
                                             <div class="col-md-10">
                                                 <input class="form-control text-box single-line" data-val="true" data-val-number="O campo Quantidade deve ser um número." data-val-required="O campo Quantidade é obrigatório." id="Quantidade" name="Quantidade" type="number" value="" />
-                                                <span class="field-validation-valid text-danger" data-valmsg-for="Quantidade" data-valmsg-replace="true"></span>
                                             </div>
                                         </div>
 
@@ -51,7 +48,6 @@
                                             <label class="control-label col-md-2" for="Code">Code</label>
                                             <div class="col-md-10">
                                                 <input class="form-control text-box single-line" id="Code" name="Code" type="text" value="" />
-                                                <span class="field-validation-valid text-danger" data-valmsg-for="Code" data-valmsg-replace="true"></span>
                                             </div>
                                         </div>
 
@@ -59,7 +55,6 @@
                                             <label class="control-label col-md-2" for="Name">Name</label>
                                             <div class="col-md-10">
                                                 <input class="form-control text-box single-line" id="Name" name="Name" type="text" value="" />
-                                                <span class="field-validation-valid text-danger" data-valmsg-for="Name" data-valmsg-replace="true"></span>
                                             </div>
                                         </div>
 
@@ -67,14 +62,8 @@
                                             <label class="control-label col-md-2" for="Description">Description</label>
                                             <div class="col-md-10">
                                                 <input class="form-control text-box single-line" id="Description" name="Description" type="text" value="" />
-                                                <span class="field-validation-valid text-danger" data-valmsg-for="Description" data-valmsg-replace="true"></span>
                                             </div>
                                         </div>
-
-
-
-
-
                                     </div>
                                 </div>
                             </form>
