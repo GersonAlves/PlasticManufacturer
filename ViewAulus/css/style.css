@@ -1944,16 +1944,20 @@ table.dataTable.display tbody tr:hover>.sorting_1, table.dataTable.order-column.
 	}
 }
 
-@media screen and (max-width:425px){
-	.panel .options ul li a {
-		width: 100% !important;
-		box-sizing: border-box;
-	}
-	.panel .options ul li {
-		width: 49%;
-	}
-	.table-notes table {
-		width: 100%;
-		float:none;
-	}
-}
+
+
+@media screen and (max-width:420px){
+
+    .panel .options ul li {
+        width: 50% !important;
+        box-sizing: border-box;          
+    }
+    .fields-row { width:100%;}
+        .fields-row .fields-bar .col select {
+            width: 40%;
+        }
+    
+
+
+    }
+
