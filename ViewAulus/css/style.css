@@ -1944,9 +1944,42 @@ table.dataTable.display tbody tr:hover>.sorting_1, table.dataTable.order-column.
 	}
 }
 
+@media screen and (max-width:768px) {
+
+    .panel .options ul li {
+        width: 50%;
+        box-sizing: border-box;       
+    }
+   
+}
+      
+    
+    .fields-row {
+        width: 100%;
+    }
+
+        .fields-row .fields-bar .col select {
+            width: 100%;
+        }
+
+    .shipping-method {
+        overflow: hidden;
+        margin-right: 0 40px;
+        width: 100%;
+    }
+
+        .shipping-method .shipping-box {
+            width: 50%;
+            float: left;
+        }
+
+    .tabs ul li a {
+        margin: 0 0 0 -5px;
+    }
+}
 
 
-@media screen and (max-width:420px){
+@media screen and (max-width:480px){
 
     .panel .options ul li {
         width: 50% !important;
@@ -1954,10 +1987,23 @@ table.dataTable.display tbody tr:hover>.sorting_1, table.dataTable.order-column.
     }
     .fields-row { width:100%;}
         .fields-row .fields-bar .col select {
-            width: 40%;
+            width: 100%;
         }
-    
 
+    .shipping-method {
+        overflow: hidden;
+        margin-right:0 40px;
+        width: 100%;
+    }
+
+        .shipping-method .shipping-box {
+            width: 50%;
+            float: left;
+        }
+
+    .tabs ul li a {  
+        margin: 0 0 0 -5px;
+    }
 
     }
 
