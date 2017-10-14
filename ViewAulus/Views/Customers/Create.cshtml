@@ -49,7 +49,7 @@
                                                         <div class="fields-row ">
                                                             <div class="fields-bar">
                                                                 <div class="form-group ">
-                                                                    <div class="col">
+                                                                    <div class="col, box-style">
                                                                         <label>Name</label>
                                                                         <input type="text" name="Name" ng-model="Code" class="form-control" />
 
@@ -111,7 +111,7 @@
                                                                         <input type="text" class="form-control" />
                                                                     </div>
                                                                 </div>
-                                                                <div class="col">
+                                                                <div class="notes-style">
                                                                     <label>Notes</label>
                                                                     <textarea cols="30" rows="10" class="form-control"></textarea>
                                                                 </div>
@@ -162,7 +162,7 @@
                                                                         <input class="form-control" type="text" />
                                                                     </div>
                                                                 </div>
-                                                                <div class="col">
+                                                                <div class="notes-style">
                                                                     <label>Notes:</label>
                                                                     <textarea class="form-control" cols="30" rows="10"></textarea>
                                                                 </div>
@@ -202,46 +202,44 @@
                                                 <!--  END TAB-2 -->
                                                 <!--  START TAB-3 -->
                                                 <div id="tab3" class="tab">
-                                                    <div class="order-info">
-                                                        <div class="form-group">
-                                                            <div class="col small">
-                                                                <span class="label">Address ID:</span>
-                                                                <select class="form-control">
-                                                                    <option>CCF</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
+                                                    <div class="order-info">                                      
                                                         <div class="address-box">
                                                             <div class="form-group">
                                                                 <div class="col small">
+                                                                    <span class="label">Address ID:</span>
+                                                                    <select class="form-control">
+                                                                        <option>CCF</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <div class="col small,  medium-box">
                                                                     <span class="label">Name:</span>
                                                                     <input type="text" class="form-control" placeholder="CCF" />
                                                                 </div>
-                                                                <div class="col small pdlft">
+                                                                <div class="col medium pdlft ">
                                                                     <span class="label">Type:</span>
                                                                     <select class="form-control">
                                                                         <option>Bill To</option>
                                                                         <option>Ship To</option>
                                                                     </select>
                                                                 </div>
-                                                                <div class="col small pdlft">
-                                                                    <span class="label">Main Ship To:</span>
-                                                                    <input type="text" class="form-control" placeholder="No" />
-                                                                </div>
-                                                                <div class="col small pdlft">
-                                                                    <span class="label">Quote Address:</span>
-                                                                    <input type="text" class="form-control" placeholder="Yes" />
-                                                                </div>
                                                             </div>
+                                                                <div class="form-group">
+                                                                    <div class="col small  pdlft">
+                                                                        <span class="label">Main Ship To:</span>
+                                                                        <input type="text" class="form-control" placeholder="No" />
+                                                                    </div>
+                                                                    <div class="col small pdlft">
+                                                                        <span class="label">Quote Address:</span>
+                                                                        <input type="text" class="form-control" placeholder="Yes" />
+                                                                    </div>
+                                                                </div>
                                                             <div class="form-group">
-                                                                <div class="col medium">
+                                                                <div class="col medium, medium-box">
                                                                     <span class="label">Address:</span>
                                                                     <input type="text" class="form-control" placeholder="POLE 131" />
-                                                                </div>
-                                                                <div class="col medium pdlft">
-                                                                    <span class="label">&nbsp;</span>
-                                                                    <input type="text" class="form-control" />
-                                                                </div>
+                                                                </div>                                                               
                                                                 <div class="col medium pdlft">
                                                                     <span class="label">City:</span>
                                                                     <input type="text" class="form-control" placeholder="HARVEYS LAKE - PA" />
@@ -258,35 +256,34 @@
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
-                                                                <div class="frame">
-                                                                    <div class="col smaller">
-                                                                        <span class="label">Contact Person 1:</span>
+                                                                <div class="col small  pdlft">
+                                                                    <span class="label">Contact Person 1:</span>
+                                                                    <input type="text" class="form-control" />
+                                                                </div>
+                                                                <div class="col small pdlft">
+                                                                    <span class="label">Phone:</span>
+                                                                    <input type="text" class="form-control" placeholder="610-852-2533" />
+                                                                </div>
+                                                                    <div class="col smallest">
+                                                                        <span class="label">Ext:</span>
                                                                         <input type="text" class="form-control" />
                                                                     </div>
-                                                                    <div class="col smaller pdlft">
-                                                                        <span class="label">Phone:</span>
-                                                                        <input type="text" class="form-control" placeholder="610-852-2533" />
-                                                                    </div>
+                                                               </div>
+                                                            <div class="form-group">
+                                                                <div class="col small  pdlft">
+                                                                    <span class="label">Contact Person 2:</span>
+                                                                    <input type="text" class="form-control"/>
+                                                                </div>
+                                                                <div class="col small pdlft">
+                                                                    <span class="label">Phone:</span>
+                                                                    <input type="text" class="form-control" placeholder="610-852-2533" />
+                                                                </div>
                                                                     <div class="col smallest">
                                                                         <span class="label">Ext:</span>
                                                                         <input type="text" class="form-control" />
                                                                     </div>
                                                                 </div>
-                                                                <div class="frame">
-                                                                    <div class="col smaller">
-                                                                        <span class="label">Contact Person 2:</span>
-                                                                        <input type="text" class="form-control" />
-                                                                    </div>
-                                                                    <div class="col smaller pdlft">
-                                                                        <span class="label">Phone:</span>
-                                                                        <input type="text" class="form-control" placeholder="610-852-2533" />
-                                                                    </div>
-                                                                    <div class="col smallest">
-                                                                        <span class="label">Ext:</span>
-                                                                        <input type="text" class="form-control" />
-                                                                    </div>
-                                                                </div>
-                                                            </div>
+                                                          
                                                             <div class="form-group">
                                                                 <label>Notes:</label>
                                                                 <textarea cols="30" rows="10" class="form-control"></textarea>

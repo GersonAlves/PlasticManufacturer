@@ -630,17 +630,24 @@ th.last { border: 0 !important; }
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
-.address-box .medium { width: 33.3333%; }
-.address-box .small { width: 25%!important; }
-.address-box .smaller { width: 180px; }
-.address-box .smallest { width: 70px; }
+.medium-box {width:51.5%; margin-right:1.1%;}
+
+.address-box .medium {
+    width: 32.3333%;
+    margin-right: 1.2%;
+}
+.address-box .small { width: 25%!important;  margin-right:1.2%;}
+.address-box .smaller  { width: 180px; margin-right:50px; }
+.address-box .smallest { width: 100px; margin-right:1.2%;}
 .address-box .frame {
-	width: 50%;
+	width: 30%;
+    margin-right:10px ;
 	float: left;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
+.box-margin{ margin-left:10px;}
 
 
 .formula .color-match { padding: 0 15px; }
@@ -649,6 +656,8 @@ th.last { border: 0 !important; }
 	table-layout: fixed;
 	margin: 0 0 15px;
 }
+
+
 
 .tab-default .col {
 	overflow: hidden;
@@ -663,6 +672,7 @@ th.last { border: 0 !important; }
 }
 .tab-default .pdlft { padding: 0 0 0 15px; }
 .tab-default .label { margin: 15px 0 5px;  }
+.box-margin{ margin-left:60px;}
 
 .shipping-method {
 	overflow: hidden;
@@ -671,11 +681,13 @@ th.last { border: 0 !important; }
 }
 .shipping-method .form-group { margin: 0 0 15px; }
 .shipping-method .shipping-box {
-	width: 50%;
+	width: 46.8%;
 	float: left;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
+    margin-right:2%;
+
 }
 
 .arr-green {
@@ -761,6 +773,8 @@ th.last { border: 0 !important; }
 	-webkit-box-sizing: border-box;
 }
 .form-control.medium { width: 500px; }
+
+
 
 .boxes-holder {
 	overflow: hidden;
@@ -1290,9 +1304,27 @@ th.last { border: 0 !important; }
 }
 #footer .shell a { color: #fff; }
 #footer .shell p { padding: 0; }
-/*
-	Costumer
-*/
+
+
+/* Costumer*/
+.box-style {
+    float: left;
+    width: 40%;
+    padding: 0 0 0 20px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.notes-style {
+    float: left;
+    width: 99.5%;
+    padding: 0 0 0 20px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+/*End*/
+
+
 .centraliza {
 	margin-right: 10px;
 	margin-left: 5px;
@@ -1858,7 +1890,15 @@ table.tableColor td:first-child {
 }
 
 @media screen and (max-width:1000px){
-nav{width:100%;}
+    .blue-box, .blue-box-r {
+        position: relative;
+        right: 30px;
+        padding-right: 0px;       
+    }
+    .blue-box-r {
+        padding-left: 30px;
+    }
+
 #cssmenu{width:100%;top: 24px;;position: absolute;}
 #cssmenu > ul{width:100%;display:none;background:#033157;z-index: 9;top: 31px;}
 #csssubmenu > ul{display:none;}
@@ -1931,28 +1971,59 @@ table.dataTable.display tbody tr:hover>.sorting_1, table.dataTable.order-column.
     display: block;
 }
 
-@media screen and (max-width:768px){
-	.panel .options ul li a {
-		width: 100% !important;
-		box-sizing: border-box;
-	}
-	.panel .options ul li {
-		width: 19.8%;
-	}
-	.tabs ul li {
-		width: 100%;
-	}
-}
 
 @media screen and (max-width:768px) {
 
-    .panel .options ul li {
-        width: 50%;
-        box-sizing: border-box;       
+    .blue-box, .blue-box-r {
+        position: relative;
+        right: 5px;
+       
     }
-   
-}
-      
+
+    .blue-box-r {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+    .panel .options ul li a {
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+
+    .box-style {
+        float: left;
+        width: 50%;
+        padding: 0 0 0 20px;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+    }
+
+    .panel .options ul li {
+        width: 19.8%;
+    }
+
+    .notes-style {
+        float: left;
+        width: 104%;
+        padding: 0 0 0 20px;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        margin-left: -20px;
+    }
+
+    
+
+    .address-box {
+        padding: 10px;
+        margin: 0 0 10px;
+        overflow: hidden;
+        border: 0px solid #000;
+        width: 100%;
+    }
+
+    .tabs ul li {
+        width: 100%;
+    }
+     
     
     .fields-row {
         width: 100%;
@@ -1969,41 +2040,99 @@ table.dataTable.display tbody tr:hover>.sorting_1, table.dataTable.order-column.
     }
 
         .shipping-method .shipping-box {
-            width: 50%;
+            width: 46%;
             float: left;
         }
+    .shipping-method {
+        overflow: hidden;
+        padding-left: 17px;
+    }
+
 
     .tabs ul li a {
         margin: 0 0 0 -5px;
     }
+    .notes-style {
+        float: left;
+        width: 100%;
+        padding: 0 0 0 20px;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        margin-left: 0px;
+    }
+
 }
 
 
 @media screen and (max-width:480px){
 
+   
+    .blue-box, .blue-box-r {
+        position: relative;
+        right: 1px;
+       
+    }
+
+    .blue-box-r {
+        padding-right: 30px;
+        padding-left: 20px;
+    }
     .panel .options ul li {
         width: 50% !important;
-        box-sizing: border-box;          
+        box-sizing: border-box;  
+        
     }
-    .fields-row { width:100%;}
+    .notes-style {
+        float: left;
+        width: 104%;
+        padding: 0 0 0 20px;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        margin-left:-20px;
+    }
+
+    .box-style {
+        float: left;
+        width: 105.5%;
+        padding: 0 0 0 20px;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        margin-left:-20px;
+    }
+
+  
+
+    .address-box {
+        padding:8px 0;
+        margin: 0 0 10px;
+        overflow: hidden;
+        border: 0px solid #000;
+        width: 100%;
+    }
+    
+    
+    .fields-row {
+        width: 100%;
+    }
         .fields-row .fields-bar .col select {
             width: 100%;
         }
 
     .shipping-method {
         overflow: hidden;
-        margin-right:0 40px;
-        width: 100%;
+        padding-left:17px;
     }
 
         .shipping-method .shipping-box {
-            width: 50%;
+            width: 46%;
             float: left;
         }
 
     .tabs ul li a {  
         margin: 0 0 0 -5px;
     }
+
+
 
     }
 
