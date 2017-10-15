@@ -740,7 +740,7 @@ th.last { border: 0 !important; }
 	box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 }
-.fields-row .fields-bar .col select { width: 100%; }
+.fields-row .fields-bar .col select { width: 100%; border-radius:5px; }
 .fields-row .fields-bar .form-control { width: 100%;}
 .fields-row .bar-col {
 	float: left;
@@ -1807,13 +1807,13 @@ table.tableColor td:first-child {
 		padding: 0;
 	}
 }
-@media (max-width: 479px) {
+@media (max-width: 480px) {
 	.color-match .order-info .col.fl { width: 100%; }
 	.buttons-margin a, .buttons-margin a + a {
 		float: none;
 		width: 100%;
 		display: block;
-		margin: 0 0 5px;
+		margin: 0 -8px 5px;
 		text-align: center;
 	}
 	.technical-info .date, .technical-info .markup, .fields-row .fields-bar .col {
@@ -2064,31 +2064,31 @@ table.dataTable.display tbody tr:hover>.sorting_1, table.dataTable.order-column.
 }
 
 
-@media screen and (max-width:480px){
+@media screen and (max-width:480px) {
 
-   
+
     .blue-box, .blue-box-r {
         position: relative;
         right: 1px;
-       
     }
 
     .blue-box-r {
         padding-right: 30px;
         padding-left: 20px;
     }
+
     .panel .options ul li {
         width: 50% !important;
-        box-sizing: border-box;  
-        
+        box-sizing: border-box;
     }
+
     .notes-style {
         float: left;
         width: 104%;
         padding: 0 0 0 20px;
         box-sizing: border-box;
         -webkit-box-sizing: border-box;
-        margin-left:-20px;
+        margin-left: -20px;
     }
 
     .box-style {
@@ -2097,30 +2097,32 @@ table.dataTable.display tbody tr:hover>.sorting_1, table.dataTable.order-column.
         padding: 0 0 0 20px;
         box-sizing: border-box;
         -webkit-box-sizing: border-box;
-        margin-left:-20px;
+        margin-left: -20px;
     }
 
-  
+
 
     .address-box {
-        padding:8px 0;
+        padding: 8px 0;
         margin: 0 0 10px;
         overflow: hidden;
         border: 0px solid #000;
         width: 100%;
     }
-    
-    
+
+
     .fields-row {
         width: 100%;
     }
+
         .fields-row .fields-bar .col select {
             width: 100%;
+            border-radius:5px;
         }
 
     .shipping-method {
         overflow: hidden;
-        padding-left:17px;
+        padding-left: 17px;
     }
 
         .shipping-method .shipping-box {
@@ -2128,11 +2130,8 @@ table.dataTable.display tbody tr:hover>.sorting_1, table.dataTable.order-column.
             float: left;
         }
 
-    .tabs ul li a {  
+    .tabs ul li a {
         margin: 0 0 0 -5px;
     }
-
-
-
-    }
+}
 
