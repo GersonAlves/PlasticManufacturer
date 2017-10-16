@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("PlasticManufacturer.Client")]
+[assembly: AssemblyTitle("CursoPluralsight")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("PlasticManufacturer.Client")]
+[assembly: AssemblyProduct("CursoPluralsight")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("9118fee4-5f21-4537-9dd5-7b7890f22872")]
+[assembly: Guid("e6bea153-9f18-4fdd-94f1-b53b7f32a21d")]
 
 // Version information for an assembly consists of the following four values:
 //
