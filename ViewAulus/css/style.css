@@ -157,6 +157,9 @@ small { font-size: 10px; }
 	margin-top: 10px;
 	overflow: hidden;
 }
+
+.form-horizontal {padding:1%;}
+
 .br { margin-left: 10px; }
 .bl { margin-right: 10px; }
 .spacer-20 { margin-bottom: 20px; }
@@ -1487,7 +1490,7 @@ table.tableColor td:first-child {
 		padding: 0;
 	}
 }
-@media (max-width: 767px) {
+@media (max-width: 768px) {
 	#wrapper {
 		-webkit-transition: all 0.25s linear;
 		-o-transition: all 0.25s linear;
@@ -1734,79 +1737,7 @@ table.tableColor td:first-child {
 	.tab-default .address-box .label.inc-margin { margin: 15px 0 5px; }
 }
 
-@media (max-width: 639px) {
-	.sub-nav {
-		border-radius:5px;
-	}
-	.header-right .menu .drop-down {
-		right: auto;
-		left: 50%;
-		transform: translateX(-50%);
-		-webkit-transform: translateX(-50%);
-	}
-	.header-right ul {
-		display: block;
-		width: 100%;
-	}
-	.header-right .menu {
-		margin: 0 auto;
-		width: 100%;
-	}
-	.header-right ul li {
-		width: 100%;
-		height: auto;
-		padding: 0;
-		margin: 5px auto;
-		background: none;
-	}
-	.header-right .dd-cnt ul li { width: 100%; }
-	.blue-box, .blue-box-r {
-		padding-left: 5px;
-		width: 100%;
-		box-sizing: border-box;
-		-webkit-box-sizing: border-box;
-	}
-	.blue-box { margin: 0; }
-	.blue-box-r { 
-		padding-right: 5px;
-		padding-left: 0;
-		width: 100%;
-	}
-	.fields-row .bar-col .col + .col { padding: 0; }
-	.fields-row .bar-col .col { width: 100%; }
-	.fields-row .bar-col .col.txt-center { text-align: left; }
-	.fields-row .bar-col .col.txt-center .chk-box { float: left; }
-	.fields-row .f-left {
-		width: 100%;
-		-webkit-box-sizing: border-box;
-		-moz-box-sizing: border-box;
-		box-sizing: border-box;
-	}
-	.fields-row .f-left .form-control { width: 100%; }
-	.selection-list li { width: 115px; }
-	.gn-table.eq-table td { padding-left: 12px; }
-	.gn-table.eq-table td:before {
-		position: static;
-		display: block;
-		margin: 0 0 5px;
-		width: auto;
-	}
 
-	.order-info .b-right, .order-info .b-left .form-group { margin: 0; }
-	.order-info .b-right .form-group,
-	.order-info .form-group .block {
-		float: none;
-		width: 100%;
-		padding: 0 0 15px;
-	}
-
-	.shipping-method .shipping-box {
-		width: 100%;
-		float: none;
-		overflow: hidden;
-		padding: 0;
-	}
-}
 @media (max-width: 480px) {
 	.color-match .order-info .col.fl { width: 100%; }
 	.buttons-margin a, .buttons-margin a + a {
@@ -2060,6 +1991,9 @@ table.dataTable.display tbody tr:hover>.sorting_1, table.dataTable.order-column.
         -webkit-box-sizing: border-box;
         margin-left: 0px;
     }
+    .form-control {
+        width: 40%;
+    }
 
 }
 
@@ -2133,5 +2067,6 @@ table.dataTable.display tbody tr:hover>.sorting_1, table.dataTable.order-column.
     .tabs ul li a {
         margin: 0 0 0 -5px;
     }
+    .form-control{width:100%;}
 }
 
