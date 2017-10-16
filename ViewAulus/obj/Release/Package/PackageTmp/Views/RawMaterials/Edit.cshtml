@@ -6,171 +6,141 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Edit</title>
-</head>
-<body>
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/jqueryval")
     <div class="panel spacer-20">
     <div class="panel-heading no-padding">
         <a href="#" class="panel-expander notext fr">&nbsp;</a>
         <h2 class="clipboard">Edit Raw Material </h2>
     </div>
 
-    @using (Html.BeginForm("Edit", "RawMaterials", FormMethod.Post, new { id = "create" }))
-        {
+        <form action="/RawMaterials/Edit/@Model.Id" id="create" method="post">
+
             <div class="panel-container">
-            <div class="options">
-                <ul>
-                    <li>
-        @*@Html.ActionLink("Post", "Create", "", new { @class = "post" })*@
-        <a class="post" href='javascript:create.submit()'>Post</a>
-                    </li>
+                <div class="options">
+                    <ul>
+                        <li>
+                            <a class="post" href='javascript:create.submit()'>Post</a>
+                        </li>
 
-                        <li>@Html.ActionLink("Cancel", "Index", "", new { @class = "cancel" })</li>
-                </ul>
-                    </div>
-        @Html.AntiForgeryToken()
-        
-        <div class="form-horizontal">
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            @Html.HiddenFor(model => model.Id)
-    
-            <div class="form-group">
-                @Html.LabelFor(model => model.Code, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Code, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Code, "", new { @class = "text-danger" })
+                        <li><a class="cancel" href="/RawMaterials?Length=0">Cancel</a></li>
+                    </ul>
                 </div>
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
-                </div>
-            </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
-                </div>
-            </div>
-    
-            <div class="form-group">
-                @Html.LabelFor(model => model.Notes, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Notes, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Notes, "", new { @class = "text-danger" })
-                </div>
-            </div>
-    
-            <div class="form-group">
-                @Html.LabelFor(model => model.ChemicalName, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.ChemicalName, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.ChemicalName, "", new { @class = "text-danger" })
-                </div>
-            </div>
-    
-            <div class="form-group">
-                <label class="control-label col-md-2" for="Status">Is Active</label>
-                <div class="col-md-10">
-                    <div class="checkbox">
-                        @Html.EditorFor(model => model.Status)
-                        @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+
+                    <input data-val="true" data-val-number="O campo Id deve ser um número." data-val-required="O campo Id é obrigatório." id="Id" name="Id" type="hidden" value="@Model.Id" />
+                    <div class="fields-row">
+                        <div class="fields-bar">
+                            <div class="form-group">
+                                <div class="col">
+                                    <label class="control-label col-md-2" for="Code">Code</label>
+                                    <input class="form-control text-box single-line" id="Code" name="Code   " type="text" value="@Model.Code" />
+                                </div>
+                                <div class="col">
+                                    <label class="control-label col-md-2" for="Name">Name</label>
+                                    <input class="form-control text-box single-line" id="Name" name="Name" type="text" value="@Model.Name" />
+                                </div>
+                                <div class="col">
+                                    <label class="control-label col-md-2" for="Description">Description</label>
+                                    <input class="form-control text-box single-line" id="Description" name="Description" type="text" value="@Model.Description" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="fields-row">
+                        <div class="fields-bar">
+                            <div class="form-group">
+                                <div class="col">
+                                    <label class="control-label col-md-2" for="Notes">Notes</label>
+                                    <input class="form-control text-box single-line" id="Notes" name="Notes" type="text" value="@Model.Notes" />
+                                </div>
+                                <div class="col">
+                                    <label class="control-label col-md-2" for="ChemicalName">Chemical Name</label>
+                                    <input class="form-control text-box single-line" id="ChemicalName" name="ChemicalName" type="text" value="@Model.ChemicalName" />
+                                </div>
+                                <div class="col">
+                                    <label class="control-label col-md-2" for="Status">Status</label>
+                                    <select name="Status" id="Status" class="form-control" style="width:200px">
+                                        <option value=""></option>
+                                        <option value="true">Active</option>
+                                        <option value="false">Inactive</option>
+
+                                    </select>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="fields-row">
+                        <div class="fields-bar">
+                            <div class="form-group">
+                                <div class="col">
+                                    <label class="control-label col-md-2" for="MainSupplier">Main Supplier</label>
+                                    <input class="form-control text-box single-line" id="MainSupplier" name="MainSupplier" type="text" value="@Model.MainSupplier" />
+                                </div>
+                                <div class="col">
+                                    <label class="control-label col-md-2" for="MainCustomer">Main Customer</label>
+                                    <input class="form-control text-box single-line" id="MainCustomer" name="MainCustomer" type="text" value="@Model.MainCustomer" />
+                                </div>
+                                <div class="col">
+                                    <label class="control-label col-md-2" for="Category">Category</label>
+                                    <select name="Category.Id" id="Category_Id" class="form-control" style="width: 200px">
+                                        <option value=""></option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="fields-row">
+                        <div class="fields-bar">
+                            <div class="form-group">
+                                <div class="col">
+                                    <label class="control-label col-md-2" for="HeatStability">Heat Stability</label>
+                                    <input class="form-control text-box single-line" id="HeatStability" name="HeatStability" type="text" value="@Model.HeatStability" />
+                                </div>
+                                <div class="col">
+                                    <label class="control-label col-md-2" for="LightSatability">Light Satability</label>
+                                    <input class="form-control text-box single-line" id="LightSatability" name="LightSatability" type="text" value="@Model.LightSatability" />
+                                </div>
+                                <div class="col">
+                                    <label class="control-label col-md-2" for="BarCode">BarCode</label>
+                                    <input class="form-control text-box single-line" id="BarCode" name="BarCode" type="text" value="@Model.BarCode" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fields-row">
+                        <div class="fields-bar">
+                            <div class="form-group">
+                                <div class="col">
+                                    <label class="control-label col-md-2" for="QCRequired">QCRequired</label>
+                                    <div class="checkbox">
+                                        <input class="check-box" data-val="true" data-val-required="O campo QCRequired é obrigatório." id="QCRequired" name="QCRequired" type="checkbox" value="true" /><input name="QCRequired" type="hidden" value="false" />
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <label class="control-label col-md-2" for="Fda">Fda</label>
+                                    <div class="checkbox">
+                                        <input class="check-box" data-val="true" data-val-required="O campo Fda é obrigatório." id="Fda" name="Fda" type="checkbox" value="true" /><input name="Fda" type="hidden" value="false" />
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <label class="control-label col-md-2" for="Hbfb">Hbfb</label>
+                                    <div class="checkbox">
+                                        <input class="check-box" data-val="true" data-val-required="O campo Hbfb é obrigatório." id="Hbfb" name="Hbfb" type="checkbox" value="true" /><input name="Hbfb" type="hidden" value="false" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-    
-            @*<div class="form-group">
-                @Html.LabelFor(model => model.Category, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Category, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Category, "", new { @class = "text-danger" })
-                </div>
-            </div>*@
-    
-            <div class="form-group">
-                @Html.LabelFor(model => model.MainSupplier, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.MainSupplier, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.MainSupplier, "", new { @class = "text-danger" })
-                </div>
-            </div>
-    
-            <div class="form-group">
-                @Html.LabelFor(model => model.MainCustomer, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.MainCustomer, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.MainCustomer, "", new { @class = "text-danger" })
-                </div>
-            </div>
-    
-            <div class="form-group">
-                @Html.LabelFor(model => model.HeatStability, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.HeatStability, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.HeatStability, "", new { @class = "text-danger" })
-                </div>
-            </div>
-    
-            <div class="form-group">
-                @Html.LabelFor(model => model.LightSatability, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.LightSatability, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.LightSatability, "", new { @class = "text-danger" })
-                </div>
-            </div>
-    
-            <div class="form-group">
-                @Html.LabelFor(model => model.Fda, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    <div class="checkbox">
-                        @Html.EditorFor(model => model.Fda)
-                        @Html.ValidationMessageFor(model => model.Fda, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-            </div>
-    
-            <div class="form-group">
-                @Html.LabelFor(model => model.Hbfb, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    <div class="checkbox">
-                        @Html.EditorFor(model => model.Hbfb)
-                        @Html.ValidationMessageFor(model => model.Hbfb, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-            </div>
-    
-            <div class="form-group">
-                @Html.LabelFor(model => model.QCRequired, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    <div class="checkbox">
-                        @Html.EditorFor(model => model.QCRequired)
-                        @Html.ValidationMessageFor(model => model.QCRequired, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-            </div>
-    
-            <div class="form-group">
-                @Html.LabelFor(model => model.BarCode, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.BarCode, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.BarCode, "", new { @class = "text-danger" })
-                </div>
-            </div>   
-        </div>
-   </div>@*end Container*@
-    }
-    </div>@*end panel*@
-</body>
-</html>
+       </form>
+</div>

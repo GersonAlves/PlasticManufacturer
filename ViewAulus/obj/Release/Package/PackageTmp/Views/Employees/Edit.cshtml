@@ -5,71 +5,183 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Edit</h2>
-
-
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>Employee</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.Id)
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.CreationDate, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.CreationDate, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.CreationDate, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.LastUpdate, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.LastUpdate, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.LastUpdate, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
-            </div>
-        </div>
+<div class="panel spacer-20">
+    <div class="panel-heading no-padding">
+        <a href="#" class="panel-expander notext fr">&nbsp;</a>
+        <h2 class="clipboard">Edit Employee</h2>
     </div>
-}
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
+
+    <form action="/Employees/Edit/@Model.Id" id="create" method="post">
+
+        <div class="panel-container">
+            <div class="options">
+                <ul>
+                    <li>
+                        <a class="post" href='javascript:create.submit()'>Post</a>
+                    </li>
+
+                    <li><a class="cancel" href="/Employees?Length=0">Cancel</a></li>
+                </ul>
+            </div>
+
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <div class="fields-row">
+                    <div class="fields-bar">
+                        <div class="form-group">
+                            <d iv class="col">
+                                <label class="control-label " for="First Name">First Name</label>
+                                <input class="form-control text-box single-line" id="Name" name="Name" type="text" value=@Model.Name />
+                                <span class="field-validation-valid text-danger" data-valmsg-for="Name" data-valmsg-replace="true"></span>
+                        </div>
+                        <div class="col">
+                            <label class="control-label" for="MiddleName">Middle Name</label>
+                            <input class="form-control text-box single-line" id="MiddleName" name="MiddleName" type="text" />
+                            <span class="field-validation-valid text-danger" data-valmsg-for="MiddleName" data-valmsg-replace="true"></span>
+                        </div>
+                        <div class="col">
+                            <label class="control-label " for="LastName">Last Name</label>
+                            <input class="form-control text-box single-line" id="LastName" name="LastName" type="text" value=@Model.LastName />
+                            <span class="field-validation-valid text-danger" data-valmsg-for="MiddleName" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="fields-row">
+                <div class="fields-bar">
+                    <div class="form-group">
+                        <div class="col">
+                            <label class="control-label " for="Birthday">Birthday</label>
+                            <input class="form-control text-box single-line" placeholder="00/00/00" id="Birthday" name="Birthday" type="text" value=@Model.Birthday />
+                            <span class="field-validation-valid text-danger" data-valmsg-for="Birthday" data-valmsg-replace="true"></span>
+                        </div>
+                        <div class="col">
+                            <label class="custom-select">Sex</label>
+                            <select style=" border-radius:5px 5px 5px 5px;" >
+                                <option></option>
+                                <option></option>
+                            </select>
+                            <span class="field-validation-valid text-danger" data-valmsg-for="Sex" data-valmsg-replace="true" value=""></span>
+                        </div>
+                        <div class="col">
+                            <label class="custom-select">Marital Status</label>
+                            <select style=" border-radius:5px 5px 5px 5px;">
+                                <option></option>
+                                <option></option>
+                            </select>
+                            <span class="field-validation-valid text-danger" data-valmsg-for="MaritalStatus" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="fields-row">
+                <div class="fields-bar">
+                    <div class="form-group">
+                        <div class="col" style="width: 565px;">
+                            <label class="control-label " for="Address">Address</label>
+                            <input class="form-control text-box single-line" id="Address" name="Address" type="text" value=@Model.Address />
+                            <span class="field-validation-valid text-danger" data-valmsg-for="Address" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="fields-row">
+                <div class="fields-bar">
+                    <div class="form-group">
+                        <div class="col" style="width: 300px;">
+                            <label class="control-label " for="City">City</label>
+                            <input class="form-control text-box single-line" id="City" name="City" type="text" value=@Model.City />
+                            <span class="field-validation-valid text-danger" data-valmsg-for="City" data-valmsg-replace="true"></span>
+                        </div>
+                        <div class="col" style="width: 75px;">
+                            <label class="control-label" for="State">State</label>
+                            <input class="form-control text-box single-line" id="State" name="State" type="text" value=@Model.State />
+                            <span class="field-validation-valid text-danger" data-valmsg-for="State" data-valmsg-replace="true"></span>
+                        </div>
+                        <div class="col">
+                            <label class="control-label " for="ZipCode">Zip Code</label>
+                            <input class="form-control text-box single-line" id="ZipCode" name="ZipCode" type="text" value=@Model.ZipCode />
+                            <span class="field-validation-valid text-danger" data-valmsg-for="ZipCode" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="fields-row">
+                <div class="fields-bar">
+                    <div class="form-group">
+                        <div class="col">
+                            <label class="control-label " for="Telephone">Telephone</label>
+                            <input class="form-control text-box single-line" id="Telephone" name="Telephone" type="text" value=@Model.Telephone />
+                            <span class="field-validation-valid text-danger" data-valmsg-for="Telephone" data-valmsg-replace="true"></span>
+                        </div>
+                        <div class="col">
+                            <label class="control-label" for="Ss">SS#</label>
+                            <input class="form-control text-box single-line" id="Ss" name="Ss" type="text" value=@Model.Ss />
+                            <span class="field-validation-valid text-danger" data-valmsg-for="Ss" data-valmsg-replace="true"></span>
+                        </div>
+                        <div class="col">
+                            <label class="control-label " for="Email">E-mail</label>
+                            <input class="form-control text-box single-line" id="Email" name="Email" type="text" value=@Model.Email />
+                            <span class="field-validation-valid text-danger" data-valmsg-for="Email" data-valmsg-replace="true"></span>
+                            <span class="field-validation-valid text-danger" data-valmsg-for="Email" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="fields-row">
+                <div class="fields-bar">
+                    <div class="form-group">
+                        <div class="col">
+                            <label class="control-label " for="HireDate">Hire Date</label>
+                            <input class="form-control text-box single-line" id="HireDate" name="HireDate" placeholder="00/00/00" type="text" value=@Model.HireDate />
+                            <span class="field-validation-valid text-danger" data-valmsg-for="HireDate" data-valmsg-replace="true"></span>
+                        </div>
+                        <div class="col">
+                            <label class="custom-select">Title</label>
+                            <select style=" border-radius:5px 5px 5px 5px;">
+                                <option></option>
+                                <option></option>
+                            </select><span class="field-validation-valid text-danger" data-valmsg-for="Title" data-valmsg-replace="true"></span>
+                        </div>
+
+                        <div class="col">
+                            <label class="custom-select">Department</label>
+                            <select style=" border-radius:5px 5px 5px 5px;">
+                                <option></option>
+                                <option></option>
+                            </select>
+                            <span class="field-validation-valid text-danger" data-valmsg-for="Department" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="fields-row">
+                <div class="fields-bar">
+                    <div class="form-group">
+                        <div class="col">
+                            <label class="custom-select">Status</label>
+                            <select style=" border-radius:5px 5px 5px 5px;">
+                                <option></option>
+                                <option></option>
+                            </select>
+                            <span class="field-validation-valid text-danger" data-valmsg-for="Status" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         </div>
+   </form>
 </div>
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}

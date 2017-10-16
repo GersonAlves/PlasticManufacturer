@@ -1998,7 +1998,7 @@ table.dataTable.display tbody tr:hover>.sorting_1, table.dataTable.order-column.
 }
 
 
-@media screen and (max-width:480px) {
+@media screen and (max-width: 577px) {
 
 
     .blue-box, .blue-box-r {

@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <parameters>
-  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\aspnet-ViewAulus-20170826033601.mdf;Initial Catalog=aspnet-ViewAulus-20170826033601;Integrated Security=True" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="D:\\Projects\\PlasticManufacturer\\ViewAulus\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection A Cadeia de Conexão usada em web.config pelo aplicativo para acessar o banco de dados." defaultValue="Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\aspnet-ViewAulus-20170826033601.mdf;Initial Catalog=aspnet-ViewAulus-20170826033601;Integrated Security=True" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="E:\\Projects\\PlasticManufacturer\\ViewAulus\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
   </parameter>
-  <parameter name="PlasticManufacturer-Web.config Connection String" description="PlasticManufacturer Connection String used in web.config by the application to access the database." defaultValue="Data Source=184.168.194.53; Initial Catalog=PlasticManufacturerDev; User Id=plasticDev; Password=plasticDev; MultipleActiveResultSets=True" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="D:\\Projects\\PlasticManufacturer\\ViewAulus\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='PlasticManufacturer']/@connectionString" />
+  <parameter name="PlasticManufacturer-Web.config Connection String" description="PlasticManufacturer A Cadeia de Conexão usada em web.config pelo aplicativo para acessar o banco de dados." defaultValue="Data Source=184.168.194.53; Initial Catalog=PlasticManufacturerDev; User Id=plasticDev; Password=plasticDev; MultipleActiveResultSets=True" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="E:\\Projects\\PlasticManufacturer\\ViewAulus\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='PlasticManufacturer']/@connectionString" />
   </parameter>
 </parameters>
