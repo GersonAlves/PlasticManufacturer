@@ -106,6 +106,8 @@ input.checkbox {
 	float: left;
 	display: inline;
 }
+
+
 .cl {
 	display: block;
 	clear: both;
@@ -743,8 +745,10 @@ th.last { border: 0 !important; }
 	box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 }
-.fields-row .fields-bar .col select { width: 100%; border-radius:5px; }
-.fields-row .fields-bar .form-control { width: 100%;}
+
+
+.fields-row .fields-bar .col select  { width: 100%; border-radius:5px; }
+.f1 .fields-row .fields-bar .form-control { width: 100%;}
 .fields-row .bar-col {
 	float: left;
 	width: 40%;
@@ -752,6 +756,8 @@ th.last { border: 0 !important; }
 	box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 }
+
+
 .fields-row .bar-col + .bar-col { width: 60%; }
 .fields-row .bar-col select { width: 100%; }
 .fields-row .bar-col .col {
@@ -1489,6 +1495,25 @@ table.tableColor td:first-child {
 		width: 100%;
 		padding: 0;
 	}
+    .fields-row .date .form-control {
+        width: 100%;
+    }
+    .form-control2 {
+        border-radius: 5px;
+        width: 90%;
+        padding: 2px;
+        margin: 0 !important;
+        height: 30px !important;
+        padding: 4px 11px;
+        border-radius: 5px;
+        border: 1px solid #75abc1;
+       
+      
+        box-shadow: inset 1px 0px 1px 1px rgba(240,240,240,1);
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+    }
+    
 }
 @media (max-width: 768px) {
 	#wrapper {
@@ -1911,6 +1936,7 @@ table.dataTable.display tbody tr:hover>.sorting_1, table.dataTable.order-column.
        
     }
 
+
     .blue-box-r {
         padding-right: 20px;
         padding-left: 20px;
@@ -1994,6 +2020,7 @@ table.dataTable.display tbody tr:hover>.sorting_1, table.dataTable.order-column.
     .form-control {
         width: 40%;
     }
+    
 
 }
 
