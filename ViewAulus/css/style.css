@@ -236,6 +236,9 @@ h1#logo a {
 	background: linear-gradient(to bottom,  #042b46 0%,#05395b 3%,#053f66 6%,#032d52 97%,#417195 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#042b46', endColorstr='#417195',GradientType=0 );
 }
+
+
+
 .blue-box-r {
 	padding-left: 0;
 	padding-right: 19px;
@@ -745,6 +748,14 @@ th.last { border: 0 !important; }
 	box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 }
+
+    .fields-row .fields-bar .little-box {
+        float: left;
+        width: 188px;
+        padding: 0 0 0 20px;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+    }
 
 
 .fields-row .fields-bar .col select  { width: 100%; border-radius:5px; }
@@ -1763,7 +1774,7 @@ table.tableColor td:first-child {
 }
 
 
-@media (max-width: 480px) {
+@media (max-width: 577px) {
 	.color-match .order-info .col.fl { width: 100%; }
 	.buttons-margin a, .buttons-margin a + a {
 		float: none;
@@ -2026,6 +2037,19 @@ table.dataTable.display tbody tr:hover>.sorting_1, table.dataTable.order-column.
 
 
 @media screen and (max-width: 577px) {
+
+
+    .little-box {  width:100%;
+                   border-radius:5px;  
+                   padding:5%;
+    }
+
+    .order {    
+        margin-left: 30%;
+        float: left;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+    }
 
 
     .blue-box, .blue-box-r {
