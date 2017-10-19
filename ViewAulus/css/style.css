@@ -60,6 +60,21 @@ label span {
 	display: block;
 	line-height: 12px;
 }
+
+.big-box {
+    width:330%;
+    margin: 0 !important;
+    height: 30px !important;
+    padding: 4px 11px;
+    border-radius: 5px;
+    border: 1px solid #75abc1;
+    -webkit-box-shadow: inset 1px 0px 1px 1px rgba(240,240,240,1);
+    -moz-box-shadow: inset 1px 0px 1px 1px rgba(240,240,240,1);
+    box-shadow: inset 1px 0px 1px 1px rgba(240,240,240,1);
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
 input.checkbox {
 	float: left;
 	display: inline;
@@ -465,6 +480,9 @@ h2.settings { background-image: url(images/icon-settings.gif); }
 	border-top: 0;
 	height: 100%;
 }
+ .padding-container { padding:5px;  }
+
+
 .color-match {
 	max-width: 958px;
 	position: relative;
@@ -757,6 +775,64 @@ th.last { border: 0 !important; }
         -webkit-box-sizing: border-box;
     }
 
+
+/*  configuration Default    */
+
+.s-b-o {
+    float: left;
+    padding: 0 0 0 20px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    margin-right: 11px;
+}
+
+
+.panel-border {
+    border: 1px solid #c6ddeb;
+   margin-bottom:5px;
+}
+.select-box{
+    border-radius: 5px;
+    width: 102%;
+    padding: 5px 43px;
+}
+
+.chk {
+    float: left;
+    margin-right: 20px;    
+}
+
+
+.container-right { float:right;
+                   width:50%;
+}
+.container-right2 {
+    float: right;
+    width: 50%;
+}
+
+
+    .container-left { width:50%;
+    float:left;
+}
+.title-left {
+    margin-bottom: 5px;
+    border: 1px solid cadetblue;
+    width: 67%;
+    padding-left: 10px;
+    border-radius: 5px;
+}
+
+
+.title-right {
+    margin-bottom: 5px;
+    border: 1px solid cadetblue;
+    width: 94%;
+    padding-left: 19px;
+    border-radius: 5px;
+}
+            
+   /*end*/
 
 .fields-row .fields-bar .col select  { width: 100%; border-radius:5px; }
 .f1 .fields-row .fields-bar .form-control { width: 100%;}
@@ -2108,7 +2184,6 @@ table.dataTable.display tbody tr:hover>.sorting_1, table.dataTable.order-column.
     .shipping-method {
         overflow: hidden;
         padding-left: 17px;
-    }
 
         .shipping-method .shipping-box {
             width: 46%;
