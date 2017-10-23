@@ -32,6 +32,14 @@ import {
     CategoryListResolver
 } from './categories/index'
 
+
+import {
+    OpacityGuard,
+    OpacityComponent,
+    OpacityListComponent,
+    OpacityService
+} from './opacities/index'
+
 import {
     CarrierGuard,
     CarrierComponent,
@@ -84,13 +92,17 @@ import { Error404Component } from './errors/404.component'
         CategoryComponent,
         CategoriesListComponent,
         CarrierComponent,
-        CarrierListComponent
+        CarrierListComponent,
+        OpacityComponent,
+        OpacityListComponent
     ],
     providers: [
         CategoryService,
         CarrierService,
+        OpacityService,
         EventService,
         CarrierGuard,
+        OpacityGuard,
         { provide: TOASTR_TOKEN, useValue: toastr },
         { provide: JQ_TOKEN, useValue: jQuery },
         EventResolver,

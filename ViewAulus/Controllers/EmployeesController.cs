@@ -16,8 +16,6 @@ namespace ViewAulus.Controllers
     public class EmployeesController : Controller
     {
         private PlasticManufacturerContext db = new PlasticManufacturerContext();
-        private object dt;
-        private DateTime date;
 
         // GET: Employees
         public async Task<ActionResult> Index()

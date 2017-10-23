@@ -267,9 +267,13 @@
     <Compile Include="Controllers\CustomerStatusController.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\OpacitiesController.cs" />
+    <Compile Include="Controllers\PackagingsController.cs" />
+    <Compile Include="Controllers\PelletsController.cs" />
     <Compile Include="Controllers\RawMaterialsController.cs" />
     <Compile Include="Controllers\ShippingMethodsController.cs" />
     <Compile Include="Controllers\StatesController.cs" />
+    <Compile Include="Controllers\TargetTypesController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

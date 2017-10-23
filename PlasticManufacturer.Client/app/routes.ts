@@ -13,6 +13,13 @@ import {
     EventResolver
 } from './events/index'
 
+
+import {
+    OpacityGuard,
+    OpacityComponent,
+    OpacityListComponent
+} from './opacities/index'
+
 import {
     CarrierGuard,
     CarrierComponent,
@@ -28,8 +35,13 @@ export const appRoutes: Routes = [
 
     { path: 'categories', component: CategoryComponent, resolve: { categories: CategoryListResolver } },
     { path: 'carriers', component: CarrierListComponent },
-    { path: '404', component: Error404Component },
-    { path: 'carriers/:id', canDeactivate: [CarrierGuard], component: CarrierComponent}
+    { path: 'carriers/:id', canDeactivate: [CarrierGuard], component: CarrierComponent },
+    
+    { path: 'opacities', component: OpacityListComponent },
+    { path: 'opacities/:id', canDeactivate: [OpacityGuard], component: OpacityComponent },
+
+    { path: '404', component: Error404Component }
+    
 
 
     //{ path: 'events/new', component: CreateEventComponent, canDeactivate: ['canDeactivateCreateEvent'] },
