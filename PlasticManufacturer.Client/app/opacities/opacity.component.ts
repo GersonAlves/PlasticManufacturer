@@ -26,7 +26,7 @@ export class OpacityComponent implements OnInit, AfterViewInit, OnDestroy {
     opacity: IOpacity;
     private sub: Subscription;
     errorMessage: string;
-    pageTitle: string = 'Carrier';
+    pageTitle: string = 'Opacity';
 
     // Use with the generic validation message class
     displayMessage: { [key: string]: string } = {};
@@ -55,7 +55,7 @@ export class OpacityComponent implements OnInit, AfterViewInit, OnDestroy {
             description: ''
         });
 
-        // Read the carrier Id from the route parameter
+        // Read the opacity Id from the route parameter
         this.sub = this.route.params.subscribe(
             params => {
                 let id = +params['id'];
@@ -112,7 +112,7 @@ export class OpacityComponent implements OnInit, AfterViewInit, OnDestroy {
 
     save(): void {
         if (this.opacityForm.dirty && this.opacityForm.valid) {
-            // Copy the form values over the carrier object values
+            // Copy the form values over the opacity object values
             let c = Object.assign({}, this.opacity, this.opacityForm.value);
 
             console.log(c);
