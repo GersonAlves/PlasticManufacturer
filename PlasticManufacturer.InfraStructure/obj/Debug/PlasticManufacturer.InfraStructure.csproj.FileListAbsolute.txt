@@ -15,6 +15,7 @@ E:\Projects\PlasticManufacturer\PlasticManufacturer.InfraStructure\obj\Debug\Pla
 E:\Projects\PlasticManufacturer\PlasticManufacturer.InfraStructure\obj\Debug\PlasticManufacturer.InfraStructure.csproj.CoreCompileInputs.cache
 E:\Projects\PlasticManufacturer\PlasticManufacturer.InfraStructure\obj\Debug\PlasticManufacturer.InfraStructure.dll
 E:\Projects\PlasticManufacturer\PlasticManufacturer.InfraStructure\obj\Debug\PlasticManufacturer.InfraStructure.pdb
+E:\Projects\PlasticManufacturer\PlasticManufacturer.InfraStructure\obj\Debug\PlasticManufacturer.InfraStructure.Migrations.StartModel.resources
 D:\Projects\PlasticManufacturer\PlasticManufacturer.InfraStructure\bin\Debug\PlasticManufacturer.InfraStructure.dll.config
 D:\Projects\PlasticManufacturer\PlasticManufacturer.InfraStructure\bin\Debug\PlasticManufacturer.InfraStructure.dll
 D:\Projects\PlasticManufacturer\PlasticManufacturer.InfraStructure\bin\Debug\PlasticManufacturer.InfraStructure.pdb
@@ -32,4 +33,3 @@ D:\Projects\PlasticManufacturer\PlasticManufacturer.InfraStructure\obj\Debug\Pla
 D:\Projects\PlasticManufacturer\PlasticManufacturer.InfraStructure\obj\Debug\PlasticManufacturer.InfraStructure.csproj.GenerateResource.Cache
 D:\Projects\PlasticManufacturer\PlasticManufacturer.InfraStructure\obj\Debug\PlasticManufacturer.InfraStructure.dll
 D:\Projects\PlasticManufacturer\PlasticManufacturer.InfraStructure\obj\Debug\PlasticManufacturer.InfraStructure.pdb
-E:\Projects\PlasticManufacturer\PlasticManufacturer.InfraStructure\obj\Debug\PlasticManufacturer.InfraStructure.Migrations.StartModel.resources
