@@ -3,7 +3,7 @@ import { IOpacity } from './opacity.model';
 import { OpacityService } from './opacity.service';
 
 @Component({
-    templateUrl: 'app/opacities/opacity-list.component.html',
+    templateUrl: 'app/opacities/opacity-list.component.html'
 })
 
 export class OpacityListComponent implements OnInit {

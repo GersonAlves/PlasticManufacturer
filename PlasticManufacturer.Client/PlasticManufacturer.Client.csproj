@@ -106,7 +106,7 @@
     <Content Include="app\events\event-details\upvote.component.css" />
     <Content Include="app\nav\navbar.component.html" />
     <Content Include="app\opacities\opacity-list.component.html" />
-    <Content Include="app\opacities\opacity.componet.html" />
+    <Content Include="app\opacities\opacity.component.html" />
     <Content Include="app\user\login.component.html" />
     <Content Include="app\user\profile.component.html" />
     <Content Include="images\arr-1.gif" />
