@@ -16,7 +16,7 @@ export class EventService {
     }
 
     getEvent(id: number): Observable<IEvent> {
-        return this.http.get("/api/events/" + id).map((response: Response) => {
+        return this.http.get("  /" + id).map((response: Response) => {
             return <IEvent>response.json();
         }).catch(this.handleError);
     }

@@ -39,6 +39,5 @@ export class CategoriesListComponent implements OnInit {
 
     ngOnInit() {
         this.categories = this.route.snapshot.data['categories']
-        console.log(this.categoryService);
     }
 }

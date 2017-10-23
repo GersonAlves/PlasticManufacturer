@@ -4,7 +4,7 @@
         <h2 class="clipboard">Create Category</h2>
     </div>
     <div class="col-md-4">
-        <form (ngSubmit)="save(categoryForm.value)" #categoryForm="ngForm" autocomplete="off">
+        <form (ngSubmit)="save(categoryForm)" #categoryForm="ngForm" autocomplete="off">
             <div class="panel-container">
                 <div class="options">
                     <ul>
@@ -19,7 +19,7 @@
                 </div>
                 <div class="form-group">
                     <label for="name">Name:  <em *ngIf="categoryForm.controls.name?.invalid && (categoryForm.controls.name?.touched || mouseoverCategoty)">*</em></label>
-                    <input [(ngModel)]="name" name="name" required id="name" type="text" class="form-control" placeholder="Name..." />
+                    <input [(ngModel)]="name" #nameVar="ngModel" name="name" required id="name" type="text" class="form-control" placeholder="Name..." />
                 </div>
                 <div class="form-group">
                     <label for="description">Description:</label>

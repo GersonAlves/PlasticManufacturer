@@ -5,6 +5,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { HttpModule } from '@angular/http'
 
 
+//import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+
 
 import {
     EventsListComponent,
@@ -29,6 +31,13 @@ import {
     CategoriesListComponent,
     CategoryListResolver
 } from './categories/index'
+
+import {
+    CarrierGuard,
+    CarrierComponent,
+    CarrierListComponent,
+    CarrierService
+} from './carriers/index'
 
 declare let toastr: Toastr;
 declare let jQuery: Object;
@@ -73,11 +82,15 @@ import { Error404Component } from './errors/404.component'
         DurationPipe,
         UpvoteComponent,
         CategoryComponent,
-        CategoriesListComponent
+        CategoriesListComponent,
+        CarrierComponent,
+        CarrierListComponent
     ],
     providers: [
         CategoryService,
+        CarrierService,
         EventService,
+        CarrierGuard,
         { provide: TOASTR_TOKEN, useValue: toastr },
         { provide: JQ_TOKEN, useValue: jQuery },
         EventResolver,

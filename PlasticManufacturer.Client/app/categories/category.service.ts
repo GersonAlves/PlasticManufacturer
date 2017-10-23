@@ -5,20 +5,20 @@ import { Http, Response, Headers, RequestOptions } from '@angular/http'
 
 @Injectable()
 export class CategoryService {
-
+    private baseUrl = 'http://hml.api.newfdplastics.com/api/Categories';
     constructor(private http: Http) { }
 
     getAll() : Observable<ICategory[]> {
-        return this.http.get("http://localhost:55751/api/Categories").map((response: Response) => {
+        return this.http.get(this.baseUrl).map((response: Response) => {
             return <ICategory[]>response.json();
         }).catch(this.handleError);
     }
 
-    //getById(id: number): Observable<ICategory> {
-    //    return this.http.get("http://localhost:55751/api/Categories/" + id).map((response: Response) => {
-    //        return <ICategory>response.json();
-    //    }).catch(this.handleError);
-    //}
+    getById(id: number): Observable<ICategory> {
+        return this.http.get("http://localhost:55751/api/Categories/" + id).map((response: Response) => {
+            return <ICategory>response.json();
+        }).catch(this.handleError);
+    }
 
     save(category): Observable<ICategory> {
         let headers = new Headers({ 'Content-Type': 'application/json' });

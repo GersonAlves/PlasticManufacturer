@@ -13,13 +13,23 @@ import {
     EventResolver
 } from './events/index'
 
+import {
+    CarrierGuard,
+    CarrierComponent,
+    CarrierListComponent
+} from './carriers/index'
+
 import { Error404Component } from './errors/404.component'
 import { CategoryComponent } from './categories/category.component'
+
+
 
 export const appRoutes: Routes = [
 
     { path: 'categories', component: CategoryComponent, resolve: { categories: CategoryListResolver } },
-    { path: '404', component: Error404Component }
+    { path: 'carriers', component: CarrierListComponent },
+    { path: '404', component: Error404Component },
+    { path: 'carriers/:id', canDeactivate: [CarrierGuard], component: CarrierComponent}
 
 
     //{ path: 'events/new', component: CreateEventComponent, canDeactivate: ['canDeactivateCreateEvent'] },

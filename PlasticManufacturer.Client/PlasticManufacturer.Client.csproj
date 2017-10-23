@@ -10,7 +10,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{E6BEA153-9F18-4FDD-94F1-B53B7F32A21D}</ProjectGuid>
+    <ProjectGuid>{9118FEE4-5F21-4537-9DD5-7B7890F22872}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -25,8 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <TypeScriptToolsVersion>2.3</TypeScriptToolsVersion>
-    <Use64BitIISExpress />
+    <TypeScriptToolsVersion>2.5</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -97,6 +96,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\carriers\carrier-list.component.html" />
+    <Content Include="app\carriers\carrier.component.html" />
     <Content Include="app\categories\category.component.html" />
     <Content Include="app\events\create-event.component.html" />
     <Content Include="app\events\event-details\create-session.component.html" />
@@ -5682,7 +5683,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="app\analise.ts" />
     <TypeScriptCompile Include="app\app.module.ts" />
+    <TypeScriptCompile Include="app\carriers\carrier-guard.service.ts" />
+    <TypeScriptCompile Include="app\carriers\carrier-list.component.ts" />
+    <TypeScriptCompile Include="app\carriers\carrier.component.ts" />
+    <TypeScriptCompile Include="app\carriers\carrier.model.ts" />
+    <TypeScriptCompile Include="app\carriers\carrier.service.ts" />
+    <TypeScriptCompile Include="app\carriers\index.ts" />
     <TypeScriptCompile Include="app\categories\category-list-resolver.service.ts" />
     <TypeScriptCompile Include="app\categories\category-list.component.ts" />
     <TypeScriptCompile Include="app\categories\index.ts" />
@@ -5719,6 +5727,7 @@
     <TypeScriptCompile Include="app\main.ts" />
     <TypeScriptCompile Include="app\nav\navbar.component.ts" />
     <TypeScriptCompile Include="app\routes.ts" />
+    <TypeScriptCompile Include="app\shared\generic-validator.ts" />
     <TypeScriptCompile Include="app\user\auth.service.ts" />
     <TypeScriptCompile Include="app\user\login.component.ts" />
     <TypeScriptCompile Include="app\user\profile.component.ts" />

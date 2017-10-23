@@ -1,0 +1,5 @@
+﻿export * from './carrier.service'
+export * from './carrier.component'
+export * from './carrier.model'
+export * from './carrier-guard.service'
+export * from './carrier-list.component'
