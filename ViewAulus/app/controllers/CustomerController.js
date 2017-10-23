@@ -1,4 +1,4 @@
-﻿/// <reference path="D:\Projects\PlasticManufacturer\ViewAulus\Scripts/angular.min.js" />
+﻿
 
 angular.module('plasticManufacturer')
     .controller("CustomerController", function ($scope, $http) {

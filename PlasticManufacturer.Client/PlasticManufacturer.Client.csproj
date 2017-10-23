@@ -25,7 +25,8 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <TypeScriptToolsVersion>2.5</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>2.3</TypeScriptToolsVersion>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -107,6 +108,15 @@
     <Content Include="app\nav\navbar.component.html" />
     <Content Include="app\opacities\opacity-list.component.html" />
     <Content Include="app\opacities\opacity.component.html" />
+    <Content Include="app\packages\index.js" />
+    <Content Include="app\packages\package--list.component.js" />
+    <Content Include="app\packages\package-guard.service.js" />
+    <Content Include="app\packages\package-list.component.html" />
+    <Content Include="app\packages\package-list.component.js" />
+    <Content Include="app\packages\package.component.html" />
+    <Content Include="app\packages\package.component.js" />
+    <Content Include="app\packages\package.model.js" />
+    <Content Include="app\packages\package.service.js" />
     <Content Include="app\user\login.component.html" />
     <Content Include="app\user\profile.component.html" />
     <Content Include="images\arr-1.gif" />
@@ -5661,6 +5671,13 @@
     <Content Include="node_modules\toastr\toastr.scss" />
     <Content Include="images\facebox\Thumbs.db" />
     <Content Include="images\Thumbs.db" />
+    <Content Include="app\packages\index.js.map" />
+    <Content Include="app\packages\package--list.component.js.map" />
+    <Content Include="app\packages\package-guard.service.js.map" />
+    <Content Include="app\packages\package-list.component.js.map" />
+    <Content Include="app\packages\package.component.js.map" />
+    <Content Include="app\packages\package.model.js.map" />
+    <Content Include="app\packages\package.service.js.map" />
     <None Include="Properties\PublishProfiles\Homolog.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -5734,6 +5751,12 @@
     <TypeScriptCompile Include="app\opacities\opacity.component.ts" />
     <TypeScriptCompile Include="app\opacities\opacity.model.ts" />
     <TypeScriptCompile Include="app\opacities\opacity.service.ts" />
+    <TypeScriptCompile Include="app\packages\index.ts" />
+    <TypeScriptCompile Include="app\packages\package-guard.service.ts" />
+    <TypeScriptCompile Include="app\packages\package-list.component.ts" />
+    <TypeScriptCompile Include="app\packages\package.component.ts" />
+    <TypeScriptCompile Include="app\packages\package.model.ts" />
+    <TypeScriptCompile Include="app\packages\package.service.ts" />
     <TypeScriptCompile Include="app\routes.ts" />
     <TypeScriptCompile Include="app\shared\generic-validator.ts" />
     <TypeScriptCompile Include="app\user\auth.service.ts" />

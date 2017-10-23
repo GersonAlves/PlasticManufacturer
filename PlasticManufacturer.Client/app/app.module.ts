@@ -47,6 +47,14 @@ import {
     CarrierService
 } from './carriers/index'
 
+import {
+    PackageGuard,
+    PackageComponent,
+    PackageListComponent,
+    PackageService
+} from './packages/index'
+
+
 declare let toastr: Toastr;
 declare let jQuery: Object;
 
@@ -94,7 +102,10 @@ import { Error404Component } from './errors/404.component'
         CarrierComponent,
         CarrierListComponent,
         OpacityComponent,
-        OpacityListComponent
+        OpacityListComponent,
+        PackageListComponent,
+        PackageComponent
+
     ],
     providers: [
         CategoryService,
@@ -110,6 +121,7 @@ import { Error404Component } from './errors/404.component'
         AuthService,
         VoterService,
         CategoryListResolver,
+        PackageService,
         { provide: 'canDeactivateCreateEvent', useValue: checkDirtyState }
     ],
 
