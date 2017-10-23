@@ -26,11 +26,11 @@
                     <tbody>
                         <tr *ngFor='let opacity of opacities'>
                             <td>
-                                <a [routerLink]="['/opacities', carrier.id]">
-                                    {{carrier.name}}
+                                <a [routerLink]="['/opacities', opacity.id]">
+                                    {{opacity.name}}
                                 </a>
                             </td>
-                            <td>{{ carrier.description }}</td>
+                            <td>{{ opacity.description }}</td>
                         </tr>
                     </tbody>
                 </table>
