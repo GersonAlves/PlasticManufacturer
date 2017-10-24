@@ -15,6 +15,7 @@
     <WebStackScaffolding_LayoutPageFile />
     <WebStackScaffolding_IsAsyncSelected>True</WebStackScaffolding_IsAsyncSelected>
     <WebStackScaffolding_DbContextTypeFullName>PlasticManufacturer.InfraStructure.Context.PlasticManufacturerContext</WebStackScaffolding_DbContextTypeFullName>
+    <NameOfLastUsedPublishProfile>TesteApi</NameOfLastUsedPublishProfile>
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>

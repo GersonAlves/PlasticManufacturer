@@ -54,6 +54,12 @@ import {
     PackagingService
 } from './packagings/index'
 
+import {
+    CustomerComponent,
+    CustomerGuard,
+    CustomerService
+} from './customers/index'
+
 
 declare let toastr: Toastr;
 declare let jQuery: Object;
@@ -92,6 +98,7 @@ import { Error404Component } from './errors/404.component'
         Error404Component,
         SessionListComponent,
         CollapsibleWellComponent,
+        CustomerComponent,
         SimpleModalComponent,
         ModalTriggerDirective,
         LocationValidatorDirective,
@@ -123,6 +130,8 @@ import { Error404Component } from './errors/404.component'
         CategoryListResolver,
         PackagingGuard,
         PackagingService,
+        CustomerGuard,
+        CustomerService,
         { provide: 'canDeactivateCreateEvent', useValue: checkDirtyState }
     ],
 

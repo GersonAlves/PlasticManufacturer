@@ -4,7 +4,7 @@ import {ICustomer} from './customer.model'
 import { Http, Response, Headers, RequestOptions } from '@angular/http'
 
 @Injectable()
-export class customerService {
+export class CustomerService {
     //private baseUrl = 'http://hml.api.newfdplastics.com/api/customers';
     private baseUrl = 'http://localhost:55751/api/customers';
 

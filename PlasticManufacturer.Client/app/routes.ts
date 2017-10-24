@@ -32,6 +32,15 @@ import {
     PackagingListComponent
 } from './packagings/index'
 
+
+import {
+    CustomerComponent,
+    CustomerGuard
+} from './customers/index'
+
+
+
+
 import { Error404Component } from './errors/404.component'
 import { CategoryComponent } from './categories/category.component'
 
@@ -48,6 +57,9 @@ export const appRoutes: Routes = [
 
     { path: 'packagings', component: PackagingListComponent },
     { path: 'packagings/:id', canDeactivate: [PackagingGuard], component: PackagingComponent },
+
+    { path: 'customers', component: CustomerComponent },
+    { path: 'customers/:id', canDeactivate: [CustomerGuard], component: CustomerComponent },
 
     { path: '404', component: Error404Component }
     

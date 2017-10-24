@@ -10,7 +10,7 @@ import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
 
 import { ICustomer } from './customer.model'
-import { customerService } from './customer.service'
+import { CustomerService } from './customer.service'
 
 import { GenericValidator } from '../shared/generic-validator';
 
@@ -19,7 +19,7 @@ import { GenericValidator } from '../shared/generic-validator';
     templateUrl: 'app/customers/customer.component.html'
 })
 
-export class customerComponent implements OnInit, AfterViewInit, OnDestroy {
+export class CustomerComponent implements OnInit, AfterViewInit, OnDestroy {
     @ViewChildren(FormControlName, { read: ElementRef }) formInputElements: ElementRef[];
 
     customerForm: FormGroup;
@@ -33,13 +33,13 @@ export class customerComponent implements OnInit, AfterViewInit, OnDestroy {
     private validationMessages: { [key: string]: { [key: string]: string } };
     private genericValidator: GenericValidator;
 
-    constructor(private router: Router, private customerService: customerService, private formBuilder: FormBuilder, private route: ActivatedRoute, ) {
+    constructor(private router: Router, private customerService: CustomerService, private formBuilder: FormBuilder, private route: ActivatedRoute, ) {
 
         // Defines all of the validation messages for the form.
         // These could instead be retrieved from a file or database.
         this.validationMessages = {
             name: {
-                required: 'carreir name is required.'
+                required: 'customer name is required.'
             }
         };
 
@@ -52,7 +52,7 @@ export class customerComponent implements OnInit, AfterViewInit, OnDestroy {
         this.customerForm = this.formBuilder.group({
             id: 0,
             name: ['', Validators.compose([Validators.required, Validators.minLength(3)])],
-            description: ''
+            lastName: ''
         });
 
         // Read the customer Id from the route parameter
@@ -83,14 +83,14 @@ export class customerComponent implements OnInit, AfterViewInit, OnDestroy {
         if (id !== 0) {
             this.customerService.getById(id)
                 .subscribe(
-                (customer: ICustomer) => this.onCorrierRetrieved(customer),
+                (customer: ICustomer) => this.onCustomerRetrieved(customer),
                 (error: any) => this.errorMessage = <any>error
                 );
         }
     }
 
 
-    onCorrierRetrieved(customer: ICustomer): void {
+    onCustomerRetrieved(customer: ICustomer): void {
         if (this.customerForm) {
             this.customerForm.reset();
         }
@@ -106,7 +106,7 @@ export class customerComponent implements OnInit, AfterViewInit, OnDestroy {
         this.customerForm.patchValue({
             id: this.customer.id,
             name: this.customer.name,
-            description: this.customer.description
+            lastName: this.customer.lastName
         });
     }
 
@@ -114,8 +114,6 @@ export class customerComponent implements OnInit, AfterViewInit, OnDestroy {
         if (this.customerForm.dirty && this.customerForm.valid) {
             // Copy the form values over the customer object values
             let c = Object.assign({}, this.customer, this.customerForm.value);
-
-            console.log(c);
 
             this.customerService.save(c)
                 .subscribe(
@@ -148,7 +146,6 @@ export class customerComponent implements OnInit, AfterViewInit, OnDestroy {
             }
         }
     }
-
 
     cancel() {
         this.router.navigate(['/customers'])
