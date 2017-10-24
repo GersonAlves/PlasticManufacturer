@@ -48,11 +48,11 @@ import {
 } from './carriers/index'
 
 import {
-    PackageGuard,
-    PackageComponent,
-    PackageListComponent,
-    PackageService
-} from './packages/index'
+    PackagingGuard,
+    PackagingComponent,
+    PackagingListComponent,
+    PackagingService
+} from './packagings/index'
 
 
 declare let toastr: Toastr;
@@ -103,8 +103,8 @@ import { Error404Component } from './errors/404.component'
         CarrierListComponent,
         OpacityComponent,
         OpacityListComponent,
-        PackageListComponent,
-        PackageComponent
+        PackagingComponent,
+        PackagingListComponent
 
     ],
     providers: [
@@ -121,7 +121,8 @@ import { Error404Component } from './errors/404.component'
         AuthService,
         VoterService,
         CategoryListResolver,
-        PackageService,
+        PackagingGuard,
+        PackagingService,
         { provide: 'canDeactivateCreateEvent', useValue: checkDirtyState }
     ],
 

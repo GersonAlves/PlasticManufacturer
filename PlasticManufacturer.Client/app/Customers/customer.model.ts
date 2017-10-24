@@ -1,4 +1,4 @@
-﻿import { IAddressType,ICity,IState } from '../addresses/addresses.model'
+﻿import { IAddressType, ICity, IState } from '../addresses/addresses.model'
 
 export interface ICustomer {
     id: number

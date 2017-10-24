@@ -9,31 +9,31 @@ import 'rxjs/add/observable/merge';
 import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
 
-import { IPackage } from './package.model'
-import { PackageService } from './package.service'
+import { ICustomer } from './customer.model'
+import { customerService } from './customer.service'
 
 import { GenericValidator } from '../shared/generic-validator';
 
+
 @Component({
-    templateUrl: 'app/packages/package.component.html'
+    templateUrl: 'app/customers/customer.component.html'
 })
 
-
-export class PackageComponent implements OnInit, AfterViewInit, OnDestroy {
+export class customerComponent implements OnInit, AfterViewInit, OnDestroy {
     @ViewChildren(FormControlName, { read: ElementRef }) formInputElements: ElementRef[];
 
-   packageForm: FormGroup;
-   package: IPackage;
+    customerForm: FormGroup;
+    customer: ICustomer;
     private sub: Subscription;
     errorMessage: string;
-    pageTitle: string = 'Package';
+    pageTitle: string = 'customer';
 
     // Use with the generic validation message class
     displayMessage: { [key: string]: string } = {};
     private validationMessages: { [key: string]: { [key: string]: string } };
     private genericValidator: GenericValidator;
 
-    constructor(private router: Router, private packageService: PackageService, private formBuilder: FormBuilder, private route: ActivatedRoute, ) {
+    constructor(private router: Router, private customerService: customerService, private formBuilder: FormBuilder, private route: ActivatedRoute, ) {
 
         // Defines all of the validation messages for the form.
         // These could instead be retrieved from a file or database.
@@ -49,17 +49,17 @@ export class PackageComponent implements OnInit, AfterViewInit, OnDestroy {
     }
 
     ngOnInit(): void {
-        this. packageForm = this.formBuilder.group({
+        this.customerForm = this.formBuilder.group({
             id: 0,
             name: ['', Validators.compose([Validators.required, Validators.minLength(3)])],
             description: ''
         });
 
-        // Read the  package Id from the route parameter
+        // Read the customer Id from the route parameter
         this.sub = this.route.params.subscribe(
             params => {
                 let id = +params['id'];
-                this.getPackage(id);
+                this.getcustomer(id);
             }
         );
     }
@@ -74,73 +74,73 @@ export class PackageComponent implements OnInit, AfterViewInit, OnDestroy {
             .map((formControl: ElementRef) => Observable.fromEvent(formControl.nativeElement, 'blur'));
 
         // Merge the blur event observable with the valueChanges observable
-        Observable.merge(this.packageForm.valueChanges, ...controlBlurs).debounceTime(800).subscribe(value => {
-            this.displayMessage = this.genericValidator.processMessages(this.packageForm);
+        Observable.merge(this.customerForm.valueChanges, ...controlBlurs).debounceTime(800).subscribe(value => {
+            this.displayMessage = this.genericValidator.processMessages(this.customerForm);
         });
     }
 
-    getPackage(id: number): void {
+    getcustomer(id: number): void {
         if (id !== 0) {
-            this.packageService.getById(id)
+            this.customerService.getById(id)
                 .subscribe(
-                (packages: IPackage) => this.onCorrierRetrieved(packages),
+                (customer: ICustomer) => this.onCorrierRetrieved(customer),
                 (error: any) => this.errorMessage = <any>error
                 );
         }
     }
 
 
-    onCorrierRetrieved(packages: IPackage): void {
-        if (this.packageForm) {
-            this.packageForm.reset();
+    onCorrierRetrieved(customer: ICustomer): void {
+        if (this.customerForm) {
+            this.customerForm.reset();
         }
-        this.package = packages;
+        this.customer = customer;
 
-        if (this.package.id === 0) {
-            this.pageTitle = 'Add Package';
+        if (this.customer.id === 0) {
+            this.pageTitle = 'Add customer';
         } else {
-            this.pageTitle = `Edit Package  : ${this.package.name}`;
+            this.pageTitle = `Edit customer  : ${this.customer.name}`;
         }
 
         // Update the data on the form
-        this.packageForm.patchValue({
-            id: this.package.id,
-            name: this.package.name,
-            description: this.package.description
+        this.customerForm.patchValue({
+            id: this.customer.id,
+            name: this.customer.name,
+            description: this.customer.description
         });
     }
 
     save(): void {
-        if (this.packageForm.dirty && this.packageForm.valid) {
-            // Copy the form values over the package object values
-            let c = Object.assign({}, this.package, this.packageForm.value);
+        if (this.customerForm.dirty && this.customerForm.valid) {
+            // Copy the form values over the customer object values
+            let c = Object.assign({}, this.customer, this.customerForm.value);
 
             console.log(c);
 
-            this.packageService.save(c)
+            this.customerService.save(c)
                 .subscribe(
                 () => this.onSaveComplete(),
                 (error: any) => this.errorMessage = <any>error
                 );
-        } else if (!this.packageForm.dirty) {
+        } else if (!this.customerForm.dirty) {
             this.onSaveComplete();
         }
     }
 
     onSaveComplete(): void {
         // Reset the form to clear the flags
-        this.packageForm.reset();
-        this.router.navigate(['/packages']);
+        this.customerForm.reset();
+        this.router.navigate(['/customers']);
     }
 
 
     delete(): void {
-        if (this.package.id === 0) {
+        if (this.customer.id === 0) {
             // Don't delete, it was never saved.
             this.onSaveComplete();
         } else {
-            if (confirm(`Really delete the product: ${this.package.name}?`)) {
-                this.packageService.delete(this.package.id)
+            if (confirm(`Really delete the product: ${this.customer.name}?`)) {
+                this.customerService.delete(this.customer.id)
                     .subscribe(
                     () => this.onSaveComplete(),
                     (error: any) => this.errorMessage = <any>error
@@ -151,7 +151,7 @@ export class PackageComponent implements OnInit, AfterViewInit, OnDestroy {
 
 
     cancel() {
-        this.router.navigate(['/packages'])
+        this.router.navigate(['/customers'])
     }
 
 

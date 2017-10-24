@@ -16,6 +16,7 @@ using System.Web.Http.Cors;
 namespace PlasticManufacturer.API.Controllers
 {
     [EnableCorsAttribute("*", "*", "*")]
+    [Serializable]
     public class CustomersController : ApiController
     {
         private PlasticManufacturerContext db = new PlasticManufacturerContext();

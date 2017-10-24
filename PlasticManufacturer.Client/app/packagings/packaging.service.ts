@@ -1,23 +1,23 @@
 ﻿import { Injectable, EventEmitter } from '@angular/core'
 import { Subject, Observable } from 'rxjs/Rx'
-import { IPackage } from './package.model'
+import { IPackaging } from './packaging.model'
 import { Http, Response, Headers, RequestOptions } from '@angular/http'
 
 @Injectable()
-export class PackageService {
-    //private baseUrl = 'http://hml.api.newfdplastics.com/api/packages';
-    private baseUrl = 'http://localhost:55751/api/packages';
+export class PackagingService {
+    //private baseUrl = 'http://hml.api.newfdplastics.com/api/packaging';
+    private baseUrl = 'http://localhost:55751/api/packagings';
 
     constructor(private http: Http) { }
 
-    save(packages: IPackage): Observable<IPackage> {
+    save(packaging: IPackaging): Observable<IPackaging> {
         let headers = new Headers({ 'Content-Type': 'application/json' });
         let options = new RequestOptions({ headers: headers });
 
-        if (packages.id === 0) {
-            return this.create(packages, options);
+        if (packaging.id === 0) {
+            return this.create(packaging, options);
         }
-        return this.update(packages, options);
+        return this.update(packaging, options);
     }
 
     delete(id: number): Observable<Response> {
@@ -29,32 +29,32 @@ export class PackageService {
             .catch(this.handleError);
     }
 
-    private create(packages: IPackage, options: RequestOptions): Observable<IPackage> {
-        packages.id = undefined;
-        return this.http.post(this.baseUrl, packages, options)
+    private create(packaging: IPackaging, options: RequestOptions): Observable<IPackaging> {
+        packaging.id = undefined;
+        return this.http.post(this.baseUrl, packaging, options)
             .map((response: Response) => {
                 return response.json();
             }).catch(this.handleError);
     }
 
-    private update(packages: IPackage, options: RequestOptions): Observable<IPackage> {
-        const url = `${this.baseUrl}/${packages.id}`;
-        return this.http.put(url, packages, options)
+    private update(packaging: IPackaging, options: RequestOptions): Observable<IPackaging> {
+        const url = `${this.baseUrl}/${packaging.id}`;
+        return this.http.put(url, packaging, options)
             .map((response: Response) => {
                 return response.json();
             }).catch(this.handleError);
     }
 
-    getAll(): Observable<IPackage[]> {
+    getAll(): Observable<IPackaging[]> {
         return this.http.get(this.baseUrl).map((response: Response) => {
-            return <IPackage[]>response.json();
+            return <IPackaging[]>response.json();
         }).catch(this.handleError);
     }
 
-    getById(id: number): Observable<IPackage> {
+    getById(id: number): Observable<IPackaging> {
         const url = `${this.baseUrl}/${id}`;
         return this.http.get(url).map((response: Response) => {
-            return <IPackage>response.json();
+            return <IPackaging>response.json();
         }).catch(this.handleError);
     }
 

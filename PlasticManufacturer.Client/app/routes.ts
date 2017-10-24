@@ -27,10 +27,10 @@ import {
 } from './carriers/index'
 
 import {
-   PackageGuard,
-    PackageComponent,
-   PackageListComponent
-} from './packages/index'
+    PackagingGuard,
+    PackagingComponent,
+    PackagingListComponent
+} from './packagings/index'
 
 import { Error404Component } from './errors/404.component'
 import { CategoryComponent } from './categories/category.component'
@@ -46,8 +46,8 @@ export const appRoutes: Routes = [
     { path: 'opacities', component: OpacityListComponent },
     { path: 'opacities/:id', canDeactivate: [OpacityGuard], component: OpacityComponent },
 
-    { path: 'packages', component: PackageListComponent },
-    { path: 'packages/:id', canDeactivate: [PackageGuard], component: PackageComponent },
+    { path: 'packagings', component: PackagingListComponent },
+    { path: 'packagings/:id', canDeactivate: [PackagingGuard], component: PackagingComponent },
 
     { path: '404', component: Error404Component }
     

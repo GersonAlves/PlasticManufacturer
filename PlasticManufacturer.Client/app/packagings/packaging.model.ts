@@ -1,4 +1,4 @@
-﻿export interface IPackage {
+﻿export interface IPackaging {
 
     id: number
     name: string
