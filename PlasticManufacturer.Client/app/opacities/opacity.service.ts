@@ -6,7 +6,7 @@ import { Http, Response, Headers, RequestOptions } from '@angular/http'
 @Injectable()
 export class OpacityService {
     //private baseUrl = 'http://hml.api.newfdplastics.com/api/opacities';
-    private baseUrl = 'http://localhost:55751/api/opacities';
+    private baseUrl = 'http://test.api.newfdplastics.com/api/opacities';
 
     constructor(private http: Http) { }
 

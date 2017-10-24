@@ -6,7 +6,7 @@ import { Http, Response, Headers, RequestOptions } from '@angular/http'
 @Injectable()
 export class PackagingService {
     //private baseUrl = 'http://hml.api.newfdplastics.com/api/packaging';
-    private baseUrl = 'http://localhost:55751/api/packagings';
+    private baseUrl = 'http://test.api.newfdplastics.com/api/packagings';
 
     constructor(private http: Http) { }
 
