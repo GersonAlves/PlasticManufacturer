@@ -5692,7 +5692,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="app\addresses\addresses.model.ts" />
     <TypeScriptCompile Include="app\analise.ts" />
     <TypeScriptCompile Include="app\app.module.ts" />
     <TypeScriptCompile Include="app\carriers\carrier-guard.service.ts" />
@@ -5762,7 +5761,6 @@
     <TypeScriptCompile Include="app\Pellets\pellet.component.ts" />
     <TypeScriptCompile Include="app\routes.ts" />
     <TypeScriptCompile Include="app\shared\generic-validator.ts" />
-    <TypeScriptCompile Include="app\shippingMethod\shipping-method.model.ts" />
     <TypeScriptCompile Include="app\user\auth.service.ts" />
     <TypeScriptCompile Include="app\user\login.component.ts" />
     <TypeScriptCompile Include="app\user\profile.component.ts" />
