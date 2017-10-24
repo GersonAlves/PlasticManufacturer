@@ -31,8 +31,17 @@
                                         <div class="form-group ">
                                             <div class="col, box-style">
                                                 <label>Name</label>
-                                                <input type="text" name="Name" ng-model="Code" class="form-control" />
-
+                                                <input type="text" formControlName="name" id="nameId" class="form-control" />
+                                                <span class="help-block" *ngIf="(customerForm.get('name').touched ||
+                                                         customerForm.get('name').dirty) &&
+                                                         customerForm.get('name').errors">
+                                                    <span *ngIf="customerForm.get('name').errors.required">
+                                                        Please enter your first name.
+                                                    </span>
+                                                    <span *ngIf="customerForm.get('name').errors.minlength">
+                                                        The first name must be longer than 3 characters.
+                                                    </span>
+                                                </span>
                                             </div>
 
                                             <div class="col">

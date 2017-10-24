@@ -112,6 +112,8 @@
     <Content Include="app\opacities\opacity.component.html" />
     <Content Include="app\packagings\packaging-list.component.html" />
     <Content Include="app\packagings\packaging.component.html" />
+    <Content Include="app\Pellets\pallet.component.html" />
+    <Content Include="app\Pellets\pellet-list.component.html" />
     <Content Include="app\user\login.component.html" />
     <Content Include="app\user\profile.component.html" />
     <Content Include="images\arr-1.gif" />
@@ -5690,6 +5692,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="app\addresses\addresses.model.ts" />
     <TypeScriptCompile Include="app\analise.ts" />
     <TypeScriptCompile Include="app\app.module.ts" />
     <TypeScriptCompile Include="app\carriers\carrier-guard.service.ts" />
@@ -5751,8 +5754,15 @@
     <TypeScriptCompile Include="app\packagings\packaging.component.ts" />
     <TypeScriptCompile Include="app\packagings\packaging.model.ts" />
     <TypeScriptCompile Include="app\packagings\packaging.service.ts" />
+    <TypeScriptCompile Include="app\Pellets\index.ts" />
+    <TypeScriptCompile Include="app\Pellets\pallet.model.ts" />
+    <TypeScriptCompile Include="app\Pellets\pallet.service.ts" />
+    <TypeScriptCompile Include="app\Pellets\pellet-guard.service.ts" />
+    <TypeScriptCompile Include="app\Pellets\pellet-list.component.ts" />
+    <TypeScriptCompile Include="app\Pellets\pellet.component.ts" />
     <TypeScriptCompile Include="app\routes.ts" />
     <TypeScriptCompile Include="app\shared\generic-validator.ts" />
+    <TypeScriptCompile Include="app\shippingMethod\shipping-method.model.ts" />
     <TypeScriptCompile Include="app\user\auth.service.ts" />
     <TypeScriptCompile Include="app\user\login.component.ts" />
     <TypeScriptCompile Include="app\user\profile.component.ts" />
