@@ -113,7 +113,7 @@ export class OpacityComponent implements OnInit, AfterViewInit, OnDestroy {
     save(): void {
         if (this.opacityForm.dirty && this.opacityForm.valid) {
             // Copy the form values over the opacity object values
-            let c = Object.assign({}, this.opacity, this.opacityForm.value);
+            let c = (<any>Object).assign({}, this.opacity, this.opacityForm.value);
 
             console.log(c);
 

@@ -1876,11 +1876,6 @@ table.tableColor td:first-child {
 	}
 }
 
-
-
-
-
-
 /* MENU NOVO */
 
 #cssmenu,#cssmenu ul,#cssmenu ul li,#cssmenu ul li a,#cssmenu #head-mobile{border:0;list-style:none;line-height:1;display:block;position:relative;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
@@ -2127,7 +2122,6 @@ table.dataTable.display tbody tr:hover>.sorting_1, table.dataTable.order-column.
         -webkit-box-sizing: border-box;
     }
 
-
     .blue-box, .blue-box-r {
         position: relative;
         right: 1px;
@@ -2161,8 +2155,6 @@ table.dataTable.display tbody tr:hover>.sorting_1, table.dataTable.order-column.
         margin-left: -20px;
     }
 
-
-
     .address-box {
         padding: 8px 0;
         margin: 0 0 10px;
@@ -2171,12 +2163,11 @@ table.dataTable.display tbody tr:hover>.sorting_1, table.dataTable.order-column.
         width: 100%;
     }
 
-
     .fields-row {
         width: 100%;
     }
 
-        .fields-row .fields-bar .col select {
+    .fields-row .fields-bar .col select {
             width: 100%;
             border-radius:5px;
         }
@@ -2184,8 +2175,9 @@ table.dataTable.display tbody tr:hover>.sorting_1, table.dataTable.order-column.
     .shipping-method {
         overflow: hidden;
         padding-left: 17px;
-
-        .shipping-method .shipping-box {
+    }
+    .shipping-method .shipping-box     
+        {
             width: 46%;
             float: left;
         }

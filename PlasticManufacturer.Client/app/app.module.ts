@@ -1,8 +1,46 @@
 ﻿import { NgModule } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
 import { RouterModule } from '@angular/router'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { HttpModule } from '@angular/http'
+import 'hammerjs';
+
+import {
+    MatAutocompleteModule,
+    MatButtonModule,
+    MatButtonToggleModule,
+    MatCardModule,
+    MatCheckboxModule,
+    MatChipsModule,
+    MatDatepickerModule,
+    MatDialogModule,
+    MatExpansionModule,
+    MatGridListModule,
+    MatIconModule,
+    MatInputModule,
+    MatListModule,
+    MatMenuModule,
+    MatNativeDateModule,
+    MatPaginatorModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
+    MatRadioModule,
+    MatRippleModule,
+    MatSelectModule,
+    MatSidenavModule,
+    MatSliderModule,
+    MatSlideToggleModule,
+    MatSnackBarModule,
+    MatSortModule,
+    MatTableModule,
+    MatTabsModule,
+    MatToolbarModule,
+    MatTooltipModule,
+    MatStepperModule
+} from '@angular/material'
+
+import { CdkTableModule } from '@angular/cdk/table'
 
 
 //import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
@@ -19,8 +57,7 @@ import {
     CreateSessionComponent,
     SessionListComponent,
     DurationPipe,
-    UpvoteComponent,
-    VoterService,
+    UpvoteComponent,   
     LocationValidatorDirective
 } from './events/index'
 
@@ -57,7 +94,8 @@ import {
 import {
     CustomerComponent,
     CustomerGuard,
-    CustomerService
+    CustomerService,
+    CustomerListComponent
 } from './customers/index'
 
 
@@ -84,7 +122,40 @@ import { Error404Component } from './errors/404.component'
         FormsModule,
         ReactiveFormsModule,
         RouterModule.forRoot(appRoutes),
-        HttpModule
+        HttpModule,
+        BrowserAnimationsModule,
+        MatAutocompleteModule,
+        MatButtonModule,
+        MatButtonToggleModule,
+        MatCardModule,
+        MatCheckboxModule,
+        MatChipsModule,
+        MatDatepickerModule,
+        MatDialogModule,
+        MatExpansionModule,
+        MatGridListModule,
+        MatIconModule,
+        MatInputModule,
+        MatListModule,
+        MatMenuModule,
+        MatNativeDateModule,
+        MatPaginatorModule,
+        MatProgressBarModule,
+        MatProgressSpinnerModule,
+        MatRadioModule,
+        MatRippleModule,
+        MatSelectModule,
+        MatSidenavModule,
+        MatSliderModule,
+        MatSlideToggleModule,
+        MatSnackBarModule,
+        MatSortModule,
+        MatTableModule,
+        MatTabsModule,
+        MatToolbarModule,
+        MatTooltipModule,
+        MatStepperModule,
+        CdkTableModule
     ],
 
     declarations: [
@@ -93,6 +164,7 @@ import { Error404Component } from './errors/404.component'
         EventThumbnailComponent,
         EventDetailsComponent,
         NavBarComponent,
+        CustomerListComponent,
         CreateEventComponent,
         CreateSessionComponent,
         Error404Component,
@@ -126,7 +198,6 @@ import { Error404Component } from './errors/404.component'
         EventResolver,
         EventListResolver,
         AuthService,
-        VoterService,
         CategoryListResolver,
         PackagingGuard,
         PackagingService,

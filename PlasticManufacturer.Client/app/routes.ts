@@ -35,7 +35,8 @@ import {
 
 import {
     CustomerComponent,
-    CustomerGuard
+    CustomerGuard,
+    CustomerListComponent
 } from './customers/index'
 
 
@@ -58,7 +59,7 @@ export const appRoutes: Routes = [
     { path: 'packagings', component: PackagingListComponent },
     { path: 'packagings/:id', canDeactivate: [PackagingGuard], component: PackagingComponent },
 
-    { path: 'customers', component: CustomerComponent },
+    { path: 'customers', component: CustomerListComponent },
     { path: 'customers/:id', canDeactivate: [CustomerGuard], component: CustomerComponent },
 
     { path: '404', component: Error404Component }

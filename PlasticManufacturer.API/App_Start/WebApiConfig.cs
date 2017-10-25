@@ -25,9 +25,13 @@ namespace PlasticManufacturer.API
                 new CamelCasePropertyNamesContractResolver();
 
 
-            //((DefaultContractResolver)config.Formatters.JsonFormatter.SerializerSettings.ContractResolver).IgnoreSerializableAttribute = true;
+            GlobalConfiguration.Configuration.Formatters.JsonFormatter.SerializerSettings
+             .ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+            GlobalConfiguration.Configuration.Formatters
+                .Remove(GlobalConfiguration.Configuration.Formatters.XmlFormatter);
 
-            config.Formatters.Remove(config.Formatters.XmlFormatter);
+
+
 
 
             var cors = new EnableCorsAttribute("*", "*", "*");

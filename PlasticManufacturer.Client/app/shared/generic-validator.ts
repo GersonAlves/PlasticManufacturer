@@ -31,7 +31,7 @@ export class GenericValidator {
                 // If it is a FormGroup, process its child controls.
                 if (c instanceof FormGroup) {
                     let childMessages = this.processMessages(c);
-                    Object.assign(messages, childMessages);
+                    (<any>Object).assign(messages, childMessages);
                 } else {
                     // Only validate if there are validation messages for the control
                     if (this.validationMessages[controlKey]) {

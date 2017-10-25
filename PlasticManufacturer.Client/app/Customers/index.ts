@@ -2,3 +2,4 @@
 export * from './customer.component'
 export * from './customer.model'
 export * from './customer-guard.service'
+export * from './customer-list.component'

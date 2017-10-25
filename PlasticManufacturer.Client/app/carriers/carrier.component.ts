@@ -113,7 +113,7 @@ export class CarrierComponent implements OnInit, AfterViewInit, OnDestroy {
     save(): void {
         if (this.carrierForm.dirty && this.carrierForm.valid) {
             // Copy the form values over the carrier object values
-            let c = Object.assign({}, this.carrier, this.carrierForm.value);
+            let c = (<any>Object).assign({}, this.carrier, this.carrierForm.value);
 
             console.log(c);
 

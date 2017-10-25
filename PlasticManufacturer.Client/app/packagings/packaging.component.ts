@@ -113,7 +113,7 @@ export class PackagingComponent implements OnInit, AfterViewInit, OnDestroy {
     save(): void {
         if (this.packagingForm.dirty && this.packagingForm.valid) {
             // Copy the form values over the package object values
-            let c = Object.assign({}, this.packaging, this.packagingForm.value);
+            let c = (<any>Object).assign({}, this.packaging, this.packagingForm.value);
 
             console.log(c);
 

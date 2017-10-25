@@ -113,7 +113,7 @@ export class CustomerComponent implements OnInit, AfterViewInit, OnDestroy {
     save(): void {
         if (this.customerForm.dirty && this.customerForm.valid) {
             // Copy the form values over the customer object values
-            let c = Object.assign({}, this.customer, this.customerForm.value);
+            let c = (<any>Object).assign({}, this.customer, this.customerForm.value);
 
             this.customerService.save(c)
                 .subscribe(

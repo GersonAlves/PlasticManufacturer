@@ -12,6 +12,8 @@ using System.Web.Http.Description;
 using PlasticManufacturer.Domain.Entities.Customers;
 using PlasticManufacturer.InfraStructure.Context;
 using System.Web.Http.Cors;
+using PlasticManufacturer.Domain.Repository;
+using PlasticManufacturer.InfraStructure.Repository;
 
 namespace PlasticManufacturer.API.Controllers
 {
@@ -19,13 +21,20 @@ namespace PlasticManufacturer.API.Controllers
     [Serializable]
     public class CustomersController : ApiController
     {
+        IRepository<Customer> repository;
+
+        public CustomersController()
+        {
+            repository = new CustomerRepository();
+        }
+
         private PlasticManufacturerContext db = new PlasticManufacturerContext();
 
         // GET: api/Customers
-        public IQueryable<Customer> GetCustomers()
+        public IEnumerable<Customer> GetCustomers()
         {
-            //var customer = db.Customers;
-            return db.Customers;
+            var Customers = repository.GetAll();
+             return Customers;
         }
 
         // GET: api/Customers/5
