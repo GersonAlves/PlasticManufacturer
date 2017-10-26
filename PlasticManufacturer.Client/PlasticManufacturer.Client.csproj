@@ -99,6 +99,8 @@
   <ItemGroup>
     <Content Include="app\carriers\carrier-list.component.html" />
     <Content Include="app\carriers\carrier.component.html" />
+    <Content Include="app\categories\category-list.component.html" />
+    <Content Include="app\categories\category.component.html" />
     <Content Include="app\customerStatus\customer-status-list.component.html" />
     <Content Include="app\customerStatus\customer-status.component.html" />
     <Content Include="app\customers\customer-list.component.html" />
@@ -126,8 +128,6 @@
     <Content Include="images\bullet1.gif" />
     <Content Include="images\bullet2.gif" />
     <Content Include="images\bullet3.gif" />
-    <Content Include="app\categories\category-list.component.html" />
-    <Content Include="app\categories\category.component.html" />
     <Content Include="images\dd-bottom.png" />
     <Content Include="images\dd-top.png" />
     <Content Include="images\facebox\b.png" />
@@ -223,6 +223,12 @@
     <TypeScriptCompile Include="app\carriers\carrier.model.ts" />
     <TypeScriptCompile Include="app\carriers\carrier.service.ts" />
     <TypeScriptCompile Include="app\carriers\index.ts" />
+    <TypeScriptCompile Include="app\categories\category-guard.service.ts" />
+    <TypeScriptCompile Include="app\categories\category-list.component.ts" />
+    <TypeScriptCompile Include="app\categories\category.component.ts" />
+    <TypeScriptCompile Include="app\categories\category.model.ts" />
+    <TypeScriptCompile Include="app\categories\category.service.ts" />
+    <TypeScriptCompile Include="app\categories\index.ts" />
     <TypeScriptCompile Include="app\common\collapsible-well.component.ts" />
     <TypeScriptCompile Include="app\common\index.ts" />
     <TypeScriptCompile Include="app\common\jQuery.service.ts" />
@@ -297,12 +303,6 @@
     <TypeScriptCompile Include="app\user\user.model.ts" />
     <TypeScriptCompile Include="app\user\user.module.ts" />
     <TypeScriptCompile Include="app\user\user.routes.ts" />
-    <TypeScriptCompile Include="app\categories\category-guard.service.ts" />
-    <TypeScriptCompile Include="app\categories\category-list.component.ts" />
-    <TypeScriptCompile Include="app\categories\category.component.ts" />
-    <TypeScriptCompile Include="app\categories\category.model.ts" />
-    <TypeScriptCompile Include="app\categories\category.service.ts" />
-    <TypeScriptCompile Include="app\categories\index.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
