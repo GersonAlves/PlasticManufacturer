@@ -99,10 +99,17 @@
   <ItemGroup>
     <Content Include="app\carriers\carrier-list.component.html" />
     <Content Include="app\carriers\carrier.component.html" />
-    <Content Include="app\categories\category.component.html" />
     <Content Include="app\customers\customer-list.component.html" />
     <Content Include="app\customers\customer.component.html" />
     <Content Include="app\customers\TesteTab.html" />
+    <Content Include="app\employees\employee-guard.service.js" />
+    <Content Include="app\employees\employee-list.component.html" />
+    <Content Include="app\employees\employee-list.component.js" />
+    <Content Include="app\employees\employee.component.html" />
+    <Content Include="app\employees\employee.component.js" />
+    <Content Include="app\employees\employee.model.js" />
+    <Content Include="app\employees\employee.service.js" />
+    <Content Include="app\employees\index.js" />
     <Content Include="app\events\create-event.component.html" />
     <Content Include="app\events\event-details\create-session.component.html" />
     <Content Include="app\events\event-details\event-details.component.html" />
@@ -123,6 +130,8 @@
     <Content Include="images\bullet1.gif" />
     <Content Include="images\bullet2.gif" />
     <Content Include="images\bullet3.gif" />
+    <Content Include="app\categories\category-list.component.html" />
+    <Content Include="app\categories\category.component.html" />
     <Content Include="images\dd-bottom.png" />
     <Content Include="images\dd-top.png" />
     <Content Include="images\facebox\b.png" />
@@ -183,6 +192,12 @@
     <Content Include="package-lock.json" />
     <Content Include="images\facebox\Thumbs.db" />
     <Content Include="images\Thumbs.db" />
+    <Content Include="app\employees\employee-guard.service.js.map" />
+    <Content Include="app\employees\employee-list.component.js.map" />
+    <Content Include="app\employees\employee.component.js.map" />
+    <Content Include="app\employees\employee.model.js.map" />
+    <Content Include="app\employees\employee.service.js.map" />
+    <Content Include="app\employees\index.js.map" />
     <None Include="Properties\PublishProfiles\Homolog.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -218,18 +233,12 @@
     <TypeScriptCompile Include="app\carriers\carrier.model.ts" />
     <TypeScriptCompile Include="app\carriers\carrier.service.ts" />
     <TypeScriptCompile Include="app\carriers\index.ts" />
-    <TypeScriptCompile Include="app\categories\category-list-resolver.service.ts" />
-    <TypeScriptCompile Include="app\categories\category-list.component.ts" />
-    <TypeScriptCompile Include="app\categories\index.ts" />
     <TypeScriptCompile Include="app\common\collapsible-well.component.ts" />
     <TypeScriptCompile Include="app\common\index.ts" />
     <TypeScriptCompile Include="app\common\jQuery.service.ts" />
     <TypeScriptCompile Include="app\common\modal-trigger.directive.ts" />
     <TypeScriptCompile Include="app\common\simple-modal.component.ts" />
     <TypeScriptCompile Include="app\common\toastr.service.ts" />
-    <TypeScriptCompile Include="app\categories\category.component.ts" />
-    <TypeScriptCompile Include="app\categories\category.model.ts" />
-    <TypeScriptCompile Include="app\categories\category.service.ts" />
     <TypeScriptCompile Include="app\customers\customer-guard.service.ts" />
     <TypeScriptCompile Include="app\customers\customer-list.component.ts" />
     <TypeScriptCompile Include="app\customers\customer.component.ts" />
@@ -237,6 +246,12 @@
     <TypeScriptCompile Include="app\customers\customer.service.ts" />
     <TypeScriptCompile Include="app\customers\index.ts" />
     <TypeScriptCompile Include="app\dummy.ts" />
+    <TypeScriptCompile Include="app\employees\employee-guard.service.ts" />
+    <TypeScriptCompile Include="app\employees\employee-list.component.ts" />
+    <TypeScriptCompile Include="app\employees\employee.component.ts" />
+    <TypeScriptCompile Include="app\employees\employee.model.ts" />
+    <TypeScriptCompile Include="app\employees\employee.service.ts" />
+    <TypeScriptCompile Include="app\employees\index.ts" />
     <TypeScriptCompile Include="app\errors\404.component.ts" />
     <TypeScriptCompile Include="app\app-component.ts" />
     <TypeScriptCompile Include="app\events\create-event.component.ts" />
@@ -286,6 +301,12 @@
     <TypeScriptCompile Include="app\user\user.model.ts" />
     <TypeScriptCompile Include="app\user\user.module.ts" />
     <TypeScriptCompile Include="app\user\user.routes.ts" />
+    <TypeScriptCompile Include="app\categories\category-guard.service.ts" />
+    <TypeScriptCompile Include="app\categories\category-list.component.ts" />
+    <TypeScriptCompile Include="app\categories\category.component.ts" />
+    <TypeScriptCompile Include="app\categories\category.model.ts" />
+    <TypeScriptCompile Include="app\categories\category.service.ts" />
+    <TypeScriptCompile Include="app\categories\index.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

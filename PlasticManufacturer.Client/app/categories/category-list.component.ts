@@ -1,43 +1,26 @@
-﻿import { Component, OnInit } from '@angular/core'
-import { CategoryService } from './category.service'
-import { ActivatedRoute } from '@angular/router'
-import { ICategory } from './category.model'
-
+﻿import { Component, OnInit } from '@angular/core';
+import { ICategory } from './category.model';
+import { CategoryService } from './category.service';
 
 @Component({
-    selector: 'categories-list',
-    template: `
-                <p>
-                <div class="panel-container">
-                    <table class="table2 gn-table">
-                        <tr>
-                            <th>
-                                Name
-                            </th>
-                            <th>
-                                Description
-                            </th>
-                        </tr>
-
-                        <tr *ngFor="let category of categories">
-                            <td>
-                                {{category?.name}}
-                            </td>
-                            <td>
-                                {{category?.description}}
-                            </td>
-                        </tr>
-                      </table>
-                 </div>
-                `
+    templateUrl: 'app/categories/category-list.component.html',
 })
 
-export class CategoriesListComponent implements OnInit {
-    categories: ICategory[]
-    constructor(private categoryService: CategoryService, private route: ActivatedRoute) {
+export class CategoryListComponent implements OnInit {
+    pageTitle: string = 'Category List';
+       errorMessage: string;
+
+       Categories: ICategory[];
+
+       constructor(private CategoryService: CategoryService) {   }
+
+    ngOnInit(): void {
+        console.log(this.CategoryService.getAll());
+        this.CategoryService.getAll()
+            .subscribe(Categories => this.Categories = Categories,
+            error => this.errorMessage = <any>error);
+
+        console.log(this.Categories);
     }
 
-    ngOnInit() {
-        this.categories = this.route.snapshot.data['categories']
-    }
 }
