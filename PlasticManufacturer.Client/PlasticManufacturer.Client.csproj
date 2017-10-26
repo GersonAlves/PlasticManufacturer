@@ -102,14 +102,8 @@
     <Content Include="app\customers\customer-list.component.html" />
     <Content Include="app\customers\customer.component.html" />
     <Content Include="app\customers\TesteTab.html" />
-    <Content Include="app\employees\employee-guard.service.js" />
     <Content Include="app\employees\employee-list.component.html" />
-    <Content Include="app\employees\employee-list.component.js" />
     <Content Include="app\employees\employee.component.html" />
-    <Content Include="app\employees\employee.component.js" />
-    <Content Include="app\employees\employee.model.js" />
-    <Content Include="app\employees\employee.service.js" />
-    <Content Include="app\employees\index.js" />
     <Content Include="app\events\create-event.component.html" />
     <Content Include="app\events\event-details\create-session.component.html" />
     <Content Include="app\events\event-details\event-details.component.html" />
@@ -192,12 +186,6 @@
     <Content Include="package-lock.json" />
     <Content Include="images\facebox\Thumbs.db" />
     <Content Include="images\Thumbs.db" />
-    <Content Include="app\employees\employee-guard.service.js.map" />
-    <Content Include="app\employees\employee-list.component.js.map" />
-    <Content Include="app\employees\employee.component.js.map" />
-    <Content Include="app\employees\employee.model.js.map" />
-    <Content Include="app\employees\employee.service.js.map" />
-    <Content Include="app\employees\index.js.map" />
     <None Include="Properties\PublishProfiles\Homolog.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
