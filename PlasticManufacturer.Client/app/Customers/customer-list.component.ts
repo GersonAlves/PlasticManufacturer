@@ -7,7 +7,7 @@ import { CustomerService } from './customer.service';
 })
 
 export class CustomerListComponent implements OnInit {
-    pageTitle: string = 'Carrier List';
+    pageTitle: string = 'Customer List';
     errorMessage: string;
 
     customers: ICustomer[];

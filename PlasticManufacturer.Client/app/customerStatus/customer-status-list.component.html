@@ -9,14 +9,14 @@
             <div class="options">
                 <ul>
                     <li>
-                        <a class="new" [routerLink]="['/customers/0']">New</a>
+                        <a class="new" [routerLink]="['/customerStatus/0']">New</a>
                     </li>
                 </ul>
             </div>
             <div class='has-error' *ngIf='errorMessage'>{{errorMessage}}</div>
 
             <div class='table-responsive'>
-                <table class="table2 gn-table" *ngIf='customers && customers.length'>
+                <table class="table2 gn-table" *ngIf='customerStatus && customerStatus.length'>
                     <thead>
                         <tr>
                             <th>Name</th>
@@ -24,13 +24,13 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor='let customer of customers'>
+                        <tr *ngFor='let customerSt of customerStatus'>
                             <td>
-                                <a [routerLink]="['/customers', customer.id]">
-                                    {{customer.name}}
+                                <a [routerLink]="['/customerStatus', customerSt.id]">
+                                    {{customerSt.name}}
                                 </a>
                             </td>
-                            <td>{{ customer?.status?.id }}</td>
+                            <td>{{ customerSt.description }}</td>
                         </tr>
                     </tbody>
                 </table>

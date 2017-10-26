@@ -99,6 +99,13 @@ import {
     CustomerListComponent
 } from './customers/index'
 
+import {
+    CustomerStatusComponent,
+    CustomerStatusListComponent,
+    CustomerStatusGuard,
+    CustomerStatusService
+} from './customerStatus/index'
+
 
 declare let toastr: Toastr;
 declare let jQuery: Object;
@@ -171,6 +178,8 @@ import { Error404Component } from './errors/404.component'
         Error404Component,
         SessionListComponent,
         CollapsibleWellComponent,
+        CustomerStatusComponent,
+        CustomerStatusListComponent,
         CustomerComponent,
         SimpleModalComponent,
         ModalTriggerDirective,
@@ -188,6 +197,8 @@ import { Error404Component } from './errors/404.component'
 
     ],
     providers: [
+        CustomerStatusGuard,
+        CustomerStatusService,
         CategoryService,
         CarrierService,
         OpacityService,
