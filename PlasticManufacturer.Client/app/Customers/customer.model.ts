@@ -1,5 +1,4 @@
-﻿import { IAddressType, ICity, IState } from '../addresses/addresses.model'
-
+﻿
 export interface ICustomer {
     id: number
     name: string
@@ -17,7 +16,7 @@ export interface ICustomer {
     addresses: ICustomerAddress[]
     customerDefaults: ICustomerDefault
     shipViaAccounts: ICustomerShipViaAccount[]
-    Notes: string
+    notes: string
 }
 
 export interface ICustomerRating {
@@ -58,11 +57,23 @@ export interface ICustomerAddress {
 }
 
 export interface ICustomerDefault {
-        addressType: IAddressType 
+    addressType?: {
+        id: number
+        name: string
+        description: string
+    }  
         street: string
         complement: string 
-         state: IState 
-         city: ICity 
+        state?: {
+            id: number
+            name: string
+            description: string
+        }
+        city?: {
+            id: number
+            name: string
+            description: string
+        } 
          zipCode: string
          phone: string  
          fax: string

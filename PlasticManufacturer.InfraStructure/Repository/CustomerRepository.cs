@@ -46,7 +46,8 @@ namespace PlasticManufacturer.InfraStructure.Repository
                return context.Customers
                             .Include(x => x.ShipViaAccounts)
                             .Include(x => x.CustomerDefaults)
-                            .Include(x => x.Addresses).ToList();
+                            .Include(x => x.Addresses)
+                            .Include(x => x.Status).ToList();
                 //return context.Customers
                 //    .Include("CustomerAddresses")
                 //    .Include("CustomersContacted")

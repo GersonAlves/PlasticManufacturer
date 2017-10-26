@@ -31,18 +31,11 @@
                                         </span>
                                     </span>
                                 </div>
-
-                                <div ngModelGroup="status" #statusGroup="ngModelGroup">
-                                    <div class="form-group">
-                                        <label for="status">Status:</label>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <select class="form-control" formControlName="status?.id">
-                                                <option *ngFor="let customerSt of customerStatus" [value]="customerSt.id">{{ customerSt.name }}</option>
-                                            </select>
-                                        </div>
-                                    </div>
+                                <div formGroupName="status" class="col-md-6">
+                                    <label for="status">Status:</label>
+                                    <select class="form-control" formControlName="id">
+                                        <option *ngFor="let customerSt of customerStatus" [value]="customerSt.id">{{ customerSt.name }}</option>
+                                    </select>
                                 </div>
                                 <div class="col">
                                     <label>Prospect</label>
@@ -90,12 +83,12 @@
                                 </div>
                                 <div class="col">
                                     <label>FED ID#</label>
-                                    <input type="text" class="form-control" />
+                                    <input formControlName="fedId" type="text" class="form-control" />
                                 </div>
                             </div>
                             <div class="notes-style">
                                 <label>Notes</label>
-                                <textarea cols="30" rows="10" class="form-control"></textarea>
+                                <textarea cols="30" rows="10" formControlName="notes" class="form-control"></textarea>
                             </div>
                         </div>
                     </mat-tab>

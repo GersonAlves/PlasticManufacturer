@@ -15,31 +15,150 @@
                         <li><a class="cancel" (click)="cancel()">Cancel</a></li>
                     </ul>
                 </div>
-                <div class="form-group"
-                     [ngClass]="{'has-error': (employeeForm.get('name').touched ||
-                                              employeeForm.get('name').dirty) &&
-                                              !employeeForm.get('name').valid }">
-                    <input formControlName="id" id="codeId" type="text" class="form-control" hidden />
+                
+                <div class="form-horizontal">
+                    <div style="border-top:2px ; padding:15px 0"></div>
+                    <div class="fields-row">
+                        <div class="fields-bar">
+                            <div class="form-group">
+                                <div class="col">
+                                    <label class="control-label " for="First Name">First Name</label>
+                                    <input class="form-control text-box single-line" id="Name" name="Name" type="text" value="" />
+                                    <span class="field-validation-valid text-danger" data-valmsg-for="Name" data-valmsg-replace="true"></span>
+                                </div>
+                                <div class="col">
+                                    <label class="control-label" for="Middle">Middle Name</label>
+                                    <input class="form-control text-box single-line" id="MiddleName" name="MiddleName" type="text" value="" />
+                                </div>
+                                <div class="col">
+                                    <label class="control-label " for="Last">Last Name</label>
+                                    <input class="form-control text-box single-line" id="LastName" name="LastName" type="text" value="" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                    <label for="name">Name:</label>
-                    <input formControlName="name" id="nameId" type="text" class="form-control" placeholder="Name..." />
-                    <br />
-                    <span class="help-block" *ngIf="(employeeForm.get('name').touched ||
-                                                         employeeForm.get('name').dirty) &&
-                                                         employeeForm.get('name').errors">
-                        <span *ngIf="employeeForm.get('name').errors.required">
-                            Please enter your first name.
-                        </span>
-                        <span *ngIf="employeeForm.get('name').errors.minlength">
-                            The first name must be longer than 3 characters.
-                        </span>
-                    </span>
+
+                    <div class="fields-row">
+                        <div class="fields-bar">
+                            <div class="form-group">
+                                <div class="col">
+                                    <label class="control-label " for="Birthday">Birthday</label>
+                                    <input class="form-control text-box single-line" placeholder="00/00/00" id="Birthday" name="Birthday" type="text" value="" />
+                                </div>
+                                <div class="col">
+                                    <label class="custom-select">Sex</label>
+                                    <select style=" border-radius:5px 5px 5px 5px;">
+                                        <option></option>
+                                        <option></option>
+                                    </select>
+                                </div>
+                                <div class="col">
+                                    <label class="custom-select">Marital Status</label>
+                                    <select style=" border-radius:5px 5px 5px 5px;">
+                                        <option></option>
+                                        <option></option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="fields-row">
+                        <div class="fields-bar">
+                            <div class="form-group">
+                                <div class="col">
+                                    <label class="control-label " for="Address">Address</label>
+                                    <input style="width: 555px" class="form-control text-box single-line" id="Address" name="Address" type="text" value="" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="fields-row">
+                        <div class="fields-bar">
+                            <div class="form-group">
+                                <div class="col">
+                                    <label class="control-label " for="City">City</label>
+                                    <input class="form-control address-box text-box single-line" id="City" name="City" type="text" value="" />
+                                </div>
+                                <div class="col">
+                                    <label class="control-label" for="State">State</label>
+                                    <input style="width:75px;" class="form-control text-box single-line" id="State" name="State" type="text" value="" />
+                                </div>
+                                <div class="col">
+                                    <label class="control-label " for="ZipCode">Zip Code</label>
+                                    <input class="form-control text-box single-line" id="ZipCode" name="ZipCode" type="text" value="" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="fields-row">
+                        <div class="fields-bar">
+                            <div class="form-group">
+                                <div class="col">
+                                    <label class="control-label " for="Telephone">Telephone</label>
+                                    <input class="form-control text-box single-line" id="Telephone" name="Telephone" type="text" value="" />
+                                </div>
+                                <div class="col">
+                                    <label class="control-label" for="Ss">SS#</label>
+                                    <input class="form-control text-box single-line" id="Ss" name="Ss" type="text" value="" />
+                                </div>
+                                <div class="col">
+                                    <label class="control-label " for="Email">E-mail</label>
+                                    <input class="form-control text-box single-line" id="Email" name="Email" type="text" value="" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="fields-row">
+                        <div class="fields-bar">
+                            <div class="form-group">
+                                <div class="col">
+                                    <label class="control-label " for="HireDate">Hire Date</label>
+                                    <input class="form-control text-box single-line" id="HireDate" name="HireDate" placeholder="00/00/00" type="text" value="" />
+                                </div>
+                                <div class="col">
+                                    <label class="custom-select">Title</label>
+                                    <select style=" border-radius:5px 5px 5px 5px;">
+                                        <option></option>
+                                        <option></option>
+                                    </select>
+                                </div>
+
+                                <div class="col">
+                                    <label class="custom-select">Department</label>
+                                    <select style=" border-radius:5px 5px 5px 5px;">
+                                        <option></option>
+                                        <option></option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="fields-row">
+                        <div class="fields-bar">
+                            <div class="form-group">
+                                <div class="col">
+                                    <label class="custom-select">Status</label>
+                                    <select style=" border-radius:5px 5px 5px 5px;">
+                                        <option>Active</option>
+                                        <option>inactive</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-                <br />
-                <div class="form-group">
-                    <label for="description">Description:</label>
-                    <input formControlName="description" id="description" type="text" class="form-control" placeholder="Description..." />
-                </div>
+
             </div>
         </form>
         <p></p>

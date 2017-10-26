@@ -54,14 +54,20 @@ export class CustomerComponent implements OnInit, AfterViewInit, OnDestroy {
     }
 
     ngOnInit(): void {
+
         this.customerForm = this.formBuilder.group({
             id: 0,
             name: ['', Validators.compose([Validators.required, Validators.minLength(3)])],
             lastName: '',
-            status: this.customerSt,
+            status: this.formBuilder.group({
+                id: 0,
+                name: ''
+            }),
             prospect: 0,
-            lead: 0
-            
+            lead: 0,
+            fedId: 0,
+            notes: ''
+
         });
 
         this.loadCustomerStatus();
@@ -104,9 +110,6 @@ export class CustomerComponent implements OnInit, AfterViewInit, OnDestroy {
         this.customerStatusService.getAll()
             .subscribe(customerStatus => this.customerStatus = customerStatus,
             error => this.errorMessage = <any>error);
-
-        console.log('customerStatus');
-        console.log(this.customerStatus);
     }
 
 
@@ -122,32 +125,37 @@ export class CustomerComponent implements OnInit, AfterViewInit, OnDestroy {
             this.pageTitle = `Edit customer  : ${this.customer.name}`;
         }
 
+        //console.log('Gerson');
+        //console.log(this.customer);
+
         // Update the data on the form
         this.customerForm.patchValue({
             id: this.customer.id,
             name: this.customer.name,
             lastName: this.customer.lastName,
-            //status: this.customer.status.id,
+            status: this.customer.status,
             prospect: this.customer.prospect,
-            lead: this.customer.lead
+            lead: this.customer.lead,
+            fedId: this.customer.fedId,
+            notes: this.customer.notes
         });
     }
 
     save(): void {
 
-        console.log( this.customerForm.value);
-        //if (this.customerForm.dirty && this.customerForm.valid) {
-        //    // Copy the form values over the customer object values
-        //    let c = (<any>Object).assign({}, this.customer, this.customerForm.value);
+        console.log(this.customerForm.value);
+        if (this.customerForm.dirty && this.customerForm.valid) {
+            // Copy the form values over the customer object values
+            let c = (<any>Object).assign({}, this.customer, this.customerForm.value);
 
-        //    this.customerService.save(c)
-        //        .subscribe(
-        //        () => this.onSaveComplete(),
-        //        (error: any) => this.errorMessage = <any>error
-        //        );
-        //} else if (!this.customerForm.dirty) {
-        //    this.onSaveComplete();
-        //}
+            this.customerService.save(c)
+                .subscribe(
+                () => this.onSaveComplete(),
+                (error: any) => this.errorMessage = <any>error
+                );
+        } else if (!this.customerForm.dirty) {
+            this.onSaveComplete();
+        }
     }
 
     onSaveComplete(): void {

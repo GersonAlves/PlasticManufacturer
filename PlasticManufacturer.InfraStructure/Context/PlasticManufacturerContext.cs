@@ -73,5 +73,13 @@ namespace PlasticManufacturer.InfraStructure.Context
             Database.SetInitializer<PlasticManufacturerContext>(null);
             base.OnModelCreating(modelBuilder);
         }
+
+        public System.Data.Entity.DbSet<PlasticManufacturer.Domain.Entities.Employees.Gender> Genders { get; set; }
+
+        public System.Data.Entity.DbSet<PlasticManufacturer.Domain.Entities.Employees.MaritalStatus> MaritalStatus { get; set; }
+
+        public System.Data.Entity.DbSet<PlasticManufacturer.Domain.Entities.Employees.Department> Departments { get; set; }
+
+        public System.Data.Entity.DbSet<PlasticManufacturer.Domain.Entities.Employees.Title> Titles { get; set; }
     }
 }
