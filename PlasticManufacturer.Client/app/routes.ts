@@ -13,12 +13,6 @@ import {
 } from './events/index'
 
 
-import {
-    CategoryGuard,
-    CategoryComponent,
-    CategoryListComponent
-} from './Categories/index'
-
 
 import {
     OpacityGuard,
@@ -47,6 +41,13 @@ import {
 
 
 import {
+   EmployeeGuard,
+   EmployeeComponent,
+   EmployeeListComponent
+} from './employees/index'
+
+
+import {
     CustomerStatusComponent,
     CustomerStatusListComponent,
     CustomerStatusGuard
@@ -61,14 +62,14 @@ import { Error404Component } from './errors/404.component'
 
 export const appRoutes: Routes = [
 
-    { path: 'categories', component: CategoryListComponent },
-    { path: 'categories/:id', canDeactivate: [CategoryGuard], component: CategoryComponent },
-
     { path: 'carriers', component: CarrierListComponent },
     { path: 'carriers/:id', canDeactivate: [CarrierGuard], component: CarrierComponent },
     
     { path: 'opacities', component: OpacityListComponent },
     { path: 'opacities/:id', canDeactivate: [OpacityGuard], component: OpacityComponent },
+
+    { path: 'employees', component: EmployeeListComponent },
+    { path: 'employees/:id', canDeactivate: [EmployeeGuard], component: EmployeeComponent },
 
     { path: 'packagings', component: PackagingListComponent },
     { path: 'packagings/:id', canDeactivate: [PackagingGuard], component: PackagingComponent },

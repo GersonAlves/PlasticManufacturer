@@ -63,12 +63,6 @@ import {
 
 import { AuthService } from './user/auth.service'
 
-import {
-    CategoryGuard,
-    CategoryComponent,
-    CategoryListComponent,
-    CategoryService
-} from './categories/index'
 
 
 import {
@@ -91,6 +85,14 @@ import {
     PackagingListComponent,
     PackagingService
 } from './packagings/index'
+
+import {
+   EmployeeGuard,
+   EmployeeComponent,
+   EmployeeListComponent,
+   EmployeeService
+} from './employees/index'
+
 
 import {
     CustomerComponent,
@@ -186,12 +188,12 @@ import { Error404Component } from './errors/404.component'
         LocationValidatorDirective,
         DurationPipe,
         UpvoteComponent,
-        CategoryComponent,
-        CategoryListComponent,
         CarrierComponent,
         CarrierListComponent,
         OpacityComponent,
         OpacityListComponent,
+        EmployeeComponent,
+        EmployeeListComponent,
         PackagingComponent,
         PackagingListComponent
 
@@ -199,13 +201,13 @@ import { Error404Component } from './errors/404.component'
     providers: [
         CustomerStatusGuard,
         CustomerStatusService,
-        CategoryService,
         CarrierService,
         OpacityService,
+        EmployeeService,
         EventService,
         CarrierGuard,
         OpacityGuard,
-        CategoryGuard,
+        EmployeeGuard,
         { provide: TOASTR_TOKEN, useValue: toastr },
         { provide: JQ_TOKEN, useValue: jQuery },
         EventResolver,
