@@ -40,6 +40,13 @@ import {
 } from './customers/index'
 
 
+import {
+    CustomerStatusComponent,
+    CustomerStatusListComponent,
+    CustomerStatusGuard
+} from './customerStatus/index'
+
+
 
 
 import { Error404Component } from './errors/404.component'
@@ -61,6 +68,10 @@ export const appRoutes: Routes = [
 
     { path: 'customers', component: CustomerListComponent },
     { path: 'customers/:id', canDeactivate: [CustomerGuard], component: CustomerComponent },
+
+
+    { path: 'customerStatus', component: CustomerStatusListComponent },
+    { path: 'customerStatus/:id', canDeactivate: [CustomerStatusGuard], component: CustomerStatusComponent },
 
     { path: '404', component: Error404Component }
     

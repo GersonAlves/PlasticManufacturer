@@ -1,23 +1,23 @@
 ﻿import { Injectable, EventEmitter } from '@angular/core'
 import { Subject, Observable } from 'rxjs/Rx'
-import { ICustomer } from './customer.model'
+import { ICustomerStatus } from './customer-status.model'
 import { Http, Response, Headers, RequestOptions } from '@angular/http'
 
 @Injectable()
-export class CustomerService {
-    //private baseUrl = 'http://hml.api.newfdplastics.com/api/customers';
-    private baseUrl = 'http://test.api.newfdplastics.com/api/customers';
+export class CustomerStatusService {
+    //private baseUrl = 'http://hml.api.newfdplastics.com/api/customerStatus';
+    private baseUrl = 'http://test.api.newfdplastics.com/api/customerStatus';
 
     constructor(private http: Http) { }
 
-    save(customer: ICustomer): Observable<ICustomer> {
+    save(customerStatus: ICustomerStatus): Observable<ICustomerStatus> {
         let headers = new Headers({ 'Content-Type': 'application/json' });
         let options = new RequestOptions({ headers: headers });
 
-        if (customer.id === 0) {
-            return this.create(customer, options);
+        if (customerStatus.id === 0) {
+            return this.create(customerStatus, options);
         }
-        return this.update(customer, options);
+        return this.update(customerStatus, options);
     }
 
     delete(id: number): Observable<Response> {
@@ -29,32 +29,32 @@ export class CustomerService {
             .catch(this.handleError);
     }
 
-    private create(customer: ICustomer, options: RequestOptions): Observable<ICustomer> {
-        customer.id = undefined;
-        return this.http.post(this.baseUrl, customer, options)
+     create(customerStatus: ICustomerStatus, options: RequestOptions): Observable<ICustomerStatus> {
+        customerStatus.id = undefined;
+        return this.http.post(this.baseUrl, customerStatus, options)
             .map((response: Response) => {
                 return response.json();
             }).catch(this.handleError);
     }
 
-    private update(customer: ICustomer, options: RequestOptions): Observable<ICustomer> {
-        const url = `${this.baseUrl}/${customer.id}`;
-        return this.http.put(url, customer, options)
+     update(customerStatus: ICustomerStatus, options: RequestOptions): Observable<ICustomerStatus> {
+        const url = `${this.baseUrl}/${customerStatus.id}`;
+        return this.http.put(url, customerStatus, options)
             .map((response: Response) => {
                 return response.json();
             }).catch(this.handleError);
     }
 
-    getAll(): Observable<ICustomer[]> {
+    getAll(): Observable<ICustomerStatus[]> {
         return this.http.get(this.baseUrl).map((response: Response) => {
-            return <ICustomer[]>response.json();
+            return <ICustomerStatus[]>response.json();
         }).catch(this.handleError);
     }
 
-    getById(id: number): Observable<ICustomer> {
+    getById(id: number): Observable<ICustomerStatus> {
         const url = `${this.baseUrl}/${id}`;
         return this.http.get(url).map((response: Response) => {
-            return <ICustomer>response.json();
+            return <ICustomerStatus>response.json();
         }).catch(this.handleError);
     }
 

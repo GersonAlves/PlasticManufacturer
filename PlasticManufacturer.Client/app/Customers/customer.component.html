@@ -31,16 +31,22 @@
                                         </span>
                                     </span>
                                 </div>
-                                <div class="col">
-                                    <label>Status</label>
-                                    <select class="form-control  ">
-                                        <option value="true">Active</option>
-                                        <option value="false">Inactive</option>
-                                    </select>
+
+                                <div ngModelGroup="status" #statusGroup="ngModelGroup">
+                                    <div class="form-group">
+                                        <label for="status">Status:</label>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <select class="form-control" formControlName="status?.id">
+                                                <option *ngFor="let customerSt of customerStatus" [value]="customerSt.id">{{ customerSt.name }}</option>
+                                            </select>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="col">
                                     <label>Prospect</label>
-                                    <select class="form-control">
+                                    <select class="form-control" formControlName="prospect">
                                         <option value="true">Yes</option>
                                         <option value="false">No</option>
                                     </select>
@@ -56,9 +62,9 @@
                             <div class="form-group">
                                 <div class="col">
                                     <label>Lead</label>
-                                    <select class="form-control">
-                                        <option value="true">Gerson Alves </option>
-                                        <option value="false">Aulus Argolo</option>
+                                    <select class="form-control" formControlName="lead">
+                                        <option value="true">Yes</option>
+                                        <option value="false">No</option>
                                     </select>
                                 </div>
                                 <div class="col">

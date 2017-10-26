@@ -12,6 +12,9 @@ import { Subscription } from 'rxjs/Subscription';
 import { ICustomer } from './customer.model'
 import { CustomerService } from './customer.service'
 
+import { CustomerStatusService } from '../customerStatus/customer-status.service'
+import { ICustomerStatus } from '../customerStatus/customer-status.model'
+
 import { GenericValidator } from '../shared/generic-validator';
 
 
@@ -24,6 +27,8 @@ export class CustomerComponent implements OnInit, AfterViewInit, OnDestroy {
 
     customerForm: FormGroup;
     customer: ICustomer;
+    customerStatus: ICustomerStatus[];
+    customerSt: ICustomerStatus;
     private sub: Subscription;
     errorMessage: string;
     pageTitle: string = 'customer';
@@ -33,7 +38,7 @@ export class CustomerComponent implements OnInit, AfterViewInit, OnDestroy {
     private validationMessages: { [key: string]: { [key: string]: string } };
     private genericValidator: GenericValidator;
 
-    constructor(private router: Router, private customerService: CustomerService, private formBuilder: FormBuilder, private route: ActivatedRoute, ) {
+    constructor(private router: Router, private customerService: CustomerService, private formBuilder: FormBuilder, private route: ActivatedRoute, private customerStatusService: CustomerStatusService) {
 
         // Defines all of the validation messages for the form.
         // These could instead be retrieved from a file or database.
@@ -52,8 +57,14 @@ export class CustomerComponent implements OnInit, AfterViewInit, OnDestroy {
         this.customerForm = this.formBuilder.group({
             id: 0,
             name: ['', Validators.compose([Validators.required, Validators.minLength(3)])],
-            lastName: ''
+            lastName: '',
+            status: this.customerSt,
+            prospect: 0,
+            lead: 0
+            
         });
+
+        this.loadCustomerStatus();
 
         // Read the customer Id from the route parameter
         this.sub = this.route.params.subscribe(
@@ -89,6 +100,15 @@ export class CustomerComponent implements OnInit, AfterViewInit, OnDestroy {
         }
     }
 
+    loadCustomerStatus(): void {
+        this.customerStatusService.getAll()
+            .subscribe(customerStatus => this.customerStatus = customerStatus,
+            error => this.errorMessage = <any>error);
+
+        console.log('customerStatus');
+        console.log(this.customerStatus);
+    }
+
 
     onCustomerRetrieved(customer: ICustomer): void {
         if (this.customerForm) {
@@ -106,23 +126,28 @@ export class CustomerComponent implements OnInit, AfterViewInit, OnDestroy {
         this.customerForm.patchValue({
             id: this.customer.id,
             name: this.customer.name,
-            lastName: this.customer.lastName
+            lastName: this.customer.lastName,
+            //status: this.customer.status.id,
+            prospect: this.customer.prospect,
+            lead: this.customer.lead
         });
     }
 
     save(): void {
-        if (this.customerForm.dirty && this.customerForm.valid) {
-            // Copy the form values over the customer object values
-            let c = (<any>Object).assign({}, this.customer, this.customerForm.value);
 
-            this.customerService.save(c)
-                .subscribe(
-                () => this.onSaveComplete(),
-                (error: any) => this.errorMessage = <any>error
-                );
-        } else if (!this.customerForm.dirty) {
-            this.onSaveComplete();
-        }
+        console.log( this.customerForm.value);
+        //if (this.customerForm.dirty && this.customerForm.valid) {
+        //    // Copy the form values over the customer object values
+        //    let c = (<any>Object).assign({}, this.customer, this.customerForm.value);
+
+        //    this.customerService.save(c)
+        //        .subscribe(
+        //        () => this.onSaveComplete(),
+        //        (error: any) => this.errorMessage = <any>error
+        //        );
+        //} else if (!this.customerForm.dirty) {
+        //    this.onSaveComplete();
+        //}
     }
 
     onSaveComplete(): void {
