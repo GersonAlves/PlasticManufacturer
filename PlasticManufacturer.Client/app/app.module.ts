@@ -57,7 +57,7 @@ import {
     CreateSessionComponent,
     SessionListComponent,
     DurationPipe,
-    UpvoteComponent,   
+    UpvoteComponent,
     LocationValidatorDirective
 } from './events/index'
 
@@ -106,6 +106,14 @@ import {
     CustomerStatusGuard,
     CustomerStatusService
 } from './customerStatus/index'
+
+
+import {
+    EmployeeGuard,
+    EmployeeService,
+    EmployeeComponent,
+    EmployeeListComponent
+} from './employees/index'
 
 
 declare let toastr: Toastr;
@@ -194,7 +202,9 @@ import { Error404Component } from './errors/404.component'
         OpacityComponent,
         OpacityListComponent,
         PackagingComponent,
-        PackagingListComponent
+        PackagingListComponent,
+        EmployeeComponent,
+        EmployeeListComponent
 
     ],
     providers: [
@@ -216,6 +226,8 @@ import { Error404Component } from './errors/404.component'
         CategoryService,
         CustomerGuard,
         CustomerService,
+        EmployeeGuard,
+        EmployeeService,
         { provide: 'canDeactivateCreateEvent', useValue: checkDirtyState }
     ],
 
