@@ -1,4 +1,4 @@
-﻿import { Component, OnInit, AfterViewInit, OnDestroy, ViewChildren, ElementRef} from '@angular/core'
+﻿import { Component, OnInit, AfterViewInit, OnDestroy, ViewChildren, ElementRef } from '@angular/core'
 import { FormBuilder, FormGroup, FormControl, FormArray, Validators, FormControlName } from '@angular/forms'
 import { ActivatedRoute, Router } from '@angular/router'
 
@@ -10,7 +10,7 @@ import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
 
 import { ICategory } from './category.model'
-import {CategoryService } from './category.service'
+import { CategoryService } from './category.service'
 
 import { GenericValidator } from '../shared/generic-validator';
 
@@ -127,7 +127,7 @@ export class CategoryComponent implements OnInit, AfterViewInit, OnDestroy {
         }
     }
 
-    onSaveComplete(): void {    
+    onSaveComplete(): void {
         // Reset the form to clear the flags
         this.categoryForm.reset();
         this.router.navigate(['/categories']);

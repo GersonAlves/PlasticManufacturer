@@ -10,17 +10,17 @@ export class CategoryListComponent implements OnInit {
     pageTitle: string = 'Category List';
        errorMessage: string;
 
-       Categories: ICategory[];
+       categories: ICategory[];
 
-       constructor(private CategoryService: CategoryService) {   }
+       constructor(private categoryService: CategoryService) {   }
 
     ngOnInit(): void {
-        console.log(this.CategoryService.getAll());
-        this.CategoryService.getAll()
-            .subscribe(Categories => this.Categories = Categories,
+        console.log(this.categoryService.getAll());
+        this.categoryService.getAll()
+            .subscribe(categories => this.categories = categories,
             error => this.errorMessage = <any>error);
 
-        console.log(this.Categories);
+        console.log(this.categories);
     }
 
 }

@@ -9,7 +9,7 @@ import 'rxjs/add/observable/merge';
 import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
 
-import { IEmployee } from './employee.model'
+import { IEmployee }from './employee.model'
 import { EmployeeService } from './employee.service'
 
 import { GenericValidator } from '../shared/generic-validator';
@@ -26,7 +26,7 @@ export class EmployeeComponent implements OnInit, AfterViewInit, OnDestroy {
     employee: IEmployee;
     private sub: Subscription;
     errorMessage: string;
-    pageTitle: string = 'Employee';
+    pageTitle: string = 'employee';
 
     // Use with the generic validation message class
     displayMessage: { [key: string]: string } = {};
@@ -39,7 +39,7 @@ export class EmployeeComponent implements OnInit, AfterViewInit, OnDestroy {
         // These could instead be retrieved from a file or database.
         this.validationMessages = {
             name: {
-                required: 'employee name is required.'
+                required: 'carreir name is required.'
             }
         };
 
@@ -59,7 +59,7 @@ export class EmployeeComponent implements OnInit, AfterViewInit, OnDestroy {
         this.sub = this.route.params.subscribe(
             params => {
                 let id = +params['id'];
-                this.getEmployee(id);
+                this.getemployee(id);
             }
         );
     }
@@ -79,7 +79,7 @@ export class EmployeeComponent implements OnInit, AfterViewInit, OnDestroy {
         });
     }
 
-    getEmployee(id: number): void {
+    getemployee(id: number): void {
         if (id !== 0) {
             this.employeeService.getById(id)
                 .subscribe(
@@ -97,9 +97,9 @@ export class EmployeeComponent implements OnInit, AfterViewInit, OnDestroy {
         this.employee = employee;
 
         if (this.employee.id === 0) {
-            this.pageTitle = 'Add Employee';
+            this.pageTitle = 'Add employee';
         } else {
-            this.pageTitle = `Edit Employee  : ${this.employee.name}`;
+            this.pageTitle = `Edit employee  : ${this.employee.name}`;
         }
 
         // Update the data on the form

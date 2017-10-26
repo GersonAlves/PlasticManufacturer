@@ -64,13 +64,20 @@ import {
 import { AuthService } from './user/auth.service'
 
 
-
 import {
     OpacityGuard,
     OpacityComponent,
     OpacityListComponent,
     OpacityService
 } from './opacities/index'
+
+
+import {
+    CategoryGuard,
+    CategoryService,
+    CategoryComponent,
+    CategoryListComponent
+} from './Categories/index'
 
 import {
     CarrierGuard,
@@ -85,14 +92,6 @@ import {
     PackagingListComponent,
     PackagingService
 } from './packagings/index'
-
-import {
-   EmployeeGuard,
-   EmployeeComponent,
-   EmployeeListComponent,
-   EmployeeService
-} from './employees/index'
-
 
 import {
     CustomerComponent,
@@ -187,13 +186,13 @@ import { Error404Component } from './errors/404.component'
         ModalTriggerDirective,
         LocationValidatorDirective,
         DurationPipe,
+        CategoryComponent,
+        CategoryListComponent,
         UpvoteComponent,
         CarrierComponent,
         CarrierListComponent,
         OpacityComponent,
         OpacityListComponent,
-        EmployeeComponent,
-        EmployeeListComponent,
         PackagingComponent,
         PackagingListComponent
 
@@ -203,11 +202,9 @@ import { Error404Component } from './errors/404.component'
         CustomerStatusService,
         CarrierService,
         OpacityService,
-        EmployeeService,
         EventService,
         CarrierGuard,
         OpacityGuard,
-        EmployeeGuard,
         { provide: TOASTR_TOKEN, useValue: toastr },
         { provide: JQ_TOKEN, useValue: jQuery },
         EventResolver,
@@ -215,6 +212,8 @@ import { Error404Component } from './errors/404.component'
         AuthService,
         PackagingGuard,
         PackagingService,
+        CategoryGuard,
+        CategoryService,
         CustomerGuard,
         CustomerService,
         { provide: 'canDeactivateCreateEvent', useValue: checkDirtyState }
