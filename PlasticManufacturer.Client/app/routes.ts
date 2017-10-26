@@ -2,7 +2,6 @@
 import { Routes } from '@angular/router'
 import { AppComponent } from './app-component'
 
-import { CategoryListResolver } from './categories/index'
 
 import {
     EventsListComponent,
@@ -12,6 +11,13 @@ import {
     CreateSessionComponent,
     EventResolver
 } from './events/index'
+
+
+import {
+    CategoryGuard,
+    CategoryComponent,
+    CategoryListComponent
+} from './Categories/index'
 
 
 import {
@@ -50,13 +56,14 @@ import {
 
 
 import { Error404Component } from './errors/404.component'
-import { CategoryComponent } from './categories/category.component'
 
 
 
 export const appRoutes: Routes = [
 
-    { path: 'categories', component: CategoryComponent, resolve: { categories: CategoryListResolver } },
+    { path: 'categories', component: CategoryListComponent },
+    { path: 'categories/:id', canDeactivate: [CategoryGuard], component: CategoryComponent },
+
     { path: 'carriers', component: CarrierListComponent },
     { path: 'carriers/:id', canDeactivate: [CarrierGuard], component: CarrierComponent },
     

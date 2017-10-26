@@ -62,11 +62,12 @@ import {
 } from './events/index'
 
 import { AuthService } from './user/auth.service'
+
 import {
+    CategoryGuard,
     CategoryComponent,
-    CategoryService,
-    CategoriesListComponent,
-    CategoryListResolver
+    CategoryListComponent,
+    CategoryService
 } from './categories/index'
 
 
@@ -186,7 +187,7 @@ import { Error404Component } from './errors/404.component'
         DurationPipe,
         UpvoteComponent,
         CategoryComponent,
-        CategoriesListComponent,
+        CategoryListComponent,
         CarrierComponent,
         CarrierListComponent,
         OpacityComponent,
@@ -204,12 +205,12 @@ import { Error404Component } from './errors/404.component'
         EventService,
         CarrierGuard,
         OpacityGuard,
+        CategoryGuard,
         { provide: TOASTR_TOKEN, useValue: toastr },
         { provide: JQ_TOKEN, useValue: jQuery },
         EventResolver,
         EventListResolver,
         AuthService,
-        CategoryListResolver,
         PackagingGuard,
         PackagingService,
         CustomerGuard,

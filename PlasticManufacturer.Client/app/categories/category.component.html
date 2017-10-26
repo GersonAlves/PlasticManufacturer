@@ -1,34 +1,47 @@
 ﻿<div class="panel spacer-20">
     <div class="panel-heading no-padding">
         <a class="panel-expander notext fr">&nbsp;</a>
-        <h2 class="clipboard">Create Category</h2>
+        <h2 class="clipboard">{{pageTitle}}</h2>
     </div>
     <div class="col-md-4">
-        <form (ngSubmit)="save(categoryForm)" #categoryForm="ngForm" autocomplete="off">
+        <form (ngSubmit)="save()" [formGroup]="categoryForm">
             <div class="panel-container">
                 <div class="options">
                     <ul>
                         <li>
-                            <span (mouseenter)="mouseoverCategoty=true" (mouseleave)="mouseoverCategoty=false">
-                                <a *ngIf="categoryForm.controls.name?.valid " class="post" (click)="save(categoryForm.value)">Post</a>
-                                <a *ngIf="categoryForm.controls.name?.invalid " class="post">Post</a>    
-                            </span>
+                            <a class="post" (click)="save()">Post</a>
                         </li>
+                        <li *ngIf="categoryForm.get('id').value !==0"><a class="delete" (click)="delete()">Delete</a></li>
                         <li><a class="cancel" (click)="cancel()">Cancel</a></li>
                     </ul>
                 </div>
-                <div class="form-group">
-                    <label for="name">Name:  <em *ngIf="categoryForm.controls.name?.invalid && (categoryForm.controls.name?.touched || mouseoverCategoty)">*</em></label>
-                    <input [(ngModel)]="name" #nameVar="ngModel" name="name" required id="name" type="text" class="form-control" placeholder="Name..." />
+                <div class="form-group"
+                     [ngClass]="{'has-error': (categoryForm.get('name').touched ||
+                                              categoryForm.get('name').dirty) &&
+                                              !categoryForm.get('name').valid }">
+                    <input formControlName="id" id="codeId" type="text" class="form-control" hidden />
+
+                    <label for="name">Name:</label>
+                    <input formControlName="name" id="nameId" type="text" class="form-control" placeholder="Name..." />
+                    <br />
+                    <span class="help-block" *ngIf="(categoryForm.get('name').touched ||
+                                                         categoryForm.get('name').dirty) &&
+                                                         categoryForm.get('name').errors">
+                        <span *ngIf="categoryForm.get('name').errors.required">
+                            Please enter your first name.
+                        </span>
+                        <span *ngIf="categoryForm.get('name').errors.minlength">
+                            The first name must be longer than 3 characters.
+                        </span>
+                    </span>
                 </div>
+                <br />
                 <div class="form-group">
                     <label for="description">Description:</label>
-                    <input [(ngModel)]="description" name="description" id="description" type="text" class="form-control" placeholder="Description..." />
+                    <input formControlName="description" id="description" type="text" class="form-control" placeholder="Description..." />
                 </div>
             </div>
         </form>
-    </div>
-    <div class="col-md-4">
-        <categories-list></categories-list>
+        <p></p>
     </div>
 </div>
