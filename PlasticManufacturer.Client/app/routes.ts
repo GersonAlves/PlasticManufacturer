@@ -39,12 +39,12 @@ import {
     CustomerListComponent
 } from './customers/index'
 
-
 import {
-   EmployeeGuard,
-   EmployeeComponent,
-   EmployeeListComponent
+    EmployeeComponent,
+    EmployeeGuard,
+    EmployeeListComponent
 } from './employees/index'
+
 
 
 import {

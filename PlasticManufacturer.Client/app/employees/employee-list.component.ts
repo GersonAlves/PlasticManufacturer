@@ -6,8 +6,8 @@ import { EmployeeService } from './employee.service';
     templateUrl: 'app/employees/employee-list.component.html',
 })
 
-export class employeeListComponent implements OnInit {
-    pageTitle: string = 'employee List';
+export class EmployeeListComponent implements OnInit {
+    pageTitle: string = 'Employee List';
     errorMessage: string;
 
     employees: IEmployee[];

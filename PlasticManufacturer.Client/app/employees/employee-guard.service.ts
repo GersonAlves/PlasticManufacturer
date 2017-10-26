@@ -4,7 +4,7 @@ import { ActivatedRouteSnapshot, CanActivate, Router, CanDeactivate } from '@ang
 import { EmployeeComponent } from './employee.component';
 
 @Injectable()
-export class employeeGuard implements CanDeactivate<EmployeeComponent> {
+export class EmployeeGuard implements CanDeactivate<EmployeeComponent> {
 
     canDeactivate(component: EmployeeComponent): boolean {
         if (component.employeeForm.dirty) {
