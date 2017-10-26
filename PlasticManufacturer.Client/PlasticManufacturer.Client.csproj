@@ -99,7 +99,6 @@
   <ItemGroup>
     <Content Include="app\carriers\carrier-list.component.html" />
     <Content Include="app\carriers\carrier.component.html" />
-    <Content Include="app\customerStatus\custome-status.service.js" />
     <Content Include="app\customerStatus\customer-status-list.component.html" />
     <Content Include="app\customerStatus\customer-status.component.html" />
     <Content Include="app\customers\customer-list.component.html" />
@@ -189,7 +188,6 @@
     <Content Include="package-lock.json" />
     <Content Include="images\facebox\Thumbs.db" />
     <Content Include="images\Thumbs.db" />
-    <Content Include="app\customerStatus\custome-status.service.js.map" />
     <None Include="Properties\PublishProfiles\Homolog.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
