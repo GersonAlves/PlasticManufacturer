@@ -5,19 +5,19 @@ import { Http, Response, Headers, RequestOptions } from '@angular/http'
 
 @Injectable()
 export class EmployeeService {
-    //private baseUrl = 'http://hml.api.newfdplastics.com/api/carriers';
-    private baseUrl = 'http://test.api.newfdplastics.com/api/carriers';
+    //private baseUrl = 'http://hml.api.newfdplastics.com/api/employees';
+    private baseUrl = 'http://test.api.newfdplastics.com/api/employees';
 
     constructor(private http: Http) { }
 
-    save(carrier: IEmployee): Observable<IEmployee> {
+    save(employee: IEmployee): Observable<IEmployee> {
         let headers = new Headers({ 'Content-Type': 'application/json' });
         let options = new RequestOptions({ headers: headers });
 
-        if (carrier.id === 0) {
-            return this.create(carrier, options);
+        if (employee.id === 0) {
+            return this.create(employee, options);
         }
-        return this.update(carrier, options);
+        return this.update(employee, options);
     }
 
     delete(id: number): Observable<Response> {
@@ -29,17 +29,17 @@ export class EmployeeService {
             .catch(this.handleError);
     }
 
-    private create(carrier: IEmployee, options: RequestOptions): Observable<IEmployee> {
-        carrier.id = undefined;
-        return this.http.post(this.baseUrl, carrier, options)
+    private create(employee: IEmployee, options: RequestOptions): Observable<IEmployee> {
+        employee.id = undefined;
+        return this.http.post(this.baseUrl, employee, options)
             .map((response: Response) => {
                 return response.json();
             }).catch(this.handleError);
     }
 
-    private update(carrier: IEmployee, options: RequestOptions): Observable<IEmployee> {
-        const url = `${this.baseUrl}/${carrier.id}`;
-        return this.http.put(url, carrier, options)
+    private update(employee: IEmployee, options: RequestOptions): Observable<IEmployee> {
+        const url = `${this.baseUrl}/${employee.id}`;
+        return this.http.put(url, employee, options)
             .map((response: Response) => {
                 return response.json();
             }).catch(this.handleError);
