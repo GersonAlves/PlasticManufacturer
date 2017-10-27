@@ -12,18 +12,39 @@ import {
     EventResolver
 } from './events/index'
 
+import {
+    CustomerRatingGuard,
+    CustomerRatingComponent,
+    CustomerRatingListComponent
+} from './customerRatings/index'
+
+
 
 
 import {
     OpacityGuard,
     OpacityComponent,
-    OpacityListComponent
+    OpacityListComponent             
 } from './opacities/index'
+
+import {
+    MaritalStatuGuard,
+    MaritalStatuComponent,
+    MaritalStatuListComponent
+} from './maritalStatus/index'
+
+
+
+import {
+    CustomerDefaultGuard,
+    CustomerDefaultComponent,
+    CustomerDefaultListComponent
+} from './customerDefaults/index'
 
 import {
     CarrierGuard,
     CarrierComponent,
-    CarrierListComponent
+    CarrierListComponent    
 } from './carriers/index'
 
 import {
@@ -73,6 +94,10 @@ import {
 } from './categories/index'
 
 
+
+
+
+
 import { Error404Component } from './errors/404.component'
 
 
@@ -85,8 +110,19 @@ export const appRoutes: Routes = [
     { path: 'categories', component: CategoryListComponent },
     { path: 'categories/:id', canDeactivate: [CategoryGuard], component: CategoryComponent },
     
-    { path: 'opacities', component: OpacityListComponent },
-    { path: 'opacities/:id', canDeactivate: [OpacityGuard], component: OpacityComponent },
+    { path: 'customerDefaults', component: CustomerDefaultListComponent },
+    { path: 'customerDefaults/:id', canDeactivate: [CustomerDefaultGuard], component: CustomerDefaultComponent },
+
+    { path: 'maritalStatus', component: MaritalStatuComponent },
+    { path: 'maritalStatus/:id', canDeactivate: [MaritalStatuGuard], component: MaritalStatuComponent },
+
+    { path: 'opacitys', component: OpacityListComponent },
+    { path: 'opacitys/:id', canDeactivate: [OpacityGuard], component: OpacityComponent },
+
+    
+
+    { path: 'customerRatings', component: CustomerRatingListComponent },
+    { path: 'customerRatings/:id', canDeactivate: [CustomerRatingGuard], component: CustomerRatingComponent },
 
     { path: 'employees', component: EmployeeListComponent },
     { path: 'employees/:id', canDeactivate: [EmployeeGuard], component: EmployeeComponent },
@@ -105,6 +141,8 @@ export const appRoutes: Routes = [
 
     { path: 'cities', component: CityListComponent },
     { path: 'cities/:id', canDeactivate: [CityGuard], component: CityComponent },
+
+    
 
     { path: '404', component: Error404Component }
     

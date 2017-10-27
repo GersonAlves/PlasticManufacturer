@@ -1,0 +1,5 @@
+﻿export * from './customerRating.service'
+export * from './customerRating.component'
+export * from './customerRating.model'
+export * from './customerRating-guard.service'
+export * from './customerRating-list.component'

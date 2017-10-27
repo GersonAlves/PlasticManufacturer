@@ -1,0 +1,47 @@
+﻿<div class="panel spacer-20">
+    <div class="panel-heading no-padding">
+        <a class="panel-expander notext fr">&nbsp;</a>
+        <h2 class="clipboard">{{pageTitle}}</h2>
+    </div>
+    <div class="col-md-4">
+        <form (ngSubmit)="save()" [formGroup]="maritalStatuForm">
+            <div class="panel-container">
+                <div class="options">
+                    <ul>
+                        <li>
+                            <a class="post" (click)="save()">Post</a>
+                        </li>
+                        <li *ngIf="maritalStatuForm.get('id').value !==0"><a class="delete" (click)="delete()">Delete</a></li>
+                        <li><a class="cancel" (click)="cancel()">Cancel</a></li>
+                    </ul>
+                </div>
+                <div class="form-group"
+                     [ngClass]="{'has-error': (maritalStatuForm.get('name').touched ||
+                                              maritalStatuForm.get('name').dirty) &&
+                                              !maritalStatuForm.get('name').valid }">
+                    <input formControlName="id" id="codeId" type="text" class="form-control" hidden />
+
+                    <label for="name">Name:</label>
+                    <input formControlName="name" id="nameId" type="text" class="form-control" placeholder="Name..." />
+                    <br />
+                    <span class="help-block" *ngIf="(maritalStatuForm.get('name').touched ||
+                                                         maritalStatuForm.get('name').dirty) &&
+                                                         maritalStatuForm.get('name').errors">
+                        <span *ngIf="maritalStatuForm.get('name').errors.required">
+                            Please enter your first name.
+                        </span>
+                        <span *ngIf="maritalStatuForm.get('name').errors.minlength">
+                            The first name must be longer than 3 characters.
+                        </span>
+                    </span>
+                </div>
+                <br />
+                <div class="form-group">
+                    <label for="description">Description:</label>
+                    <input formControlName="description" id="description" type="text" class="form-control" placeholder="Description..." />
+                </div>
+            </div>
+        </form>
+        <p></p>
+    </div>
+</div>

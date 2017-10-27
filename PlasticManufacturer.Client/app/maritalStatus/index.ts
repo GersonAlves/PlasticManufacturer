@@ -1,0 +1,5 @@
+﻿export * from './maritalStatu.service'
+export * from './maritalStatu.component'
+export * from './maritalStatu.model'
+export * from './maritalStatu-guard.service'
+export * from './maritalStatu-list.component'
