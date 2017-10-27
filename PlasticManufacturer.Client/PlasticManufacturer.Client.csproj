@@ -101,6 +101,8 @@
     <Content Include="app\carriers\carrier.component.html" />
     <Content Include="app\categories\category-list.component.html" />
     <Content Include="app\categories\category.component.html" />
+    <Content Include="app\cities\city-list.component.html" />
+    <Content Include="app\cities\city.component.html" />
     <Content Include="app\customerStatus\customer-status-list.component.html" />
     <Content Include="app\customerStatus\customer-status.component.html" />
     <Content Include="app\customers\customer-list.component.html" />
@@ -113,6 +115,8 @@
     <Content Include="app\events\event-details\event-details.component.html" />
     <Content Include="app\events\event-details\session-list.component.html" />
     <Content Include="app\events\event-details\upvote.component.css" />
+    <Content Include="app\genders\gender-list.component.html" />
+    <Content Include="app\genders\gender.component.html" />
     <Content Include="app\nav\navbar.component.html" />
     <Content Include="app\opacities\opacity-list.component.html" />
     <Content Include="app\opacities\opacity.component.html" />
@@ -228,6 +232,12 @@
     <TypeScriptCompile Include="app\categories\category.model.ts" />
     <TypeScriptCompile Include="app\categories\category.service.ts" />
     <TypeScriptCompile Include="app\categories\index.ts" />
+    <TypeScriptCompile Include="app\cities\city-guard.service.ts" />
+    <TypeScriptCompile Include="app\cities\city-list.component.ts" />
+    <TypeScriptCompile Include="app\cities\city.component.ts" />
+    <TypeScriptCompile Include="app\cities\city.model.ts" />
+    <TypeScriptCompile Include="app\cities\city.service.ts" />
+    <TypeScriptCompile Include="app\cities\index.ts" />
     <TypeScriptCompile Include="app\common\collapsible-well.component.ts" />
     <TypeScriptCompile Include="app\common\index.ts" />
     <TypeScriptCompile Include="app\common\jQuery.service.ts" />
@@ -273,6 +283,12 @@
     <TypeScriptCompile Include="app\events\shared\index.ts" />
     <TypeScriptCompile Include="app\events\location-validator.directive.ts" />
     <TypeScriptCompile Include="app\events\shared\restricted-words.validator.ts" />
+    <TypeScriptCompile Include="app\genders\gender-guard.service.ts" />
+    <TypeScriptCompile Include="app\genders\gender-list.component.ts" />
+    <TypeScriptCompile Include="app\genders\gender.component.ts" />
+    <TypeScriptCompile Include="app\genders\gender.model.ts" />
+    <TypeScriptCompile Include="app\genders\gender.service.ts" />
+    <TypeScriptCompile Include="app\genders\index.ts" />
     <TypeScriptCompile Include="app\main.ts" />
     <TypeScriptCompile Include="app\nav\navbar.component.ts" />
     <TypeScriptCompile Include="app\opacities\index.ts" />
@@ -307,11 +323,9 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="app\cities\" />
     <Folder Include="app\customerDefaults\" />
     <Folder Include="app\customerRatings\" />
     <Folder Include="app\departments\" />
-    <Folder Include="app\genders\" />
     <Folder Include="app\maritalStatus\" />
     <Folder Include="app\states\" />
     <Folder Include="app\Titles\" />

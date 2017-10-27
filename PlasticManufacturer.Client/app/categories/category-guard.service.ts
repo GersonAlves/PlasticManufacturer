@@ -8,7 +8,7 @@ export class CategoryGuard implements CanDeactivate<CategoryComponent> {
 
     canDeactivate(component: CategoryComponent): boolean {
         if (component.categoryForm.dirty) {
-            let name = component.categoryForm.get('name').value || 'New Category';
+            let name = component.categoryForm.get('name').value || 'New city';
             return confirm(`Navigate away and lose all changes to ${name}?`);
         }
         return true;

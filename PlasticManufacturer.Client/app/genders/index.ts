@@ -1,0 +1,5 @@
+﻿export * from './gender.service'
+export * from './gender.component'
+export * from './gender.model'
+export * from './gender-guard.service'
+export * from './gender-list.component'

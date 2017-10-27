@@ -71,13 +71,12 @@ import {
     OpacityService
 } from './opacities/index'
 
-
 import {
-    CategoryGuard,
-    CategoryService,
     CategoryComponent,
-    CategoryListComponent
-} from './Categories/index'
+    CategoryListComponent,
+    CategoryGuard,
+    CategoryService
+} from './categories/index'
 
 import {
     CarrierGuard,
@@ -114,6 +113,23 @@ import {
     EmployeeComponent,
     EmployeeListComponent
 } from './employees/index'
+
+import {
+    GenderComponent,
+    GenderListComponent,
+    GenderGuard,
+    GenderService
+    
+} from './genders/index'
+
+
+import {
+    CityComponent,
+    CityListComponent,
+    CityGuard,
+    CityService
+    
+} from './cities/index'
 
 
 declare let toastr: Toastr;
@@ -189,18 +205,22 @@ import { Error404Component } from './errors/404.component'
         CollapsibleWellComponent,
         CustomerStatusComponent,
         CustomerStatusListComponent,
+        CategoryComponent,
+        CategoryListComponent,
         CustomerComponent,
         SimpleModalComponent,
         ModalTriggerDirective,
         LocationValidatorDirective,
         DurationPipe,
-        CategoryComponent,
-        CategoryListComponent,
+        GenderComponent,
+        GenderListComponent,
         UpvoteComponent,
         CarrierComponent,
         CarrierListComponent,
         OpacityComponent,
         OpacityListComponent,
+        CityComponent,
+        CityListComponent,
         PackagingComponent,
         PackagingListComponent,
         EmployeeComponent,
@@ -222,12 +242,16 @@ import { Error404Component } from './errors/404.component'
         AuthService,
         PackagingGuard,
         PackagingService,
-        CategoryGuard,
-        CategoryService,
         CustomerGuard,
         CustomerService,
         EmployeeGuard,
         EmployeeService,
+        GenderGuard,
+        GenderService,
+        CityGuard,
+        CityService,
+        CategoryGuard,
+        CategoryService,
         { provide: 'canDeactivateCreateEvent', useValue: checkDirtyState }
     ],
 

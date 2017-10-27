@@ -9,31 +9,31 @@ import 'rxjs/add/observable/merge';
 import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
 
-import { ICategory } from './category.model'
-import { CategoryService } from './category.service'
+import { ICity } from './city.model'
+import { CityService } from './city.service'
 
 import { GenericValidator } from '../shared/generic-validator';
 
 
 @Component({
-    templateUrl: 'app/categories/category.component.html'
+    templateUrl: 'app/cities/city.component.html'
 })
 
-export class CategoryComponent implements OnInit, AfterViewInit, OnDestroy {
+export class CityComponent implements OnInit, AfterViewInit, OnDestroy {
     @ViewChildren(FormControlName, { read: ElementRef }) formInputElements: ElementRef[];
 
-    categoryForm: FormGroup;
-    category: ICategory;
+    cityForm: FormGroup;
+    city: ICity;
     private sub: Subscription;
     errorMessage: string;
-    pageTitle: string = 'category';
+    pageTitle: string = 'city';
 
     // Use with the generic validation message class
     displayMessage: { [key: string]: string } = {};
     private validationMessages: { [key: string]: { [key: string]: string } };
     private genericValidator: GenericValidator;
 
-    constructor(private router: Router, private categoryService: CategoryService, private formBuilder: FormBuilder, private route: ActivatedRoute, ) {
+    constructor(private router: Router, private cityService: CityService, private formBuilder: FormBuilder, private route: ActivatedRoute, ) {
 
         // Defines all of the validation messages for the form.
         // These could instead be retrieved from a file or database.
@@ -49,17 +49,17 @@ export class CategoryComponent implements OnInit, AfterViewInit, OnDestroy {
     }
 
     ngOnInit(): void {
-        this.categoryForm = this.formBuilder.group({
+        this.cityForm = this.formBuilder.group({
             id: 0,
             name: ['', Validators.compose([Validators.required, Validators.minLength(3)])],
             description: ''
         });
 
-        // Read the category Id from the route parameter
+        // Read the city Id from the route parameter
         this.sub = this.route.params.subscribe(
             params => {
                 let id = +params['id'];
-                this.getcategory(id);
+                this.getcity(id);
             }
         );
     }
@@ -74,73 +74,73 @@ export class CategoryComponent implements OnInit, AfterViewInit, OnDestroy {
             .map((formControl: ElementRef) => Observable.fromEvent(formControl.nativeElement, 'blur'));
 
         // Merge the blur event observable with the valueChanges observable
-        Observable.merge(this.categoryForm.valueChanges, ...controlBlurs).debounceTime(800).subscribe(value => {
-            this.displayMessage = this.genericValidator.processMessages(this.categoryForm);
+        Observable.merge(this.cityForm.valueChanges, ...controlBlurs).debounceTime(800).subscribe(value => {
+            this.displayMessage = this.genericValidator.processMessages(this.cityForm);
         });
     }
 
-    getcategory(id: number): void {
+    getcity(id: number): void {
         if (id !== 0) {
-            this.categoryService.getById(id)
+            this.cityService.getById(id)
                 .subscribe(
-                (category: ICategory) => this.onCorrierRetrieved(category),
+                (city: ICity) => this.onCorrierRetrieved(city),
                 (error: any) => this.errorMessage = <any>error
                 );
         }
     }
 
 
-    onCorrierRetrieved(category: ICategory): void {
-        if (this.categoryForm) {
-            this.categoryForm.reset();
+    onCorrierRetrieved(city: ICity): void {
+        if (this.cityForm) {
+            this.cityForm.reset();
         }
-        this.category = category;
+        this.city = city;
 
-        if (this.category.id === 0) {
-            this.pageTitle = 'Add category';
+        if (this.city.id === 0) {
+            this.pageTitle = 'Add city';
         } else {
-            this.pageTitle = `Edit category  : ${this.category.name}`;
+            this.pageTitle = `Edit city  : ${this.city.name}`;
         }
 
         // Update the data on the form
-        this.categoryForm.patchValue({
-            id: this.category.id,
-            name: this.category.name,
-            description: this.category.description
+        this.cityForm.patchValue({
+            id: this.city.id,
+            name: this.city.name,
+            description: this.city.description
         });
     }
 
     save(): void {
-        if (this.categoryForm.dirty && this.categoryForm.valid) {
-            // Copy the form values over the category object values
-            let c = (<any>Object).assign({}, this.category, this.categoryForm.value);
+        if (this.cityForm.dirty && this.cityForm.valid) {
+            // Copy the form values over the city object values
+            let c = (<any>Object).assign({}, this.city, this.cityForm.value);
 
             console.log(c);
 
-            this.categoryService.save(c)
+            this.cityService.save(c)
                 .subscribe(
                 () => this.onSaveComplete(),
                 (error: any) => this.errorMessage = <any>error
                 );
-        } else if (!this.categoryForm.dirty) {
+        } else if (!this.cityForm.dirty) {
             this.onSaveComplete();
         }
     }
 
     onSaveComplete(): void {
         // Reset the form to clear the flags
-        this.categoryForm.reset();
-        this.router.navigate(['/categories']);
+        this.cityForm.reset();
+        this.router.navigate(['/cities']);
     }
 
 
     delete(): void {
-        if (this.category.id === 0) {
+        if (this.city.id === 0) {
             // Don't delete, it was never saved.
             this.onSaveComplete();
         } else {
-            if (confirm(`Really delete the product: ${this.category.name}?`)) {
-                this.categoryService.delete(this.category.id)
+            if (confirm(`Really delete the product: ${this.city.name}?`)) {
+                this.cityService.delete(this.city.id)
                     .subscribe(
                     () => this.onSaveComplete(),
                     (error: any) => this.errorMessage = <any>error
@@ -151,7 +151,7 @@ export class CategoryComponent implements OnInit, AfterViewInit, OnDestroy {
 
 
     cancel() {
-        this.router.navigate(['/categories'])
+        this.router.navigate(['/cities'])
     }
 
 

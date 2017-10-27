@@ -19,8 +19,6 @@ export class CarrierListComponent implements OnInit {
         this.carrierService.getAll()
             .subscribe(carriers => this.carriers = carriers,
             error => this.errorMessage = <any>error);
-
-        console.log(this.carriers);
     }
 
 }

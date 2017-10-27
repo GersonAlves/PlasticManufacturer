@@ -7,20 +7,18 @@ import { CategoryService } from './category.service';
 })
 
 export class CategoryListComponent implements OnInit {
-    pageTitle: string = 'Category List';
-       errorMessage: string;
+    pageTitle: string = 'category List';
+    errorMessage: string;
 
-       categories: ICategory[];
+    categories: ICategory[];
 
-       constructor(private categoryService: CategoryService) {   }
+    constructor(private categoryService: CategoryService) { }
 
     ngOnInit(): void {
         console.log(this.categoryService.getAll());
         this.categoryService.getAll()
             .subscribe(categories => this.categories = categories,
             error => this.errorMessage = <any>error);
-
-        console.log(this.categories);
     }
 
 }

@@ -54,6 +54,23 @@ import {
 } from './customerStatus/index'
 
 
+import {
+    GenderComponent,
+    GenderGuard,
+    GenderListComponent
+} from './genders/index'
+
+import {
+    CityComponent,
+    CityListComponent,
+    CityGuard
+} from './cities/index'
+
+import {
+    CategoryComponent,
+    CategoryListComponent,
+    CategoryGuard
+} from './categories/index'
 
 
 import { Error404Component } from './errors/404.component'
@@ -64,6 +81,9 @@ export const appRoutes: Routes = [
 
     { path: 'carriers', component: CarrierListComponent },
     { path: 'carriers/:id', canDeactivate: [CarrierGuard], component: CarrierComponent },
+
+    { path: 'categories', component: CategoryListComponent },
+    { path: 'categories/:id', canDeactivate: [CategoryGuard], component: CategoryComponent },
     
     { path: 'opacities', component: OpacityListComponent },
     { path: 'opacities/:id', canDeactivate: [OpacityGuard], component: OpacityComponent },
@@ -77,9 +97,14 @@ export const appRoutes: Routes = [
     { path: 'customers', component: CustomerListComponent },
     { path: 'customers/:id', canDeactivate: [CustomerGuard], component: CustomerComponent },
 
-
     { path: 'customerStatus', component: CustomerStatusListComponent },
     { path: 'customerStatus/:id', canDeactivate: [CustomerStatusGuard], component: CustomerStatusComponent },
+
+    { path: 'genders', component: GenderListComponent },
+    { path: 'genders/:id', canDeactivate: [GenderGuard], component: GenderComponent },
+
+    { path: 'cities', component: CityListComponent },
+    { path: 'cities/:id', canDeactivate: [CityGuard], component: CityComponent },
 
     { path: '404', component: Error404Component }
     

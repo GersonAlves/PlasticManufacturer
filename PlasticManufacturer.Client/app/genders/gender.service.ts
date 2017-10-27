@@ -1,23 +1,23 @@
 ﻿import { Injectable, EventEmitter } from '@angular/core'
 import { Subject, Observable } from 'rxjs/Rx'
-import { ICategory } from './category.model'
+import { IGender } from './gender.model'
 import { Http, Response, Headers, RequestOptions } from '@angular/http'
 
 @Injectable()
-export class CategoryService {
-    //private baseUrl = 'http://hml.api.newfdplastics.com/api/categories';
-    private baseUrl = 'http://test.api.newfdplastics.com/api/categories';
+export class GenderService {
+    //private baseUrl = 'http://hml.api.newfdplastics.com/api/genders';
+    private baseUrl = 'http://test.api.newfdplastics.com/api/genders';
 
     constructor(private http: Http) { }
 
-    save(category: ICategory): Observable<ICategory> {
+    save(gender: IGender): Observable<IGender> {
         let headers = new Headers({ 'Content-Type': 'application/json' });
         let options = new RequestOptions({ headers: headers });
 
-        if (category.id === 0) {
-            return this.create(category, options);
+        if (gender.id === 0) {
+            return this.create(gender, options);
         }
-        return this.update(category, options);
+        return this.update(gender, options);
     }
 
     delete(id: number): Observable<Response> {
@@ -29,32 +29,32 @@ export class CategoryService {
             .catch(this.handleError);
     }
 
-    private create(category: ICategory, options: RequestOptions): Observable<ICategory> {
-        category.id = undefined;
-        return this.http.post(this.baseUrl, category, options)
+    private create(gender: IGender, options: RequestOptions): Observable<IGender> {
+        gender.id = undefined;
+        return this.http.post(this.baseUrl, gender, options)
             .map((response: Response) => {
                 return response.json();
             }).catch(this.handleError);
     }
 
-    private update(category: ICategory, options: RequestOptions): Observable<ICategory> {
-        const url = `${this.baseUrl}/${category.id}`;
-        return this.http.put(url, category, options)
+    private update(gender: IGender, options: RequestOptions): Observable<IGender> {
+        const url = `${this.baseUrl}/${gender.id}`;
+        return this.http.put(url, gender, options)
             .map((response: Response) => {
                 return response.json();
             }).catch(this.handleError);
     }
 
-    getAll(): Observable<ICategory[]> {
+    getAll(): Observable<IGender[]> {
         return this.http.get(this.baseUrl).map((response: Response) => {
-            return <ICategory[]>response.json();
+            return <IGender[]>response.json();
         }).catch(this.handleError);
     }
 
-    getById(id: number): Observable<ICategory> {
+    getById(id: number): Observable<IGender> {
         const url = `${this.baseUrl}/${id}`;
         return this.http.get(url).map((response: Response) => {
-            return <ICategory>response.json();
+            return <IGender>response.json();
         }).catch(this.handleError);
     }
 
