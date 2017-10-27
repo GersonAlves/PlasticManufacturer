@@ -1,11 +1,11 @@
 ﻿<!DOCTYPE html>
 <html>
-  <head>
-     <base href="/">
+<head>
+    <base href="/">
     <title>Plastic Manufacturer</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+
     <!--<link rel="stylesheet" href="node_modules/ng2f-bootstrap/dist/bootstrap.min.css">-->
     <link href="node_modules/toastr/build/toastr.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css">
@@ -18,17 +18,22 @@
     <script src="node_modules/toastr/build/toastr.min.js"></script>
     <script src="node_modules/zone.js/dist/zone.js"></script>
     <script src="node_modules/systemjs/dist/system.src.js"></script>
+
+   <script src="node_modules/rxjs/bundles/Rx.js"></script>
+   <!--  <script src="node_modules/angular2/bundles/angular2.dev.js"></script>-->
+
+
     <link href="node_modules/@angular/material/prebuilt-themes/indigo-pink.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
- 
+
     <script src="systemjs.config.js"></script>
     <script>
         System.import('app').catch(function (err) { console.error(err); });
     </script>
-  </head>
-  
-  <body>
+</head>
+
+<body>
     <system-app></system-app>
-  </body>
+</body>
 </html>
