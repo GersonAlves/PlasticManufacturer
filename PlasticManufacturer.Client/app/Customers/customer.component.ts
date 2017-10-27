@@ -125,9 +125,6 @@ export class CustomerComponent implements OnInit, AfterViewInit, OnDestroy {
             this.pageTitle = `Edit customer  : ${this.customer.name}`;
         }
 
-        //console.log('Gerson');
-        //console.log(this.customer);
-
         // Update the data on the form
         this.customerForm.patchValue({
             id: this.customer.id,
@@ -142,8 +139,6 @@ export class CustomerComponent implements OnInit, AfterViewInit, OnDestroy {
     }
 
     save(): void {
-
-        console.log(this.customerForm.value);
         if (this.customerForm.dirty && this.customerForm.valid) {
             // Copy the form values over the customer object values
             let c = (<any>Object).assign({}, this.customer, this.customerForm.value);
