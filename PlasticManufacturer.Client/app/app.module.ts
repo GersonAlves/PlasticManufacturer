@@ -68,8 +68,32 @@ import {
     OpacityGuard,
     OpacityComponent,
     OpacityListComponent,
-    OpacityService
+    OpacityService                           
 } from './opacities/index'
+
+import {
+    MaritalStatuGuard,
+    MaritalStatuComponent,
+    MaritalStatuListComponent,
+    MaritalStatuService
+} from './maritalStatus/index'
+
+
+
+
+import {
+    CustomerDefaultGuard,
+    CustomerDefaultComponent,
+    CustomerDefaultListComponent,
+    CustomerDefaultService
+} from './customerDefaults/index'
+                                                         
+import {            
+    CustomerRatingGuard,
+    CustomerRatingComponent,
+    CustomerRatingListComponent,
+   CustomerRatingService
+} from './customerRatings/index'
 
 import {
     CategoryComponent,
@@ -77,6 +101,7 @@ import {
     CategoryGuard,
     CategoryService
 } from './categories/index'
+
 
 import {
     CarrierGuard,
@@ -207,6 +232,11 @@ import { Error404Component } from './errors/404.component'
         CustomerStatusListComponent,
         CategoryComponent,
         CategoryListComponent,
+       
+        MaritalStatuComponent,
+        MaritalStatuListComponent,
+        OpacityComponent,
+        OpacityListComponent,
         CustomerComponent,
         SimpleModalComponent,
         ModalTriggerDirective,
@@ -217,8 +247,14 @@ import { Error404Component } from './errors/404.component'
         UpvoteComponent,
         CarrierComponent,
         CarrierListComponent,
-        OpacityComponent,
-        OpacityListComponent,
+        CustomerDefaultComponent,                                    
+        CustomerDefaultListComponent,
+        CustomerDefaultComponent,
+        CustomerDefaultListComponent,                                              
+
+
+        CustomerRatingComponent,
+        CustomerRatingListComponent,           
         CityComponent,
         CityListComponent,
         PackagingComponent,
@@ -231,10 +267,16 @@ import { Error404Component } from './errors/404.component'
         CustomerStatusGuard,
         CustomerStatusService,
         CarrierService,
-        OpacityService,
+        
+        CustomerDefaultService,
+        CustomerRatingService,
+        
         EventService,
         CarrierGuard,
-        OpacityGuard,
+        
+        CustomerDefaultGuard,
+        CustomerRatingGuard,
+        
         { provide: TOASTR_TOKEN, useValue: toastr },
         { provide: JQ_TOKEN, useValue: jQuery },
         EventResolver,
@@ -252,6 +294,11 @@ import { Error404Component } from './errors/404.component'
         CityService,
         CategoryGuard,
         CategoryService,
+   
+        OpacityGuard,
+        OpacityService,
+        MaritalStatuGuard,
+        MaritalStatuService,
         { provide: 'canDeactivateCreateEvent', useValue: checkDirtyState }
     ],
 

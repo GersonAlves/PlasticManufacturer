@@ -1,0 +1,5 @@
+﻿export * from './customerDefault.service'
+export * from './customerDefault.component'
+export * from './customerDefault.model'
+export * from './customerDefault-guard.service'
+export * from './customerDefault-list.component'

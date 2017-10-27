@@ -132,6 +132,12 @@
     <Content Include="images\bullet1.gif" />
     <Content Include="images\bullet2.gif" />
     <Content Include="images\bullet3.gif" />
+    <Content Include="app\customerRatings\customerRating-list.component.html" />
+    <Content Include="app\customerRatings\customerRating.component.html" />
+    <Content Include="app\customerDefaults\customerDefault-list.component.html" />
+    <Content Include="app\customerDefaults\customerDefault.component.html" />
+    <Content Include="app\maritalStatus\maritalStatu-list.component.html" />
+    <Content Include="app\maritalStatus\maritalStatu.component.html" />
     <Content Include="images\dd-bottom.png" />
     <Content Include="images\dd-top.png" />
     <Content Include="images\facebox\b.png" />
@@ -318,16 +324,29 @@
     <TypeScriptCompile Include="app\user\user.model.ts" />
     <TypeScriptCompile Include="app\user\user.module.ts" />
     <TypeScriptCompile Include="app\user\user.routes.ts" />
+    <TypeScriptCompile Include="app\customerRatings\customerRating-guard.service.ts" />
+    <TypeScriptCompile Include="app\customerRatings\customerRating-list.component.ts" />
+    <TypeScriptCompile Include="app\customerRatings\customerRating.component.ts" />
+    <TypeScriptCompile Include="app\customerRatings\customerRating.model.ts" />
+    <TypeScriptCompile Include="app\customerRatings\customerRating.service.ts" />
+    <TypeScriptCompile Include="app\customerRatings\index.ts" />
+    <TypeScriptCompile Include="app\customerDefaults\customerDefault-guard.service.ts" />
+    <TypeScriptCompile Include="app\customerDefaults\customerDefault-list.component.ts" />
+    <TypeScriptCompile Include="app\customerDefaults\customerDefault.component.ts" />
+    <TypeScriptCompile Include="app\customerDefaults\customerDefault.model.ts" />
+    <TypeScriptCompile Include="app\customerDefaults\customerDefault.service.ts" />
+    <TypeScriptCompile Include="app\customerDefaults\index.ts" />
+    <TypeScriptCompile Include="app\maritalStatus\maritalStatu-guard.service.ts" />
+    <TypeScriptCompile Include="app\maritalStatus\maritalStatu-list.component.ts" />
+    <TypeScriptCompile Include="app\maritalStatus\maritalStatu.component.ts" />
+    <TypeScriptCompile Include="app\maritalStatus\maritalStatu.model.ts" />
+    <TypeScriptCompile Include="app\maritalStatus\maritalStatu.service.ts" />
+    <TypeScriptCompile Include="app\maritalStatus\index.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="app\customerDefaults\" />
-    <Folder Include="app\customerRatings\" />
-    <Folder Include="app\departments\" />
-    <Folder Include="app\maritalStatus\" />
-    <Folder Include="app\states\" />
     <Folder Include="app\Titles\" />
   </ItemGroup>
   <PropertyGroup>
