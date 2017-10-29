@@ -15,12 +15,9 @@ export class EmployeeListComponent implements OnInit {
     constructor(private employeeService: EmployeeService) { }
 
     ngOnInit(): void {
-        console.log(this.employeeService.getAll());
         this.employeeService.getAll()
             .subscribe(employees => this.employees = employees,
             error => this.errorMessage = <any>error);
-
-        console.log(this.employees);
     }
 
 }

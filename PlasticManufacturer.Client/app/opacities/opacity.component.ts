@@ -115,8 +115,6 @@ export class OpacityComponent implements OnInit, AfterViewInit, OnDestroy {
             // Copy the form values over the opacity object values
             let c = (<any>Object).assign({}, this.opacity, this.opacityForm.value);
 
-            console.log(c);
-
             this.opacityService.save(c)
                 .subscribe(
                 () => this.onSaveComplete(),

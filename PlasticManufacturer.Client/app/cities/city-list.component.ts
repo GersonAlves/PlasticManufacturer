@@ -15,7 +15,6 @@ export class CityListComponent implements OnInit {
     constructor(private cityService: CityService) { }
 
     ngOnInit(): void {
-        console.log(this.cityService.getAll());
         this.cityService.getAll()
             .subscribe(cities => this.cities = cities,
             error => this.errorMessage = <any>error);

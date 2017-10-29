@@ -1,1 +1,5 @@
-﻿
+﻿export * from './pellet.service'
+export * from './pellet.component'
+export * from './pellet.model'
+export * from './pellet-guard.service'
+export * from './pellet-list.component'

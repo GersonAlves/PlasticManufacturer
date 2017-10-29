@@ -115,8 +115,6 @@ export class CustomerDefaultComponent implements OnInit, AfterViewInit, OnDestro
             // Copy the form values over the customerDefault object values
             let c = (<any>Object).assign({}, this.customerDefault, this.customerDefaultForm.value);
 
-            console.log(c);
-
             this.customerDefaultService.save(c)
                 .subscribe(
                 () => this.onSaveComplete(),

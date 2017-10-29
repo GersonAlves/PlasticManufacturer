@@ -15,12 +15,9 @@ export class OpacityListComponent implements OnInit {
     constructor(private opacityService: OpacityService) { }
 
     ngOnInit(): void {
-        console.log(this.opacityService.getAll());
         this.opacityService.getAll()
             .subscribe(opacities => this.opacities = opacities,
             error => this.errorMessage = <any>error);
-
-        console.log(this.opacities);
     }
 
 }

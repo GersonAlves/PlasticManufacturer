@@ -15,7 +15,6 @@ export class GenderListComponent implements OnInit {
     constructor(private genderService: GenderService) { }
 
     ngOnInit(): void {
-        console.log(this.genderService.getAll());
         this.genderService.getAll()
             .subscribe(genders => this.genders = genders,
             error => this.errorMessage = <any>error);

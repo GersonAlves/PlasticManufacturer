@@ -115,8 +115,6 @@ export class CityComponent implements OnInit, AfterViewInit, OnDestroy {
             // Copy the form values over the city object values
             let c = (<any>Object).assign({}, this.city, this.cityForm.value);
 
-            console.log(c);
-
             this.cityService.save(c)
                 .subscribe(
                 () => this.onSaveComplete(),

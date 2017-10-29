@@ -115,8 +115,6 @@ export class GenderComponent implements OnInit, AfterViewInit, OnDestroy {
             // Copy the form values over the gender object values
             let c = (<any>Object).assign({}, this.gender, this.genderForm.value);
 
-            console.log(c);
-
             this.genderService.save(c)
                 .subscribe(
                 () => this.onSaveComplete(),

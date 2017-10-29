@@ -103,11 +103,17 @@
     <Content Include="app\categories\category.component.html" />
     <Content Include="app\cities\city-list.component.html" />
     <Content Include="app\cities\city.component.html" />
+    <Content Include="app\customerDefaults\customerDefault-list.component.html" />
+    <Content Include="app\customerDefaults\customerDefault.component.html" />
+    <Content Include="app\customerRatings\customerRating-list.component.html" />
+    <Content Include="app\customerRatings\customerRating.component.html" />
     <Content Include="app\customerStatus\customer-status-list.component.html" />
     <Content Include="app\customerStatus\customer-status.component.html" />
     <Content Include="app\customers\customer-list.component.html" />
     <Content Include="app\customers\customer.component.html" />
     <Content Include="app\customers\TesteTab.html" />
+    <Content Include="app\departments\department-list.component.html" />
+    <Content Include="app\departments\department.component.html" />
     <Content Include="app\employees\employee-list.component.html" />
     <Content Include="app\employees\employee.component.html" />
     <Content Include="app\events\create-event.component.html" />
@@ -117,13 +123,19 @@
     <Content Include="app\events\event-details\upvote.component.css" />
     <Content Include="app\genders\gender-list.component.html" />
     <Content Include="app\genders\gender.component.html" />
+    <Content Include="app\maritalStatus\maritalStatus-list.component.html" />
+    <Content Include="app\maritalStatus\maritalStatus.component.html" />
     <Content Include="app\nav\navbar.component.html" />
     <Content Include="app\opacities\opacity-list.component.html" />
     <Content Include="app\opacities\opacity.component.html" />
     <Content Include="app\packagings\packaging-list.component.html" />
     <Content Include="app\packagings\packaging.component.html" />
-    <Content Include="app\Pellets\pallet.component.html" />
+    <Content Include="app\Pellets\pellet.component.html" />
     <Content Include="app\Pellets\pellet-list.component.html" />
+    <Content Include="app\states\state-list.component.html" />
+    <Content Include="app\states\state.component.html" />
+    <Content Include="app\titles\title-list.component.html" />
+    <Content Include="app\titles\title.component.html" />
     <Content Include="app\user\login.component.html" />
     <Content Include="app\user\profile.component.html" />
     <Content Include="images\arr-1.gif" />
@@ -6523,6 +6535,18 @@
     <TypeScriptCompile Include="app\common\modal-trigger.directive.ts" />
     <TypeScriptCompile Include="app\common\simple-modal.component.ts" />
     <TypeScriptCompile Include="app\common\toastr.service.ts" />
+    <TypeScriptCompile Include="app\customerDefaults\customerDefault-guard.service.ts" />
+    <TypeScriptCompile Include="app\customerDefaults\customerDefault-list.component.ts" />
+    <TypeScriptCompile Include="app\customerDefaults\customerDefault.component.ts" />
+    <TypeScriptCompile Include="app\customerDefaults\customerDefault.model.ts" />
+    <TypeScriptCompile Include="app\customerDefaults\customerDefault.service.ts" />
+    <TypeScriptCompile Include="app\customerDefaults\index.ts" />
+    <TypeScriptCompile Include="app\customerRatings\customerRating-guard.service.ts" />
+    <TypeScriptCompile Include="app\customerRatings\customerRating-list.component.ts" />
+    <TypeScriptCompile Include="app\customerRatings\customerRating.component.ts" />
+    <TypeScriptCompile Include="app\customerRatings\customerRating.model.ts" />
+    <TypeScriptCompile Include="app\customerRatings\customerRating.service.ts" />
+    <TypeScriptCompile Include="app\customerRatings\index.ts" />
     <TypeScriptCompile Include="app\customerStatus\customer-status-guard.service.ts" />
     <TypeScriptCompile Include="app\customerStatus\customer-status-list.component.ts" />
     <TypeScriptCompile Include="app\customerStatus\customer-status.component.ts" />
@@ -6535,6 +6559,12 @@
     <TypeScriptCompile Include="app\customers\customer.model.ts" />
     <TypeScriptCompile Include="app\customers\customer.service.ts" />
     <TypeScriptCompile Include="app\customers\index.ts" />
+    <TypeScriptCompile Include="app\departments\department-guard.service.ts" />
+    <TypeScriptCompile Include="app\departments\department-list.component.ts" />
+    <TypeScriptCompile Include="app\departments\department.component.ts" />
+    <TypeScriptCompile Include="app\departments\department.model.ts" />
+    <TypeScriptCompile Include="app\departments\department.service.ts" />
+    <TypeScriptCompile Include="app\departments\index.ts" />
     <TypeScriptCompile Include="app\dummy.ts" />
     <TypeScriptCompile Include="app\employees\employee-guard.service.ts" />
     <TypeScriptCompile Include="app\employees\employee-list.component.ts" />
@@ -6569,6 +6599,12 @@
     <TypeScriptCompile Include="app\genders\gender.service.ts" />
     <TypeScriptCompile Include="app\genders\index.ts" />
     <TypeScriptCompile Include="app\main.ts" />
+    <TypeScriptCompile Include="app\maritalStatus\index.ts" />
+    <TypeScriptCompile Include="app\maritalStatus\maritalStatus-guard.service.ts" />
+    <TypeScriptCompile Include="app\maritalStatus\maritalStatus-list.component.ts" />
+    <TypeScriptCompile Include="app\maritalStatus\maritalStatus.component.ts" />
+    <TypeScriptCompile Include="app\maritalStatus\maritalStatus.model.ts" />
+    <TypeScriptCompile Include="app\maritalStatus\maritalStatus.service.ts" />
     <TypeScriptCompile Include="app\nav\navbar.component.ts" />
     <TypeScriptCompile Include="app\opacities\index.ts" />
     <TypeScriptCompile Include="app\opacities\opacity-guard.service.ts" />
@@ -6583,14 +6619,27 @@
     <TypeScriptCompile Include="app\packagings\packaging.model.ts" />
     <TypeScriptCompile Include="app\packagings\packaging.service.ts" />
     <TypeScriptCompile Include="app\Pellets\index.ts" />
-    <TypeScriptCompile Include="app\Pellets\pallet.model.ts" />
-    <TypeScriptCompile Include="app\Pellets\pallet.service.ts" />
+    <TypeScriptCompile Include="app\Pellets\pellet.model.ts" />
+    <TypeScriptCompile Include="app\Pellets\pellet.service.ts" />
     <TypeScriptCompile Include="app\Pellets\pellet-guard.service.ts" />
     <TypeScriptCompile Include="app\Pellets\pellet-list.component.ts" />
     <TypeScriptCompile Include="app\Pellets\pellet.component.ts" />
     <TypeScriptCompile Include="app\routes.ts" />
     <TypeScriptCompile Include="app\shared\generic-validator.ts" />
+    <TypeScriptCompile Include="app\shared\http-util.service.ts" />
     <TypeScriptCompile Include="app\shippingMethod\shipping-method.model.ts" />
+    <TypeScriptCompile Include="app\states\index.ts" />
+    <TypeScriptCompile Include="app\states\state-guard.service.ts" />
+    <TypeScriptCompile Include="app\states\state-list.component.ts" />
+    <TypeScriptCompile Include="app\states\state.component.ts" />
+    <TypeScriptCompile Include="app\states\state.service.ts" />
+    <TypeScriptCompile Include="app\states\state.model.ts" />
+    <TypeScriptCompile Include="app\titles\index.ts" />
+    <TypeScriptCompile Include="app\titles\title-guard.service.ts" />
+    <TypeScriptCompile Include="app\titles\title-list.component.ts" />
+    <TypeScriptCompile Include="app\titles\title.component.ts" />
+    <TypeScriptCompile Include="app\titles\title.model.ts" />
+    <TypeScriptCompile Include="app\titles\title.service.ts" />
     <TypeScriptCompile Include="app\user\auth.service.ts" />
     <TypeScriptCompile Include="app\user\login.component.ts" />
     <TypeScriptCompile Include="app\user\profile.component.ts" />
@@ -8580,14 +8629,7 @@
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="app\customerDefaults\" />
-    <Folder Include="app\customerRatings\" />
-    <Folder Include="app\departments\" />
-    <Folder Include="app\maritalStatus\" />
-    <Folder Include="app\states\" />
-    <Folder Include="app\Titles\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

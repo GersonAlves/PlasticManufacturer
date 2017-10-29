@@ -1,0 +1,5 @@
+﻿export * from './department.service'
+export * from './department.component'
+export * from './department.model'
+export * from './department-guard.service'
+export * from './department-list.component'

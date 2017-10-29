@@ -1,64 +1,53 @@
 ﻿import { Injectable, EventEmitter } from '@angular/core'
 import { Subject, Observable } from 'rxjs/Rx'
 import { ICategory } from './category.model'
-import { Http, Response, Headers, RequestOptions } from '@angular/http'
+import { Http, Response } from '@angular/http'
+import { HttpUtilService } from '../shared/http-util.service'
 
 @Injectable()
 export class CategoryService {
-    //private baseUrl = 'http://hml.api.newfdplastics.com/api/categories';
-    private baseUrl = 'http://test.api.newfdplastics.com/api/categories';
+    private api = 'categories';
 
-    constructor(private http: Http) { }
+    constructor(private http: Http, private httpUtil: HttpUtilService) { }
 
     save(category: ICategory): Observable<ICategory> {
-        let headers = new Headers({ 'Content-Type': 'application/json' });
-        let options = new RequestOptions({ headers: headers });
 
         if (category.id === 0) {
-            return this.create(category, options);
+            return this.create(category);
         }
-        return this.update(category, options);
+        return this.update(category);
     }
 
     delete(id: number): Observable<Response> {
-        let headers = new Headers({ 'Content-Type': 'application/json' });
-        let options = new RequestOptions({ headers: headers });
 
-        const url = `${this.baseUrl}/${id}`;
-        return this.http.delete(url, options)
-            .catch(this.handleError);
+        return this.http.delete(this.httpUtil.url(this.api + '/' + id), this.httpUtil.headers())
+            .catch(this.httpUtil.processarErros);
     }
 
-    private create(category: ICategory, options: RequestOptions): Observable<ICategory> {
+    private create(category: ICategory): Observable<ICategory> {
         category.id = undefined;
-        return this.http.post(this.baseUrl, category, options)
+        return this.http.post(this.httpUtil.url(this.api), category, this.httpUtil.headers())
             .map((response: Response) => {
                 return response.json();
-            }).catch(this.handleError);
+            }).catch(this.httpUtil.processarErros);
     }
 
-    private update(category: ICategory, options: RequestOptions): Observable<ICategory> {
-        const url = `${this.baseUrl}/${category.id}`;
-        return this.http.put(url, category, options)
+    private update(category: ICategory): Observable<ICategory> {
+        return this.http.put(this.httpUtil.url(this.api + '/' + category.id), category, this.httpUtil.headers())
             .map((response: Response) => {
                 return response.json();
-            }).catch(this.handleError);
+            }).catch(this.httpUtil.processarErros);
     }
 
     getAll(): Observable<ICategory[]> {
-        return this.http.get(this.baseUrl).map((response: Response) => {
+        return this.http.get(this.httpUtil.url(this.api)).map((response: Response) => {
             return <ICategory[]>response.json();
-        }).catch(this.handleError);
+        }).catch(this.httpUtil.processarErros);
     }
 
     getById(id: number): Observable<ICategory> {
-        const url = `${this.baseUrl}/${id}`;
-        return this.http.get(url).map((response: Response) => {
+        return this.http.get(this.httpUtil.url(this.api + '/' + id)).map((response: Response) => {
             return <ICategory>response.json();
-        }).catch(this.handleError);
-    }
-
-    private handleError(error: Response) {
-        return Observable.throw(error.statusText);
+        }).catch(this.httpUtil.processarErros);
     }
 }

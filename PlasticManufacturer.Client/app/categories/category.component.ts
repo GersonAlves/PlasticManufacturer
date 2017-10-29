@@ -115,8 +115,6 @@ export class CategoryComponent implements OnInit, AfterViewInit, OnDestroy {
             // Copy the form values over the category object values
             let c = (<any>Object).assign({}, this.category, this.categoryForm.value);
 
-            console.log(c);
-
             this.categoryService.save(c)
                 .subscribe(
                 () => this.onSaveComplete(),
