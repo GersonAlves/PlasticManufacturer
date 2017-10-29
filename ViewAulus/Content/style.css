@@ -362,6 +362,9 @@ h1#logo a {
 */
 
 #content { padding-top: 18px; }
+.content2 {
+    padding-top: 100%;
+}
 .gn-table {
 	width: 100%;
 	border-collapse: collapse;
