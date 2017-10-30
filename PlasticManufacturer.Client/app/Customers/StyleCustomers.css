@@ -1,0 +1,27 @@
+﻿/* Address*/
+.margin-adjust{ margin-right: 328px;}
+
+/*Shipping Information*/
+.shipping-method {
+    overflow: hidden;
+    margin: 4px 280px;
+    width: 40%;
+}
+
+.shipping-method-box {
+    width: 80%;
+    margin-right: -70px;
+}
+
+    .shipping-method .form-group {
+        margin: 0 0 15px;
+    }
+
+    .shipping-method .shipping-box {
+        width: 46.8%;
+        float: left;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        margin-right: 2%;
+    }

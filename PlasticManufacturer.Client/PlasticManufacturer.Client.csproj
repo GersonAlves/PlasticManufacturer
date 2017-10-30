@@ -107,6 +107,7 @@
     <Content Include="app\customerStatus\customer-status.component.html" />
     <Content Include="app\customers\customer-list.component.html" />
     <Content Include="app\customers\customer.component.html" />
+    <Content Include="app\customers\StyleCustomers.css" />
     <Content Include="app\customers\TesteTab.html" />
     <Content Include="app\employees\employee-list.component.html" />
     <Content Include="app\employees\employee.component.html" />
