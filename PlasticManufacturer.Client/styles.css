@@ -334,15 +334,16 @@ body.active { overflow: hidden; }
 	overflow: visible;
 }
 #header {
-	min-height: 58px;
-	background: #074875;
-	/* background: #14567e;
+    min-height: 58px;
+    background: #074875;
+    position: fixed;
+    width: 100%;
+    /* background: #14567e;
 	background: -moz-linear-gradient(top,  #14567e 0%, #16557e 7%, #4eb0d9 7%, #1496cb 11%, #1285b9 32%, #0b4c7b 79%, #0a3c69 98%, #092841 100%);
 	background: -webkit-linear-gradient(top,  #14567e 0%,#16557e 7%,#4eb0d9 7%,#1496cb 11%,#1285b9 32%,#0b4c7b 79%,#0a3c69 98%,#092841 100%);
 	background: linear-gradient(to bottom,  #14567e 0%,#16557e 7%,#4eb0d9 7%,#1496cb 11%,#1285b9 32%,#0b4c7b 79%,#0a3c69 98%,#092841 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#14567e', endColorstr='#092841',GradientType=0 ); */
-
-	/*background: url(images/header-bg.gif) repeat-x 0 0;*/
+    /*background: url(images/header-bg.gif) repeat-x 0 0;*/
 }
 #header .shell {
 	max-width: 1000px;
@@ -538,7 +539,7 @@ h1#logo a {
 	Content
 */
 
-#content { padding-top: 18px; }
+#content { padding-top: 120px; }
 .gn-table {
 	width: 100%;
 	border-collapse: collapse;
