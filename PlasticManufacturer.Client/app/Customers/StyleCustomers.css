@@ -1,6 +1,20 @@
 ﻿/* Address*/
 .margin-adjust{ margin-right: 328px;}
 
+/*Default*/
+.c-padding {
+    margin: 0 !important;
+    height: 30px !important;
+    padding: 4px 4px;
+    border-radius: 5px;
+    border: 1px solid #75abc1;
+    -webkit-box-shadow: inset 1px 0px 1px 1px rgba(240,240,240,1);
+    -moz-box-shadow: inset 1px 0px 1px 1px rgba(240,240,240,1);
+    box-shadow: inset 1px 0px 1px 1px rgba(240,240,240,1);
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
 /*Shipping Information*/
 .shipping-method {
     overflow: hidden;
@@ -24,4 +38,38 @@
         -moz-box-sizing: border-box;
         box-sizing: border-box;
         margin-right: 2%;
+    }
+
+/deep/ .mat-tab-group {
+    padding: 0%;
+}
+
+    @media screen and (max-width:1000px) {
+
+        /deep/ .mat-tab-group {
+            padding: 0%;
+        }
+    }
+
+
+@media screen and (max-width:577px) {
+    .margin-adjust {
+        margin-right: 0px;
+    }
+    .shipping-method[_ngcontent-c0][_ngcontent-c0] {
+        overflow: hidden;
+        margin: 1px -11px;
+        width: 100%;
+    }
+    .shipping-method-box[_ngcontent-c0] {
+        width: 90%;
+    }
+
+    .shipping-method[_ngcontent-c0] {
+        overflow: hidden;
+        margin: 1px -2px;
+        width: 100%;
+    }
+
+
     }

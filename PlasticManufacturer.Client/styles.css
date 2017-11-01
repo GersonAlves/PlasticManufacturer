@@ -843,19 +843,7 @@ th.last { border: 0 !important; }
 .tab-default .label { margin: 15px 0 5px;  }
 .box-margin{ margin-left:60px;}
 
-.shipping-method {
-	overflow: hidden;
-	margin: 0 auto;
-	max-width: 500px;
-}
-.shipping-method .form-group { margin: 0 0 15px; }
-.shipping-method .shipping-box {
-	width: 46.8%;
-	float: left;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-    margin-right:2%;
+
 
 }
 
@@ -1707,7 +1695,9 @@ table.tableColor td:first-child {
 	.table1 .col2 { width: 75px; }
 	.color-match .order-info { padding: 10px; }
 	.color-match .col .field-wide { width: 215px; }
-	.fields-row .fields-bar .col { width: 139px; }
+    .fields-row .fields-bar .col {
+        width: 195px;
+    }
 	.fields-row .bar label { font-size: 9px; }
 	.add-info .box, .add-info .frm-row label {
 		float: none;
