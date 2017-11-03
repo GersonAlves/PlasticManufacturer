@@ -102,6 +102,13 @@ import {
     CategoryService
 } from './categories/index'
 
+import {
+ 
+    SalesOrderGuard,
+    SalesOrderService,
+    SalesOrderComponent
+} from './salesOrders/index'
+
 
 import {
     CarrierGuard,
@@ -174,6 +181,7 @@ import {
 
 import { appRoutes } from './routes'
 import { Error404Component } from './errors/404.component'
+import { SalesOrderListComponent } from "./salesOrders/salesOrder-list.component";
 
 @NgModule({
     imports: [BrowserModule,
@@ -232,6 +240,8 @@ import { Error404Component } from './errors/404.component'
         CustomerStatusListComponent,
         CategoryComponent,
         CategoryListComponent,
+        SalesOrderComponent,
+        SalesOrderListComponent,
        
         MaritalStatuComponent,
         MaritalStatuListComponent,
@@ -294,6 +304,8 @@ import { Error404Component } from './errors/404.component'
         CityService,
         CategoryGuard,
         CategoryService,
+        SalesOrderGuard,
+        SalesOrderService,
    
         OpacityGuard,
         OpacityService,

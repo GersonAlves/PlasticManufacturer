@@ -1,0 +1,5 @@
+﻿export * from './salesOrder.service'
+export * from './salesOrder.component'
+export * from './salesOrder.model'
+export * from './salesOrder-guard.service'
+export * from './salesOrder-list.component'

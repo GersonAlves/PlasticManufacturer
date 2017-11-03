@@ -28,6 +28,13 @@ import {
 } from './opacities/index'
 
 import {
+    SalesOrderGuard,
+    SalesOrderComponent,
+    SalesOrderListComponent
+} from './salesOrders/index'
+
+
+import {
     MaritalStatuGuard,
     MaritalStatuComponent,
     MaritalStatuListComponent
@@ -109,9 +116,14 @@ export const appRoutes: Routes = [
 
     { path: 'categories', component: CategoryListComponent },
     { path: 'categories/:id', canDeactivate: [CategoryGuard], component: CategoryComponent },
+
+   
     
     { path: 'customerDefaults', component: CustomerDefaultListComponent },
     { path: 'customerDefaults/:id', canDeactivate: [CustomerDefaultGuard], component: CustomerDefaultComponent },
+
+    { path: 'salesOrders', component: SalesOrderListComponent },
+    { path: 'salesOrders/:id', canDeactivate: [SalesOrderGuard], component: SalesOrderComponent },
 
     { path: 'maritalStatus', component: MaritalStatuComponent },
     { path: 'maritalStatus/:id', canDeactivate: [MaritalStatuGuard], component: MaritalStatuComponent },

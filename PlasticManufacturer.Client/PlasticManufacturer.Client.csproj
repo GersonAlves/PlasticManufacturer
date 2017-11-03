@@ -125,8 +125,11 @@
     <Content Include="app\packagings\packaging.component.html" />
     <Content Include="app\Pellets\pallet.component.html" />
     <Content Include="app\Pellets\pellet-list.component.html" />
+    <Content Include="app\salesOrders\salesOrder-list.component.html" />
+    <Content Include="app\salesOrders\salesOrder.component.html" />
     <Content Include="app\user\login.component.html" />
     <Content Include="app\user\profile.component.html" />
+    <Content Include="default.css" />
     <Content Include="images\arr-1.gif" />
     <Content Include="images\arr-2.gif" />
     <Content Include="images\background.gif" />
@@ -182,6 +185,12 @@
     <Content Include="images\whitebox-bg.png" />
     <Content Include="images\whitebox-bottom.png" />
     <Content Include="images\whitebox-top.png" />
+    <Content Include="jquery-fns.js" />
+    <Content Include="jquery.js" />
+    <Content Include="media-480.css" />
+    <Content Include="media-768.css" />
+    <Content Include="media-desktop.css" />
+    <Content Include="media-laptops.css" />
     <Content Include="node_modules\%40angular\animations\%40angular\animations.es5.js" />
     <Content Include="node_modules\%40angular\animations\%40angular\animations.js" />
     <Content Include="node_modules\%40angular\animations\%40angular\animations\browser.es5.js" />
@@ -6590,6 +6599,12 @@
     <TypeScriptCompile Include="app\Pellets\pellet-list.component.ts" />
     <TypeScriptCompile Include="app\Pellets\pellet.component.ts" />
     <TypeScriptCompile Include="app\routes.ts" />
+    <TypeScriptCompile Include="app\salesOrders\index.ts" />
+    <TypeScriptCompile Include="app\salesOrders\salesOrder-guard.service.ts" />
+    <TypeScriptCompile Include="app\salesOrders\salesOrder-list.component.ts" />
+    <TypeScriptCompile Include="app\salesOrders\salesOrder.component.ts" />
+    <TypeScriptCompile Include="app\salesOrders\salesOrder.model.ts" />
+    <TypeScriptCompile Include="app\salesOrders\salesOrder.service.ts" />
     <TypeScriptCompile Include="app\shared\generic-validator.ts" />
     <TypeScriptCompile Include="app\shippingMethod\shipping-method.model.ts" />
     <TypeScriptCompile Include="app\user\auth.service.ts" />
@@ -8588,6 +8603,7 @@
     <Folder Include="app\maritalStatus\" />
     <Folder Include="app\states\" />
     <Folder Include="app\Titles\" />
+    <Folder Include="css\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

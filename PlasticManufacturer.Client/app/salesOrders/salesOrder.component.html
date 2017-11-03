@@ -1,0 +1,414 @@
+﻿<div class="panel spacer-20">
+    <div class="panel-heading">
+        <a href="#" class="panel-expander notext fr">&nbsp;</a>
+        <h2 class="clipboard">{{pageTitle}}</h2>
+    </div>
+
+
+    <div class="col-md-4">
+        <form (ngSubmit)="save()" [formGroup]="salesOrderForm">
+            <div class="panel-container">
+                <div class="options">
+                    <ul>
+                        <li>
+                            <a class="post" (click)="save()">Post</a>
+                        </li>
+                        <li *ngIf="salesOrderForm.get('id').value !==0"><a class="delete" (click)="delete()">Delete</a></li>
+                        <li><a class="cancel" (click)="cancel()">Cancel</a></li>
+                    </ul>
+                </div>
+                <br />
+                <div class="order-info">
+                    <div class="fields-row">
+                        <div class="fields-bar">
+                            <div class="col">
+                                <label>Customer</label>
+                                <select name="select-resin" class="form-control">
+                                    <option value="option1">- Select One -</option>
+                                    <option value="option2">option2</option>
+                                </select>
+                            </div>
+                            <div class="col">
+                                <label>&nbsp;</label>
+                                <input type="text" class="form-control" />
+                            </div>
+                            <div class="col">
+                                <label>Credit Limit</label>
+                                <input type="text" class="form-control" />
+                            </div>
+                            <div class="col">
+                                <label>Rating</label>
+                                <input type="text" class="form-control" />
+                            </div>
+                            <div class="col">
+                                <label>SO#</label>
+                                <input type="text" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="fields-row">
+                        <div class="fields-bar">
+                            <div class="col">
+                                <span class="label">Ship From</span>
+                                <div class="boxes-holder">
+                                    <div class="">
+                                        <label>F&D Plastic, Inc.</label>
+                                        <p>23 Jytek Dr.</p>
+                                        <p>LEOMINSTER MA 01453</p>
+                                        <p>Phone: (987) 534-8999</p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="date fl col">
+                                <label>Date</label>
+                                <input type="text" class="form-control" placeholder="00/00/0000" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="fields-row">
+                        <div class="fields-bar">
+                            <div class="col">
+                                <label>Bill to:</label>
+                                <select name="select-resin" class="custom-select">
+                                    <option value="option1">- Select One -</option>
+                                    <option value="option2">option2</option>
+                                </select>
+                            </div>
+                            <div class="col">
+                                <label>&nbsp;</label>
+                                <input type="text" class="form-control" />
+                            </div>
+                            <div class="col">
+                                <label>&nbsp;</label>
+                                <input type="text" class="form-control" />
+                            </div>
+                            <div class="col">
+                                <label>&nbsp;</label>
+                                <input type="text" class="form-control" />
+                            </div>
+                            <div class="col">
+                                <label>&nbsp;</label>
+                                <input type="text" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="fields-bar">
+                            <div class="col">
+                                <label>Phone:</label>
+                                <input type="text" class="form-control" />
+                            </div>
+                            <div class="col">
+                                <label>Fax</label>
+                                <input type="text" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="fields-bar">
+                            <div class="col">
+                                <label>Ship to:</label>
+                                <select name="select-resin" class="custom-select">
+                                    <option value="option1">- Select One -</option>
+                                    <option value="option2">option2</option>
+                                </select>
+                            </div>
+                            <div class="col">
+                                <label>&nbsp;</label>
+                                <input type="text" class="form-control" />
+                            </div>
+                            <div class="col">
+                                <label>&nbsp;</label>
+                                <input type="text" class="form-control" />
+                            </div>
+                            <div class="col">
+                                <label>&nbsp;</label>
+                                <input type="text" class="form-control" />
+                            </div>
+                            <div class="col">
+                                <label>&nbsp;</label>
+                                <input type="text" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="fields-bar">
+                            <div class="col">
+                                <label>Phone:</label>
+                                <input type="text" class="form-control" />
+                            </div>
+                            <div class="col">
+                                <label>Fax</label>
+                                <input type="text" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <table class="dataTable display responsive no-wrap tableBig">
+                        <thead>
+                            <tr>
+                                <th>PO #</th>
+                                <th>Contact Person</th>
+                                <th>Ship Attention To</th>
+                                <th>Terms</th>
+                                <th>Freight</th>
+                                <th>Sales Person</th>
+                                <th class="last">Written by</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-title="PO #"><input type="text" class="form-control" /></td>
+                                <td data-title="Contact Person"><input type="text" class="form-control" /></td>
+                                <td data-title="Ship Attention To"><input type="text" class="form-control" /></td>
+                                <td data-title="Terms"><input type="text" class="form-control" /></td>
+                                <td data-title="Freight"><input type="text" class="form-control" /></td>
+                                <td data-title="Sales Person">
+                                    <select name="select-resin" class="form-control">
+                                        <option value="option1">- Select One -</option>
+                                        <option value="option2">option2</option>
+                                    </select>
+                                </td>
+                                <td data-title="Written by" class="last">
+                                    <select name="select-resin" class="form-control">
+                                        <option value="option1">- Select One -</option>
+                                        <option value="option2">option2</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="fields-row m-t-20">
+                        <div class="fields-bar">
+                            <div class="col">
+                                <label>Type</label>
+                                <select name="select-resin" class="form-control">
+                                    <option value="option1">- Select One -</option>
+                                    <option value="option2">option2</option>
+                                </select>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <table class="dataTable display responsive no-wrap tableBig">
+                        <thead>
+                            <tr>
+                                <th>Lot #</th>
+                                <th>Qty Units</th>
+                                <th>Qty Ord.</th>
+                                <th>Qty Stock</th>
+                                <th>To Be Prod</th>
+                                <th>Item</th>
+                                <th>Description</th>
+                                <th>Unit</th>
+                                <th>Currency</th>
+                                <th>Price</th>
+                                <th>% Disc</th>
+                                <th class="last">Extension</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-title="Lot #"><input type="text" class="form-control" /></td>
+                                <td data-title="Qty Units"><input type="text" class="form-control" /></td>
+                                <td data-title="Qty Ord."><input type="text" class="form-control" /></td>
+                                <td data-title="Qty Stock"><input type="text" class="form-control" /></td>
+                                <td data-title="To Be Prod"><input type="text" class="form-control" /></td>
+                                <td data-title="Item"><input type="text" class="form-control" /></td>
+                                <td data-title="Description"><input type="text" class="form-control" /></td>
+                                <td data-title="Unit"><input type="text" class="form-control" /></td>
+                                <td data-title="Currency"><input type="text" class="form-control" /></td>
+                                <td data-title="Price"><input type="text" class="form-control" /></td>
+                                <td data-title="% Disc"><input type="text" class="form-control" /></td>
+                                <td data-title="Extension" class="last"><input type="text" class="form-control" /></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="dataTable display responsive no-wrap tableBig">
+                        <thead>
+                            <tr>
+                                <th>Ship Via</th>
+                                <th>Account #</th>
+                                <th>Processing Dept</th>
+                                <th>Packaging</th>
+                                <th>Status</th>
+                                <th>Ship On</th>
+                                <th>Make & Hold</th>
+                                <th>Authorized?</th>
+                                <th>Qt Sent</th>
+                                <th class="last">Date Sent</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-title="Ship Via">
+                                    <select name="select-resin" class="form-control">
+                                        <option value="option1">- Select One -</option>
+                                        <option value="option2">option2</option>
+                                    </select>
+                                </td>
+                                <td data-title="Account"><input type="text" class="form-control" /></td>
+                                <td data-title="Processing Dept">
+                                    <select name="select-resin" class="form-control">
+                                        <option value="option1">- Select One -</option>
+                                        <option value="option2">option2</option>
+                                    </select>
+                                </td>
+                                <td data-title="Packaging">
+                                    <select name="select-resin" class="form-control">
+                                        <option value="option1">- Select One -</option>
+                                        <option value="option2">option2</option>
+                                    </select>
+                                </td>
+                                <td data-title="Status">
+                                    <select name="select-resin" class="form-control">
+                                        <option value="option1">- Select One -</option>
+                                        <option value="option2">option2</option>
+                                    </select>
+                                </td>
+                                <td data-title="Ship On"><input type="text" class="form-control" /></td>
+                                <td data-title="Make & Hold">
+                                    <select name="select-resin" class="form-control">
+                                        <option value="option1">- Select One -</option>
+                                        <option value="option2">option2</option>
+                                    </select>
+                                </td>
+                                <td data-title="Authorized?">
+
+                                    <div class="chk-box">
+                                        <input type="checkbox" class="checkbox" />
+                                        <label>Shp</label>
+                                    </div>
+
+                                    <div class="chk-box">
+                                        <input type="checkbox" class="checkbox" />
+                                        <label>Prod</label>
+                                    </div>
+
+                                    <div class="chk-box">
+                                        <input type="checkbox" class="checkbox" />
+                                        <label>Ovr Qt</label>
+                                    </div>
+                                </td>
+                                <td data-title="Qt Sent"><input type="text" class="form-control" /></td>
+                                <td class="last" data-title="Date Sent"><input type="text" class="form-control" /></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="fields-row m-t-20">
+                        <div class="fields-bar">
+                            <div class="col">
+                                <label>C.O.A.</label>
+                                <input type="text" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="fields-bar">
+                            <div class="col">
+                                <label>Customer Shipp Date</label>
+                                <textarea class="form-control"></textarea>
+                            </div>
+                            <div class="col">
+                                <label>&nbsp;</label>
+                                <textarea class="form-control"></textarea>
+                            </div>
+                            <div class="col">
+                                <label>&nbsp;</label>
+                                <a href="#" class="fr button button-green br">Prod</a>
+                            </div>
+                            <div class="col">
+                                <label>&nbsp;</label>
+                                <textarea class="form-control"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fields-row">
+                        <div class="fields-bar">
+                            <div class="col">
+                                <label>Cielab</label>
+                                <input type="text" class="form-control" />
+                            </div>
+                            <div class="col">
+                                <label>UV Letter</label>
+                                <input type="text" class="form-control" />
+                            </div>
+                            <div class="col">
+                                <label>Material Sheet</label>
+                                <input type="text" class="form-control" />
+                            </div>
+                            <div class="col">
+                                <label>Qty Chips</label>
+                                <input type="text" class="form-control" />
+                            </div>
+                            <div class="col txt-center">
+                                <label>Ship Aready?</label>
+                                <div class="chk-box">
+                                    <input type="checkbox" class="checkbox" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fields-bar">
+                            <div class="col">
+                                <label>MSDS</label>
+                                <input type="text" class="form-control" />
+                            </div>
+                            <div class="col">
+                                <label>FDA Letter</label>
+                                <input type="text" class="form-control" />
+                            </div>
+                            <div class="col">
+                                <label>Sample Qty Ahead</label>
+                                <input type="text" class="form-control" />
+                            </div>
+                            <div class="col">
+                                <label>Pkg Sample in</label>
+                                <input type="text" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="fields-row m-t-20">
+                        <div class="fields-bar">
+                            <div class="col" style="width:100%">
+                                <label>Notes</label>
+                                <textarea class="form-control"></textarea>
+                            </div>
+                            <div class="col">
+                                <label>Subtotal</label>
+                                <input type="text" class="form-control" />
+                            </div>
+                            <div class="col">
+                                <label>0.0%</label>
+                                <input type="text" class="form-control" />
+                            </div>
+                            <div class="col">
+                                <label>Subtotal</label>
+                                <input type="text" class="form-control" />
+                            </div>
+                            <div class="col">
+                                <label>0.0%</label>
+                                <input type="text" class="form-control" />
+                            </div>
+                            <div class="col">
+                                <label>Freight Amt</label>
+                                <input type="text" class="form-control" />
+                            </div>
+                            <div class="col">
+                                <label>SO Total</label>
+                                <input type="text" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+          </div>
+        </form>
+
+
+            <p></p>
+        </div>
+</div>

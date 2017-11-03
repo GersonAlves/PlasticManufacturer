@@ -1,5 +1,6 @@
-﻿/* Address*/
-.margin-adjust{ margin-right: 328px;}
+﻿.margin-adjust {
+    margin-right: 328px;
+}
 
 /*Default*/
 .c-padding {
@@ -27,49 +28,26 @@
     margin-right: -70px;
 }
 
-    .shipping-method .form-group {
-        margin: 0 0 15px;
-    }
+.shipping-method .form-group {
+    margin: 0 0 15px;
+}
 
-    .shipping-method .shipping-box {
-        width: 46.8%;
-        float: left;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-        margin-right: 2%;
-    }
+.shipping-method .shipping-box {
+    width: 46.8%;
+    float: left;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-right: 2%;
+}
 
 /deep/ .mat-tab-group {
     padding: 0%;
 }
 
-    @media screen and (max-width:1000px) {
+@media screen and (max-width:1000px) {
 
-        /deep/ .mat-tab-group {
-            padding: 0%;
-        }
+    /deep/ .mat-tab-group {
+        padding: 0%;
     }
-
-
-@media screen and (max-width:577px) {
-    .margin-adjust {
-        margin-right: 0px;
-    }
-    .shipping-method[_ngcontent-c0][_ngcontent-c0] {
-        overflow: hidden;
-        margin: 1px -11px;
-        width: 100%;
-    }
-    .shipping-method-box[_ngcontent-c0] {
-        width: 90%;
-    }
-
-    .shipping-method[_ngcontent-c0] {
-        overflow: hidden;
-        margin: 1px -2px;
-        width: 100%;
-    }
-
-
-    }
+}
