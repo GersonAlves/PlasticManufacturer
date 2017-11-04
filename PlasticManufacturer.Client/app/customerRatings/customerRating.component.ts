@@ -26,7 +26,7 @@ export class CustomerRatingComponent implements OnInit, AfterViewInit, OnDestroy
     customerRating: ICustomerRating;
     private sub: Subscription;
     errorMessage: string;
-    pageTitle: string = 'CustomerRating';
+    pageTitle: string = 'Customer Rating';
 
     // Use with the generic validation message class
     displayMessage: { [key: string]: string } = {};
@@ -97,9 +97,9 @@ export class CustomerRatingComponent implements OnInit, AfterViewInit, OnDestroy
         this.customerRating = customerRating;
 
         if (this.customerRating.id === 0) {
-            this.pageTitle = 'Add CustomerRating';
+            this.pageTitle = 'Add Customer Rating';
         } else {
-            this.pageTitle = `Edit CustomerRating  : ${this.customerRating.name}`;
+            this.pageTitle = `Edit Customer Rating  : ${this.customerRating.name}`;
         }
 
         // Update the data on the form
@@ -112,10 +112,8 @@ export class CustomerRatingComponent implements OnInit, AfterViewInit, OnDestroy
 
     save(): void {
         if (this.customerRatingForm.dirty && this.customerRatingForm.valid) {
-            // Copy the form values over the customerRating object values
+            // Copy the form values over the customer Rating object values
             let c = (<any>Object).assign({}, this.customerRating, this.customerRatingForm.value);
-
-            console.log(c);
 
             this.customerRatingService.save(c)
                 .subscribe(

@@ -115,8 +115,6 @@ export class PackagingComponent implements OnInit, AfterViewInit, OnDestroy {
             // Copy the form values over the package object values
             let c = (<any>Object).assign({}, this.packaging, this.packagingForm.value);
 
-            console.log(c);
-
             this.packagingService.save(c)
                 .subscribe(
                 () => this.onSaveComplete(),

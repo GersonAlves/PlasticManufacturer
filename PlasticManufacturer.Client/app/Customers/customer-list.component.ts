@@ -15,12 +15,9 @@ export class CustomerListComponent implements OnInit {
     constructor(private customerService: CustomerService) { }
 
     ngOnInit(): void {
-        console.log(this.customerService.getAll());
         this.customerService.getAll()
             .subscribe(customers => this.customers = customers,
             error => this.errorMessage = <any>error);
-
-        console.log(this.customers);
     }
 
 }

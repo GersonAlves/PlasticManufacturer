@@ -18,26 +18,16 @@ import {
     CustomerRatingListComponent
 } from './customerRatings/index'
 
-
-
-
 import {
     OpacityGuard,
     OpacityComponent,
-    OpacityListComponent             
+    OpacityListComponent
 } from './opacities/index'
 
 import {
-    SalesOrderGuard,
-    SalesOrderComponent,
-    SalesOrderListComponent
-} from './salesOrders/index'
-
-
-import {
-    MaritalStatuGuard,
-    MaritalStatuComponent,
-    MaritalStatuListComponent
+    MaritalStatusGuard,
+    MaritalStatusComponent,
+    MaritalStatusListComponent
 } from './maritalStatus/index'
 
 
@@ -51,7 +41,7 @@ import {
 import {
     CarrierGuard,
     CarrierComponent,
-    CarrierListComponent    
+    CarrierListComponent
 } from './carriers/index'
 
 import {
@@ -81,7 +71,6 @@ import {
     CustomerStatusGuard
 } from './customerStatus/index'
 
-
 import {
     GenderComponent,
     GenderGuard,
@@ -100,16 +89,46 @@ import {
     CategoryGuard
 } from './categories/index'
 
+import {
+    DepartmentComponent,
+    DepartmentListComponent,
+    DepartmentGuard,
+} from './departments/index'
 
+import {
+    PelletComponent,
+    PelletListComponent,
+    PelletGuard,
+} from './pellets/index'
 
+import {
+    StateComponent,
+    StatetListComponent,
+    StateGuard
+} from './states/index'
 
-
+import {
+    TitleComponent,
+    TitleListComponent,
+    TitleGuard
+} from './titles/index'
 
 import { Error404Component } from './errors/404.component'
 
 
-
 export const appRoutes: Routes = [
+
+    { path: 'states', component: StatetListComponent },
+    { path: 'states/:id', canDeactivate: [StateGuard], component: StateComponent },
+
+    { path: 'titles', component: TitleListComponent },
+    { path: 'titles/:id', canDeactivate: [TitleGuard], component: TitleComponent },
+
+    { path: 'pellets', component: PelletListComponent },
+    { path: 'pellets/:id', canDeactivate: [PelletGuard], component: PelletComponent },
+
+    { path: 'departments', component: DepartmentListComponent },
+    { path: 'departments/:id', canDeactivate: [DepartmentGuard], component: DepartmentComponent },
 
     { path: 'carriers', component: CarrierListComponent },
     { path: 'carriers/:id', canDeactivate: [CarrierGuard], component: CarrierComponent },
@@ -117,21 +136,16 @@ export const appRoutes: Routes = [
     { path: 'categories', component: CategoryListComponent },
     { path: 'categories/:id', canDeactivate: [CategoryGuard], component: CategoryComponent },
 
-   
-    
     { path: 'customerDefaults', component: CustomerDefaultListComponent },
     { path: 'customerDefaults/:id', canDeactivate: [CustomerDefaultGuard], component: CustomerDefaultComponent },
 
-    { path: 'salesOrders', component: SalesOrderListComponent },
-    { path: 'salesOrders/:id', canDeactivate: [SalesOrderGuard], component: SalesOrderComponent },
-
-    { path: 'maritalStatus', component: MaritalStatuComponent },
-    { path: 'maritalStatus/:id', canDeactivate: [MaritalStatuGuard], component: MaritalStatuComponent },
+    { path: 'maritalStatus', component: MaritalStatusListComponent },
+    { path: 'maritalStatus/:id', canDeactivate: [MaritalStatusGuard], component: MaritalStatusComponent },
 
     { path: 'opacitys', component: OpacityListComponent },
     { path: 'opacitys/:id', canDeactivate: [OpacityGuard], component: OpacityComponent },
 
-    
+
 
     { path: 'customerRatings', component: CustomerRatingListComponent },
     { path: 'customerRatings/:id', canDeactivate: [CustomerRatingGuard], component: CustomerRatingComponent },
@@ -154,10 +168,10 @@ export const appRoutes: Routes = [
     { path: 'cities', component: CityListComponent },
     { path: 'cities/:id', canDeactivate: [CityGuard], component: CityComponent },
 
-    
+
 
     { path: '404', component: Error404Component }
-    
+
 
 
     //{ path: 'events/new', component: CreateEventComponent, canDeactivate: ['canDeactivateCreateEvent'] },

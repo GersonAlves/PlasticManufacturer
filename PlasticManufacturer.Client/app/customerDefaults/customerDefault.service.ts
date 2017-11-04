@@ -1,64 +1,53 @@
 ﻿import { Injectable, EventEmitter } from '@angular/core'
 import { Subject, Observable } from 'rxjs/Rx'
 import { ICustomerDefault } from './customerDefault.model'
-import { Http, Response, Headers, RequestOptions } from '@angular/http'
+import { Http, Response } from '@angular/http'
+import { HttpUtilService } from '../shared/http-util.service'
+
 
 @Injectable()
 export class CustomerDefaultService {
-    //private baseUrl = 'http://hml.api.newfdplastics.com/api/customerDefaults';
-    private baseUrl = 'http://test.api.newfdplastics.com/api/customerDefaults';
-    
-    constructor(private http: Http) { }
+
+    private api = 'customerDefaults';
+
+    constructor(private http: Http, private httpUtil: HttpUtilService) { }
 
     save(customerDefault: ICustomerDefault): Observable<ICustomerDefault> {
-        let headers = new Headers({ 'Content-Type': 'application/json' });
-        let options = new RequestOptions({ headers: headers });
-
         if (customerDefault.id === 0) {
-            return this.create(customerDefault, options);
+            return this.create(customerDefault);
         }
-        return this.update(customerDefault, options);
-    }   
+        return this.update(customerDefault);
+    }
 
     delete(id: number): Observable<Response> {
-        let headers = new Headers({ 'Content-Type': 'application/json' });
-        let options = new RequestOptions({ headers: headers });
-
-        const url = `${this.baseUrl}/${id}`;
-        return this.http.delete(url, options)
-            .catch(this.handleError);
+        return this.http.delete(this.httpUtil.url(this.api + '' + id), this.httpUtil.headers())
+            .catch(this.httpUtil.processarErros);
     }
 
-    private create(customerDefault: ICustomerDefault, options: RequestOptions): Observable<ICustomerDefault> {
+    private create(customerDefault: ICustomerDefault): Observable<ICustomerDefault> {
         customerDefault.id = undefined;
-        return this.http.post(this.baseUrl, customerDefault, options)
+        return this.http.post(this.httpUtil.url(this.api), customerDefault, this.httpUtil.headers())
             .map((response: Response) => {
                 return response.json();
-            }).catch(this.handleError);
+            }).catch(this.httpUtil.processarErros);
     }
-    
-    private update(customerDefault: ICustomerDefault, options: RequestOptions): Observable<ICustomerDefault> {
-        const url = `${this.baseUrl}/${customerDefault.id}`;
-        return this.http.put(url, customerDefault, options)
+
+    private update(customerDefault: ICustomerDefault): Observable<ICustomerDefault> {
+        return this.http.put(this.httpUtil.url(this.api + '/' + customerDefault.id), customerDefault, this.httpUtil.headers())
             .map((response: Response) => {
                 return response.json();
-            }).catch(this.handleError);
+            }).catch(this.httpUtil.processarErros);
     }
-   
+
     getAll(): Observable<ICustomerDefault[]> {
-        return this.http.get(this.baseUrl).map((response: Response) => {
+        return this.http.get(this.httpUtil.url(this.api)).map((response: Response) => {
             return <ICustomerDefault[]>response.json();
-        }).catch(this.handleError);
+        }).catch(this.httpUtil.processarErros);
     }
 
     getById(id: number): Observable<ICustomerDefault> {
-        const url = `${this.baseUrl}/${id}`;
-        return this.http.get(url).map((response: Response) => {
+        return this.http.get(this.httpUtil.url(this.api + '/' + id)).map((response: Response) => {
             return <ICustomerDefault>response.json();
-        }).catch(this.handleError);
-    }
-
-    private handleError(error: Response) {
-        return Observable.throw(error.statusText);
+        }).catch(this.httpUtil.processarErros);
     }
 }

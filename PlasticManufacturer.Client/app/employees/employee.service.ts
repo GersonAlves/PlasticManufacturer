@@ -1,64 +1,55 @@
 ﻿import { Injectable, EventEmitter } from '@angular/core'
 import { Subject, Observable } from 'rxjs/Rx'
 import { IEmployee } from './employee.model'
-import { Http, Response, Headers, RequestOptions } from '@angular/http'
+import { Http, Response } from '@angular/http'
+import { HttpUtilService } from '../shared/http-util.service'
 
 @Injectable()
 export class EmployeeService {
-    //private baseUrl = 'http://hml.api.newfdplastics.com/api/employees';
-    private baseUrl = 'http://test.api.newfdplastics.com/api/employees';
+    private api = 'employees';
 
-    constructor(private http: Http) { }
+    constructor(private http: Http, private httpUtil: HttpUtilService) { }
 
     save(employee: IEmployee): Observable<IEmployee> {
-        let headers = new Headers({ 'Content-Type': 'application/json' });
-        let options = new RequestOptions({ headers: headers });
 
         if (employee.id === 0) {
-            return this.create(employee, options);
+            return this.create(employee);
         }
-        return this.update(employee, options);
+        return this.update(employee);
     }
 
     delete(id: number): Observable<Response> {
-        let headers = new Headers({ 'Content-Type': 'application/json' });
-        let options = new RequestOptions({ headers: headers });
 
-        const url = `${this.baseUrl}/${id}`;
-        return this.http.delete(url, options)
-            .catch(this.handleError);
+        return this.http.delete(this.httpUtil.url(this.api + '/' + id), this.httpUtil.headers())
+            .catch(this.httpUtil.processarErros);
     }
 
-    private create(employee: IEmployee, options: RequestOptions): Observable<IEmployee> {
+    private create(employee: IEmployee): Observable<IEmployee> {
         employee.id = undefined;
-        return this.http.post(this.baseUrl, employee, options)
+        return this.http.post(this.httpUtil.url(this.api), employee, this.httpUtil.headers())
             .map((response: Response) => {
                 return response.json();
-            }).catch(this.handleError);
+            }).catch(this.httpUtil.processarErros);
     }
 
-    private update(employee: IEmployee, options: RequestOptions): Observable<IEmployee> {
-        const url = `${this.baseUrl}/${employee.id}`;
-        return this.http.put(url, employee, options)
+    private update(employee: IEmployee): Observable<IEmployee> {
+        return this.http.put(this.httpUtil.url(this.api + '/' + employee.id), employee, this.httpUtil.headers())
             .map((response: Response) => {
                 return response.json();
-            }).catch(this.handleError);
+            }).catch(this.httpUtil.processarErros);
     }
 
     getAll(): Observable<IEmployee[]> {
-        return this.http.get(this.baseUrl).map((response: Response) => {
+        return this.http.get(this.httpUtil.url(this.api)).map((response: Response) => {
             return <IEmployee[]>response.json();
-        }).catch(this.handleError);
+        }).catch(this.httpUtil.processarErros);
     }
 
     getById(id: number): Observable<IEmployee> {
-        const url = `${this.baseUrl}/${id}`;
-        return this.http.get(url).map((response: Response) => {
+        return this.http.get(this.httpUtil.url(this.api + '/' + id)).map((response: Response) => {
             return <IEmployee>response.json();
-        }).catch(this.handleError);
+        }).catch(this.httpUtil.processarErros);
     }
 
-    private handleError(error: Response) {
-        return Observable.throw(error.statusText);
-    }
+
 }

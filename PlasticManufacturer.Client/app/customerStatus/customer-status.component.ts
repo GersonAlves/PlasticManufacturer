@@ -115,8 +115,6 @@ export class CustomerStatusComponent implements OnInit, AfterViewInit, OnDestroy
             // Copy the form values over the Customer Status object values
             let c = (<any>Object).assign({}, this.customerStatus, this.customerStatusForm.value);
 
-            console.log(c);
-
             this.customerStatusService.save(c)
                 .subscribe(
                 () => this.onSaveComplete(),

@@ -22,11 +22,7 @@ export class AuthService {
     }
 
     updateCurrentUser(firstName: string, lastName: string) {
-        console.log('new name : ' + firstName)
-
         this.currentUser.firstName = firstName
         this.currentUser.lastName = lastName
-
-        console.log(this.currentUser.lastName)
     }
 }

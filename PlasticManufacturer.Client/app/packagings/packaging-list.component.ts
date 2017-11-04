@@ -15,7 +15,6 @@ export class PackagingListComponent implements OnInit {
     constructor(private packagingService: PackagingService) { }
 
     ngOnInit(): void {
-        console.log(this.packagingService.getAll());
         this.packagingService.getAll()
             .subscribe(packaging => this.packagings = packaging,
             error => this.errorMessage = <any>error);

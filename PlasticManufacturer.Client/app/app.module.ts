@@ -62,6 +62,7 @@ import {
 } from './events/index'
 
 import { AuthService } from './user/auth.service'
+import { HttpUtilService } from './shared/http-util.service'
 
 
 import {
@@ -72,15 +73,18 @@ import {
 } from './opacities/index'
 
 import {
-    MaritalStatuGuard,
-    MaritalStatuComponent,
-    MaritalStatuListComponent,
-    MaritalStatuService
+    MaritalStatusListComponent,
+    MaritalStatusComponent,
+    MaritalStatusGuard,
+    MaritalStatusService
 } from './maritalStatus/index'
 
-
-
-
+import {
+    DepartmentComponent,
+    DepartmentListComponent,
+    DepartmentGuard,
+    DepartmentService
+} from './departments/index'
 import {
     CustomerDefaultGuard,
     CustomerDefaultComponent,
@@ -101,13 +105,6 @@ import {
     CategoryGuard,
     CategoryService
 } from './categories/index'
-
-import {
- 
-    SalesOrderGuard,
-    SalesOrderService,
-    SalesOrderComponent
-} from './salesOrders/index'
 
 
 import {
@@ -179,9 +176,29 @@ import {
     ModalTriggerDirective
 } from './common/index'
 
+import {
+    PelletComponent,
+    PelletListComponent,
+    PelletGuard,
+    PelletService
+} from './pellets/index'
+
+import {
+    StateComponent,
+    StatetListComponent,
+    StateGuard,
+    StateService
+} from './states/index'
+
+import {
+    TitleComponent,
+    TitleListComponent,
+    TitleGuard,
+    TitleService
+} from './titles/index'
+
 import { appRoutes } from './routes'
 import { Error404Component } from './errors/404.component'
-import { SalesOrderListComponent } from "./salesOrders/salesOrder-list.component";
 
 @NgModule({
     imports: [BrowserModule,
@@ -226,6 +243,10 @@ import { SalesOrderListComponent } from "./salesOrders/salesOrder-list.component
 
     declarations: [
         AppComponent,
+        StateComponent,
+        StatetListComponent,
+        TitleComponent,
+        TitleListComponent,
         EventsListComponent,
         EventThumbnailComponent,
         EventDetailsComponent,
@@ -240,11 +261,10 @@ import { SalesOrderListComponent } from "./salesOrders/salesOrder-list.component
         CustomerStatusListComponent,
         CategoryComponent,
         CategoryListComponent,
-        SalesOrderComponent,
-        SalesOrderListComponent,
-       
-        MaritalStatuComponent,
-        MaritalStatuListComponent,
+        DepartmentComponent,
+        DepartmentListComponent,
+        MaritalStatusComponent,
+        MaritalStatusListComponent,
         OpacityComponent,
         OpacityListComponent,
         CustomerComponent,
@@ -261,8 +281,8 @@ import { SalesOrderListComponent } from "./salesOrders/salesOrder-list.component
         CustomerDefaultListComponent,
         CustomerDefaultComponent,
         CustomerDefaultListComponent,                                              
-
-
+        PelletComponent,
+        PelletListComponent,
         CustomerRatingComponent,
         CustomerRatingListComponent,           
         CityComponent,
@@ -271,22 +291,22 @@ import { SalesOrderListComponent } from "./salesOrders/salesOrder-list.component
         PackagingListComponent,
         EmployeeComponent,
         EmployeeListComponent
-
     ],
     providers: [
         CustomerStatusGuard,
         CustomerStatusService,
         CarrierService,
-        
+        HttpUtilService,
         CustomerDefaultService,
         CustomerRatingService,
-        
+        DepartmentGuard,
+        DepartmentService,
         EventService,
         CarrierGuard,
-        
+        PelletGuard,
+        PelletService,
         CustomerDefaultGuard,
         CustomerRatingGuard,
-        
         { provide: TOASTR_TOKEN, useValue: toastr },
         { provide: JQ_TOKEN, useValue: jQuery },
         EventResolver,
@@ -303,14 +323,15 @@ import { SalesOrderListComponent } from "./salesOrders/salesOrder-list.component
         CityGuard,
         CityService,
         CategoryGuard,
-        CategoryService,
-        SalesOrderGuard,
-        SalesOrderService,
-   
+        CategoryService,  
         OpacityGuard,
         OpacityService,
-        MaritalStatuGuard,
-        MaritalStatuService,
+        MaritalStatusGuard,
+        MaritalStatusService,
+        StateGuard,
+        StateService,
+        TitleGuard,
+        TitleService,
         { provide: 'canDeactivateCreateEvent', useValue: checkDirtyState }
     ],
 

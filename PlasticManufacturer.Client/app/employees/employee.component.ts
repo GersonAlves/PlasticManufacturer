@@ -115,8 +115,6 @@ export class EmployeeComponent implements OnInit, AfterViewInit, OnDestroy {
             // Copy the form values over the employee object values
             let c = (<any>Object).assign({}, this.employee, this.employeeForm.value);
 
-            console.log(c);
-
             this.employeeService.save(c)
                 .subscribe(
                 () => this.onSaveComplete(),

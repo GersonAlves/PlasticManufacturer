@@ -15,7 +15,6 @@ export class CustomerDefaultListComponent implements OnInit {
        constructor(private customerDefaultService: CustomerDefaultService) {   }
 
     ngOnInit(): void {
-        console.log(this.customerDefaultService.getAll());
         this.customerDefaultService.getAll()
             .subscribe(customerDefaults => this.customerDefaults = customerDefaults,
             error => this.errorMessage = <any>error);

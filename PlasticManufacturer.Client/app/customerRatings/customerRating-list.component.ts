@@ -7,7 +7,7 @@ import { CustomerRatingService } from './customerRating.service';
 })
 
 export class CustomerRatingListComponent implements OnInit {
-    pageTitle: string = 'CustomerRating List';
+    pageTitle: string = 'Customer Rating List';
        errorMessage: string;
 
        customerRatings: ICustomerRating[];
@@ -15,7 +15,6 @@ export class CustomerRatingListComponent implements OnInit {
        constructor(private customerRatingService: CustomerRatingService) {   }
 
     ngOnInit(): void {
-        console.log(this.customerRatingService.getAll());
         this.customerRatingService.getAll()
             .subscribe(customerRatings => this.customerRatings = customerRatings,
             error => this.errorMessage = <any>error);

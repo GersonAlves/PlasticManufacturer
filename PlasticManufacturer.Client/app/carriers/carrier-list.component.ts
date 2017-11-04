@@ -15,7 +15,6 @@ export class CarrierListComponent implements OnInit {
     constructor(private carrierService: CarrierService) {   }
 
     ngOnInit(): void {
-        console.log(this.carrierService.getAll());
         this.carrierService.getAll()
             .subscribe(carriers => this.carriers = carriers,
             error => this.errorMessage = <any>error);
