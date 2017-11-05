@@ -16,27 +16,40 @@ namespace PlasticManufacturer.Domain.Entities.Customers
 
         public virtual string Code { get; set; }
 
-        public virtual CustomerRating Rating { get; set; }
+        [ForeignKey("Rating")]
+        public int? Rating_Id { get; set; }
+        public virtual CustomerRating Rating { get; private set; }
 
-        public virtual CustomerStatus Status { get; set; }
+        [ForeignKey("Status")]
+        public int? Status_Id { get; set; }
+        public virtual CustomerStatus Status { get; private set; }
+
 
         public virtual bool Prospect { get; set; }
 
         public virtual bool Lead { get; set; }
 
-        public virtual Employee SalesRepresentant { get; set; }
+        [ForeignKey("SalesRepresentant")]
+        public int? SalesRepresentant_Id { get; set; }
+        public virtual Employee SalesRepresentant { get; private set; }
 
-        public virtual Employee AuthorizedBy { get; set; }
+        [ForeignKey("AuthorizedBy")]
+        public int? AuthorizedBy_Id { get; set; }
+        public virtual Employee AuthorizedBy { get; private set; }
 
-        public virtual CustomerContacted ContactedBy { get; set; }
+        [ForeignKey("ContactedBy")]
+        public int? ContactedBy_Id { get; set; }
+        public virtual CustomerContacted ContactedBy { get; private set; }
 
         public virtual int FedId { get; set; }
 
-        public virtual IList<CustomerAddress> Addresses { get; set; }
+        public virtual IList<CustomerAddress> Addresses { get; private set; }
 
-        public virtual CustomerDefault CustomerDefaults { get; set; }
+        [ForeignKey("CustomerDefaults")]
+        public int? CustomerDefaults_Id { get; set; }
+        public virtual CustomerDefault CustomerDefaults { get; private set; }
 
-        public virtual IList<CustomerShipViaAccount> ShipViaAccounts { get; set; }
+        public virtual IList<CustomerShipViaAccount> ShipViaAccounts { get; private set; }
 
         public virtual string Notes { get; set; }
 

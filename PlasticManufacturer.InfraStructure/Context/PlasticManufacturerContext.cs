@@ -9,6 +9,7 @@ using PlasticManufacturer.Domain.Entities.ShippingMethods;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -40,7 +41,11 @@ namespace PlasticManufacturer.InfraStructure.Context
                 
         //Employee
         public DbSet<Employee> Employees { get; set; }
-        
+        public DbSet<Gender> Genders { get; set; }
+        public DbSet<MaritalStatus> MaritalStatus { get; set; }
+        public DbSet<Department> Departments { get; set; }
+        public DbSet<Title> Titles { get; set; }
+
         //Product
         public DbSet<Product> Products { get; set; }
         public DbSet<Formula> Formulas { get; set; }
@@ -71,15 +76,11 @@ namespace PlasticManufacturer.InfraStructure.Context
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             Database.SetInitializer<PlasticManufacturerContext>(null);
+            modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
             base.OnModelCreating(modelBuilder);
+            
         }
 
-        public System.Data.Entity.DbSet<PlasticManufacturer.Domain.Entities.Employees.Gender> Genders { get; set; }
-
-        public System.Data.Entity.DbSet<PlasticManufacturer.Domain.Entities.Employees.MaritalStatus> MaritalStatus { get; set; }
-
-        public System.Data.Entity.DbSet<PlasticManufacturer.Domain.Entities.Employees.Department> Departments { get; set; }
-
-        public System.Data.Entity.DbSet<PlasticManufacturer.Domain.Entities.Employees.Title> Titles { get; set; }
+        
     }
 }

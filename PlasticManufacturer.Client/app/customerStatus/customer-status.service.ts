@@ -12,7 +12,7 @@ export class CustomerStatusService {
 
     save(customerStatus: ICustomerStatus): Observable<ICustomerStatus> {
 
-        if (customerStatus.id === 0) {
+        if (customerStatus.status_id === 0) {
             return this.create(customerStatus);
         }
         return this.update(customerStatus);
@@ -24,7 +24,7 @@ export class CustomerStatusService {
     }
 
     create(customerStatus: ICustomerStatus): Observable<ICustomerStatus> {
-        customerStatus.id = undefined;
+        customerStatus.status_id = undefined;
         return this.http.post(this.httpUtil.url(this.api), customerStatus, this.httpUtil.headers())
             .map((response: Response) => {
                 return response.json();
@@ -32,7 +32,7 @@ export class CustomerStatusService {
     }
 
     update(customerStatus: ICustomerStatus): Observable<ICustomerStatus> {
-        return this.http.put(this.httpUtil.url(this.api + '/' + customerStatus.id), customerStatus, this.httpUtil.headers())
+        return this.http.put(this.httpUtil.url(this.api + '/' + customerStatus.status_id), customerStatus, this.httpUtil.headers())
             .map((response: Response) => {
                 return response.json();
             }).catch(this.httpUtil.processarErros);

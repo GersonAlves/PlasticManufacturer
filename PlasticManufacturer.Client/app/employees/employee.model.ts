@@ -6,39 +6,15 @@
     status: boolean
     lastName: string
     birthday: Date
-    gender?: {
-        id: number
-        name: string
-        description: string
-    }            		
-    maritalStatus?: {
-        id: number
-        name: string
-        description: string
-    } 	
+    gender_Id: number       		
+    maritalStatus_Id: number 
     address: string
-    city?: {
-        id: number
-        name: string
-        description: string
-    }
-    state?: {
-        id: number
-        name: string
-        description: string
-    }
+    city_Id: number 
+    state_Id: number 
     zipCode: string
     telephone: string
     ss: string
-    HireDate: Date
-    Title?: {
-        id: number
-        name: string
-        description: string
-    }
-    Department?: {
-        id: number
-        name: string
-        description: string
-    }
+    hireDate: Date
+    title_Id: number 
+    department_Id: number 
 }

@@ -9,10 +9,25 @@ import 'rxjs/add/observable/merge';
 import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
 
-import { IEmployee }from './employee.model'
+import { IEmployee } from './employee.model'
 import { EmployeeService } from './employee.service'
 
 import { GenericValidator } from '../shared/generic-validator';
+
+//load combobox
+import { IGender } from '../genders/gender.model'
+import { GenderService } from '../genders/gender.service'
+import { IMaritalStatus } from '../maritalStatus/maritalStatus.model'
+import { MaritalStatusService } from '../maritalStatus/maritalStatus.service'
+import { ICity } from '../cities/city.model'
+import { CityService } from '../cities/city.service'
+import { IState } from '../states/state.model'
+import { StateService } from '../states/state.service'
+import { ITitle } from '../titles/title.model'
+import { TitleService } from '../titles/title.service'
+import { IDepartment } from '../departments/department.model'
+import { DepartmentService } from '../departments/department.service'
+
 
 
 @Component({
@@ -28,12 +43,31 @@ export class EmployeeComponent implements OnInit, AfterViewInit, OnDestroy {
     errorMessage: string;
     pageTitle: string = 'employee';
 
+
+    //load combobox
+    genders: IGender[];
+    maritalStatus: IMaritalStatus[];
+    cities: ICity[];
+    states: IState[];
+    titles: ITitle[];
+    departments: IDepartment[];
+
+
     // Use with the generic validation message class
     displayMessage: { [key: string]: string } = {};
     private validationMessages: { [key: string]: { [key: string]: string } };
     private genericValidator: GenericValidator;
 
-    constructor(private router: Router, private employeeService: EmployeeService, private formBuilder: FormBuilder, private route: ActivatedRoute, ) {
+    constructor(private router: Router,
+        private employeeService: EmployeeService,
+        private formBuilder: FormBuilder,
+        private genderService: GenderService,
+        private route: ActivatedRoute,
+        private maritalStatusService: MaritalStatusService,
+        private cityService: CityService,
+        private stateService: StateService,
+        private titleService: TitleService,
+        private departmentService: DepartmentService ) {
 
         // Defines all of the validation messages for the form.
         // These could instead be retrieved from a file or database.
@@ -51,9 +85,32 @@ export class EmployeeComponent implements OnInit, AfterViewInit, OnDestroy {
     ngOnInit(): void {
         this.employeeForm = this.formBuilder.group({
             id: 0,
-            name: ['', Validators.compose([Validators.required, Validators.minLength(3)])],
-            description: ''
+            name: ['', Validators.required],
+            description: '',
+            email: '',
+            status: true,
+            lastName: '',
+            birthday: '',
+            gender_Id: undefined,
+            maritalStatus_Id: undefined,
+            address: '',
+            city_Id: undefined,
+            state_Id: undefined,
+            zipCode: '',
+            telephone: '',
+            ss: '',
+            hireDate: '',
+            title_Id: undefined,
+            department_Id: undefined,
         });
+
+        //loads combobox
+        this.loadGender();
+        this.loadMarital();
+        this.loadCity();
+        this.loadState();
+        this.loadTitle();
+        this.loadDepartment();
 
         // Read the employee Id from the route parameter
         this.sub = this.route.params.subscribe(
@@ -89,11 +146,12 @@ export class EmployeeComponent implements OnInit, AfterViewInit, OnDestroy {
         }
     }
 
-
     onCorrierRetrieved(employee: IEmployee): void {
+
         if (this.employeeForm) {
             this.employeeForm.reset();
         }
+
         this.employee = employee;
 
         if (this.employee.id === 0) {
@@ -106,7 +164,22 @@ export class EmployeeComponent implements OnInit, AfterViewInit, OnDestroy {
         this.employeeForm.patchValue({
             id: this.employee.id,
             name: this.employee.name,
-            description: this.employee.description
+            description: this.employee.description,
+            email: this.employee.email,
+            status: this.employee.status,
+            lastName: this.employee.lastName,
+            birthday: this.employee.birthday,
+            gender_Id: this.employee.gender_Id,
+            maritalStatus_Id: this.employee.maritalStatus_Id,
+            address: this.employee.address,
+            city_Id: this.employee.city_Id,
+            state_Id: this.employee.state_Id,
+            zipCode: this.employee.zipCode,
+            telephone: this.employee.telephone,
+            ss: this.employee.ss,
+            hireDate: this.employee.hireDate,
+            Title_Id: this.employee.title_Id,
+            department_Id: this.employee.department_Id
         });
     }
 
@@ -114,7 +187,7 @@ export class EmployeeComponent implements OnInit, AfterViewInit, OnDestroy {
         if (this.employeeForm.dirty && this.employeeForm.valid) {
             // Copy the form values over the employee object values
             let c = (<any>Object).assign({}, this.employee, this.employeeForm.value);
-
+            console.log(c);
             this.employeeService.save(c)
                 .subscribe(
                 () => this.onSaveComplete(),
@@ -131,7 +204,6 @@ export class EmployeeComponent implements OnInit, AfterViewInit, OnDestroy {
         this.router.navigate(['/employees']);
     }
 
-
     delete(): void {
         if (this.employee.id === 0) {
             // Don't delete, it was never saved.
@@ -147,10 +219,44 @@ export class EmployeeComponent implements OnInit, AfterViewInit, OnDestroy {
         }
     }
 
-
     cancel() {
         this.router.navigate(['/employees'])
     }
 
+    //loads combobox
+    loadGender(): void {
+        this.genderService.getAll()
+            .subscribe(genders => this.genders = genders,
+            error => this.errorMessage = <any>error);
+    }
 
+    loadMarital(): void {
+        this.maritalStatusService.getAll()
+            .subscribe(maritalStatus => this.maritalStatus = maritalStatus,
+            error => this.errorMessage = <any>error);
+    }
+
+    loadCity(): void {
+        this.cityService.getAll()
+            .subscribe(cities => this.cities = cities,
+            error => this.errorMessage = <any>error);
+    }
+
+    loadState(): void {
+        this.stateService.getAll()
+            .subscribe(states => this.states = states,
+            error => this.errorMessage = <any>error);
+    }
+
+    loadTitle(): void {
+        this.titleService.getAll()
+            .subscribe(cities => this.titles = cities,
+            error => this.errorMessage = <any>error);
+    }
+
+    loadDepartment(): void {
+        this.stateService.getAll()
+            .subscribe(states => this.states = states,
+            error => this.errorMessage = <any>error);
+    }
 }

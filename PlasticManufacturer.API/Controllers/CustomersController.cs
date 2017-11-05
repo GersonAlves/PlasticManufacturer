@@ -66,7 +66,7 @@ namespace PlasticManufacturer.API.Controllers
 
             var customerStatus = db.CustomersStatus.Find(customer.Status.Id);
 
-            if (customerStatus != null) { customer.Status = customerStatus; }
+            //if (customerStatus != null) { customer.Status = customerStatus; }
 
             customer.LastUpdate = DateTime.UtcNow;
 
@@ -100,9 +100,9 @@ namespace PlasticManufacturer.API.Controllers
             {
                 return BadRequest(ModelState);
             }
-            CustomerStatus customerStatus = db.CustomersStatus.Find(customer.Status.Id);
+            //CustomerStatus customerStatus = db.CustomersStatus.Find(customer.Status.Id);
 
-            if (customerStatus != null) { customer.Status = customerStatus; }
+            //if (customerStatus != null) { customer.Status = customerStatus; }
 
             customer.CreationDate = DateTime.UtcNow;
             customer.LastUpdate = DateTime.UtcNow;

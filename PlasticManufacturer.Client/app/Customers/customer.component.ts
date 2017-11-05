@@ -12,6 +12,7 @@ import { Subscription } from 'rxjs/Subscription';
 import { ICustomer } from './customer.model'
 import { CustomerService } from './customer.service'
 
+//load combobox
 import { CustomerStatusService } from '../customerStatus/customer-status.service'
 import { ICustomerStatus } from '../customerStatus/customer-status.model'
 
@@ -27,8 +28,10 @@ export class CustomerComponent implements OnInit, AfterViewInit, OnDestroy {
 
     customerForm: FormGroup;
     customer: ICustomer;
+
+    //load combobox
     customerStatus: ICustomerStatus[];
-    customerSt: ICustomerStatus;
+
     private sub: Subscription;
     errorMessage: string;
     pageTitle: string = 'customer';
@@ -38,7 +41,11 @@ export class CustomerComponent implements OnInit, AfterViewInit, OnDestroy {
     private validationMessages: { [key: string]: { [key: string]: string } };
     private genericValidator: GenericValidator;
 
-    constructor(private router: Router, private customerService: CustomerService, private formBuilder: FormBuilder, private route: ActivatedRoute, private customerStatusService: CustomerStatusService) {
+    constructor(private router: Router,
+        private customerService: CustomerService,
+        private formBuilder: FormBuilder,
+        private route: ActivatedRoute,
+        private customerStatusService: CustomerStatusService) {
 
         // Defines all of the validation messages for the form.
         // These could instead be retrieved from a file or database.
@@ -57,12 +64,9 @@ export class CustomerComponent implements OnInit, AfterViewInit, OnDestroy {
 
         this.customerForm = this.formBuilder.group({
             id: 0,
-            name: ['', Validators.compose([Validators.required, Validators.minLength(3)])],
+            name: ['', Validators.required],
             lastName: '',
-            status: this.formBuilder.group({
-                id: 0,
-                name: ''
-            }),
+            status_id: undefined,
             prospect: 0,
             lead: 0,
             fedId: 0,
@@ -125,12 +129,13 @@ export class CustomerComponent implements OnInit, AfterViewInit, OnDestroy {
             this.pageTitle = `Edit customer  : ${this.customer.name}`;
         }
 
+        console.log(this.customer.status_id);
         // Update the data on the form
         this.customerForm.patchValue({
             id: this.customer.id,
             name: this.customer.name,
             lastName: this.customer.lastName,
-            status: this.customer.status,
+            status_id: this.customer.status_id,
             prospect: this.customer.prospect,
             lead: this.customer.lead,
             fedId: this.customer.fedId,

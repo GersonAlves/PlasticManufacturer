@@ -11,17 +11,27 @@ using System.Web.Http;
 using System.Web.Http.Description;
 using PlasticManufacturer.Domain.Entities.Employees;
 using PlasticManufacturer.InfraStructure.Context;
+using PlasticManufacturer.Domain.Repository;
+using PlasticManufacturer.InfraStructure.Repository;
 
 namespace PlasticManufacturer.API.Controllers
 {
     public class EmployeesController : ApiController
     {
+        IRepository<Employee> repository;
+
+        public EmployeesController()
+        {
+            repository = new EmployeeRepository();
+        }
+
         private PlasticManufacturerContext db = new PlasticManufacturerContext();
 
         // GET: api/Employees
-        public IQueryable<Employee> GetEmployees()
+        public IEnumerable<Employee> GetEmployees()
         {
-            return db.Employees;
+            var employees = repository.GetAll();
+            return employees;
         }
 
         // GET: api/Employees/5
@@ -76,12 +86,19 @@ namespace PlasticManufacturer.API.Controllers
         [ResponseType(typeof(Employee))]
         public async Task<IHttpActionResult> PostEmployee(Employee employee)
         {
+
+            employee.HireDate = DateTime.UtcNow;
+
+            employee.CreationDate = DateTime.UtcNow;
+            employee.LastUpdate = DateTime.UtcNow;
+
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
             db.Employees.Add(employee);
+
             await db.SaveChangesAsync();
 
             return CreatedAtRoute("DefaultApi", new { id = employee.Id }, employee);

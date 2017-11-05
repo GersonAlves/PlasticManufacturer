@@ -31,10 +31,10 @@
                                         </span>
                                     </span>
                                 </div>
-                                <div formGroupName="status" class="col-md-6">
+                                <div class="col-md-6">
                                     <label for="status">Status:</label>
-                                    <select class="form-control" formControlName="id">
-                                        <option *ngFor="let customerSt of customerStatus" [value]="customerSt.id">{{ customerSt.name }}</option>
+                                    <select class="form-control" formControlName="status_id">
+                                        <option *ngFor="let status of customerStatus" [ngValue]="status.status_id">{{ status.name }}</option>
                                     </select>
                                 </div>
                                 <div class="col">

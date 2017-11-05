@@ -1,6 +1,6 @@
 ﻿export interface ICustomerStatus {
 
-    id: number
+    status_id: number
     name: string
     description: string
 

@@ -8,45 +8,17 @@ export interface ICustomer {
     prospect: boolean
     lead: boolean
     fedId: number
-    rating: ICustomerRating
-    status: ICustomerStatus
-    salesRepresentant: IEmployee
-    authorizedBy: IEmployee
-    contactedBy: ICustomerContacted
+    rating_id: number
+    status_id: number
+    salesRepresentant_id: number
+    authorizedBy_id: number
+    contactedBy_id: number
     addresses: ICustomerAddress[]
-    customerDefaults: ICustomerDefault
+    customerDefaults_id: number
     shipViaAccounts: ICustomerShipViaAccount[]
     notes: string
 }
 
-export interface ICustomerRating {
-    id: number
-    name: string
-    description: string
-    creationDate: Date
-    lastUpdate: Date
-}
-
-export interface ICustomerStatus {
-    id: number
-    name: string
-    description: string
-    creationDate: Date
-    lastUpdate: Date
-}
-
-export interface ICustomerContacted {
-    id: number
-    name: string
-    description: string
-    creationDate: Date
-    lastUpdate: Date
-}
-
-export interface IEmployee {
-    id: number
-    name: string
-}
 
 export interface ICustomerAddress {
     id: number
@@ -54,29 +26,6 @@ export interface ICustomerAddress {
     description: string
     creationDate: Date
     lastUpdate: Date
-}
-
-export interface ICustomerDefault {
-    addressType?: {
-        id: number
-        name: string
-        description: string
-    }  
-        street: string
-        complement: string 
-        state?: {
-            id: number
-            name: string
-            description: string
-        }
-        city?: {
-            id: number
-            name: string
-            description: string
-        } 
-         zipCode: string
-         phone: string  
-         fax: string
 }
 
 export interface ICustomerShipViaAccount {

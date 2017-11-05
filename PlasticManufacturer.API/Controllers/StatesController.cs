@@ -10,17 +10,27 @@ using System.Web.Http;
 using System.Web.Http.Description;
 using PlasticManufacturer.Domain.Entities.Adresses;
 using PlasticManufacturer.InfraStructure.Context;
+using PlasticManufacturer.Domain.Repository;
+using PlasticManufacturer.InfraStructure.Repository;
 
 namespace PlasticManufacturer.API.Controllers
 {
     public class StatesController : ApiController
     {
+        IRepository<State> repository;
+
+        public StatesController()
+        {
+            repository = new StateRepository();
+        }
+
         private PlasticManufacturerContext db = new PlasticManufacturerContext();
 
         // GET: api/States
-        public IQueryable<State> GetStates()
+        public IEnumerable<State> GetStates()
         {
-            return db.States;
+            var States = repository.GetAll();
+            return States;
         }
 
         // GET: api/States/5

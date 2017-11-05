@@ -23,16 +23,16 @@
                             <div class="form-group">
                                 <div class="col">
                                     <label class="control-label " for="First Name">First Name</label>
-                                    <input class="form-control text-box single-line" id="Name" name="Name" type="text" value="" />
+                                    <input class="form-control text-box single-line" formControlName="name" id="Name" name="Name" type="text" value="" />
                                     <span class="field-validation-valid text-danger" data-valmsg-for="Name" data-valmsg-replace="true"></span>
                                 </div>
                                 <div class="col">
                                     <label class="control-label" for="Middle">Middle Name</label>
-                                    <input class="form-control text-box single-line" id="MiddleName" name="MiddleName" type="text" value="" />
+                                    <input class="form-control text-box single-line" formControlName="description" id="MiddleName" name="MiddleName" type="text" value="" />
                                 </div>
                                 <div class="col">
                                     <label class="control-label " for="Last">Last Name</label>
-                                    <input class="form-control text-box single-line" id="LastName" name="LastName" type="text" value="" />
+                                    <input class="form-control text-box single-line" formControlName="lastName" id="LastName" name="LastName" type="text" value="" />
                                 </div>
                             </div>
                         </div>
@@ -48,29 +48,25 @@
                                 </div>
                                 <div class="col">
                                     <label class="custom-select">Sex</label>
-                                    <select style=" border-radius:5px 5px 5px 5px;">
-                                        <option></option>
-                                        <option></option>
+                                    <select class="form-control" formControlName="gender_Id">
+                                        <option *ngFor="let gender of genders"[ngValue]="gender.id">{{ gender.name }}</option>
                                     </select>
                                 </div>
                                 <div class="col">
                                     <label class="custom-select">Marital Status</label>
-                                    <select style=" border-radius:5px 5px 5px 5px;">
-                                        <option></option>
-                                        <option></option>
+                                    <select class="form-control" formControlName="maritalStatus_Id">
+                                        <option *ngFor="let marital of maritalStatus" [ngValue]="marital.id">{{ marital.name }}</option>-->
                                     </select>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-
                     <div class="fields-row">
                         <div class="fields-bar">
                             <div class="form-group">
                                 <div class="col">
-                                    <label class="control-label " for="Address">Address</label>
-                                    <input style="width: 555px" class="form-control text-box single-line" id="Address" name="Address" type="text" value="" />
+                                    <label class="control-label" for="Address">Address</label>
+                                    <input style="width: 555px" formControlName="address" class="form-control text-box single-line" id="Address" name="Address" type="text" value="" />
                                 </div>
                             </div>
                         </div>
@@ -82,15 +78,19 @@
                             <div class="form-group">
                                 <div class="col">
                                     <label class="control-label " for="City">City</label>
-                                    <input class="form-control address-box text-box single-line" id="City" name="City" type="text" value="" />
+                                    <select class="form-control" formControlName="city_Id">
+                                        <option *ngFor="let city of cities" [ngValue]="city.id">{{ city.name }}</option>-->
+                                    </select>
                                 </div>
                                 <div class="col">
                                     <label class="control-label" for="State">State</label>
-                                    <input style="width:75px;" class="form-control text-box single-line" id="State" name="State" type="text" value="" />
+                                    <select class="form-control" formControlName="state_Id">
+                                        <option *ngFor="let state of states" [ngValue]="state.id">{{ state.name }}</option>-->
+                                    </select>
                                 </div>
                                 <div class="col">
                                     <label class="control-label " for="ZipCode">Zip Code</label>
-                                    <input class="form-control text-box single-line" id="ZipCode" name="ZipCode" type="text" value="" />
+                                    <input class="form-control text-box single-line" formControlName="zipCode" id="ZipCode" name="ZipCode" type="text" value="" />
                                 </div>
                             </div>
                         </div>
@@ -101,16 +101,16 @@
                         <div class="fields-bar">
                             <div class="form-group">
                                 <div class="col">
-                                    <label class="control-label " for="Telephone">Telephone</label>
-                                    <input class="form-control text-box single-line" id="Telephone" name="Telephone" type="text" value="" />
+                                    <label class="control-label" for="Telephone">Telephone</label>
+                                    <input class="form-control text-box single-line" formControlName="telephone" id="Telephone" name="Telephone" type="text" value="" />
                                 </div>
                                 <div class="col">
                                     <label class="control-label" for="Ss">SS#</label>
-                                    <input class="form-control text-box single-line" id="Ss" name="Ss" type="text" value="" />
+                                    <input class="form-control text-box single-line" formControlName="ss" id="Ss" name="Ss" type="text" value="" />
                                 </div>
                                 <div class="col">
                                     <label class="control-label " for="Email">E-mail</label>
-                                    <input class="form-control text-box single-line" id="Email" name="Email" type="text" value="" />
+                                    <input class="form-control text-box single-line" formControlName="email" id="Email" name="Email" type="text" value="" />
                                 </div>
                             </div>
                         </div>
@@ -122,21 +122,19 @@
                             <div class="form-group">
                                 <div class="col">
                                     <label class="control-label " for="HireDate">Hire Date</label>
-                                    <input class="form-control text-box single-line" id="HireDate" name="HireDate" placeholder="00/00/00" type="text" value="" />
+                                    <input class="form-control text-box single-line" formControlName="hireDate" id="HireDate" name="HireDate" placeholder="00/00/00" type="text" value="" />
                                 </div>
                                 <div class="col">
                                     <label class="custom-select">Title</label>
-                                    <select style=" border-radius:5px 5px 5px 5px;">
-                                        <option></option>
-                                        <option></option>
+                                    <select class="form-control" formControlName="title_Id">
+                                        <option *ngFor="let title of titles" [ngValue]="title.id">{{ title.name }}</option>-->
                                     </select>
                                 </div>
 
                                 <div class="col">
                                     <label class="custom-select">Department</label>
-                                    <select style=" border-radius:5px 5px 5px 5px;">
-                                        <option></option>
-                                        <option></option>
+                                    <select class="form-control" formControlName="department_Id">
+                                        <option *ngFor="let department of departments" [ngValue]="department.id">{{ department.name }}</option>-->
                                     </select>
                                 </div>
                             </div>
@@ -148,9 +146,9 @@
                             <div class="form-group">
                                 <div class="col">
                                     <label class="custom-select">Status</label>
-                                    <select style=" border-radius:5px 5px 5px 5px;">
-                                        <option>Active</option>
-                                        <option>inactive</option>
+                                    <select formControlName="status" class="form-control">
+                                        <option value="true">Active</option>
+                                        <option value="false">inactive</option>
                                     </select>
                                 </div>
                             </div>

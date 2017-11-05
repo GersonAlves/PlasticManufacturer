@@ -96,7 +96,7 @@ export class CustomerStatusComponent implements OnInit, AfterViewInit, OnDestroy
         }
         this.customerStatus = customerStatus;
 
-        if (this.customerStatus.id === 0) {
+        if (this.customerStatus.status_id === 0) {
             this.pageTitle = 'Add Customer Status';
         } else {
             this.pageTitle = `Edit Customer Status  : ${this.customerStatus.name}`;
@@ -104,7 +104,7 @@ export class CustomerStatusComponent implements OnInit, AfterViewInit, OnDestroy
 
         // Update the data on the form
         this.customerStatusForm.patchValue({
-            id: this.customerStatus.id,
+            id: this.customerStatus.status_id,
             name: this.customerStatus.name,
             description: this.customerStatus.description
         });
@@ -133,12 +133,12 @@ export class CustomerStatusComponent implements OnInit, AfterViewInit, OnDestroy
 
 
     delete(): void {
-        if (this.customerStatus.id === 0) {
+        if (this.customerStatus.status_id === 0) {
             // Don't delete, it was never saved.
             this.onSaveComplete();
         } else {
             if (confirm(`Really delete the product: ${this.customerStatus.name}?`)) {
-                this.customerStatusService.delete(this.customerStatus.id)
+                this.customerStatusService.delete(this.customerStatus.status_id)
                     .subscribe(
                     () => this.onSaveComplete(),
                     (error: any) => this.errorMessage = <any>error

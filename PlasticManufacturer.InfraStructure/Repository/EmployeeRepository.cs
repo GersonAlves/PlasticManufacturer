@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using PlasticManufacturer.Domain.Entities.Employees;
 using PlasticManufacturer.InfraStructure.Context;
+using System.Data.Entity;
+
 
 namespace PlasticManufacturer.InfraStructure.Repository
 {
@@ -38,7 +40,13 @@ namespace PlasticManufacturer.InfraStructure.Repository
         {
             using (var context = new PlasticManufacturerContext())
             {
-                return context.Employees.ToList();
+                return context.Employees
+                    .Include(x => x.Department)
+                    .Include(x => x.City)
+                    .Include(x => x.Gender)
+                    .Include(x => x.MaritalStatus)
+                    .Include(x => x.State.Cities)
+                    .Include(x => x.Title).ToList();
             }
         }
 
