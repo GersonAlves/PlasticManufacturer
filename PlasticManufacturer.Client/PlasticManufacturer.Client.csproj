@@ -132,6 +132,7 @@
     <Content Include="app\packagings\packaging.component.html" />
     <Content Include="app\Pellets\pellet.component.html" />
     <Content Include="app\Pellets\pellet-list.component.html" />
+    <Content Include="app\salesOrders\salesOrder.component.html" />
     <Content Include="app\states\state-list.component.html" />
     <Content Include="app\states\state.component.html" />
     <Content Include="app\titles\title-list.component.html" />
@@ -6625,6 +6626,12 @@
     <TypeScriptCompile Include="app\Pellets\pellet-list.component.ts" />
     <TypeScriptCompile Include="app\Pellets\pellet.component.ts" />
     <TypeScriptCompile Include="app\routes.ts" />
+    <TypeScriptCompile Include="app\salesOrders\index.ts" />
+    <TypeScriptCompile Include="app\salesOrders\salesOrder-guard.service.ts" />
+    <TypeScriptCompile Include="app\salesOrders\salesOrder-list.component.ts" />
+    <TypeScriptCompile Include="app\salesOrders\salesOrder.component.ts" />
+    <TypeScriptCompile Include="app\salesOrders\salesOrder.model.ts" />
+    <TypeScriptCompile Include="app\salesOrders\salesOrder.service.ts" />
     <TypeScriptCompile Include="app\shared\generic-validator.ts" />
     <TypeScriptCompile Include="app\shared\http-util.service.ts" />
     <TypeScriptCompile Include="app\shippingMethod\shipping-method.model.ts" />
