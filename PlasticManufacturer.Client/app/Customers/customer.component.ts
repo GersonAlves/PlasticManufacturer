@@ -67,7 +67,7 @@ export class CustomerComponent implements OnInit, AfterViewInit, OnDestroy {
             id: 0,
             name: ['', Validators.required],
             lastName: '',
-            status_id: undefined,
+            status_Id: undefined,
             prospect: 0,
             lead: 0,
             fedId: 0,
@@ -130,13 +130,13 @@ export class CustomerComponent implements OnInit, AfterViewInit, OnDestroy {
             this.pageTitle = `Edit customer  : ${this.customer.name}`;
         }
 
-        console.log(this.customer.status_id);
+        console.log(this.customer.status_Id);
         // Update the data on the form
         this.customerForm.patchValue({
             id: this.customer.id,
             name: this.customer.name,
             lastName: this.customer.lastName,
-            status_id: this.customer.status_id,
+            status_Id: this.customer.status_Id,
             prospect: this.customer.prospect,
             lead: this.customer.lead,
             fedId: this.customer.fedId,

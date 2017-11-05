@@ -8,13 +8,13 @@ export interface ICustomer {
     prospect: boolean
     lead: boolean
     fedId: number
-    rating_id: number
-    status_id: number
-    salesRepresentant_id: number
-    authorizedBy_id: number
-    contactedBy_id: number
+    rating_Id: number
+    status_Id: number
+    salesRepresentant_Id: number
+    authorizedBy_Id: number
+    contactedBy_Id: number
     addresses: ICustomerAddress[]
-    customerDefaults_id: number
+    customerDefaults_Id: number
     shipViaAccounts: ICustomerShipViaAccount[]
     notes: string
 }
