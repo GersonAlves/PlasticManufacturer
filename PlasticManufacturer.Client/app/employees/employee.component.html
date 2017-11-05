@@ -16,8 +16,7 @@
                     </ul>
                 </div>
                 
-                <div class="form-horizontal">
-                    <div style="border-top:2px ; padding:15px 0"></div>
+                <div class="form-horizontal">                   
                     <div class="fields-row">
                         <div class="fields-bar">
                             <div class="form-group">
@@ -126,15 +125,17 @@
                                 </div>
                                 <div class="col">
                                     <label class="custom-select">Title</label>
-                                    <select class="form-control" formControlName="title_Id">
-                                        <option *ngFor="let title of titles" [ngValue]="title.id">{{ title.name }}</option>-->
+                                    <select style=" border-radius:5px 5px 5px 5px;">
+                                        <option></option>
+                                        <option></option>
                                     </select>
                                 </div>
 
                                 <div class="col">
                                     <label class="custom-select">Department</label>
-                                    <select class="form-control" formControlName="department_Id">
-                                        <option *ngFor="let department of departments" [ngValue]="department.id">{{ department.name }}</option>-->
+                                    <select style=" border-radius:5px 5px 5px 5px;">
+                                        <option></option>
+                                        <option></option>
                                     </select>
                                 </div>
                             </div>
@@ -146,9 +147,9 @@
                             <div class="form-group">
                                 <div class="col">
                                     <label class="custom-select">Status</label>
-                                    <select formControlName="status" class="form-control">
-                                        <option value="true">Active</option>
-                                        <option value="false">inactive</option>
+                                    <select style=" border-radius:5px 5px 5px 5px;">
+                                        <option>Active</option>
+                                        <option>inactive</option>
                                     </select>
                                 </div>
                             </div>

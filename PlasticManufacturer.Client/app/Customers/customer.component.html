@@ -13,14 +13,18 @@
                         <li><a class="cancel" (click)="cancel()">Cancel</a></li>
                     </ul>
                 </div>
-                <mat-tab-group class="custome-tab-group">
-                    <mat-tab label="General">
-                        <div class="customer-tab-content">
-                            <div class="form-group">
-                                <div class="col, box-style">
-                                    <label>Name</label>
-                                    <input type="text" formControlName="name" id="nameId" class="form-control" />
-                                    <span class="help-block" *ngIf="(customerForm.get('name').touched ||
+                <mat-tab-group class="form-horizontal">]
+                    <div class="formula">
+                        <mat-tab label="General">
+                            <div class="customer-tab-content">
+                                <div class="fields-row">
+                                    <div class="fields-bar">
+
+                                        <div class="form-group">
+                                            <div class="col">
+                                                <label>Name</label>
+                                                <input type="text" formControlName="name" id="nameId" class="form-control" />
+                                                <span class="help-block" *ngIf="(customerForm.get('name').touched ||
                                                          customerForm.get('name').dirty) &&
                                                          customerForm.get('name').errors">
                                         <span *ngIf="customerForm.get('name').errors.required">
@@ -31,10 +35,10 @@
                                         </span>
                                     </span>
                                 </div>
-                                <div class="col-md-6">
+                                <div formGroupName="status" class="col-md-6">
                                     <label for="status">Status:</label>
-                                    <select class="form-control" formControlName="status_id">
-                                        <option *ngFor="let status of customerStatus" [ngValue]="status.status_id">{{ status.name }}</option>
+                                    <select class="form-control" formControlName="id">
+                                        <option *ngFor="let customerSt of customerStatus" [value]="customerSt.id">{{ customerSt.name }}</option>
                                     </select>
                                 </div>
                                 <div class="col">
@@ -263,28 +267,29 @@
                                 </div>
                             </div>
                         </div>
-                    </mat-tab>
-                    <mat-tab label="Shipping Information">
-                        <div class="customer-tab-content">
-                            <div class="shipping-method">
-                                <div class="shipping-box">
-                                    <span class="label">Shipping Method</span>
-                                    <div class="form-group">
-                                        <select class="form-control">
-                                            <option>UPS</option>
-                                        </select>
-                                    </div>
+                        </mat-tab>
+                        <mat-tab label="Shipping Information">
+                            <div class="customer-tab-content">
+                                <div class="shipping-method">
+                                    <div class="shipping-box">
+                                        <span class="label">Shipping Method</span>
+                                        <div class="form-group">
+                                            <select class="form-control shipping-method-box">
+                                                <option>UPS</option>
+                                            </select>
+                                        </div>
 
-                                </div>
-                                <div class="shipping-box pdlft">
-                                    <span class="label">Account #</span>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" />
+                                    </div>
+                                    <div class="shipping-box pdlft">
+                                        <span class="label">Account #</span>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" />
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </mat-tab>
+                        </mat-tab>
+                    </div>
                 </mat-tab-group>
             </div>
         </form>

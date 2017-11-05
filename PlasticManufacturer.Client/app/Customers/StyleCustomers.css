@@ -1,0 +1,53 @@
+﻿.margin-adjust {
+    margin-right: 328px;
+}
+
+/*Default*/
+.c-padding {
+    margin: 0 !important;
+    height: 30px !important;
+    padding: 4px 4px;
+    border-radius: 5px;
+    border: 1px solid #75abc1;
+    -webkit-box-shadow: inset 1px 0px 1px 1px rgba(240,240,240,1);
+    -moz-box-shadow: inset 1px 0px 1px 1px rgba(240,240,240,1);
+    box-shadow: inset 1px 0px 1px 1px rgba(240,240,240,1);
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+/*Shipping Information*/
+.shipping-method {
+    overflow: hidden;
+    margin: 4px 280px;
+    width: 40%;
+}
+
+.shipping-method-box {
+    width: 80%;
+    margin-right: -70px;
+}
+
+.shipping-method .form-group {
+    margin: 0 0 15px;
+}
+
+.shipping-method .shipping-box {
+    width: 46.8%;
+    float: left;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-right: 2%;
+}
+
+/deep/ .mat-tab-group {
+    padding: 0%;
+}
+
+@media screen and (max-width:1000px) {
+
+    /deep/ .mat-tab-group {
+        padding: 0%;
+    }
+}

@@ -20,7 +20,8 @@ import { GenericValidator } from '../shared/generic-validator';
 
 
 @Component({
-    templateUrl: 'app/customers/customer.component.html'
+    templateUrl: 'app/customers/customer.component.html',
+    styleUrls: ['app/customers/StyleCustomers.css']
 })
 
 export class CustomerComponent implements OnInit, AfterViewInit, OnDestroy {
