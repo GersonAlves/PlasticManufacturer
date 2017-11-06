@@ -681,6 +681,9 @@
 	Content
 */
 
+    #content {
+        padding-top: 120px;
+    }
 
     .gn-table {
         width: 100%;

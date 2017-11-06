@@ -139,7 +139,6 @@
     <Content Include="app\titles\title.component.html" />
     <Content Include="app\user\login.component.html" />
     <Content Include="app\user\profile.component.html" />
-    <Content Include="default.css" />
     <Content Include="images\arr-1.gif" />
     <Content Include="images\arr-2.gif" />
     <Content Include="images\background.gif" />
@@ -195,10 +194,6 @@
     <Content Include="images\whitebox-bg.png" />
     <Content Include="images\whitebox-bottom.png" />
     <Content Include="images\whitebox-top.png" />
-    <Content Include="media-480.css" />
-    <Content Include="media-768.css" />
-    <Content Include="media-desktop.css" />
-    <Content Include="media-laptops.css" />
     <Content Include="node_modules\%40angular\animations\%40angular\animations.es5.js" />
     <Content Include="node_modules\%40angular\animations\%40angular\animations.js" />
     <Content Include="node_modules\%40angular\animations\%40angular\animations\browser.es5.js" />

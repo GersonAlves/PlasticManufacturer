@@ -418,7 +418,6 @@
         background: #074875;
         position: fixed;
         width: 100%;
-        z-index:15;
         /* background: #14567e;
 	background: -moz-linear-gradient(top,  #14567e 0%, #16557e 7%, #4eb0d9 7%, #1496cb 11%, #1285b9 32%, #0b4c7b 79%, #0a3c69 98%, #092841 100%);
 	background: -webkit-linear-gradient(top,  #14567e 0%,#16557e 7%,#4eb0d9 7%,#1496cb 11%,#1285b9 32%,#0b4c7b 79%,#0a3c69 98%,#092841 100%);
@@ -683,7 +682,7 @@
 */
 
     #content {
-        padding-top: 106px;
+        padding-top: 120px;
     }
 
     .gn-table {
@@ -703,19 +702,18 @@
         vertical-align: top;
     }
 
-.white-box {
-    margin-bottom: 17px;
-    background: #fff;
-    border-radius: 7px;
-    -webkit-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.12);
-    -moz-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.12);
-    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.12);
-    border: 1px solid #dedcdc;
-    /* -webkit-box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
+    .white-box {
+        margin-bottom: 17px;
+        background: #fff;
+        border-radius: 7px;
+        -webkit-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.12);
+        -moz-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.12);
+        box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.12);
+        border: 1px solid #dedcdc;
+        /* -webkit-box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
 	-moz-box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
 	box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75); */
-    
-}
+    }
 
     .in-table th.in-title {
         width: 5%;
@@ -2067,14 +2065,6 @@
         #footer .shell p {
             padding: 0;
         }
-
-#footer {
-    position: fixed;
-    top: 619px;
-    width: 74.4%;
-    z-index: 10;
-    right: 172px;
-}
 
 
     /* Costumer*/
