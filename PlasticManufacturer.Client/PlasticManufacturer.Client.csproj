@@ -140,6 +140,7 @@
     <Content Include="app\titles\title.component.html" />
     <Content Include="app\user\login.component.html" />
     <Content Include="app\user\profile.component.html" />
+    <Content Include="default.css" />
     <Content Include="images\arr-1.gif" />
     <Content Include="images\arr-2.gif" />
     <Content Include="images\background.gif" />
