@@ -19,5 +19,4 @@ export class CustomerListComponent implements OnInit {
             .subscribe(customers => this.customers = customers,
             error => this.errorMessage = <any>error);
     }
-
 }

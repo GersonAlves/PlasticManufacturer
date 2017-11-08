@@ -20,7 +20,7 @@ namespace PlasticManufacturer.InfraStructure.Context
     {
         public PlasticManufacturerContext() : base("PlasticManufacturer")
         {
-           
+            this.Configuration.LazyLoadingEnabled = false;
         }
 
         public DbSet<RawMaterial>RawMateials { get; set; }

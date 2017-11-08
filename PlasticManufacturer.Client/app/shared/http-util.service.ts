@@ -14,7 +14,7 @@ export class HttpUtilService {
     }
 
     headers() {
-        let headersParams = { 'Content-Type': 'application/json' };
+        let headersParams = { 'Content-Type': 'application/json'};
         if (localStorage['token']) {
             headersParams['Authorization'] = localStorage['token'];
         }

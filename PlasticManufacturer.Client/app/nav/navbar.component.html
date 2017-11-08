@@ -25,73 +25,71 @@
         <!-- END Header Right -->
     </div>
     <!-- END Shell -->
+    <!-- END Header -->
+    <nav id='cssmenu'>
+        <div id="head-mobile"></div>
+        <div class="nav-mobile"></div>
+        <ul class="shell">
+            <li>
+                <a href='#'>Table</a>
+                <ul>
+                    <li><a routerLink="/states" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">State</a></li>
+                    <li><a routerLink="/titles" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Title</a></li>
+                    <li><a routerLink="/departments" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Department</a></li>
+                    <li><a routerLink="/customerRatings" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Customer Rating</a></li>
+                    <li><a routerLink="/maritalStatus" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Marital Status</a></li>
+                    <li><a routerLink="/pellets" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Pelle</a></li>
+                    <li><a routerLink="/categories" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Category</a></li>
+                    <li><a routerLink="/carriers" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Carrier</a></li>
+                    <li><a routerLink="/opacities" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Opacity</a></li>
+                    <li><a routerLink="/packagings" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Packing</a></li>
+                    <li><a routerLink="/employees" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Employee</a></li>
+                    <li><a routerLink="/customerStatus" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Customer Status</a></li>
+                    <li><a routerLink="/genders" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Gender</a></li>
+                    <li><a routerLink="/cities" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">City</a></li>
+                    <li><a routerLink="/customerDefaults" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Customer Default</a></li>
+
+                    <!--<li>@Html.ActionLink("Category", "index", "Categories")</li>
+
+                    <li>@Html.ActionLink("Opacity", "index", "Opacities")</li>
+                    <li>@Html.ActionLink("Packaging", "index", "Packagings")</li>
+                    <li>@Html.ActionLink("Pellet", "index", "Pellets")</li>
+                    <li>@Html.ActionLink("Employee", "index", "Employees")</li>
+                    <li>
+                        <a href='#'>Sub Item</a>
+                        <ul><li><a href='#'>Item 1</a></li></ul>
+                    </li>-->
+                </ul>
+            </li>
+            <li>
+                <a href='#'>Maintain</a>
+                <ul>
+                    <li><a routerLink="/customers" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Customer</a></li>
+                    <!--   <li>@Html.ActionLink("Customer Resin", "index", "CustomerResins")</li>
+                       <li>@Html.ActionLink("Target Type", "index", "TargetTypes")</li>
+                       <li>@Html.ActionLink("Defaults", "tela", "Categories")</li>
+
+                       <li>@Html.ActionLink("Employee", "index", "Employees")</li>
+                       <li><a href="#">Supplier</a></li>
+                       <li>@Html.ActionLink("Raw Material", "index", "RawMaterials")</li>-->
+                </ul>
+            </li>
+            <li>
+                <a href='#'>Tasks</a>
+                <!--<ul>
+                    <li>@Html.ActionLink("Color Match Request", "create", "ColorMatchRequests")</li>
+                </ul>-->
+            </li>
+            <li>
+                <a href='#'>Reports</a>
+                <!--<ul>
+                    <li><a href='#'>none</a></li>
+                </ul>-->
+            </li>
+        </ul>
+    </nav>
+
 </div>
-<!-- END Header -->
-<nav id='cssmenu'>
-    <div id="head-mobile"></div>
-    <div class="nav-mobile"></div>
-    <ul class="shell">
-        <li>
-            <a href='#'>Table</a>
-            <ul>
-                <li><a routerLink="/states" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">State</a></li>
-                <li><a routerLink="/titles" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Title</a></li>
-                <li><a routerLink="/departments" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Department</a></li>
-                <li><a routerLink="/customerRatings" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Customer Rating</a></li>
-                <li><a routerLink="/maritalStatus" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Marital Status</a></li>
-                <li><a routerLink="/pellets" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Pelle</a></li>
-                <li><a routerLink="/categories" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Category</a></li>
-                <li><a routerLink="/carriers" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Carrier</a></li>
-                <li><a routerLink="/opacities" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Opacity</a></li>
-                <li><a routerLink="/packagings" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Packing</a></li>
-                <li><a routerLink="/employees" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Employee</a></li>
-                <li><a routerLink="/customerStatus" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Customer Status</a></li>
-                <li><a routerLink="/genders" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Gender</a></li>
-                <li><a routerLink="/cities" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">City</a></li>
-                <li><a routerLink="/customerDefaults" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Customer Default</a></li>
-                
-                <!--<li>@Html.ActionLink("Category", "index", "Categories")</li>
-                
-                <li>@Html.ActionLink("Opacity", "index", "Opacities")</li>
-                <li>@Html.ActionLink("Packaging", "index", "Packagings")</li>
-                <li>@Html.ActionLink("Pellet", "index", "Pellets")</li>
-                <li>@Html.ActionLink("Employee", "index", "Employees")</li>             
-                <li>
-                    <a href='#'>Sub Item</a>
-                    <ul><li><a href='#'>Item 1</a></li></ul>
-                </li>-->
-            </ul>
-        </li>
-        <li>
-            <a href='#'>Maintain</a>
-            <ul>
-                <li><a routerLink="/customers" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Customer</a></li>
-             <!--   <li>@Html.ActionLink("Customer Resin", "index", "CustomerResins")</li>
-                <li>@Html.ActionLink("Target Type", "index", "TargetTypes")</li>
-                <li>@Html.ActionLink("Defaults", "tela", "Categories")</li>
-                
-                <li>@Html.ActionLink("Employee", "index", "Employees")</li>
-                <li><a href="#">Supplier</a></li>
-                <li>@Html.ActionLink("Raw Material", "index", "RawMaterials")</li>-->
-            </ul>
-        </li>
-        <li>
-            <a href='#'>Tasks</a>
-            <!--<ul>
-                <li>@Html.ActionLink("Color Match Request", "create", "ColorMatchRequests")</li>
-            </ul>-->
-        </li>
-        <li>
-            <a href='#'>Reports</a>
-            <!--<ul>
-                <li><a href='#'>none</a></li>
-            </ul>-->
-        </li>
-    </ul>
-</nav>
-
-
-
 
 
 

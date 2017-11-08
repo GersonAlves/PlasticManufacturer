@@ -39,3 +39,4 @@ D:\Projects\PlasticManufacturer\PlasticManufacturer.InfraStructure\obj\Debug\Pla
 D:\Projects\PlasticManufacturer\PlasticManufacturer.InfraStructure\obj\Debug\PlasticManufacturer.InfraStructure.Migrations.correcaoFkEmployee.resources
 D:\Projects\PlasticManufacturer\PlasticManufacturer.InfraStructure\obj\Debug\PlasticManufacturer.InfraStructure.Migrations.correcaoFkCustomerEmployee.resources
 D:\Projects\PlasticManufacturer\PlasticManufacturer.InfraStructure\obj\Debug\PlasticManufacturer.InfraStructure.Migrations.correcaoCustomer.resources
+D:\Projects\PlasticManufacturer\PlasticManufacturer.InfraStructure\obj\Debug\PlasticManufacturer.InfraStructure.Migrations.AlteracaoCustoemr.resources

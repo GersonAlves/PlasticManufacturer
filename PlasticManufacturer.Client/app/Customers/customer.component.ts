@@ -15,6 +15,8 @@ import { CustomerService } from './customer.service'
 //load combobox
 import { CustomerStatusService } from '../customerStatus/customer-status.service'
 import { ICustomerStatus } from '../customerStatus/customer-status.model'
+import { EmployeeService } from '../employees/employee.service'
+import { IEmployee } from '../employees/employee.model'
 
 import { GenericValidator } from '../shared/generic-validator';
 
@@ -32,6 +34,7 @@ export class CustomerComponent implements OnInit, AfterViewInit, OnDestroy {
 
     //load combobox
     customerStatus: ICustomerStatus[];
+    employees: IEmployee[];
 
     private sub: Subscription;
     errorMessage: string;
@@ -46,7 +49,8 @@ export class CustomerComponent implements OnInit, AfterViewInit, OnDestroy {
         private customerService: CustomerService,
         private formBuilder: FormBuilder,
         private route: ActivatedRoute,
-        private customerStatusService: CustomerStatusService) {
+        private customerStatusService: CustomerStatusService,
+        private employeeService: EmployeeService) {
 
         // Defines all of the validation messages for the form.
         // These could instead be retrieved from a file or database.
@@ -67,14 +71,27 @@ export class CustomerComponent implements OnInit, AfterViewInit, OnDestroy {
             id: 0,
             name: ['', Validators.required],
             lastName: '',
+            code: '',// tenho que definir
+            rating_Id: undefined,
             status_Id: undefined,
             prospect: 0,
+            salesRepresentant_Id: undefined,
+            authorizedBy_Id: undefined,
+            contactedBy_Id: undefined,
             lead: 0,
             fedId: 0,
             notes: ''
 
         });
 
+        //contactedBy_Id: number
+        //addresses: ICustomerAddress[]
+        //customerDefaults_Id: number
+        //shipViaAccounts: ICustomerShipViaAccount[]
+
+
+        // loads combobox
+        this.loadEmployees();
         this.loadCustomerStatus();
 
         // Read the customer Id from the route parameter
@@ -111,11 +128,6 @@ export class CustomerComponent implements OnInit, AfterViewInit, OnDestroy {
         }
     }
 
-    loadCustomerStatus(): void {
-        this.customerStatusService.getAll()
-            .subscribe(customerStatus => this.customerStatus = customerStatus,
-            error => this.errorMessage = <any>error);
-    }
 
 
     onCustomerRetrieved(customer: ICustomer): void {
@@ -130,13 +142,16 @@ export class CustomerComponent implements OnInit, AfterViewInit, OnDestroy {
             this.pageTitle = `Edit customer  : ${this.customer.name}`;
         }
 
-        console.log(this.customer.status_Id);
+        console.log(this.customer.id);
         // Update the data on the form
         this.customerForm.patchValue({
             id: this.customer.id,
             name: this.customer.name,
             lastName: this.customer.lastName,
             status_Id: this.customer.status_Id,
+            salesRepresentant_Id: this.customer.salesRepresentant_Id,
+            authorizedBy_Id: this.customer.authorizedBy_Id,
+            contactedBy_Id: this.customer.contactedBy_Id,
             prospect: this.customer.prospect,
             lead: this.customer.lead,
             fedId: this.customer.fedId,
@@ -185,5 +200,16 @@ export class CustomerComponent implements OnInit, AfterViewInit, OnDestroy {
         this.router.navigate(['/customers'])
     }
 
+
+    loadCustomerStatus(): void {
+        this.customerStatusService.getAll()
+            .subscribe(customerStatus => this.customerStatus = customerStatus,
+            error => this.errorMessage = <any>error);
+    }
+    loadEmployees(): void {
+        this.employeeService.getAll()
+            .subscribe(employees => this.employees = employees,
+            error => this.errorMessage = <any>error);
+    }
 
 }

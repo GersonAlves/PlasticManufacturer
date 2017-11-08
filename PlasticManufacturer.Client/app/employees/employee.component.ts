@@ -178,7 +178,7 @@ export class EmployeeComponent implements OnInit, AfterViewInit, OnDestroy {
             telephone: this.employee.telephone,
             ss: this.employee.ss,
             hireDate: this.employee.hireDate,
-            Title_Id: this.employee.title_Id,
+            title_Id: this.employee.title_Id,
             department_Id: this.employee.department_Id
         });
     }
@@ -250,13 +250,13 @@ export class EmployeeComponent implements OnInit, AfterViewInit, OnDestroy {
 
     loadTitle(): void {
         this.titleService.getAll()
-            .subscribe(cities => this.titles = cities,
+            .subscribe(titles => this.titles = titles,
             error => this.errorMessage = <any>error);
     }
 
     loadDepartment(): void {
-        this.stateService.getAll()
-            .subscribe(states => this.states = states,
+        this.departmentService.getAll()
+            .subscribe(departments => this.departments = departments,
             error => this.errorMessage = <any>error);
     }
 }

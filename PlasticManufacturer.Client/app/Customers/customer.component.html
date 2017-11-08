@@ -20,7 +20,6 @@
                             <div class="customer-tab-content">
                                 <div class="fields-row">
                                     <div class="fields-bar">
-
                                         <div class="form-group">
                                             <div class="col">
                                                 <label>Name</label>
@@ -38,11 +37,10 @@
                                             </div>
                                         </div>
 
-
                                         <div class="form-group">
                                             <div class="col">
                                                 <label for="status">Status:</label>
-                                                <select class="form-control" formControlName="id">
+                                                <select class="form-control" formControlName="status_Id">
                                                     <option *ngFor="let customerSt of customerStatus" [value]="customerSt.id">{{ customerSt.name }}</option>
                                                 </select>
                                             </div>
@@ -59,9 +57,8 @@
                                             </div>
                                             <div class="col">
                                                 <label>Sales Rep</label>
-                                                <select class="form-control">
-                                                    <option value="true">Gerson Alves </option>
-                                                    <option value="false">Aulus Argolo</option>
+                                                <select class="form-control" formControlName="salesRepresentant_Id">
+                                                    <option *ngFor="let employee of employees" [value]="employee.id">{{ employee.name }}</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -76,9 +73,8 @@
                                             </div>
                                             <div class="col">
                                                 <label>Authorized by</label>
-                                                <select class="form-control">
-                                                    <option value="true">Gerson Alves </option>
-                                                    <option value="false">Aulus Argolo</option>
+                                                <select class="form-control" formControlName="authorizedBy_Id">
+                                                    <option *ngFor="let employee of employees" [value]="employee.id">{{ employee.name }}</option>
                                                 </select>
                                             </div>
                                             <div class="col">
@@ -90,9 +86,10 @@
                                             </div>
                                             <div class="col">
                                                 <label>Contacted by</label>
-                                                <select class="form-control">
-                                                    <option value="true">Company </option>
-                                                    <option value="false">Friends</option>
+                                                <select class="form-control" formControlName="contactedBy_Id">
+                                                    <option value="01">Company </option>
+                                                    <option value="02">Friends</option>
+                                                    <option value="03">Undefined</option>
                                                 </select>
                                             </div>
                                             <div class="col">
@@ -100,6 +97,7 @@
                                                 <input formControlName="fedId" type="text" class="form-control" />
                                             </div>
                                         </div>
+
                                         <div class="notes-style">
                                             <label>Notes</label>
                                             <textarea cols="30" rows="10" formControlName="notes" class="form-control"></textarea>

@@ -15,8 +15,8 @@
                         <li><a class="cancel" (click)="cancel()">Cancel</a></li>
                     </ul>
                 </div>
-                
-                <div class="form-horizontal">                   
+
+                <div class="form-horizontal">
                     <div class="fields-row">
                         <div class="fields-bar">
                             <div class="form-group">
@@ -48,7 +48,7 @@
                                 <div class="col">
                                     <label class="custom-select">Sex</label>
                                     <select class="form-control" formControlName="gender_Id">
-                                        <option *ngFor="let gender of genders"[ngValue]="gender.id">{{ gender.name }}</option>
+                                        <option *ngFor="let gender of genders" [ngValue]="gender.id">{{ gender.name }}</option>
                                     </select>
                                 </div>
                                 <div class="col">
@@ -125,17 +125,15 @@
                                 </div>
                                 <div class="col">
                                     <label class="custom-select">Title</label>
-                                    <select style=" border-radius:5px 5px 5px 5px;">
-                                        <option></option>
-                                        <option></option>
+                                    <select class="form-control" formControlName="title_Id">
+                                        <option *ngFor="let title of titles" [ngValue]="title.id">{{ title.name }}</option>-->
                                     </select>
                                 </div>
 
                                 <div class="col">
                                     <label class="custom-select">Department</label>
-                                    <select style=" border-radius:5px 5px 5px 5px;">
-                                        <option></option>
-                                        <option></option>
+                                    <select class="form-control" formControlName="department_Id">
+                                        <option *ngFor="let department of departments" [ngValue]="department.id">{{ department.name }}</option>-->
                                     </select>
                                 </div>
                             </div>

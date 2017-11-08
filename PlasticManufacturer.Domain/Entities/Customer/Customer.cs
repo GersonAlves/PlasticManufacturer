@@ -41,7 +41,7 @@ namespace PlasticManufacturer.Domain.Entities.Customers
         public int? ContactedBy_Id { get; set; }
         public virtual CustomerContacted ContactedBy { get; private set; }
 
-        public virtual int FedId { get; set; }
+        public virtual int? FedId { get; set; }
 
         public virtual IList<CustomerAddress> Addresses { get; private set; }
 
