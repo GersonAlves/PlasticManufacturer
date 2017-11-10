@@ -14,11 +14,19 @@ export interface ICustomer {
     authorizedBy_Id: number
     contactedBy_Id: number
     addresses: ICustomerAddress[]
-    customerDefaults_Id: number
     shipViaAccounts: ICustomerShipViaAccount[]
     notes: string
+    customerDefault?: {
+        id: number
+        freight_Id: number
+        freightDescription: string
+        mailingList: boolean
+        mutipleSites: boolean
+        reference: string
+        secondLabel_Id: number
+        note: string
+    }
 }
-
 
 export interface ICustomerAddress {
     id: number

@@ -26,7 +26,7 @@ export class CityComponent implements OnInit, AfterViewInit, OnDestroy {
     city: ICity;
     private sub: Subscription;
     errorMessage: string;
-    pageTitle: string = 'city';
+    pageTitle: string = 'City';
 
     // Use with the generic validation message class
     displayMessage: { [key: string]: string } = {};

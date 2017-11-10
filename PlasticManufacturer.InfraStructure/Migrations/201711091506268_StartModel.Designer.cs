@@ -7,13 +7,13 @@ namespace PlasticManufacturer.InfraStructure.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class AlteracaoStatusCustomer : IMigrationMetadata
+    public sealed partial class StartModel : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AlteracaoStatusCustomer));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(StartModel));
         
         string IMigrationMetadata.Id
         {
-            get { return "201711040556060_AlteracaoStatusCustomer"; }
+            get { return "201711091506268_StartModel"; }
         }
         
         string IMigrationMetadata.Source

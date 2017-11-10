@@ -269,6 +269,7 @@
     <Compile Include="Controllers\CustomerStatusController.cs" />
     <Compile Include="Controllers\DepartmentsController.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
+    <Compile Include="Controllers\FreightsController.cs" />
     <Compile Include="Controllers\GendersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MaritalStatusController.cs" />
@@ -276,6 +277,7 @@
     <Compile Include="Controllers\PackagingsController.cs" />
     <Compile Include="Controllers\PelletsController.cs" />
     <Compile Include="Controllers\RawMaterialsController.cs" />
+    <Compile Include="Controllers\SecondLabelsController.cs" />
     <Compile Include="Controllers\ShippingMethodsController.cs" />
     <Compile Include="Controllers\StatesController.cs" />
     <Compile Include="Controllers\TargetTypesController.cs" />

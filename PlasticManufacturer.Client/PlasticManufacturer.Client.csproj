@@ -103,6 +103,8 @@
     <Content Include="app\categories\category.component.html" />
     <Content Include="app\cities\city-list.component.html" />
     <Content Include="app\cities\city.component.html" />
+    <Content Include="app\customerContacteds\customerContacted-list.component.html" />
+    <Content Include="app\customerContacteds\customerContacted.component.html" />
     <Content Include="app\customerDefaults\customerDefault-list.component.html" />
     <Content Include="app\customerDefaults\customerDefault.component.html" />
     <Content Include="app\customerRatings\customerRating-list.component.html" />
@@ -122,6 +124,7 @@
     <Content Include="app\events\event-details\event-details.component.html" />
     <Content Include="app\events\event-details\session-list.component.html" />
     <Content Include="app\events\event-details\upvote.component.css" />
+    <Content Include="app\freights\freight-list.component.html" />
     <Content Include="app\genders\gender-list.component.html" />
     <Content Include="app\genders\gender.component.html" />
     <Content Include="app\maritalStatus\maritalStatus-list.component.html" />
@@ -134,6 +137,8 @@
     <Content Include="app\Pellets\pellet.component.html" />
     <Content Include="app\Pellets\pellet-list.component.html" />
     <Content Include="app\salesOrders\salesOrder.component.html" />
+    <Content Include="app\secondLabels\secondLabel-list.component.html" />
+    <Content Include="app\secondLabels\secondLabel.component.html" />
     <Content Include="app\states\state-list.component.html" />
     <Content Include="app\states\state.component.html" />
     <Content Include="app\titles\title-list.component.html" />
@@ -6538,6 +6543,12 @@
     <TypeScriptCompile Include="app\common\modal-trigger.directive.ts" />
     <TypeScriptCompile Include="app\common\simple-modal.component.ts" />
     <TypeScriptCompile Include="app\common\toastr.service.ts" />
+    <TypeScriptCompile Include="app\customerContacteds\customerContacted-guard.service.ts" />
+    <TypeScriptCompile Include="app\customerContacteds\customerContacted-list.component.ts" />
+    <TypeScriptCompile Include="app\customerContacteds\customerContacted.component.ts" />
+    <TypeScriptCompile Include="app\customerContacteds\customerContacted.model.ts" />
+    <TypeScriptCompile Include="app\customerContacteds\customerContacted.service.ts" />
+    <TypeScriptCompile Include="app\customerContacteds\index.ts" />
     <TypeScriptCompile Include="app\customerDefaults\customerDefault-guard.service.ts" />
     <TypeScriptCompile Include="app\customerDefaults\customerDefault-list.component.ts" />
     <TypeScriptCompile Include="app\customerDefaults\customerDefault.component.ts" />
@@ -6595,6 +6606,13 @@
     <TypeScriptCompile Include="app\events\shared\index.ts" />
     <TypeScriptCompile Include="app\events\location-validator.directive.ts" />
     <TypeScriptCompile Include="app\events\shared\restricted-words.validator.ts" />
+    <TypeScriptCompile Include="app\freights\freight-guard.service.ts" />
+    <TypeScriptCompile Include="app\freights\freight-list.component.ts" />
+    <TypeScriptCompile Include="app\freights\freight.component.ts" />
+    <Content Include="app\freights\freight.component.html" />
+    <TypeScriptCompile Include="app\freights\freight.model.ts" />
+    <TypeScriptCompile Include="app\freights\freight.service.ts" />
+    <TypeScriptCompile Include="app\freights\index.ts" />
     <TypeScriptCompile Include="app\genders\gender-guard.service.ts" />
     <TypeScriptCompile Include="app\genders\gender-list.component.ts" />
     <TypeScriptCompile Include="app\genders\gender.component.ts" />
@@ -6634,6 +6652,12 @@
     <TypeScriptCompile Include="app\salesOrders\salesOrder.component.ts" />
     <TypeScriptCompile Include="app\salesOrders\salesOrder.model.ts" />
     <TypeScriptCompile Include="app\salesOrders\salesOrder.service.ts" />
+    <TypeScriptCompile Include="app\secondLabels\index.ts" />
+    <TypeScriptCompile Include="app\secondLabels\secondLabel-guard.service.ts" />
+    <TypeScriptCompile Include="app\secondLabels\secondLabel-list.component.ts" />
+    <TypeScriptCompile Include="app\secondLabels\secondLabel.component.ts" />
+    <TypeScriptCompile Include="app\secondLabels\secondLabel.model.ts" />
+    <TypeScriptCompile Include="app\secondLabels\secondLabel.service.ts" />
     <TypeScriptCompile Include="app\shared\generic-validator.ts" />
     <TypeScriptCompile Include="app\shared\http-util.service.ts" />
     <TypeScriptCompile Include="app\shippingMethod\shipping-method.model.ts" />

@@ -14,7 +14,6 @@
                     </ul>
                 </div>
                 <mat-tab-group class="form-horizontal">
-                    ]
                     <div class="formula">
                         <mat-tab label="General">
                             <div class="customer-tab-content">
@@ -79,17 +78,15 @@
                                             </div>
                                             <div class="col">
                                                 <label>Rating</label>
-                                                <select class="form-control">
-                                                    <option value="true">Canada </option>
-                                                    <option value="false">Good</option>
+                                                 
+                                                <select class="form-control" formControlName="rating_Id">
+                                                    <option *ngFor="let rating of customerRatings" [value]="rating.id">{{ rating.name }}</option>
                                                 </select>
                                             </div>
                                             <div class="col">
                                                 <label>Contacted by</label>
                                                 <select class="form-control" formControlName="contactedBy_Id">
-                                                    <option value="01">Company </option>
-                                                    <option value="02">Friends</option>
-                                                    <option value="03">Undefined</option>
+                                                    <option *ngFor="let contacted of customerContacteds" [value]="contacted.id">{{ contacted.name }}</option>
                                                 </select>
                                             </div>
                                             <div class="col">
@@ -109,42 +106,46 @@
                         <mat-tab label="Defaults">
                             <div class="customer-tab-content">
                                 <div class="fields-row">
-                                    <div class="fields-bar">
+                                    <div formGroupName="customerDefault" class="fields-bar">
                                         <div class="form-group">
                                             <div class="col small">
                                                 <label>Freight</label>
-                                                <input type="text" class="form-control" placeholder="Prepaid" />
+                                                <select class="form-control" formControlName="freight_Id">
+                                                    <option *ngFor="let freight  of freights" [value]="freight.id">{{ freight.name }}</option>
+                                                </select>
                                             </div>
                                             <div class="col pdlft">
                                                 <label>&nbsp;</label>
-                                                <input class="form-control" type="text" />
+                                                <input class="form-control" formControlName="freightDescription" type="text" />
                                             </div>
                                             <div class="col pdlft">
                                                 <label>Mutiple Sites?</label>
-                                                <select class="form-control">
-                                                    <option>Yes</option>
-                                                    <option>No</option>
+                                                <select class="form-control" formControlName="mutipleSites">
+                                                    <option value="true">Yes</option>
+                                                    <option value="false">No</option>
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="col small">
                                                 <label>Mailing List?</label>
-                                                <select class="form-control">
-                                                    <option>Yes</option>
-                                                    <option>No</option>
+                                                <select class="form-control" formControlName="mailingList">
+                                                    <option value="true">Yes</option>
+                                                    <option value="false">No</option>
                                                 </select>
                                             </div>
 
                                             <div class="col pdlft">
                                                 <label>Second Label:</label>
-                                                <input class="c-padding" cla placeholder="[None]" type="text" />
+                                                <select class="form-control" formControlName="secondLabel_Id">
+                                                    <option *ngFor="let secondLabel of secondLabels" [value]="secondLabel.id">{{ secondLabel.name }}</option>
+                                                </select>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="col">
                                                 <label>Reference:</label>
-                                                <input class="form-control" type="text" />
+                                                <input formControlName="reference"  class="form-control" type="text" />
                                             </div>
                                         </div>
                                         <div class="notes-style">
@@ -182,7 +183,7 @@
                                 </div>
                             </div>
                         </mat-tab>
-                        <mat-tab label="Address">
+                        <!--<mat-tab label="Address">
                             <div class="customer-tab-content">
                                 <div class="order-info">
                                     <div calss="address-box">
@@ -316,7 +317,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </mat-tab>
+                        </mat-tab>-->
                     </div>
                 </mat-tab-group>
             </div>

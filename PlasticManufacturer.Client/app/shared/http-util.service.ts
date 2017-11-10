@@ -5,9 +5,9 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class HttpUtilService {
 
-    //private API_URL = 'http://hml.api.newfdplastics.com/api/';
+    private API_URL = 'http://hml.api.newfdplastics.com/api/';
    // private API_URL = 'http://test.api.newfdplastics.com/api/';
-    private API_URL = 'http://localhost:55751/api/';
+    //private API_URL = 'http://localhost:55751/api/';
 
     url(path: string) {
         return this.API_URL + path;

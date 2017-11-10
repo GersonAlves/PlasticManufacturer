@@ -113,10 +113,36 @@ import {
     TitleGuard
 } from './titles/index'
 
+import {
+    CustomerContactedComponent,
+    CustomerContactedListComponent,
+    CustomerContactedGuard
+} from './customerContacteds/index'
+
+import {
+    FreightComponent,
+    FreightListComponent,
+    FreightGuard
+} from './freights/index'
+
+import {
+    SecondLabelComponent,
+    SecondLabelListComponent,
+    SecondLabelGuard
+} from './secondLabels/index'
+
 import { Error404Component } from './errors/404.component'
 
-
 export const appRoutes: Routes = [
+
+    { path: 'secondLabels', component: SecondLabelListComponent },
+    { path: 'secondLabels/:id', canDeactivate: [SecondLabelGuard], component: SecondLabelComponent },
+
+    { path: 'freights', component: FreightListComponent },
+    { path: 'freights/:id', canDeactivate: [FreightGuard], component: FreightComponent },
+
+    { path: 'customerContacteds', component: CustomerContactedListComponent },
+    { path: 'customerContacteds/:id', canDeactivate: [CustomerContactedGuard], component: CustomerContactedComponent },
 
     { path: 'states', component: StatetListComponent },
     { path: 'states/:id', canDeactivate: [StateGuard], component: StateComponent },
@@ -142,10 +168,8 @@ export const appRoutes: Routes = [
     { path: 'maritalStatus', component: MaritalStatusListComponent },
     { path: 'maritalStatus/:id', canDeactivate: [MaritalStatusGuard], component: MaritalStatusComponent },
 
-    { path: 'opacitys', component: OpacityListComponent },
-    { path: 'opacitys/:id', canDeactivate: [OpacityGuard], component: OpacityComponent },
-
-
+    { path: 'opacities', component: OpacityListComponent },
+    { path: 'opacities/:id', canDeactivate: [OpacityGuard], component: OpacityComponent },
 
     { path: 'customerRatings', component: CustomerRatingListComponent },
     { path: 'customerRatings/:id', canDeactivate: [CustomerRatingGuard], component: CustomerRatingComponent },
@@ -167,8 +191,6 @@ export const appRoutes: Routes = [
 
     { path: 'cities', component: CityListComponent },
     { path: 'cities/:id', canDeactivate: [CityGuard], component: CityComponent },
-
-
 
     { path: '404', component: Error404Component }
 

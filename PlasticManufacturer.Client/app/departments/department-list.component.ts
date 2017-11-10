@@ -7,7 +7,7 @@ import { DepartmentService } from './department.service';
 })
 
 export class DepartmentListComponent implements OnInit {
-    pageTitle: string = 'department List';
+    pageTitle: string = 'Department List';
     errorMessage: string;
 
     departments: IDepartment[];

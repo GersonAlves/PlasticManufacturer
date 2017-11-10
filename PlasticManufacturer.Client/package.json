@@ -23,6 +23,7 @@
     "@angular/platform-browser-dynamic": "4.4.4",
     "@angular/router": "4.4.4",
     "core-js": "2.4.1",
+    "date-fns": "^1.29.0",
     "hammerjs": "^2.0.8",
     "ng2f-bootstrap": "^0.0.4",
     "ng2f-server": "^0.2.3",

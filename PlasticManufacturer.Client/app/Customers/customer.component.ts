@@ -13,13 +13,14 @@ import { ICustomer } from './customer.model'
 import { CustomerService } from './customer.service'
 
 //load combobox
-import { CustomerStatusService } from '../customerStatus/customer-status.service'
-import { ICustomerStatus } from '../customerStatus/customer-status.model'
-import { EmployeeService } from '../employees/employee.service'
-import { IEmployee } from '../employees/employee.model'
+import { ICustomerStatus, CustomerStatusService } from '../customerStatus/index'
+import { IEmployee, EmployeeService } from '../employees/index'
+import { ICustomerContacted, CustomerContactedService } from '../customerContacteds/index'
+import { ICustomerRating, CustomerRatingService } from '../customerRatings/index'
+import { IFreight, FreightService } from '../freights/index'
+import { ISecondLabel, SecondLabelService } from '../secondLabels/index'
 
 import { GenericValidator } from '../shared/generic-validator';
-
 
 @Component({
     templateUrl: 'app/customers/customer.component.html',
@@ -35,6 +36,10 @@ export class CustomerComponent implements OnInit, AfterViewInit, OnDestroy {
     //load combobox
     customerStatus: ICustomerStatus[];
     employees: IEmployee[];
+    customerContacteds: ICustomerContacted[];
+    customerRatings: ICustomerRating[];
+    freights: IFreight[];
+    secondLabels: ISecondLabel[];
 
     private sub: Subscription;
     errorMessage: string;
@@ -50,7 +55,11 @@ export class CustomerComponent implements OnInit, AfterViewInit, OnDestroy {
         private formBuilder: FormBuilder,
         private route: ActivatedRoute,
         private customerStatusService: CustomerStatusService,
-        private employeeService: EmployeeService) {
+        private employeeService: EmployeeService,
+        private customerContactedService: CustomerContactedService,
+        private customerRatingService: CustomerRatingService,
+        private freightService: FreightService,
+        private secondLabelService: SecondLabelService) {
 
         // Defines all of the validation messages for the form.
         // These could instead be retrieved from a file or database.
@@ -74,17 +83,25 @@ export class CustomerComponent implements OnInit, AfterViewInit, OnDestroy {
             code: '',// tenho que definir
             rating_Id: undefined,
             status_Id: undefined,
-            prospect: 0,
+            prospect: undefined,
             salesRepresentant_Id: undefined,
             authorizedBy_Id: undefined,
             contactedBy_Id: undefined,
-            lead: 0,
-            fedId: 0,
-            notes: ''
-
+            lead: undefined,
+            fedId: undefined,
+            notes: '',
+            customerDefault: this.formBuilder.group({
+                id: 0,
+                freight_Id: undefined,
+                freightDescription: '',
+                mailingList: undefined,
+                mutipleSites: undefined,
+                reference: '',
+                secondLabel_Id: undefined,
+                note: ''
+            })
         });
 
-        //contactedBy_Id: number
         //addresses: ICustomerAddress[]
         //customerDefaults_Id: number
         //shipViaAccounts: ICustomerShipViaAccount[]
@@ -93,6 +110,11 @@ export class CustomerComponent implements OnInit, AfterViewInit, OnDestroy {
         // loads combobox
         this.loadEmployees();
         this.loadCustomerStatus();
+        this.loadCustomerContacteds();
+        this.loadCustomerRatings();
+        this.loadFreights();
+        this.loadSecondLabels();
+        
 
         // Read the customer Id from the route parameter
         this.sub = this.route.params.subscribe(
@@ -128,13 +150,21 @@ export class CustomerComponent implements OnInit, AfterViewInit, OnDestroy {
         }
     }
 
-
-
     onCustomerRetrieved(customer: ICustomer): void {
         if (this.customerForm) {
             this.customerForm.reset();
         }
+
+        console.log('passei 01');
+
+        //let customerDefaultClone = this.customer.customerDefault;
+
         this.customer = customer;
+
+        //if (!this.customer.customerDefault) this.customer.customerDefault = customerDefaultClone;
+
+        //console.log('passei 02' + this.customer.customerDefault);
+
 
         if (this.customer.id === 0) {
             this.pageTitle = 'Add customer';
@@ -142,7 +172,7 @@ export class CustomerComponent implements OnInit, AfterViewInit, OnDestroy {
             this.pageTitle = `Edit customer  : ${this.customer.name}`;
         }
 
-        console.log(this.customer.id);
+       
         // Update the data on the form
         this.customerForm.patchValue({
             id: this.customer.id,
@@ -152,10 +182,12 @@ export class CustomerComponent implements OnInit, AfterViewInit, OnDestroy {
             salesRepresentant_Id: this.customer.salesRepresentant_Id,
             authorizedBy_Id: this.customer.authorizedBy_Id,
             contactedBy_Id: this.customer.contactedBy_Id,
+            rating_Id: this.customer.rating_Id,
             prospect: this.customer.prospect,
             lead: this.customer.lead,
             fedId: this.customer.fedId,
-            notes: this.customer.notes
+            notes: this.customer.notes,
+            customerDefault: this.customer.customerDefault
         });
     }
 
@@ -179,7 +211,6 @@ export class CustomerComponent implements OnInit, AfterViewInit, OnDestroy {
         this.customerForm.reset();
         this.router.navigate(['/customers']);
     }
-
 
     delete(): void {
         if (this.customer.id === 0) {
@@ -209,6 +240,28 @@ export class CustomerComponent implements OnInit, AfterViewInit, OnDestroy {
     loadEmployees(): void {
         this.employeeService.getAll()
             .subscribe(employees => this.employees = employees,
+            error => this.errorMessage = <any>error);
+    }
+
+    loadCustomerContacteds(): void {
+        this.customerContactedService.getAll()
+            .subscribe(customerContacteds => this.customerContacteds = customerContacteds,
+            error => this.errorMessage = <any>error);
+    }
+
+    loadCustomerRatings(): void {
+        this.customerRatingService.getAll()
+            .subscribe(customerRatings => this.customerRatings = customerRatings,
+            error => this.errorMessage = <any>error);
+    }
+    loadFreights(): void {
+        this.freightService.getAll()
+            .subscribe(freights => this.freights = freights,
+            error => this.errorMessage = <any>error);
+    }
+    loadSecondLabels(): void {
+        this.secondLabelService.getAll()
+            .subscribe(secondLabels => this.secondLabels = secondLabels,
             error => this.errorMessage = <any>error);
     }
 

@@ -1,0 +1,5 @@
+﻿export * from './freight.service'
+export * from './freight.component'
+export * from './freight.model'
+export * from './freight-guard.service'
+export * from './freight-list.component'

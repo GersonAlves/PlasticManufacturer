@@ -12,6 +12,12 @@ namespace PlasticManufacturer.Domain.Entities.Customers
 {
     public class Customer : Entity
     {
+
+        public Customer()
+        {
+            
+        }
+
         public virtual string LastName { get; set; }
 
         public virtual string Code { get; set; }
@@ -25,9 +31,9 @@ namespace PlasticManufacturer.Domain.Entities.Customers
         public virtual CustomerStatus Status { get; private set; }
 
 
-        public virtual bool Prospect { get; set; }
+        public virtual bool? Prospect { get; set; }
 
-        public virtual bool Lead { get; set; }
+        public virtual bool? Lead { get; set; }
 
         [ForeignKey("SalesRepresentant")]
         public int? SalesRepresentant_Id { get; set; }
@@ -45,9 +51,7 @@ namespace PlasticManufacturer.Domain.Entities.Customers
 
         public virtual IList<CustomerAddress> Addresses { get; private set; }
 
-        [ForeignKey("CustomerDefaults")]
-        public int? CustomerDefaults_Id { get; set; }
-        public virtual CustomerDefault CustomerDefaults { get; private set; }
+        public virtual CustomerDefault CustomerDefault { get; set; }
 
         public virtual IList<CustomerShipViaAccount> ShipViaAccounts { get; private set; }
 

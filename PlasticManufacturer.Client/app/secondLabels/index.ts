@@ -1,0 +1,5 @@
+﻿export * from './secondLabel.service'
+export * from './secondLabel.component'
+export * from './secondLabel.model'
+export * from './secondLabel-guard.service'
+export * from './secondLabel-list.component'

@@ -7,7 +7,7 @@ import { TitleService } from './title.service';
 })
 
 export class TitleListComponent implements OnInit {
-    pageTitle: string = 'title List';
+    pageTitle: string = 'Title List';
     errorMessage: string;
 
     titles: ITitle[];

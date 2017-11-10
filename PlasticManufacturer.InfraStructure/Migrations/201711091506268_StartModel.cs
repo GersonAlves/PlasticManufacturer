@@ -238,34 +238,34 @@ namespace PlasticManufacturer.InfraStructure.Migrations
                         Id = c.Int(nullable: false, identity: true),
                         LastName = c.String(),
                         Code = c.String(),
-                        Prospect = c.Boolean(nullable: false),
-                        Lead = c.Boolean(nullable: false),
-                        FedId = c.Int(nullable: false),
+                        Rating_Id = c.Int(),
+                        Status_Id = c.Int(),
+                        Prospect = c.Boolean(),
+                        Lead = c.Boolean(),
+                        SalesRepresentant_Id = c.Int(),
+                        AuthorizedBy_Id = c.Int(),
+                        ContactedBy_Id = c.Int(),
+                        FedId = c.Int(),
                         Notes = c.String(),
                         Name = c.String(),
                         Description = c.String(),
                         CreationDate = c.DateTime(),
                         LastUpdate = c.DateTime(),
-                        AuthorizedBy_Id = c.Int(),
-                        ContactedBy_Id = c.Int(),
-                        CustomerDefaults_Id = c.Int(),
-                        Rating_Id = c.Int(),
-                        SalesRepresentant_Id = c.Int(),
-                        Status_Id = c.Int(),
+                        CustomerDefault_Id = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Employees", t => t.AuthorizedBy_Id)
                 .ForeignKey("dbo.CustomerContacteds", t => t.ContactedBy_Id)
-                .ForeignKey("dbo.CustomerDefaults", t => t.CustomerDefaults_Id)
+                .ForeignKey("dbo.CustomerDefaults", t => t.CustomerDefault_Id)
                 .ForeignKey("dbo.CustomerRatings", t => t.Rating_Id)
                 .ForeignKey("dbo.Employees", t => t.SalesRepresentant_Id)
                 .ForeignKey("dbo.CustomerStatus", t => t.Status_Id)
+                .Index(t => t.Rating_Id)
+                .Index(t => t.Status_Id)
+                .Index(t => t.SalesRepresentant_Id)
                 .Index(t => t.AuthorizedBy_Id)
                 .Index(t => t.ContactedBy_Id)
-                .Index(t => t.CustomerDefaults_Id)
-                .Index(t => t.Rating_Id)
-                .Index(t => t.SalesRepresentant_Id)
-                .Index(t => t.Status_Id);
+                .Index(t => t.CustomerDefault_Id);
             
             CreateTable(
                 "dbo.Employees",
@@ -273,6 +273,80 @@ namespace PlasticManufacturer.InfraStructure.Migrations
                     {
                         Id = c.Int(nullable: false, identity: true),
                         Email = c.String(),
+                        Status = c.Boolean(),
+                        LastName = c.String(),
+                        Birthday = c.DateTime(),
+                        Gender_Id = c.Int(),
+                        MaritalStatus_Id = c.Int(),
+                        Address = c.String(),
+                        City_Id = c.Int(),
+                        State_Id = c.Int(),
+                        ZipCode = c.String(),
+                        Telephone = c.String(),
+                        Ss = c.String(),
+                        HireDate = c.DateTime(),
+                        Title_Id = c.Int(),
+                        Department_Id = c.Int(),
+                        Name = c.String(),
+                        Description = c.String(),
+                        CreationDate = c.DateTime(),
+                        LastUpdate = c.DateTime(),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Cities", t => t.City_Id)
+                .ForeignKey("dbo.Departments", t => t.Department_Id)
+                .ForeignKey("dbo.Genders", t => t.Gender_Id)
+                .ForeignKey("dbo.MaritalStatus", t => t.MaritalStatus_Id)
+                .ForeignKey("dbo.States", t => t.State_Id)
+                .ForeignKey("dbo.Titles", t => t.Title_Id)
+                .Index(t => t.Gender_Id)
+                .Index(t => t.MaritalStatus_Id)
+                .Index(t => t.City_Id)
+                .Index(t => t.State_Id)
+                .Index(t => t.Title_Id)
+                .Index(t => t.Department_Id);
+            
+            CreateTable(
+                "dbo.Departments",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Name = c.String(),
+                        Description = c.String(),
+                        CreationDate = c.DateTime(),
+                        LastUpdate = c.DateTime(),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.Genders",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Name = c.String(),
+                        Description = c.String(),
+                        CreationDate = c.DateTime(),
+                        LastUpdate = c.DateTime(),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.MaritalStatus",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Name = c.String(),
+                        Description = c.String(),
+                        CreationDate = c.DateTime(),
+                        LastUpdate = c.DateTime(),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.Titles",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
                         Name = c.String(),
                         Description = c.String(),
                         CreationDate = c.DateTime(),
@@ -297,20 +371,22 @@ namespace PlasticManufacturer.InfraStructure.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        MailingList = c.Boolean(nullable: false),
-                        MutipleSites = c.Boolean(nullable: false),
+                        Freight_Id = c.Int(),
+                        FreightDescription = c.String(),
+                        MailingList = c.Boolean(),
+                        MutipleSites = c.Boolean(),
                         Reference = c.String(),
+                        SecondLabel_Id = c.Int(),
+                        Note = c.String(),
                         Name = c.String(),
                         Description = c.String(),
                         CreationDate = c.DateTime(),
                         LastUpdate = c.DateTime(),
-                        Freights_Id = c.Int(),
-                        SecondLabel_Id = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Freights", t => t.Freights_Id)
+                .ForeignKey("dbo.Freights", t => t.Freight_Id)
                 .ForeignKey("dbo.SecondLabels", t => t.SecondLabel_Id)
-                .Index(t => t.Freights_Id)
+                .Index(t => t.Freight_Id)
                 .Index(t => t.SecondLabel_Id);
             
             CreateTable(
@@ -614,11 +690,17 @@ namespace PlasticManufacturer.InfraStructure.Migrations
             DropForeignKey("dbo.CustomerShipViaAccounts", "ShippingMethod_Id", "dbo.ShippingMethods");
             DropForeignKey("dbo.Customers", "SalesRepresentant_Id", "dbo.Employees");
             DropForeignKey("dbo.Customers", "Rating_Id", "dbo.CustomerRatings");
-            DropForeignKey("dbo.Customers", "CustomerDefaults_Id", "dbo.CustomerDefaults");
+            DropForeignKey("dbo.Customers", "CustomerDefault_Id", "dbo.CustomerDefaults");
             DropForeignKey("dbo.CustomerDefaults", "SecondLabel_Id", "dbo.SecondLabels");
-            DropForeignKey("dbo.CustomerDefaults", "Freights_Id", "dbo.Freights");
+            DropForeignKey("dbo.CustomerDefaults", "Freight_Id", "dbo.Freights");
             DropForeignKey("dbo.Customers", "ContactedBy_Id", "dbo.CustomerContacteds");
             DropForeignKey("dbo.Customers", "AuthorizedBy_Id", "dbo.Employees");
+            DropForeignKey("dbo.Employees", "Title_Id", "dbo.Titles");
+            DropForeignKey("dbo.Employees", "State_Id", "dbo.States");
+            DropForeignKey("dbo.Employees", "MaritalStatus_Id", "dbo.MaritalStatus");
+            DropForeignKey("dbo.Employees", "Gender_Id", "dbo.Genders");
+            DropForeignKey("dbo.Employees", "Department_Id", "dbo.Departments");
+            DropForeignKey("dbo.Employees", "City_Id", "dbo.Cities");
             DropForeignKey("dbo.CustomerAddresses", "Customer_Id", "dbo.Customers");
             DropForeignKey("dbo.ColorCustomerAddresses", "ColorMatchRequest_Id", "dbo.ColorMatchRequests");
             DropForeignKey("dbo.ColorMatchRequests", "Carrier_Id", "dbo.Carriers");
@@ -638,13 +720,19 @@ namespace PlasticManufacturer.InfraStructure.Migrations
             DropIndex("dbo.CustomerShipViaAccounts", new[] { "Customer_Id" });
             DropIndex("dbo.CustomerShipViaAccounts", new[] { "ShippingMethod_Id" });
             DropIndex("dbo.CustomerDefaults", new[] { "SecondLabel_Id" });
-            DropIndex("dbo.CustomerDefaults", new[] { "Freights_Id" });
-            DropIndex("dbo.Customers", new[] { "Status_Id" });
-            DropIndex("dbo.Customers", new[] { "SalesRepresentant_Id" });
-            DropIndex("dbo.Customers", new[] { "Rating_Id" });
-            DropIndex("dbo.Customers", new[] { "CustomerDefaults_Id" });
+            DropIndex("dbo.CustomerDefaults", new[] { "Freight_Id" });
+            DropIndex("dbo.Employees", new[] { "Department_Id" });
+            DropIndex("dbo.Employees", new[] { "Title_Id" });
+            DropIndex("dbo.Employees", new[] { "State_Id" });
+            DropIndex("dbo.Employees", new[] { "City_Id" });
+            DropIndex("dbo.Employees", new[] { "MaritalStatus_Id" });
+            DropIndex("dbo.Employees", new[] { "Gender_Id" });
+            DropIndex("dbo.Customers", new[] { "CustomerDefault_Id" });
             DropIndex("dbo.Customers", new[] { "ContactedBy_Id" });
             DropIndex("dbo.Customers", new[] { "AuthorizedBy_Id" });
+            DropIndex("dbo.Customers", new[] { "SalesRepresentant_Id" });
+            DropIndex("dbo.Customers", new[] { "Status_Id" });
+            DropIndex("dbo.Customers", new[] { "Rating_Id" });
             DropIndex("dbo.ColorMatchRequests", new[] { "TargetType_Id" });
             DropIndex("dbo.ColorMatchRequests", new[] { "Reformulation_Id" });
             DropIndex("dbo.ColorMatchRequests", new[] { "Product_Id" });
@@ -683,6 +771,10 @@ namespace PlasticManufacturer.InfraStructure.Migrations
             DropTable("dbo.Freights");
             DropTable("dbo.CustomerDefaults");
             DropTable("dbo.CustomerContacteds");
+            DropTable("dbo.Titles");
+            DropTable("dbo.MaritalStatus");
+            DropTable("dbo.Genders");
+            DropTable("dbo.Departments");
             DropTable("dbo.Employees");
             DropTable("dbo.Customers");
             DropTable("dbo.ColorMatchRequests");

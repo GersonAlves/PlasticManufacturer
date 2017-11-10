@@ -58,37 +58,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context\PlasticManufacturerContext.cs" />
-    <Compile Include="Migrations\201709302214171_StartModel.cs" />
-    <Compile Include="Migrations\201709302214171_StartModel.Designer.cs">
-      <DependentUpon>201709302214171_StartModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201711040318354_AlteracaoStatusEmployee.cs" />
-    <Compile Include="Migrations\201711040318354_AlteracaoStatusEmployee.Designer.cs">
-      <DependentUpon>201711040318354_AlteracaoStatusEmployee.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201711040334411_AlteracaoHireDateEmployee.cs" />
-    <Compile Include="Migrations\201711040334411_AlteracaoHireDateEmployee.Designer.cs">
-      <DependentUpon>201711040334411_AlteracaoHireDateEmployee.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201711040556060_AlteracaoStatusCustomer.cs" />
-    <Compile Include="Migrations\201711040556060_AlteracaoStatusCustomer.Designer.cs">
-      <DependentUpon>201711040556060_AlteracaoStatusCustomer.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201711040636544_correcaoFkEmployee.cs" />
-    <Compile Include="Migrations\201711040636544_correcaoFkEmployee.Designer.cs">
-      <DependentUpon>201711040636544_correcaoFkEmployee.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201711040704154_correcaoFkCustomerEmployee.cs" />
-    <Compile Include="Migrations\201711040704154_correcaoFkCustomerEmployee.Designer.cs">
-      <DependentUpon>201711040704154_correcaoFkCustomerEmployee.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201711041622422_correcaoCustomer.cs" />
-    <Compile Include="Migrations\201711041622422_correcaoCustomer.Designer.cs">
-      <DependentUpon>201711041622422_correcaoCustomer.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201711081706090_AlteracaoCustoemr.cs" />
-    <Compile Include="Migrations\201711081706090_AlteracaoCustoemr.Designer.cs">
-      <DependentUpon>201711081706090_AlteracaoCustoemr.cs</DependentUpon>
+    <Compile Include="Migrations\201711091506268_StartModel.cs" />
+    <Compile Include="Migrations\201711091506268_StartModel.Designer.cs">
+      <DependentUpon>201711091506268_StartModel.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -116,29 +88,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201709302214171_StartModel.resx">
-      <DependentUpon>201709302214171_StartModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711040318354_AlteracaoStatusEmployee.resx">
-      <DependentUpon>201711040318354_AlteracaoStatusEmployee.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711040334411_AlteracaoHireDateEmployee.resx">
-      <DependentUpon>201711040334411_AlteracaoHireDateEmployee.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711040556060_AlteracaoStatusCustomer.resx">
-      <DependentUpon>201711040556060_AlteracaoStatusCustomer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711040636544_correcaoFkEmployee.resx">
-      <DependentUpon>201711040636544_correcaoFkEmployee.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711040704154_correcaoFkCustomerEmployee.resx">
-      <DependentUpon>201711040704154_correcaoFkCustomerEmployee.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711041622422_correcaoCustomer.resx">
-      <DependentUpon>201711041622422_correcaoCustomer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711081706090_AlteracaoCustoemr.resx">
-      <DependentUpon>201711081706090_AlteracaoCustoemr.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201711091506268_StartModel.resx">
+      <DependentUpon>201711091506268_StartModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

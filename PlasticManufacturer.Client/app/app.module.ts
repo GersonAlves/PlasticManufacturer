@@ -197,6 +197,28 @@ import {
     TitleService
 } from './titles/index'
 
+import {
+    CustomerContactedComponent,
+    CustomerContactedListComponent,
+    CustomerContactedGuard,
+    CustomerContactedService
+
+} from './customerContacteds/index'
+
+import {
+    FreightComponent,
+    FreightListComponent,
+    FreightGuard,
+    FreightService
+} from './freights/index'
+
+import {
+    SecondLabelComponent,
+    SecondLabelListComponent,
+    SecondLabelGuard,
+    SecondLabelService
+} from './secondLabels/index'
+
 import { appRoutes } from './routes'
 import { Error404Component } from './errors/404.component'
 
@@ -240,7 +262,6 @@ import { Error404Component } from './errors/404.component'
         MatStepperModule,
         CdkTableModule
     ],
-
     declarations: [
         AppComponent,
         StateComponent,
@@ -248,8 +269,14 @@ import { Error404Component } from './errors/404.component'
         TitleComponent,
         TitleListComponent,
         EventsListComponent,
+        SecondLabelComponent,
+        SecondLabelListComponent,
         EventThumbnailComponent,
         EventDetailsComponent,
+        CustomerContactedComponent,
+        CustomerContactedListComponent,
+        FreightComponent,
+        FreightListComponent,
         NavBarComponent,
         CustomerListComponent,
         CreateEventComponent,
@@ -316,6 +343,12 @@ import { Error404Component } from './errors/404.component'
         PackagingService,
         CustomerGuard,
         CustomerService,
+        FreightGuard,
+        FreightService,
+        SecondLabelGuard,
+        SecondLabelService,
+        CustomerContactedGuard,
+        CustomerContactedService,
         EmployeeGuard,
         EmployeeService,
         GenderGuard,

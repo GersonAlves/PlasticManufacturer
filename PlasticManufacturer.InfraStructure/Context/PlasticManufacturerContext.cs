@@ -20,14 +20,15 @@ namespace PlasticManufacturer.InfraStructure.Context
     {
         public PlasticManufacturerContext() : base("PlasticManufacturer")
         {
-            this.Configuration.LazyLoadingEnabled = false;
+            // this.Configuration.LazyLoadingEnabled = false;
+            this.Configuration.ProxyCreationEnabled = false;
         }
 
-        public DbSet<RawMaterial>RawMateials { get; set; }
+        public DbSet<RawMaterial> RawMateials { get; set; }
         public DbSet<Cost> Costs { get; set; }
         public DbSet<OperationType> OperationTypes { get; set; }
         public DbSet<Category> Categories { get; set; }
-        
+
         //Customer
         public DbSet<Customer> Customers { get; set; }
         public DbSet<CustomerAddress> CustomerAddresses { get; set; }
@@ -38,7 +39,7 @@ namespace PlasticManufacturer.InfraStructure.Context
         public DbSet<CustomerStatus> CustomersStatus { get; set; }
         public DbSet<SecondLabel> SecondLabels { get; set; }
         public DbSet<CustomerResin> CustomerResins { get; set; }
-                
+
         //Employee
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Gender> Genders { get; set; }
@@ -56,12 +57,10 @@ namespace PlasticManufacturer.InfraStructure.Context
         public DbSet<AddressType> AddressTypes { get; set; }
         public DbSet<City> Cities { get; set; }
         public DbSet<State> States { get; set; }
-        
+
         //Color Match request
         public DbSet<ColorMatchRequest> ColorMatchRequests { get; set; }
         public DbSet<ColorCustomerAddress> ColorCustomerAdresses { get; set; }
-
-
 
         //common
         public DbSet<TargetType> TargetTypes { get; set; }
@@ -71,16 +70,14 @@ namespace PlasticManufacturer.InfraStructure.Context
         public DbSet<Carrier> Carriers { get; set; }
         public DbSet<ShippingMethod> ShippingMethods { get; set; }
         public DbSet<Freight> Freights { get; set; }
-        public DbSet<UnitMeasurement> UnitMeasurements { get; set; }            
+        public DbSet<UnitMeasurement> UnitMeasurements { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             Database.SetInitializer<PlasticManufacturerContext>(null);
-            modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
+            // modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
             base.OnModelCreating(modelBuilder);
-            
         }
 
-        
     }
 }

@@ -26,7 +26,7 @@ export class DepartmentComponent implements OnInit, AfterViewInit, OnDestroy {
     department: IDepartment;
     private sub: Subscription;
     errorMessage: string;
-    pageTitle: string = 'department';
+    pageTitle: string = 'Department';
 
     // Use with the generic validation message class
     displayMessage: { [key: string]: string } = {};

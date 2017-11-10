@@ -39,15 +39,12 @@ namespace PlasticManufacturer.API.Controllers
 
         // GET: api/Customers/5
         [ResponseType(typeof(Customer))]
-        public async Task<IHttpActionResult> GetCustomer(int id)
+        public Customer GetCustomer(int id)
         {
-            Customer customer = await db.Customers.FindAsync(id);
-            if (customer == null)
-            {
-                return NotFound();
-            }
+            
 
-            return Ok(customer);
+            Customer customer = repository.GetById(id);
+               return customer;
         }
 
         // PUT: api/Customers/5
@@ -68,9 +65,11 @@ namespace PlasticManufacturer.API.Controllers
 
 
             db.Entry(customer).State = EntityState.Modified;
+            db.Entry(customer.CustomerDefault).State = EntityState.Modified;
 
             try
             {
+
                 await db.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException)

@@ -1,0 +1,5 @@
+﻿export * from './customerContacted.service'
+export * from './customerContacted.component'
+export * from './customerContacted.model'
+export * from './customerContacted-guard.service'
+export * from './customerContacted-list.component'
