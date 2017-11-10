@@ -41,9 +41,11 @@
                     <div class="fields-row">
                         <div class="fields-bar">
                             <div class="form-group">
+                               
                                 <div class="col">
                                     <label class="control-label " for="Birthday">Birthday</label>
-                                    <input class="form-control text-box single-line" placeholder="00/00/00" id="Birthday" name="Birthday" type="text" value="" />
+                                    <input matInput [matDatepicker]="picker" class="form-control text-box single-line" (click)="picker.open()" id="Birthday" name="Birthday"  placeholder="Choose a date">
+                                      <mat-datepicker #picker></mat-datepicker>
                                 </div>
                                 <div class="col">
                                     <label class="custom-select">Sex</label>
@@ -121,7 +123,8 @@
                             <div class="form-group">
                                 <div class="col">
                                     <label class="control-label " for="HireDate">Hire Date</label>
-                                    <input class="form-control text-box single-line" formControlName="hireDate" id="HireDate" name="HireDate" placeholder="00/00/00" type="text" value="" />
+                                    <input matInput [matDatepicker]="pickerHire" formControlName="hireDate" id="HireDate" name="HireDate" class="form-control text-box single-line" (click)="pickerHire.open()" placeholder="Choose a date">
+                                    <mat-datepicker #pickerHire></mat-datepicker>
                                 </div>
                                 <div class="col">
                                     <label class="custom-select">Title</label>
