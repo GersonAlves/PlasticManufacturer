@@ -11,6 +11,8 @@ export interface ICustomer {
     rating_Id: number
     status_Id: number
     salesRepresentant_Id: number
+    city_Id: number
+    state_Id:number
     authorizedBy_Id: number
     contactedBy_Id: number
     addresses: ICustomerAddress[]

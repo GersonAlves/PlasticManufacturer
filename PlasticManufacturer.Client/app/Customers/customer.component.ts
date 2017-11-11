@@ -19,6 +19,9 @@ import { ICustomerContacted, CustomerContactedService } from '../customerContact
 import { ICustomerRating, CustomerRatingService } from '../customerRatings/index'
 import { IFreight, FreightService } from '../freights/index'
 import { ISecondLabel, SecondLabelService } from '../secondLabels/index'
+import { ICity, CityService } from '../cities/index'
+import { IState, StateService } from '../states/index'
+
 
 import { GenericValidator } from '../shared/generic-validator';
 
@@ -40,6 +43,8 @@ export class CustomerComponent implements OnInit, AfterViewInit, OnDestroy {
     customerRatings: ICustomerRating[];
     freights: IFreight[];
     secondLabels: ISecondLabel[];
+    cities: ICity[];
+    states: IState[];
 
     private sub: Subscription;
     errorMessage: string;
@@ -59,6 +64,8 @@ export class CustomerComponent implements OnInit, AfterViewInit, OnDestroy {
         private customerContactedService: CustomerContactedService,
         private customerRatingService: CustomerRatingService,
         private freightService: FreightService,
+        private cityService: CityService,
+        private stateService: StateService, 
         private secondLabelService: SecondLabelService) {
 
         // Defines all of the validation messages for the form.
@@ -90,6 +97,8 @@ export class CustomerComponent implements OnInit, AfterViewInit, OnDestroy {
             lead: undefined,
             fedId: undefined,
             notes: '',
+            city_Id: undefined,
+            state_Id: undefined,
             customerDefault: this.formBuilder.group({
                 id: 0,
                 freight_Id: undefined,
@@ -114,6 +123,8 @@ export class CustomerComponent implements OnInit, AfterViewInit, OnDestroy {
         this.loadCustomerRatings();
         this.loadFreights();
         this.loadSecondLabels();
+        this.loadCity();
+        this.loadState();
         
 
         // Read the customer Id from the route parameter
@@ -187,6 +198,8 @@ export class CustomerComponent implements OnInit, AfterViewInit, OnDestroy {
             lead: this.customer.lead,
             fedId: this.customer.fedId,
             notes: this.customer.notes,
+            city_Id: this.customer.city_Id,
+            state_Id: this.customer.state_Id,
             customerDefault: this.customer.customerDefault
         });
     }
@@ -262,6 +275,18 @@ export class CustomerComponent implements OnInit, AfterViewInit, OnDestroy {
     loadSecondLabels(): void {
         this.secondLabelService.getAll()
             .subscribe(secondLabels => this.secondLabels = secondLabels,
+            error => this.errorMessage = <any>error);
+    }
+
+    loadCity(): void {
+        this.cityService.getAll()
+            .subscribe(cities => this.cities = cities,
+            error => this.errorMessage = <any>error);
+    }
+
+    loadState(): void {
+        this.stateService.getAll()
+            .subscribe(states => this.states = states,
             error => this.errorMessage = <any>error);
     }
 

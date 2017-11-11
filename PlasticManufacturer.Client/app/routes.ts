@@ -131,9 +131,18 @@ import {
     SecondLabelGuard
 } from './secondLabels/index'
 
+import {
+    ColorMatchRequestComponent,
+    ColorMatchRequestListComponent,
+    ColorMatchRequestGuard
+} from './colorMatchRequests/index'
+
 import { Error404Component } from './errors/404.component'
 
 export const appRoutes: Routes = [
+
+    { path: 'colorMatchRequests', component: ColorMatchRequestListComponent },
+    { path: 'colorMatchRequests/:id', canDeactivate: [ColorMatchRequestGuard], component: ColorMatchRequestComponent },
 
     { path: 'secondLabels', component: SecondLabelListComponent },
     { path: 'secondLabels/:id', canDeactivate: [SecondLabelGuard], component: SecondLabelComponent },

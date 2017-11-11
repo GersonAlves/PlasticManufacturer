@@ -26,7 +26,7 @@
     </div>
     <!-- END Shell -->
     <!-- END Header -->
-    <nav id='cssmenu'>
+    <!--<nav id='cssmenu'>
         <div id="head-mobile"></div>
         <div class="nav-mobile"></div>
         <ul class="shell">
@@ -59,18 +59,6 @@
                     <li><a routerLink="/opacities" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Opacity</a></li>
                     <li><a routerLink="/packagings" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Packing</a></li>                                       
                     <li><a routerLink="/cities" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">City</a></li>
-                    <!--<li><a routerLink="/customerDefaults" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Customer Default</a></li>-->
-
-                    <!--<li>@Html.ActionLink("Category", "index", "Categories")</li>
-
-                    <li>@Html.ActionLink("Opacity", "index", "Opacities")</li>
-                    <li>@Html.ActionLink("Packaging", "index", "Packagings")</li>
-                    <li>@Html.ActionLink("Pellet", "index", "Pellets")</li>
-                    <li>@Html.ActionLink("Employee", "index", "Employees")</li>
-                    <li>
-                        <a href='#'>Sub Item</a>
-                        <ul><li><a href='#'>Item 1</a></li></ul>
-                    </li>-->
                 </ul>
             </li>
             <li>
@@ -78,30 +66,42 @@
                 <ul>
                     <li><a routerLink="/customers" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Customer</a></li>
                     <li><a routerLink="/employees" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Employee</a></li>
-                    <!--   <li>@Html.ActionLink("Customer Resin", "index", "CustomerResins")</li>
-                       <li>@Html.ActionLink("Target Type", "index", "TargetTypes")</li>
-                       <li>@Html.ActionLink("Defaults", "tela", "Categories")</li>
-
-                       <li>@Html.ActionLink("Employee", "index", "Employees")</li>
-                       <li><a href="#">Supplier</a></li>
-                       <li>@Html.ActionLink("Raw Material", "index", "RawMaterials")</li>-->
                 </ul>
             </li>
             <li>
                 <a href='#'>Tasks</a>
-                <!--<ul>
-                    <li>@Html.ActionLink("Color Match Request", "create", "ColorMatchRequests")</li>
-                </ul>-->
+                <ul>
+                    <li><a routerLink="/colorMatchRequests" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Color Match Requests</a></li>
+                </ul>
+                
             </li>
             <li>
                 <a href='#'>Reports</a>
-                <!--<ul>
-                    <li><a href='#'>none</a></li>
-                </ul>-->
             </li>
         </ul>
-    </nav>
-
+    </nav>-->
+    <label for="show-menu" class="show-menu">Show Menu</label>
+    <input type="checkbox" id="show-menu" role="button">
+    <ul id="menu">
+        <li><a href="#">Home</a></li>
+        <li>
+            <a href="#">About</a>
+            <ul class="hidden">
+                <li><a href="#">Who We Are</a></li>
+                <li><a href="#">What We Do</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">Portfolio</a>
+            <ul class="hidden">
+                <li><a href="#">Photography</a></li>
+                <li><a href="#">Web & User Interface Design</a></li>
+                <li><a href="#">Illustration</a></li>
+            </ul>
+        </li>
+        <li><a href="#">News</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
 </div>
 
 

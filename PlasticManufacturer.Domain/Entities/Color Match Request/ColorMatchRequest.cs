@@ -9,8 +9,8 @@ using System.Threading.Tasks;
 
 namespace PlasticManufacturer.Domain.Entities.Color_Match_Request
 {
-    public class ColorMatchRequest: Entity      
-    {       
+    public class ColorMatchRequest : Entity
+    {
         public virtual Customer Customer { get; set; }
         public virtual int LoteId { get; set; }
         public virtual IList<ColorCustomerAddress> ColorCustomerAdresses { get; set; }
@@ -28,7 +28,7 @@ namespace PlasticManufacturer.Domain.Entities.Color_Match_Request
         public virtual bool Blow { get; set; }
         public virtual bool Compression { get; set; }
         public virtual bool Extrusion { get; set; }
-        public virtual bool FiberDenier    { get; set; }
+        public virtual bool FiberDenier { get; set; }
         public virtual bool CoEx { get; set; }
         public virtual CustomerResin CustomerResin { get; set; }
         public virtual string MeltIndex { get; set; }
@@ -39,13 +39,13 @@ namespace PlasticManufacturer.Domain.Entities.Color_Match_Request
         public virtual bool GasAssitInjection { get; set; }
         public virtual bool Exact { get; set; }
         public virtual bool Commercial { get; set; }
-        public virtual string ClosestSTD  { get; set; }
+        public virtual string ClosestSTD { get; set; }
         public virtual string MoreDe { get; set; }
         public virtual bool CieLab { get; set; }
         public virtual bool D65 { get; set; }
         public virtual bool Cfw { get; set; }
         public virtual bool A { get; set; }
-        public virtual int ChipsQty { get; set; }      
+        public virtual int ChipsQty { get; set; }
         public virtual bool TubeSample { get; set; }
         public virtual bool SheetExtrusionSample { get; set; }
         public virtual decimal RequiredCustomerQty { get; set; }

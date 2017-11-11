@@ -103,6 +103,8 @@
     <Content Include="app\categories\category.component.html" />
     <Content Include="app\cities\city-list.component.html" />
     <Content Include="app\cities\city.component.html" />
+    <Content Include="app\colorMatchRequests\colorMatchRequest-list.component.html" />
+    <Content Include="app\colorMatchRequests\colorMatchRequest.component.html" />
     <Content Include="app\customerContacteds\customerContacted-list.component.html" />
     <Content Include="app\customerContacteds\customerContacted.component.html" />
     <Content Include="app\customerDefaults\customerDefault-list.component.html" />
@@ -129,6 +131,7 @@
     <Content Include="app\genders\gender.component.html" />
     <Content Include="app\maritalStatus\maritalStatus-list.component.html" />
     <Content Include="app\maritalStatus\maritalStatus.component.html" />
+    <Content Include="app\nav\navbar.component.css" />
     <Content Include="app\nav\navbar.component.html" />
     <Content Include="app\opacities\opacity-list.component.html" />
     <Content Include="app\opacities\opacity.component.html" />
@@ -6537,6 +6540,12 @@
     <TypeScriptCompile Include="app\cities\city.model.ts" />
     <TypeScriptCompile Include="app\cities\city.service.ts" />
     <TypeScriptCompile Include="app\cities\index.ts" />
+    <TypeScriptCompile Include="app\colorMatchRequests\colorMatchRequest-guard.service.ts" />
+    <TypeScriptCompile Include="app\colorMatchRequests\colorMatchRequest-list.component.ts" />
+    <TypeScriptCompile Include="app\colorMatchRequests\colorMatchRequest.component.ts" />
+    <TypeScriptCompile Include="app\colorMatchRequests\colorMatchRequest.model.ts" />
+    <TypeScriptCompile Include="app\colorMatchRequests\colorMatchRequest.service.ts" />
+    <TypeScriptCompile Include="app\colorMatchRequests\index.ts" />
     <TypeScriptCompile Include="app\common\collapsible-well.component.ts" />
     <TypeScriptCompile Include="app\common\index.ts" />
     <TypeScriptCompile Include="app\common\jQuery.service.ts" />

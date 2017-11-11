@@ -1,6 +1,6 @@
 ﻿<div class="panel spacer-20">
     <div class="panel-heading no-padding">
-        <a href="#" class="panel-expander notext fr">&nbsp;</a>
+        <a class="panel-expander notext fr">&nbsp;</a>
         <h2 class="clipboard">{{pageTitle}}</h2>
     </div>
     <div class="col-md-4">
@@ -183,7 +183,7 @@
                                 </div>
                             </div>
                         </mat-tab>
-                        <!--<mat-tab label="Address">
+                        <mat-tab label="Address">
                             <div class="customer-tab-content">
                                 <div class="order-info">
                                     <div calss="address-box">
@@ -192,15 +192,9 @@
                                             <div class="fields-bar">
                                                 <div class="margin-adjust">
                                                     <div class="form-group">
-                                                        <div class="col small">
-                                                            <span class="label">Address ID:</span>
-                                                            <select class="form-control">
-                                                                <option>CCF</option>
-                                                            </select>
-                                                        </div>
-                                                        <div class="col small">
+                                                        <div class="col">
                                                             <span class="label">Name:</span>
-                                                            <input type="text" class="form-control" placeholder="CCF" />
+                                                            <input style="width: 550px" type="text" class="form-control"  />
                                                         </div>
                                                     </div>
 
@@ -208,35 +202,62 @@
                                                         <div class="col small pdlft">
                                                             <span class="label">Type:</span>
                                                             <select class="form-control">
+                                                                <option>Both</option>
                                                                 <option>Bill To</option>
                                                                 <option>Ship To</option>
+
                                                             </select>
                                                         </div>
 
                                                         <div class="col small  pdlft">
                                                             <span class="label">Main Ship To:</span>
-                                                            <input type="text" class="form-control" placeholder="No" />
+                                                            <select class="form-control" >
+                                                                <option value="true">Yes</option>
+                                                                <option value="false">No</option>
+                                                            </select>
                                                         </div>
                                                         <div class="col small pdlft">
                                                             <span class="label">Quote Address:</span>
-                                                            <input type="text" class="form-control" placeholder="Yes" />
+                                                            <select class="form-control" >
+                                                                <option value="true">Yes</option>
+                                                                <option value="false">No</option>
+                                                            </select>
                                                         </div>
                                                     </div>
+
                                                     <div class="form-group">
                                                         <div class="col small  pdlft">
-                                                            <span class="label">City:</span>
-                                                            <input type="text" class="form-control" placeholder="HARVEYS LAKE - PA" />
+                                                            <span class="label">Address:</span>
+                                                            <input  type="text" class="form-control" />
                                                         </div>
 
                                                         <div class="col small  pdlft">
-                                                            <span class="label">Address:</span>
-                                                            <input type="text" class="form-control" placeholder="POLE 131" />
-                                                        </div>
-                                                        <div class="col smallest">
-                                                            <span class="label">Zip Code:</span>
-                                                            <input type="text" class="form-control" placeholder="18618" />
+                                                            <span class="label">&nbsp;</span>
+                                                            <input type="text" class="form-control" />
                                                         </div>
                                                     </div>
+                                                    <div class="form-group">
+                                                        <div class="col smallest">
+                                                            <span class="label">Zip Code:</span>
+                                                            <input type="text" class="form-control" />
+                                                        </div>
+
+                                                        <div class="col small  pdlft">
+                                                            <span class="label">City:</span>
+                                                            <select class="form-control" formControlName="city_Id">
+                                                                <option *ngFor="let city of cities" [ngValue]="city.id">{{ city.name }}</option>-->
+                                                            </select>
+                                                        </div>
+
+                                                        <div class="col small  pdlft">
+                                                            <label class="control-label" for="State">State</label>
+                                                            <select class="form-control" formControlName="state_Id">
+                                                                <option *ngFor="let state of states" [ngValue]="state.id">{{ state.name }}</option>-->
+                                                            </select>
+                                                        </div>
+                                                        
+                                                    </div>
+
                                                     <div class="form-group">
                                                         <div class="col small  pdlft">
                                                             <span class="label">Contact Person 1:</span>
@@ -244,7 +265,7 @@
                                                         </div>
                                                         <div class="col small pdlft">
                                                             <span class="label">Phone:</span>
-                                                            <input type="text" class="form-control" placeholder="610-852-2533" />
+                                                            <input type="text" class="form-control"/>
                                                         </div>
                                                         <div class="col smallest">
                                                             <span class="label">Ext:</span>
@@ -258,7 +279,7 @@
                                                         </div>
                                                         <div class="col small pdlft">
                                                             <span class="label">Phone:</span>
-                                                            <input type="text" class="form-control" placeholder="610-852-2533" />
+                                                            <input type="text" class="form-control" />
                                                         </div>
                                                         <div class="col smallest">
                                                             <span class="label">Ext:</span>
@@ -270,11 +291,11 @@
                                                     <div class="form-group">
                                                         <div class="col smaller pdlft">
                                                             <span class="label">Fax:</span>
-                                                            <input type="text" class="form-control" placeholder="570-825-9025" />
+                                                            <input type="text" class="form-control"/>
                                                         </div>
                                                         <div class="col">
                                                             <span class="label">Contact for Lable:</span>
-                                                            <input type="text" class="form-control" placeholder="CLIFFORD FAY" />
+                                                            <input type="text" class="form-control"  />
                                                         </div>
                                                         <div class="col pdlft">
                                                             <span class="label inc-margin">E-Mail:</span>
@@ -317,7 +338,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </mat-tab>-->
+                        </mat-tab>
                     </div>
                 </mat-tab-group>
             </div>

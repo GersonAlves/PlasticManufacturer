@@ -219,6 +219,13 @@ import {
     SecondLabelService
 } from './secondLabels/index'
 
+import {
+    ColorMatchRequestComponent,
+    ColorMatchRequestListComponent,
+    ColorMatchRequestGuard,
+    ColorMatchRequestService
+} from './colorMatchRequests/index'
+
 import { appRoutes } from './routes'
 import { Error404Component } from './errors/404.component'
 
@@ -286,6 +293,8 @@ import { Error404Component } from './errors/404.component'
         CollapsibleWellComponent,
         CustomerStatusComponent,
         CustomerStatusListComponent,
+        ColorMatchRequestComponent,
+        ColorMatchRequestListComponent,
         CategoryComponent,
         CategoryListComponent,
         DepartmentComponent,
@@ -343,6 +352,8 @@ import { Error404Component } from './errors/404.component'
         PackagingService,
         CustomerGuard,
         CustomerService,
+        ColorMatchRequestGuard,
+        ColorMatchRequestService,
         FreightGuard,
         FreightService,
         SecondLabelGuard,

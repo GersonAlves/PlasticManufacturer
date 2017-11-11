@@ -262,6 +262,7 @@
     <Compile Include="Controllers\CarriersController.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\CitiesController.cs" />
+    <Compile Include="Controllers\ColorMatchRequestsController.cs" />
     <Compile Include="Controllers\CustomerContactedsController.cs" />
     <Compile Include="Controllers\CustomerDefaultsController.cs" />
     <Compile Include="Controllers\CustomerRatingsController.cs" />
