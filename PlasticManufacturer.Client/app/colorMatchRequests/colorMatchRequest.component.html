@@ -197,18 +197,18 @@
                             <div class="bar">
                                 <div class="bar-col">
                                     <label class="m-t-20" for="ProductDescription">Product Description</label>
-                                    <input class="form-control text-box single-line" id="ProductDescription" name="ProductDescription" type="text" value="" />
+                                    <input class="form-control text-box single-line" id="ProductDescription" formControlName="productDescription"  name="ProductDescription" type="text" value="" />
 
                                 </div>
                                 <div class="bar-col">
                                     <div class="col">
                                         <label class="m-t-20">Product Application</label>
-                                        <input class="form-control text-box single-line" id="ProductAplication" name="ProductAplication" type="text" value="" />
+                                        <input class="form-control text-box single-line" id="ProductAplication"  formControlName="productAplication" name="ProductAplication" type="text" value="" />
                                     </div>
                                     <div class="col txt-center">
                                         <label class="m-t-20">Price Quote Required</label>
                                         <div class="chk-box">
-                                            <input class="checkbox" id="PriceQuoteRequired" name="PriceQuoteRequired" type="checkbox" value="true" />
+                                            <input class="checkbox" id="PriceQuoteRequired" formControlName="priceQuoteRequired" name="PriceQuoteRequired" type="checkbox" value="true" />
                                         </div>
                                     </div>
                                 </div>
@@ -271,28 +271,28 @@
                             <div class="bar">
                                 <div class="col f-left">
                                     <label class="custom-select">Opacity</label>
-                                    <select name="targetTypeField" id="targetTypeField">
-                                        <option></option>
+                                    <select class="form-control" formControlName="opacity_Id">
+                                        <option *ngFor="let opacity of opacities" [value]="opacity.id">{{ opacity.name }}</option>
                                     </select>
                                 </div>
                                 <div class="col f-left">
                                     <span class="m-t-20 label">Surface</span>
                                     <div class="box">
                                         <label class="m-t-20">Matt</label>
-                                        <input name="SurfaceMatte" class="checkbox" id="SurfaceMatte" type="checkbox">
+                                        <input name="SurfaceMatte" formControlName="surfaceMatte"  class="checkbox" id="SurfaceMatte" type="checkbox">
                                     </div>
                                     <div class="box">
                                         <label class="m-t-20">Glossy</label>
-                                        <input name="SurfaceGlossy" class="checkbox" id="SurfaceGlossy" type="checkbox">
+                                        <input name="SurfaceGlossy" formControlName="surfaceGlossy" class="checkbox" id="SurfaceGlossy" type="checkbox">
                                     </div>
                                 </div>
                                 <div class="col f-left">
                                     <label class="m-t-20">Others</label>
-                                    <input class="form-control text-box single-line" id="SurfaceOthers" name="SurfaceOthers" type="text" value="" />
+                                    <input class="form-control text-box single-line" formControlName="surfaceOthers" id="SurfaceOthers" name="SurfaceOthers" type="text" value="" />
                                 </div>
                                 <div class="col f-left">
                                     <label class="m-t-20">Wall Thickness</label>
-                                    <input class="form-control text-box single-line" id="WallThickness" name="WallThickness" type="text" value="" />
+                                    <input class="form-control text-box single-line" formControlName="wallThickness" id="WallThickness" name="WallThickness" type="text" value="" />
                                 </div>
 
                             </div>
@@ -314,15 +314,14 @@
                                                     <li>
                                                         <label class="m-t-20">Injection</label>
                                                         <div class="chk-box">
-
-                                                            <input class="check-box" id="Injection" name="Injection" type="checkbox">
+                                                            <input class="check-box" formControlName="injection" id="Injection" name="Injection" type="checkbox">
                                                         </div>
                                                     </li>
                                                     <li>
                                                         <label class="m-t-20">Blow</label>
                                                         <div class="chk-box">
 
-                                                            <input class="check-box" id="Blow" name="Blow" type="checkbox" value="true" />
+                                                            <input class="check-box" formControlName="blow" id="Blow" name="Blow" type="checkbox" value="true" />
                                                         </div>
                                                     </li>
                                                     <li>

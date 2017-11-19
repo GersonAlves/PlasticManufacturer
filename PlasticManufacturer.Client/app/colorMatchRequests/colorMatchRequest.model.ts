@@ -11,6 +11,8 @@
     surfaceGlossy: boolean
     surfaceOthers: string
     wallThickness: string
+
+
     injection: boolean
     blow: boolean
     compression: boolean
@@ -74,10 +76,10 @@
     uvLetter: boolean
     logoChips: boolean
     customerDueDate?: Date
+    opacity_Id: number
 
     /*
         Customer Customer ok
-        Opacity Opacity ok
         Packaging Packaging ok
         Carrier Carrier ok
         Pellet Pellet ok
