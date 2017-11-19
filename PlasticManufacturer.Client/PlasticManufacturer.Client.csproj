@@ -203,6 +203,8 @@
     <Content Include="app\packagings\packaging.component.html" />
     <Content Include="app\Pellets\pellet.component.html" />
     <Content Include="app\Pellets\pellet-list.component.html" />
+    <Content Include="app\products\product-list.component.html" />
+    <Content Include="app\products\product.component.html" />
     <Content Include="app\salesOrders\salesOrder.component.html" />
     <Content Include="app\secondLabels\secondLabel-list.component.html" />
     <Content Include="app\secondLabels\secondLabel.component.html" />
@@ -6728,6 +6730,12 @@
     <TypeScriptCompile Include="app\Pellets\pellet-guard.service.ts" />
     <TypeScriptCompile Include="app\Pellets\pellet-list.component.ts" />
     <TypeScriptCompile Include="app\Pellets\pellet.component.ts" />
+    <TypeScriptCompile Include="app\products\index.ts" />
+    <TypeScriptCompile Include="app\products\product-guard.service.ts" />
+    <TypeScriptCompile Include="app\products\product-list.component.ts" />
+    <TypeScriptCompile Include="app\products\product.component.ts" />
+    <TypeScriptCompile Include="app\products\product.model.ts" />
+    <TypeScriptCompile Include="app\products\product.service.ts" />
     <TypeScriptCompile Include="app\routes.ts" />
     <TypeScriptCompile Include="app\salesOrders\index.ts" />
     <TypeScriptCompile Include="app\salesOrders\salesOrder-guard.service.ts" />

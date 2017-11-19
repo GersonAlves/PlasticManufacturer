@@ -141,9 +141,13 @@ import { CustomerResinComponent, CustomerResinListComponent, CustomerResinGuard 
 
 import { TargetTypeComponent, TargetTypeListComponent, TargetTypeGuard } from './targetTypes/index'
 
+import { ProductComponent, ProductListComponent, ProductGuard } from './products/index'
+
 import { Error404Component } from './errors/404.component'
 
 export const appRoutes: Routes = [
+    { path: 'products', component: ProductListComponent },
+    { path: 'products/:id', canDeactivate: [ProductGuard], component: ProductComponent },
 
     { path: 'targetTypes', component: TargetTypeListComponent },
     { path: 'targetTypes/:id', canDeactivate: [TargetTypeGuard], component: TargetTypeComponent },
