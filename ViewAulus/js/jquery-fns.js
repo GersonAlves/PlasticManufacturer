@@ -244,10 +244,6 @@ function initMobileNav() {
 }(jQuery));
 
 
-
-
-
-
 $(document).ready(function() {
     $('.dataTable').DataTable( {
 		//responsive: true,

@@ -11,7 +11,6 @@
                             <!-- White Box -->
                             <div class="white-box">
                                 <div class="cnt">
-                                           
                                         <router-outlet></router-outlet>
                                 </div>
                             </div>
