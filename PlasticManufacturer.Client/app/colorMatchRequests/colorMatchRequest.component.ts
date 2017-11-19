@@ -14,6 +14,8 @@ import { ColorMatchRequestService } from './colorMatchRequest.service'
 
 import { GenericValidator } from '../shared/generic-validator';
 
+import { IOpacity, OpacityService } from '../opacities/index'
+
 
 @Component({
     templateUrl: 'app/colorMatchRequests/colorMatchRequest.component.html'
@@ -28,12 +30,21 @@ export class ColorMatchRequestComponent implements OnInit, AfterViewInit, OnDest
     errorMessage: string;
     pageTitle: string = 'Color Match Request';
 
+
+    //Variavel of fill ComboBox
+    opacities: IOpacity[];
+
+
     // Use with the generic validation message class
     displayMessage: { [key: string]: string } = {};
     private validationMessages: { [key: string]: { [key: string]: string } };
     private genericValidator: GenericValidator;
 
-    constructor(private router: Router, private colorMatchRequestService: ColorMatchRequestService, private formBuilder: FormBuilder, private route: ActivatedRoute, ) {
+    constructor(private router: Router,
+        private colorMatchRequestService: ColorMatchRequestService,
+        private formBuilder: FormBuilder,
+        private route: ActivatedRoute,
+        private opacityService: OpacityService) {
 
         // Defines all of the validation messages for the form.
         // These could instead be retrieved from a file or database.
@@ -49,10 +60,23 @@ export class ColorMatchRequestComponent implements OnInit, AfterViewInit, OnDest
     }
 
     ngOnInit(): void {
+
         this.colorMatchRequestForm = this.formBuilder.group({
             id: 0,
             name: ['', Validators.compose([Validators.required, Validators.minLength(3)])],
-            description: ''
+            description: '',
+            loteId: undefined,
+            productDescription: '',
+            productAplication: '',
+            priceQuoteRequired: undefined,
+            targetTypeField: '',
+            surfaceMatte: undefined,
+            surfaceGlossy: undefined,
+            surfaceOthers: '',
+            wallThickness: '',
+            opacity_Id: undefined,
+            injection: undefined,
+            blow: undefined
         });
 
         // Read the colorMatchRequest Id from the route parameter
@@ -62,6 +86,10 @@ export class ColorMatchRequestComponent implements OnInit, AfterViewInit, OnDest
                 this.getcolorMatchRequest(id);
             }
         );
+
+         // loads combobox
+        this.loadOpacity();
+
     }
 
     ngOnDestroy(): void {
@@ -106,7 +134,19 @@ export class ColorMatchRequestComponent implements OnInit, AfterViewInit, OnDest
         this.colorMatchRequestForm.patchValue({
             id: this.colorMatchRequest.id,
             name: this.colorMatchRequest.name,
-            description: this.colorMatchRequest.description
+            description: this.colorMatchRequest.description,
+            loteId: this.colorMatchRequest.loteId,
+            productDescription: this.colorMatchRequest.productDescription,
+            productAplication: this.colorMatchRequest.productAplication,
+            priceQuoteRequired: this.colorMatchRequest.priceQuoteRequired,
+            targetTypeField: this.colorMatchRequest.targetTypeField,
+            surfaceMatte: this.colorMatchRequest.surfaceMatte,
+            surfaceGlossy: this.colorMatchRequest.surfaceGlossy,
+            surfaceOthers: this.colorMatchRequest.surfaceOthers,
+            wallThickness: this.colorMatchRequest.wallThickness,
+            opacity_Id: this.colorMatchRequest.opacity_Id,
+            injection: this.colorMatchRequest.injection,
+            blow: this.colorMatchRequest.blow
         });
     }
 
@@ -152,5 +192,11 @@ export class ColorMatchRequestComponent implements OnInit, AfterViewInit, OnDest
         this.router.navigate(['/colorMatchRequests'])
     }
 
+    //
+    loadOpacity(): void {
+        this.opacityService.getAll()
+            .subscribe(opacities => this.opacities = opacities,
+            error => this.errorMessage = <any>error);
+    }
 
 }
