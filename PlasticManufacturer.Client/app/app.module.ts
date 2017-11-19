@@ -226,6 +226,8 @@ import {
     ColorMatchRequestService
 } from './colorMatchRequests/index'
 
+import { CustomerResinComponent, CustomerResinListComponent, CustomerResinService, CustomerResinGuard } from './customerResins/index'
+
 import { appRoutes } from './routes'
 import { Error404Component } from './errors/404.component'
 
@@ -293,6 +295,8 @@ import { Error404Component } from './errors/404.component'
         CollapsibleWellComponent,
         CustomerStatusComponent,
         CustomerStatusListComponent,
+        CustomerResinComponent,
+        CustomerResinListComponent,
         ColorMatchRequestComponent,
         ColorMatchRequestListComponent,
         CategoryComponent,
@@ -341,6 +345,8 @@ import { Error404Component } from './errors/404.component'
         CarrierGuard,
         PelletGuard,
         PelletService,
+        CustomerResinService,
+        CustomerResinGuard,
         CustomerDefaultGuard,
         CustomerRatingGuard,
         { provide: TOASTR_TOKEN, useValue: toastr },

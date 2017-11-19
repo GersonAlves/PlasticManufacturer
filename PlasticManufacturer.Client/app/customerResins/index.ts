@@ -1,0 +1,5 @@
+﻿export * from './customerResin.service'
+export * from './customerResin.component'
+export * from './customerResin.model'
+export * from './customerResin-guard.service'
+export * from './customerResin-list.component'

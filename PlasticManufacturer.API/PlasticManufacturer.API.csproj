@@ -266,6 +266,7 @@
     <Compile Include="Controllers\CustomerContactedsController.cs" />
     <Compile Include="Controllers\CustomerDefaultsController.cs" />
     <Compile Include="Controllers\CustomerRatingsController.cs" />
+    <Compile Include="Controllers\CustomerResinsController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\CustomerStatusController.cs" />
     <Compile Include="Controllers\DepartmentsController.cs" />
@@ -277,6 +278,7 @@
     <Compile Include="Controllers\OpacitiesController.cs" />
     <Compile Include="Controllers\PackagingsController.cs" />
     <Compile Include="Controllers\PelletsController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\RawMaterialsController.cs" />
     <Compile Include="Controllers\SecondLabelsController.cs" />
     <Compile Include="Controllers\ShippingMethodsController.cs" />

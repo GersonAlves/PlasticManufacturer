@@ -137,9 +137,14 @@ import {
     ColorMatchRequestGuard
 } from './colorMatchRequests/index'
 
+import { CustomerResinComponent, CustomerResinListComponent, CustomerResinGuard } from './customerResins/index'
+
 import { Error404Component } from './errors/404.component'
 
 export const appRoutes: Routes = [
+
+    { path: 'customerResins', component: CustomerResinListComponent },
+    { path: 'customerResins/:id', canDeactivate: [CustomerResinGuard], component: CustomerResinComponent },
 
     { path: 'colorMatchRequests', component: ColorMatchRequestListComponent },
     { path: 'colorMatchRequests/:id', canDeactivate: [ColorMatchRequestGuard], component: ColorMatchRequestComponent },

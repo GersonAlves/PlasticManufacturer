@@ -169,6 +169,8 @@
     <Content Include="app\customerDefaults\customerDefault.component.html" />
     <Content Include="app\customerRatings\customerRating-list.component.html" />
     <Content Include="app\customerRatings\customerRating.component.html" />
+    <Content Include="app\customerResins\customerResin-list.component.html" />
+    <Content Include="app\customerResins\customerResin.component.html" />
     <Content Include="app\customerStatus\customer-status-list.component.html" />
     <Content Include="app\customerStatus\customer-status.component.html" />
     <Content Include="app\customers\customer-list.component.html" />
@@ -6634,6 +6636,12 @@
     <TypeScriptCompile Include="app\customerRatings\customerRating.model.ts" />
     <TypeScriptCompile Include="app\customerRatings\customerRating.service.ts" />
     <TypeScriptCompile Include="app\customerRatings\index.ts" />
+    <TypeScriptCompile Include="app\customerResins\customerResin-guard.service.ts" />
+    <TypeScriptCompile Include="app\customerResins\customerResin-list.component.ts" />
+    <TypeScriptCompile Include="app\customerResins\customerResin.component.ts" />
+    <TypeScriptCompile Include="app\customerResins\customerResin.model.ts" />
+    <TypeScriptCompile Include="app\customerResins\customerResin.service.ts" />
+    <TypeScriptCompile Include="app\customerResins\index.ts" />
     <TypeScriptCompile Include="app\customerStatus\customer-status-guard.service.ts" />
     <TypeScriptCompile Include="app\customerStatus\customer-status-list.component.ts" />
     <TypeScriptCompile Include="app\customerStatus\customer-status.component.ts" />
