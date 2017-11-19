@@ -1,0 +1,40 @@
+﻿<div class="panel spacer-20">
+    <div class="panel-heading no-padding">
+        <a class="panel-expander notext fr">&nbsp;</a>
+        <h2 class="clipboard">{{pageTitle}}</h2>
+    </div>
+
+    <div class='panel-body'>
+        <div class="panel-container">
+            <div class="options">
+                <ul>
+                    <li>
+                        <a class="new" [routerLink]="['/targetTypes/0']">New</a>
+                    </li>
+                </ul>
+            </div>
+            <div class='has-error' *ngIf='errorMessage'>{{errorMessage}}</div>
+
+            <div class='table-responsive'>
+                <table class="table2 gn-table" *ngIf='targetTypes && targetTypes.length'>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor='let targetType of targetTypes'>
+                            <td>
+                                <a [routerLink]="['/targetTypes', targetType.id]">
+                                    {{targetType.name}}
+                                </a>
+                            </td>
+                            <td>{{ targetType.description }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

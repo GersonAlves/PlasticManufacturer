@@ -208,6 +208,8 @@
     <Content Include="app\secondLabels\secondLabel.component.html" />
     <Content Include="app\states\state-list.component.html" />
     <Content Include="app\states\state.component.html" />
+    <Content Include="app\targetTypes\targetType-list.component.html" />
+    <Content Include="app\targetTypes\targetType.component.html" />
     <Content Include="app\titles\title-list.component.html" />
     <Content Include="app\titles\title.component.html" />
     <Content Include="app\user\login.component.html" />
@@ -6748,6 +6750,12 @@
     <TypeScriptCompile Include="app\states\state.component.ts" />
     <TypeScriptCompile Include="app\states\state.service.ts" />
     <TypeScriptCompile Include="app\states\state.model.ts" />
+    <TypeScriptCompile Include="app\targetTypes\index.ts" />
+    <TypeScriptCompile Include="app\targetTypes\targetType-guard.service.ts" />
+    <TypeScriptCompile Include="app\targetTypes\targetType-list.component.ts" />
+    <TypeScriptCompile Include="app\targetTypes\targetType.component.ts" />
+    <TypeScriptCompile Include="app\targetTypes\targetType.model.ts" />
+    <TypeScriptCompile Include="app\targetTypes\targetType.service.ts" />
     <TypeScriptCompile Include="app\titles\index.ts" />
     <TypeScriptCompile Include="app\titles\title-guard.service.ts" />
     <TypeScriptCompile Include="app\titles\title-list.component.ts" />

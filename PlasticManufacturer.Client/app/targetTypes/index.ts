@@ -1,0 +1,5 @@
+﻿export * from './targetType.service'
+export * from './targetType.component'
+export * from './targetType.model'
+export * from './targetType-guard.service'
+export * from './targetType-list.component'

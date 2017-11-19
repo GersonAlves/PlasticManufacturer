@@ -4,7 +4,7 @@
     <UseIISExpress>true</UseIISExpress>
     <ProjectView>ProjectFiles</ProjectView>
     <NameOfLastUsedPublishProfile>Homolog</NameOfLastUsedPublishProfile>
-    <ToolsVersionPromptShown>2.5</ToolsVersionPromptShown>
+    <ToolsVersionPromptShown>2.6</ToolsVersionPromptShown>
     <Use64BitIISExpress />
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
