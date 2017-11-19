@@ -229,6 +229,9 @@ import {
 import { CustomerResinComponent, CustomerResinListComponent, CustomerResinService, CustomerResinGuard } from './customerResins/index'
 import { TargetTypeComponent, TargetTypeListComponent, TargetTypeService, TargetTypeGuard } from './targetTypes/index'
 
+import { ProductComponent, ProductListComponent, ProductService, ProductGuard } from './products/index'
+
+
 
 import { appRoutes } from './routes'
 import { Error404Component } from './errors/404.component'
@@ -327,6 +330,10 @@ import { Error404Component } from './errors/404.component'
         CustomerDefaultListComponent,                                              
         PelletComponent,
         PelletListComponent,
+
+        ProductComponent,
+        ProductListComponent,
+
         CustomerRatingComponent,
         CustomerRatingListComponent,           
         CityComponent,
@@ -351,10 +358,10 @@ import { Error404Component } from './errors/404.component'
         PelletService,
         CustomerResinService,
         CustomerResinGuard,
-
         TargetTypeService,
         TargetTypeGuard,
-
+        ProductGuard,
+        ProductService,
         CustomerDefaultGuard,
         CustomerRatingGuard,
         { provide: TOASTR_TOKEN, useValue: toastr },
