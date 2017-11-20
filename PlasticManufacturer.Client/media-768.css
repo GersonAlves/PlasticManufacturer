@@ -1,5 +1,9 @@
 ﻿@media (min-width: 768px) and (max-width: 1024px) {
 
+    .margin-adjust {
+        margin-right: 0px;
+    }
+
     /* app css stylesheet */
     .hoverwell:hover {
         background-color: #485563;
@@ -2285,14 +2289,14 @@
     .buttons-margin a, .buttons-margin a + a {
         float: none;
         width: 100%;
-        display: block;
+        display: block;   
         margin: 0 -8px 5px;
         text-align: center;
     }
 
     .technical-info .date, .technical-info .markup, .fields-row .fields-bar .col {
-        width: 100%;
-        padding: 0;
+        width: 50%;
+        padding: -1px;
     }
 
     .fields-row .fields-bar {
@@ -2348,11 +2352,20 @@
 
     .notes-style {
         float: left;
-        width: 104%;
+        width: 50.1%;
         padding: 0 0 0 20px;
         box-sizing: border-box;
         -webkit-box-sizing: border-box;
-        margin-left: -20px;
+        margin-left: inherit;
+    }
+
+    .notes-style-address {
+        float: left;
+        width: 100%;
+        padding: 0 0 0 20px;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        margin-left: inherit;
     }
 
     .box-style {

@@ -2,6 +2,11 @@
     margin-right: 328px;
 }
 
+#change-hamburguer{
+    display: none;
+    cursor: pointer
+}
+
 /*Default*/
 .c-padding {
     margin: 0 !important;
@@ -45,9 +50,389 @@
     padding: 0%;
 }
 
-@media screen and (max-width:1000px) {
+@media screen and (max-width:1024px) {
 
     /deep/ .mat-tab-group {
         padding: 0%;
     }
+
+    #change-hamburguer {
+        display: none;
+        cursor: pointer
+    }
+
+    .hamburguer {
+        width: 20px;
+        height: 20px;
+        display: block;
+        position: relative;
+        background: none;
+        margin: 0 0 10px 0;
+    }
+
+        .hamburguer:after, .hamburguer:before, .hamburguer span, .hamburguer label {
+            content: ' ';
+            display: block;
+            width: 100%;
+            height: 4px;
+            background: black;
+            left: 0;
+            position: absolute;
+            -webkit-transition: all 300ms ease-in-out;
+            transition: all 300ms ease-in-out;
+        }
+
+        .hamburguer:before {
+            top: 0;
+        }
+
+        .hamburguer:after {
+            bottom: 0;
+        }
+
+        .hamburguer:focus {
+            outline: none;
+        }
+
+        .hamburguer label {
+            width: 100%;
+            height: 100%;
+            background: none;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .hamburguer span {
+            top: 8px;
+        }
+
+
+
+
+    #change-hamburguer {
+        display: none;
+    }
+
+        #change-hamburguer:checked ~ .hamburguer:before, #change-hamburguer:checked ~ .hamburguer:after {
+            top: 10px;
+            margin-top: -10%;
+        }
+
+        #change-hamburguer:checked ~ .hamburguer:before {
+            -ms-transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+        }
+
+        #change-hamburguer:checked ~ .hamburguer:after {
+            -ms-transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+
+        #change-hamburguer:checked ~ .hamburguer span {
+            opacity: 0;
+        }
+
+        #change-hamburguer:checked ~ .menu {
+            max-height: 600px;
+        }
+
+
+
+
+
+    .menu {
+        max-height: 0;
+        height: auto;
+        -webkit-transition: all 300ms ease-in-out;
+        transition: all 300ms ease-in-out;
+        overflow: hidden;
+        font-family: sans-serif;
+        font-weight: 400;
+        font-size: 13px;
+        width: 90%;
+    }
+
+    a {
+        box-shadow: 0px 0px 0px
+    }
+
+
+
+
+}
+
+@media screen and (max-width:768px) {
+
+    /deep/ .mat-tab-group {
+        padding: 0%;
+    }
+
+    #change-hamburguer {
+        display: none;
+        cursor: pointer
+    }
+
+    .margin-adjust {
+        margin-right:0px;
+    }
+
+    .shipping-method {
+        overflow: hidden;
+        margin: inherit;
+        width: 99%;
+    }
+
+    .add-info .box {
+        float: none;
+        width: 102%;
+        font-size: 0;
+        line-height: 0;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        margin-top: 11px;
+    }
+
+    .add-info {
+        padding: 4px;
+        overflow: hidden;
+        border: 1px solid #000;
+    }
+    .hamburguer {
+        width: 20px;
+        height: 20px;
+        display: block;
+        position: relative;
+        background: none;
+        margin: 0 0 10px 0;
+    }
+
+        .hamburguer:after, .hamburguer:before, .hamburguer span, .hamburguer label {
+            content: ' ';
+            display: block;
+            width: 100%;
+            height: 4px;
+            background: black;
+            left: 0;
+            position: absolute;
+            -webkit-transition: all 300ms ease-in-out;
+            transition: all 300ms ease-in-out;
+        }
+
+        .hamburguer:before {
+            top: 0;
+        }
+
+        .hamburguer:after {
+            bottom: 0;
+        }
+
+        .hamburguer:focus {
+            outline: none;
+        }
+
+        .hamburguer label {
+            width: 100%;
+            height: 100%;
+            background: none;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .hamburguer span {
+            top: 8px;
+        }
+
+
+
+
+    #change-hamburguer {
+        display: none;
+    }
+
+        #change-hamburguer:checked ~ .hamburguer:before, #change-hamburguer:checked ~ .hamburguer:after {
+            top: 10px;
+            margin-top: -10%;
+        }
+
+        #change-hamburguer:checked ~ .hamburguer:before {
+            -ms-transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+        }
+
+        #change-hamburguer:checked ~ .hamburguer:after {
+            -ms-transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+
+        #change-hamburguer:checked ~ .hamburguer span {
+            opacity: 0;
+        }
+
+        #change-hamburguer:checked ~ .menu {
+            max-height: 600px;
+        }
+
+
+
+
+
+    .menu {
+        max-height: 0;
+        height: auto;
+        -webkit-transition: all 300ms ease-in-out;
+        transition: all 300ms ease-in-out;
+        overflow: hidden;
+        font-family: sans-serif;
+        font-weight: 400;
+        font-size: 13px;
+        width: 90%;
+    }
+
+    a {
+        box-shadow: 0px 0px 0px
+    }
+
+
+}
+
+@media screen and (max-width:481px) {
+
+    /deep/ .mat-tab-group {
+        padding: 0%;
+    }
+
+    .margin-adjust {
+        margin-right: 0px;
+    }
+
+    .shipping-method {
+        overflow: hidden;
+        margin: inherit;
+        width: 99%;
+    }
+
+
+
+    .add-info .box {
+        float: none;
+        width: 102%;
+        font-size: 0;
+        line-height: 0;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        margin-top: 11px;
+    }
+
+    .add-info {
+        padding: 4px;
+        overflow: hidden;
+        border: 1px solid #000;
+    }
+
+
+    .hamburguer {
+        width: 20px;
+        height: 20px;
+        display: block;
+        position: relative;
+        background: none;
+        margin: 0 0 10px 0;
+    }
+
+        .hamburguer:after, .hamburguer:before, .hamburguer span, .hamburguer label {
+            content: ' ';
+            display: block;
+            width: 100%;
+            height: 4px;
+            background: black;
+            left: 0;
+            position: absolute;
+            -webkit-transition: all 300ms ease-in-out;
+            transition: all 300ms ease-in-out;
+        }
+
+        .hamburguer:before {
+            top: 0;
+        }
+
+        .hamburguer:after {
+            bottom: 0;
+        }
+
+        .hamburguer:focus {
+            outline: none;
+        }
+
+        .hamburguer label {
+            width: 100%;
+            height: 100%;
+            background: none;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .hamburguer span {
+            top: 8px;
+        }
+
+
+
+
+    #change-hamburguer {
+        display: none;
+    }
+
+        #change-hamburguer:checked ~ .hamburguer:before, #change-hamburguer:checked ~ .hamburguer:after {
+            top: 10px;
+            margin-top: -10%;
+        }
+
+        #change-hamburguer:checked ~ .hamburguer:before {
+            -ms-transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+        }
+
+        #change-hamburguer:checked ~ .hamburguer:after {
+            -ms-transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+
+        #change-hamburguer:checked ~ .hamburguer span {
+            opacity: 0;
+        }
+
+        #change-hamburguer:checked ~ .menu {
+            max-height: 600px;
+        }
+
+
+
+
+
+    .menu {
+        max-height: 0;
+        height: auto;
+        -webkit-transition: all 300ms ease-in-out;
+        transition: all 300ms ease-in-out;
+        overflow: hidden;
+        font-family: sans-serif;
+        font-weight: 400;
+        font-size: 13px;
+        width: 90%;
+    }
+
+    a {
+        box-shadow: 0px 0px 0px
+    }
+
+
+
 }

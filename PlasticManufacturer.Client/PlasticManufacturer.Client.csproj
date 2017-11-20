@@ -272,6 +272,8 @@
     <Content Include="images\whitebox-bg.png" />
     <Content Include="images\whitebox-bottom.png" />
     <Content Include="images\whitebox-top.png" />
+    <Content Include="media-480.css" />
+    <Content Include="media-768.css" />
     <Content Include="node_modules\%40angular\animations\%40angular\animations.es5.js" />
     <Content Include="node_modules\%40angular\animations\%40angular\animations.js" />
     <Content Include="node_modules\%40angular\animations\%40angular\animations\browser.es5.js" />
