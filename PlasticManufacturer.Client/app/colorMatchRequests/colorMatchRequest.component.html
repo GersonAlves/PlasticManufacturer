@@ -270,7 +270,7 @@
                             </div>
                             <div class="bar">
                                 <div class="col f-left">
-                                    <label class="custom-select">Opacity</label>
+                                    <span class="m-t-20 label">Opacity</span>
                                     <select class="form-control" formControlName="opacity_Id">
                                         <option *ngFor="let opacity of opacities" [value]="opacity.id">{{ opacity.name }}</option>
                                     </select>
@@ -328,61 +328,61 @@
                                                         <label class="m-t-20">Compression</label>
                                                         <div class="chk-box">
 
-                                                            <input class="check-box" id="Compression" name="Compression" type="checkbox" value="true" />
+                                                            <input class="check-box" formControlName="compression" id="Compression" name="Compression" type="checkbox" value="true" />
                                                         </div>
                                                     </li>
                                                     <li>
                                                         <label class="m-t-20">Extrusion</label>
                                                         <div class="chk-box">
-                                                            <input class="check-box" id="Extrusion" name="Extrusion" type="checkbox" value="true" />
+                                                            <input class="check-box" formControlName="extrusion" id="Extrusion" name="Extrusion" type="checkbox" value="true" />
                                                         </div>
                                                     </li>
                                                     <li>
                                                         <label class="m-t-20">Fiber Denier</label>
                                                         <div class="chk-box">
 
-                                                            <input class="check-box" id="FiberDenier" name="FiberDenier" type="checkbox" value="true" />
+                                                            <input class="check-box" formControlName="fiberDenier" id="FiberDenier" name="FiberDenier" type="checkbox" value="true" />
                                                         </div>
                                                     </li>
                                                     <li>
                                                         <label class="m-t-20">CO-EX</label>
                                                         <div class="chk-box">
 
-                                                            <input class="check-box" id="CoEx" name="CoEx" type="checkbox" value="true" />
+                                                            <input class="check-box" formControlName="coEx" id="CoEx" name="CoEx" type="checkbox" value="true" />
                                                         </div>
                                                     </li>
                                                     <li>
                                                         <label class="m-t-20">Films</label>
                                                         <div class="chk-box">
 
-                                                            <input class="check-box" id="Film" name="Film" type="checkbox" value="true" />
+                                                            <input class="check-box" formControlName="film" id="Film" name="Film" type="checkbox" value="true" />
                                                         </div>
                                                     </li>
                                                     <li>
                                                         <label class="m-t-20">Sheet</label>
                                                         <div class="chk-box">
 
-                                                            <input class="check-box" id="Sheet" name="Sheet" type="checkbox" value="true" />
+                                                            <input class="check-box" formControlName="sheet" id="Sheet" name="Sheet" type="checkbox" value="true" />
                                                         </div>
                                                     </li>
                                                     <li>
                                                         <label class="m-t-20">Rotational</label>
                                                         <div class="chk-box">
-                                                            <input class="check-box" id="Rotational" name="Rotational" type="checkbox" value="true" />
+                                                            <input class="check-box" formControlName="rotational" id="Rotational" name="Rotational" type="checkbox" value="true" />
                                                         </div>
                                                     </li>
                                                     <li>
                                                         <label class="m-t-20">MFG</label>
                                                         <div class="chk-box">
 
-                                                            <input class="form-control text-box single-line" id="Mfg" name="Mfg" type="text" value="" />
+                                                            <input class="form-control text-box single-line" formControlName="mfg" id="Mfg" name="Mfg" type="text" value="" />
                                                         </div>
                                                     </li>
                                                     <li>
                                                         <label class="m-t-20">Gas Assit Injection</label>
                                                         <div class="chk-box">
 
-                                                            <input class="check-box" id="GasAssitInjection" name="GasAssitInjection" type="checkbox" value="true" />
+                                                            <input class="check-box" id="GasAssitInjection" formControlName="gasAssitInjection" name="GasAssitInjection" type="checkbox" value="true" />
                                                         </div>
                                                     </li>
                                                 </ul>
@@ -390,9 +390,9 @@
                                                 <td data-title="Resin Specification">
                                                 <div class="bar">
                                                     <div class="block">
-                                                        <label class="b-padding">Customer Resin</label>
-                                                        <select name="select-markup">
-                                                            <option value=""></option>
+                                                        <label>Customer Resin</label>
+                                                        <select class="form-control" formControlName="customerResin_Id">
+                                                            <option *ngFor="let customerResin of customerResins" [value]="customerResin.id">{{ customerResin.name }}</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -400,7 +400,7 @@
                                                     <div class="block">
                                                         <label class="b-padding">Melt Index</label>
 
-                                                        <input class="form-control text-box single-line" id="MeltIndex" name="MeltIndex" type="text" value="" />
+                                                        <input class="form-control text-box single-line" formControlName="meltIndex" id="MeltIndex" name="MeltIndex" type="text" value="" />
                                                     </div>
                                                 </div>
                                             </td>
@@ -417,31 +417,31 @@
                                     <div class="box">
                                         <label>Exact</label>
                                         <div class="chk-box">
-                                            <input class="check-box" id="Exact" name="Exact" type="checkbox" value="true" />
+                                            <input class="check-box" formControlName="exact" id="Exact" name="Exact" type="checkbox" value="true" />
                                         </div>
                                     </div>
                                     <div class="box">
                                         <label>Commercial</label>
                                         <div class="chk-box">
 
-                                            <input class="check-box" id="Commercial" name="Commercial" type="checkbox" value="true" />
+                                            <input class="check-box" formControlName="commercial" id="Commercial" name="Commercial" type="checkbox" value="true" />
                                         </div>
                                     </div>
                                     <div class="box">
                                         <label>Closest STD</label>
 
-                                        <input class="form-control text-box single-line" id="ClosestSTD" name="ClosestSTD" type="text" value="" />
+                                        <input class="form-control text-box single-line" formControlName="closestSTD" id="ClosestSTD" name="ClosestSTD" type="text" value="" />
                                     </div>
                                     <div class="box">
                                         <label>+DE</label>
 
-                                        <input class="form-control text-box single-line" id="MoreDe" name="MoreDe" type="text" value="" />
+                                        <input class="form-control text-box single-line" formControlName="moreDe" id="MoreDe" name="MoreDe" type="text" value="" />
                                     </div>
                                     <div class="box">
                                         <label>CIELAB</label>
                                         <div class="chk-box">
 
-                                            <input class="check-box" id="CieLab" name="CieLab" type="checkbox" value="true" />
+                                            <input class="check-box" id="CieLab" formControlName="cieLab" name="CieLab" type="checkbox" value="true" />
                                         </div>
                                     </div>
                                     <div class="box">
@@ -454,15 +454,15 @@
                                 <span class="label m-t-20">Illumination:</span>
                                 <div class="boxes-holder box-frm">
                                     <div class="chk-hldr">
-                                        <input class="check-box" id="D65" name="D65" type="checkbox" value="true" />
+                                        <input class="check-box" formControlName="d65" id="D65" name="D65" type="checkbox" value="true" />
                                         <label>D-65</label>
                                     </div>
                                     <div class="chk-hldr">
-                                        <input class="check-box" id="Cfw" name="Cfw" type="checkbox" value="true" />
+                                        <input class="check-box" formControlName="cfw"  id="Cfw" name="Cfw" type="checkbox" value="true" />
                                         <label>CFW</label>
                                     </div>
                                     <div class="chk-hldr">
-                                        <input class="check-box" id="A" name="A" type="checkbox" value="true" />
+                                        <input class="check-box" formControlName="a" id="A" name="A" type="checkbox" value="true" />
                                         <label>A</label>
                                     </div>
                                 </div>
@@ -484,31 +484,31 @@
                                                     <li>
                                                         <label>Chip Qty</label>
                                                         <div class="chk-box">
-                                                            <input class="form-control text-box single-line" id="ChipsQty" name="ChipsQty" type="text" value="" />
+                                                            <input class="form-control text-box single-line" formControlName="chipsQty" id="ChipsQty" name="ChipsQty" type="text" value="" />
                                                         </div>
                                                     </li>
                                                     <li>
                                                         <label>Tube Sample</label>
                                                         <div class="chk-box">
-                                                            <input class="check-box" data-val="true" id="TubeSample" name="TubeSample" type="checkbox" value="true" />
+                                                            <input class="check-box" data-val="true" formControlName="tubeSample" id="TubeSample" name="TubeSample" type="checkbox" value="true" />
                                                         </div>
                                                     </li>
                                                     <li>
                                                         <label>Sheet Extrusion Sample</label>
                                                         <div class="chk-box">
-                                                            <input class="check-box" id="SheetExtrusionSample" name="SheetExtrusionSample" type="checkbox" value="true" />
+                                                            <input class="check-box" formControlName="sheetExtrusionSample" id="SheetExtrusionSample" name="SheetExtrusionSample" type="checkbox" value="true" />
                                                         </div>
                                                     </li>
                                                     <li>
                                                         <label>Required Customer Qty</label>
                                                         <div class="chk-box txt">
-                                                            <input class="form-control text-box single-line" name="RequiredCustomerQty" type="text" value="" />
+                                                            <input class="form-control text-box single-line" formControlName="requiredCustomerQty" name="RequiredCustomerQty" type="text" value="" />
                                                         </div>
                                                     </li>
                                                     <li>
                                                         <label>Units Qty</label>
                                                         <div class="chk-box">
-                                                            <input class="form-control text-box single-line" id="UnitQty" name="UnitQty" type="text" value="" />
+                                                            <input class="form-control text-box single-line" formControlName="unitQty" id="UnitQty" name="UnitQty" type="text" value="" />
                                                         </div>
                                                     </li>
                                                 </ul>
@@ -516,24 +516,24 @@
                                                 <ul class="info-list">
                                                     <li>
                                                         <label>Packaging</label>
-                                                        <select name="select-markup">
-                                                            <option value=""></option>
+                                                        <select class="form-control" formControlName="packaging_Id">
+                                                            <option *ngFor="let packaging of packagings" [value]="packaging.id">{{ packaging.name }}</option>
                                                         </select>
                                                     </li>
                                                     <li>
                                                         <label>Carrier</label>
-                                                        <select name="select-markup">
-                                                            <option value=""></option>
-                                                         </select>
+                                                        <select class="form-control" formControlName="carrier_Id">
+                                                            <option *ngFor="let carrier of carriers" [value]="carrier.id">{{ carrier.name }}</option>
+                                                        </select>
                                                     </li>
                                                     <li>
                                                         <label>Required Ratio</label>
-                                                        <input class="form-control text-box single-line" id="RequiredRatio" name="RequiredRatio" type="text" value="" />
+                                                        <input class="form-control text-box single-line" formControlName="requiredRatio" id="RequiredRatio" name="RequiredRatio" type="text" value="" />
                                                     </li>
                                                     <li>
                                                         <label>Pellet Size</label>
-                                                        <select name="select-markup">
-                                                            <option value=""></option>
+                                                        <select class="form-control" formControlName="pellet_Id">
+                                                            <option *ngFor="let pellet of pellets" [value]="pellet.id">{{ pellet.name }}</option>
                                                         </select>
                                                     </li>
                                                 </ul>
@@ -557,22 +557,22 @@
                                                     <li>
                                                         <label>Interior</label>
                                                         <div class="chk-box">
-                                                            <input class="check-box" id="Interior" name="Interior" type="checkbox" value="true" />
+                                                            <input class="check-box" formControlName="interior" id="Interior" name="Interior" type="checkbox" value="true" />
                                                         </div>
                                                     </li>
                                                     <li>
                                                         <label>Exterior</label>
                                                         <div class="chk-box">
-                                                            <input class="check-box" id="Exterior" name="Exterior" type="checkbox" value="true" />
+                                                            <input class="check-box" id="Exterior" formControlName="exterior" name="Exterior" type="checkbox" value="true" />
                                                         </div>
                                                     </li>
                                                     <li>
                                                         <label>Light Fasteness </label>
-                                                        <input class="form-control text-box single-line" id="LightLastness" name="LightLastness" type="text" value="" />
+                                                        <input class="form-control text-box single-line" formControlName="lightLastness" id="LightLastness" name="LightLastness" type="text" value="" />
                                                     </li>
                                                     <li>
                                                         <label>Hours </label>
-                                                        <input class="form-control text-box single-line" id="Hour" name="Hour" type="datetime" value="" />
+                                                        <input class="form-control text-box single-line" formControlName="hour" id="Hour" name="Hour" type="datetime" value="" />
                                                     </li>
                                                 </ul>
                                             </td>
@@ -589,23 +589,23 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td data-title=" Purpose For Match" class="last">
+                                            <td data-title="Purpose For Match" class="last">
                                                 <ul class="info-list">
                                                     <li>
                                                         <label>New</label>
                                                         <div class="chk-box">
-                                                            <input class="check-box" id="New" name="New" type="checkbox" value="true" />
+                                                            <input class="check-box" formControlName="new" id="New" name="New" type="checkbox" value="true" />
                                                         </div>
                                                     </li>
                                                     <li>
                                                         <label>Reformulation</label>
-                                                        <select name="select-markup">
-                                                            <option value=""></option>
+                                                        <select class="form-control" formControlName="reformulation_Id">
+                                                            <option *ngFor="let reformulation of reformulation" [value]="reformulation.id">{{ reformulation.name }}</option>
                                                         </select>
                                                     </li>
                                                     <li>
                                                         <label>Reason </label>
-                                                        <input class="form-control text-box single-line" id="Reason" name="Reason" type="text" value="" />
+                                                        <input class="form-control text-box single-line" formControlName="reason" id="Reason" name="Reason" type="text" value="" />
                                                     </li>
                                                 </ul>
                                             </td>
@@ -628,56 +628,56 @@
                                                     <li>
                                                         <label>UV</label>
                                                         <div class="chk-box">
-                                                            <input class="check-box" id="Uv" name="Uv" type="checkbox" value="true" />
+                                                            <input class="check-box" formControlName="uv" id="Uv" name="Uv" type="checkbox" value="true" />
                                                         </div>
 
-                                                        <input class="form-control text-box single-line" id="UvPackage" name="UvPackage" type="text" value="" />
+                                                        <input class="form-control text-box single-line" formControlName="uv" id="UvPackage" name="UvPackage" type="text" value="" />
                                                     </li>
                                                     <li>
                                                         <label>Antioxidants </label>
                                                         <div class="chk-box fl">
-                                                            <input class="check-box" id="IsAntiOxidant" name="IsAntiOxidant" type="checkbox" value="true" />
+                                                            <input class="check-box" id="IsAntiOxidant" formControlName="isAntiOxidant" name="IsAntiOxidant" type="checkbox" value="true" />
                                                         </div>
-                                                        <input class="form-control text-box single-line" id="AntiOxidant" name="AntiOxidant" type="text" value="" />
+                                                        <input class="form-control text-box single-line" formControlName="antiOxidant" id="AntiOxidant" name="AntiOxidant" type="text" value="" />
                                                     </li>
                                                     <li>
                                                         <label>Antistat</label>
                                                         <div class="chk-box fl">
-                                                            <input class="check-box" id="IsAntiStat" name="IsAntiStat" type="checkbox" value="true" />
+                                                            <input class="check-box" id="IsAntiStat" formControlName="isAntiStat" name="IsAntiStat" type="checkbox" value="true" />
                                                         </div>
-                                                        <input class="form-control text-box single-line" id="AntiStat" name="AntiStat" type="text" value="" />
+                                                        <input class="form-control text-box single-line"  formControlName="antiStat" id="AntiStat" name="AntiStat" type="text" value="" />
                                                     </li>
                                                     <li>
                                                         <label>None</label>
                                                         <div class="chk-box">
-                                                            <input class="check-box" id="AdditiveNone" name="AdditiveNone" type="checkbox" value="true" />
+                                                            <input class="check-box" id="AdditiveNone" formControlName="additiveNone" name="AdditiveNone" type="checkbox" value="true" />
                                                         </div>
                                                     </li>
                                                     <li>
                                                         <label>Lubricant</label>
                                                         <div class="chk-box fl">
-                                                            <input class="check-box" id="IsLubricant" name="IsLubricant" type="checkbox" value="true" />
+                                                            <input class="check-box" id="IsLubricant" formControlName="isLubricant" name="IsLubricant" type="checkbox" value="true" />
                                                         </div>
-                                                        <input class="form-control text-box single-line" id="Lubricant" name="Lubricant" type="text" value="" />
+                                                        <input class="form-control text-box single-line" formControlName="lubricant" id="Lubricant" name="Lubricant" type="text" value="" />
                                                     </li>
                                                     <li>
                                                         <label>Amount</label>
-                                                        <input class="form-control text-box single-line" id="Amount" name="Amount" type="text" value="" />
+                                                        <input class="form-control text-box single-line" formControlName="amount" id="Amount" name="Amount" type="text" value="" />
                                                     </li>
                                                     <li>
                                                         <label>Other</label>
-                                                        <input class="form-control text-box single-line" id="AdditiveOther" name="AdditiveOther" type="text" value="" />
+                                                        <input class="form-control text-box single-line" formControlName="additiveOther" id="AdditiveOther" name="AdditiveOther" type="text" value="" />
                                                     </li>
                                                     <li>
                                                         <label>Lab to check application for best additive</label>
                                                         <div class="chk-box">
-                                                            <input class="check-box" id="BestAdditive" name="BestAdditive" type="checkbox" value="true" />
+                                                            <input class="check-box" formControlName="bestAdditive" id="BestAdditive" name="BestAdditive" type="checkbox" value="true" />
                                                         </div>
                                                     </li>
                                                     <li>
                                                         <label>Slip</label>
                                                         <div class="chk-box">
-                                                            <input class="check-box" id="Slip" name="Slip" type="checkbox" value="true" />
+                                                            <input class="check-box" id="Slip" formControlName="slip"  name="Slip" type="checkbox" value="true" />
                                                         </div>
                                                     </li>
                                                 </ul>
@@ -701,30 +701,30 @@
                                                     <li>
                                                         <label>Price</label>
                                                         <div class="chk-box">
-                                                            <input class="form-control text-box single-line" id="Price" name="Price" type="number" value="" />
+                                                            <input class="form-control text-box single-line" formControlName="price" id="Price" name="Price" type="number" value="" />
                                                         </div>
                                                     </li>
                                                     <li>
                                                         <label>Accuracy</label>
                                                         <div class="chk-box">
-                                                            <input class="form-control text-box single-line" id="Accuracy" name="Accuracy" type="number" value="" />
+                                                            <input class="form-control text-box single-line" formControlName="accuracy" id="Accuracy" name="Accuracy" type="number" value="" />
                                                         </div>
                                                     </li>
                                                     <li>
                                                         <label>Turnaround</label>
                                                         <div class="chk-box">
-                                                            <input class="form-control text-box single-line" id="Turnaround" name="Turnaround" type="number" value="" />
+                                                            <input class="form-control text-box single-line" formControlName="turnaround" id="Turnaround" name="Turnaround" type="number" value="" />
                                                         </div>
                                                     </li>
                                                     <li>
                                                         <label>None</label>
                                                         <div class="chk-box">
-                                                            <input class="check-box" id="ConcernNone" name="ConcernNone" type="checkbox" value="true" />
+                                                            <input class="check-box" id="ConcernNone" formControlName="concernNone" name="ConcernNone" type="checkbox" value="true" />
                                                         </div>
                                                     </li>
                                                     <li>
                                                         <label>Other </label>
-                                                        <input class="form-control text-box single-line" id="ConcernOther" name="ConcernOther" type="text" value="" />
+                                                        <input class="form-control text-box single-line" formControlName="concernOther" id="ConcernOther" name="ConcernOther" type="text" value="" />
                                                     </li>
                                                 </ul>
                                             </td>
@@ -747,24 +747,24 @@
                                                     <li>
                                                         <label>FDA</label>
                                                         <div class="chk-box">
-                                                            <input class="check-box" id="Fda" name="Fda" type="checkbox" value="true" />
+                                                            <input class="check-box" formControlName="fda" id="Fda" name="Fda" type="checkbox" value="true" />
                                                         </div>
                                                     </li>
                                                     <li>
                                                         <label>NON h/m</label>
                                                         <div class="chk-box">
-                                                            <input class="check-box" id="NonHm" name="NonHm" type="checkbox" value="true" />
+                                                            <input class="check-box" formControlName="nonHm" id="NonHm" name="NonHm" type="checkbox" value="true" />
                                                         </div>
                                                     </li>
                                                     <li>
                                                         <label>None</label>
                                                         <div class="chk-box">
-                                                            <input class="check-box" id="RequirementNone" name="RequirementNone" type="checkbox" value="true" />
+                                                            <input class="check-box" formControlName="requirementNone" id="RequirementNone" name="RequirementNone" type="checkbox" value="true" />
                                                         </div>
                                                     </li>
                                                     <li>
                                                         <label>Other </label>
-                                                        <input class="form-control text-box single-line" id="RequirementOther" name="RequirementOther" type="text" value="" />
+                                                        <input class="form-control text-box single-line" formControlName="requirementOther" id="RequirementOther" name="RequirementOther" type="text" value="" />
                                                     </li>
                                                 </ul>
                                             </td>
@@ -782,52 +782,52 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td data-title=" Processing Information" class="last">
+                                            <td data-title="Processing Information" class="last">
                                                 <ul class="info-list">
                                                     <li>
                                                         <label>Maximum Heat </label>
-                                                        <input class="form-control text-box single-line" id="MaximumHeat" name="MaximumHeat" type="text" value="" />
+                                                        <input class="form-control text-box single-line" formControlName="maximumHeat" id="MaximumHeat" name="MaximumHeat" type="text" value="" />
                                                     </li>
                                                     <li>
                                                         <label>COA</label>
                                                         <div class="chk-box">
-                                                            <input class="check-box" id="Coa" name="Coa" type="checkbox" value="true" />
+                                                            <input class="check-box" formControlName="coa" id="Coa" name="Coa" type="checkbox" value="true" />
                                                         </div>
                                                     </li>
                                                     <li>
                                                         <label>MSDS</label>
                                                         <div class="chk-box">
-                                                            <input class="check-box" id="Msds" name="Msds" type="checkbox" value="true" />
+                                                            <input class="check-box" formControlName="msds" id="Msds" name="Msds" type="checkbox" value="true" />
                                                         </div>
                                                     </li>
                                                     <li>
                                                         <label>CIE</label>
                                                         <div class="chk-box">
-                                                            <input class="check-box" id="Cie" name="Cie" type="checkbox" value="true" />
+                                                            <input class="check-box" formControlName="cie" id="Cie" name="Cie" type="checkbox" value="true" />
                                                         </div>
                                                     </li>
                                                     <li>
                                                         <label>Material Sheet</label>
                                                         <div class="chk-box">
-                                                            <input class="check-box" id="MateriaSeet" name="MateriaSeet" type="checkbox" value="true" />
+                                                            <input class="check-box" formControlName="materiaSeet" id="MateriaSeet" name="MateriaSeet" type="checkbox" value="true" />
                                                         </div>
                                                     </li>
                                                     <li>
                                                         <label>FDA Letter</label>
                                                         <div class="chk-box">
-                                                            <input class="check-box" id="FdaLetter" name="FdaLetter" type="checkbox" value="true" />
+                                                            <input class="check-box" formControlName="fdaLetter" id="FdaLetter" name="FdaLetter" type="checkbox" value="true" />
                                                         </div>
                                                     </li>
                                                     <li>
                                                         <label>UV Letter</label>
                                                         <div class="chk-box">
-                                                            <input class="check-box" id="UvLetter" name="UvLetter" type="checkbox" value="true" />
+                                                            <input class="check-box" formControlName="uvLetter" id="UvLetter" name="UvLetter" type="checkbox" value="true" />
                                                         </div>
                                                     </li>
                                                     <li>
                                                         <label>No Logo Chips</label>
                                                         <div class="chk-box">
-                                                            <input class="check-box" id="LogoChips" name="LogoChips" type="checkbox" value="true" />
+                                                            <input class="check-box" formControlName="logoChips" id="LogoChips" name="LogoChips" type="checkbox" value="true" />
                                                         </div>
                                                     </li>
                                                 </ul>
@@ -852,7 +852,7 @@
                                                 <ul class="info-list">
                                                     <li>
                                                         <label>Item</label>
-                                                        <input type="text" class="form-control" />
+                                                        <input type="text"  class="form-control" />
                                                     </li>
                                                     <li>
                                                         <label>Name</label>
@@ -867,7 +867,6 @@
                                                         <select class="form-control">
                                                             <option value="true">Yes</option>
                                                             <option value="false">No</option>
-
                                                         </select>
                                                     </li>
                                                     <li>
@@ -960,13 +959,13 @@
                                     <tbody>
                                         <tr>
                                             <td data-title="Lab Notes">
-                                                <textarea></textarea>
+                                                <textarea formControlName="labNotes"></textarea>
                                             </td>
                                             <td data-title="Shipping Notes">
-                                                <textarea></textarea>
+                                                <textarea formControlName="shippingNotes"></textarea>
                                             </td>
                                             <td data-title="Label">
-                                                <textarea></textarea>
+                                                <textarea formControlName="label"></textarea>
                                             </td>
                                         </tr>
                                     </tbody>

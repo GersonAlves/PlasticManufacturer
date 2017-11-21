@@ -135,5 +135,8 @@ namespace PlasticManufacturer.Domain.Entities.Color_Match_Request
         public virtual CustomerShipViaAccount CustomerShipViaAccount { get; set; }
 
         public virtual DateTime? CustomerDueDate { get; set; }
+        public virtual string LabNotes { get; set; }
+        public virtual string ShippingNotes { get; set; }
+        public virtual string Label { get; set; }
     }
 }
