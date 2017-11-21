@@ -2077,13 +2077,23 @@
         -webkit-box-sizing: border-box;
     }
 
-    .notes-style {
-        float: left;
-        width: 99.5%;
-        padding: 0 0 0 20px;
-        box-sizing: border-box;
-        -webkit-box-sizing: border-box;
-    }
+.notes-style {
+    float: left;
+    width: 99.5%;
+    padding: 0 0 0 20px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.notes-style-address {
+    float: left;
+    width: 96.5%;
+    padding: 0 0 0 20px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    margin-left: inherit;
+}
+    
     /*End*/
 
 

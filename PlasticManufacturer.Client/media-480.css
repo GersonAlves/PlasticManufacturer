@@ -1,5 +1,12 @@
 ﻿@media Screen and (max-width: 481px) {
 
+    .margin-adjust {
+        margin-right: 0px;
+    }
+
+
+
+
     /* app css stylesheet */
     .hoverwell:hover {
         background-color: #485563;
@@ -2342,13 +2349,22 @@
     }
 
     .panel .options ul li {
-        width: 36% !important;
+        width: 26% !important;
         box-sizing: border-box;
     }
 
     .notes-style {
         float: left;
-        width: 104%;
+        width: 106%;
+        padding: 0 0 0 20px;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        margin-left: -20px;
+    }
+
+    .notes-style-address {
+        float: left;
+        width: 107%;
         padding: 0 0 0 20px;
         box-sizing: border-box;
         -webkit-box-sizing: border-box;

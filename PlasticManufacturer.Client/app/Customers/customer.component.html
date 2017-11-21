@@ -6,13 +6,27 @@
     <div class="col-md-4">
         <form (ngSubmit)="save()" [formGroup]="customerForm">
             <div class="panel-container">
-                <div class="options">
-                    <ul>
-                        <li><a class="post" (click)="save()">Post</a></li>
-                        <li *ngIf="customerForm.get('id').value !==0"><a class="delete" (click)="delete()">Delete</a></li>
-                        <li><a class="cancel" (click)="cancel()">Cancel</a></li>
-                    </ul>
-                </div>
+
+                <nav id="into-menu">
+
+                    <input type="checkbox" id="change-hamburguer" />
+                    <a class="hamburguer" href="#">
+                        <span></span>
+                        <label for="change-hamburguer"></label>
+                    </a>
+                    <div class="menu">
+
+                        <div class="options">
+                            <ul>
+                                <li><a class="post" (click)="save()">Post</a></li>
+                                <li *ngIf="customerForm.get('id').value !==0"><a class="delete" (click)="delete()">Delete</a></li>
+                                <li><a class="cancel" (click)="cancel()">Cancel</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </nav>
+
                 <mat-tab-group class="form-horizontal">
                     <div class="formula">
                         <mat-tab label="General">
@@ -156,12 +170,13 @@
                                 </div>
                                 <div class="add-info">
                                     <div class="box">
-                                        <div class="col-frm">
+                                        <div class="col-frm pdlft">
                                             <label><input type="checkbox" />Use Standard Terms</label>
-                                            <div class="frm-row">
+                                          
                                                 <label><input type="checkbox" />C.O.D</label>
                                                 <label><input type="checkbox" />Prepaid</label>
-                                            </div>
+                                            <label>Discount % <input type="text" class="form-control" value="0.00" /></label>
+                                         
                                         </div>
                                         <div class="col-frm pdlft">
                                             <label><input type="checkbox" />Dues on Day of month</label>
@@ -171,9 +186,9 @@
                                     </div>
                                     <div class="box pdlft col-right">
                                         <div class="col-frm">
-                                            <label>Net due in days <input type="text" class="form-control" value="0" /> days</label>
+                                            <label>Net due in&nbsp; <input type="text" class="form-control" value="0" /> days</label>
                                             <label>Discount in <input type="text" class="form-control" value="0" /> days</label>
-                                            <label>Discount % <input type="text" class="form-control" value="0.00" /></label>
+                                            
                                         </div>
                                         <div class="col-frm pdlft">
                                             <label>Credit limit <input class="form-control" type="text" value="0.00" /></label>
@@ -194,7 +209,7 @@
                                                     <div class="form-group">
                                                         <div class="col">
                                                             <span class="label">Name:</span>
-                                                            <input style="width: 550px" type="text" class="form-control"  />
+                                                            <input  type="text" class="form-control"  />
                                                         </div>
                                                     </div>
 
@@ -304,7 +319,7 @@
                                                     </div>
 
                                                     <div class="form-group">
-                                                        <div class="notes-style">
+                                                        <div class="notes-style-address">
                                                             <label>Notes:</label>
                                                             <textarea cols="30" rows="10" class="form-control"></textarea>
 
