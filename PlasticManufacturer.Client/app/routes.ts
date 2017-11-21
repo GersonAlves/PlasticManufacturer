@@ -18,6 +18,14 @@ import {
     CustomerRatingListComponent
 } from './customerRatings/index'
 
+
+import {
+    CdefaultGuard,
+    CdefaultComponent,
+    CdefaultListComponent
+} from './cdefaults/index'
+
+
 import {
     OpacityGuard,
     OpacityComponent,
@@ -84,10 +92,22 @@ import {
 } from './cities/index'
 
 import {
+    MarkupComponent,
+    MarkupListComponent,
+    MarkupGuard
+} from './markups/index'
+
+import {
     CategoryComponent,
     CategoryListComponent,
     CategoryGuard
 } from './categories/index'
+
+import {
+    FormulaComponent,
+    FormulaListComponent,
+    FormulaGuard
+} from './formulas/index'
 
 import {
     DepartmentComponent,
@@ -152,6 +172,12 @@ export const appRoutes: Routes = [
     { path: 'targetTypes', component: TargetTypeListComponent },
     { path: 'targetTypes/:id', canDeactivate: [TargetTypeGuard], component: TargetTypeComponent },
 
+    { path: 'categories', component: CategoryListComponent },
+    { path: 'categories/:id', canDeactivate: [CategoryGuard], component: CategoryComponent },
+
+    { path: 'formulas', component: FormulaListComponent },
+    { path: 'formulas/:id', canDeactivate: [FormulaGuard], component: FormulaComponent },
+
     { path: 'customerResins', component: CustomerResinListComponent },
     { path: 'customerResins/:id', canDeactivate: [CustomerResinGuard], component: CustomerResinComponent },
 
@@ -182,8 +208,13 @@ export const appRoutes: Routes = [
     { path: 'carriers', component: CarrierListComponent },
     { path: 'carriers/:id', canDeactivate: [CarrierGuard], component: CarrierComponent },
 
-    { path: 'categories', component: CategoryListComponent },
-    { path: 'categories/:id', canDeactivate: [CategoryGuard], component: CategoryComponent },
+    { path: 'cdefaults', component: CdefaultListComponent },
+    { path: 'cdefaults/:id', canDeactivate: [CdefaultGuard], component: CdefaultComponent },
+
+    { path: 'categories', component: MarkupListComponent },
+    { path: 'categories/:id', canDeactivate: [MarkupGuard], component: MarkupComponent },
+    { path: 'markups', component: MarkupListComponent },
+    { path: 'markups/:id', canDeactivate: [MarkupGuard], component: MarkupComponent },
 
     { path: 'customerDefaults', component: CustomerDefaultListComponent },
     { path: 'customerDefaults/:id', canDeactivate: [CustomerDefaultGuard], component: CustomerDefaultComponent },

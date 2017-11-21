@@ -1,4 +1,4 @@
-﻿import { NgModule } from '@angular/core'
+﻿import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser'
 import { RouterModule } from '@angular/router'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -91,6 +91,14 @@ import {
     CustomerDefaultListComponent,
     CustomerDefaultService
 } from './customerDefaults/index'
+
+import {
+    CdefaultGuard,
+    CdefaultComponent,
+    CdefaultListComponent,
+    CdefaultService
+} from './cdefaults/index'
+
                                                          
 import {            
     CustomerRatingGuard,
@@ -106,6 +114,14 @@ import {
     CategoryService
 } from './categories/index'
 
+import {
+    MarkupComponent,
+    MarkupListComponent,
+    MarkupGuard,
+    MarkupService
+} from './markups/index'
+
+
 
 import {
     CarrierGuard,
@@ -113,6 +129,9 @@ import {
     CarrierListComponent,
     CarrierService
 } from './carriers/index'
+
+
+
 
 import {
     PackagingGuard,
@@ -306,6 +325,8 @@ import { Error404Component } from './errors/404.component'
         TargetTypeListComponent,
         ColorMatchRequestComponent,
         ColorMatchRequestListComponent,
+        MarkupComponent,
+        MarkupListComponent,
         CategoryComponent,
         CategoryListComponent,
         DepartmentComponent,
@@ -326,8 +347,8 @@ import { Error404Component } from './errors/404.component'
         CarrierListComponent,
         CustomerDefaultComponent,                                    
         CustomerDefaultListComponent,
-        CustomerDefaultComponent,
-        CustomerDefaultListComponent,                                              
+        CdefaultComponent,
+        CdefaultListComponent,                                              
         PelletComponent,
         PelletListComponent,
 
@@ -347,13 +368,16 @@ import { Error404Component } from './errors/404.component'
         CustomerStatusGuard,
         CustomerStatusService,
         CarrierService,
+       
         HttpUtilService,
         CustomerDefaultService,
+        CdefaultService,
         CustomerRatingService,
         DepartmentGuard,
         DepartmentService,
         EventService,
         CarrierGuard,
+      
         PelletGuard,
         PelletService,
         CustomerResinService,
@@ -363,6 +387,7 @@ import { Error404Component } from './errors/404.component'
         ProductGuard,
         ProductService,
         CustomerDefaultGuard,
+        CdefaultGuard,
         CustomerRatingGuard,
         { provide: TOASTR_TOKEN, useValue: toastr },
         { provide: JQ_TOKEN, useValue: jQuery },
@@ -389,6 +414,8 @@ import { Error404Component } from './errors/404.component'
         CityService,
         CategoryGuard,
         CategoryService,  
+        MarkupGuard,
+        MarkupService,  
         OpacityGuard,
         OpacityService,
         MaritalStatusGuard,
