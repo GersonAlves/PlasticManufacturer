@@ -948,9 +948,19 @@
             text-transform: uppercase;
         }
 
+
+    .notes-style-address {
+        float: left;
+        width: 96.5%;
+        padding: 0 0 0 20px;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        margin-left: inherit;
+    }
+
         .order-info textarea {
             width: auto !important;
-            min-width: 100%;
+            min-width: 97.7%;
             max-width: 100%;
             min-height: 71px;
             max-height: 71px;
@@ -2356,7 +2366,7 @@
     .notes-style {
         float: left;
         width: 106%;
-        padding: 0 0 0 20px;
+        padding: 0 4px 0 20px;
         box-sizing: border-box;
         -webkit-box-sizing: border-box;
         margin-left: -20px;
