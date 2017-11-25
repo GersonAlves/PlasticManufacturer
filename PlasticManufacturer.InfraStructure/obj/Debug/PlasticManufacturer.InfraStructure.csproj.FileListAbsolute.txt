@@ -68,3 +68,5 @@ D:\Projects\USA\Aulus\PlasticManufacturer\PlasticManufacturer.InfraStructure\obj
 D:\Projects\USA\Aulus\PlasticManufacturer\PlasticManufacturer.InfraStructure\obj\Debug\PlasticManufacturer.InfraStructure.csproj.GenerateResource.Cache
 D:\Projects\USA\Aulus\PlasticManufacturer\PlasticManufacturer.InfraStructure\obj\Debug\PlasticManufacturer.InfraStructure.dll
 D:\Projects\USA\Aulus\PlasticManufacturer\PlasticManufacturer.InfraStructure\obj\Debug\PlasticManufacturer.InfraStructure.pdb
+C:\Projects\PlasticManufacturer\PlasticManufacturer.InfraStructure\obj\Debug\PlasticManufacturer.InfraStructure.Migrations.alteracaoColorMatcNotes.resources
+C:\Projects\PlasticManufacturer\PlasticManufacturer.InfraStructure\obj\Debug\PlasticManufacturer.InfraStructure.Migrations.AlteracaoProduto.resources
