@@ -250,6 +250,13 @@ import { TargetTypeComponent, TargetTypeListComponent, TargetTypeService, Target
 
 import { ProductComponent, ProductListComponent, ProductService, ProductGuard } from './products/index'
 
+import {
+    FormulaComponent,
+    FormulaListComponent,
+    FormulaService,
+    FormulaGuard
+} from './formulas/index'
+
 
 
 import { appRoutes } from './routes'
@@ -310,6 +317,8 @@ import { Error404Component } from './errors/404.component'
         CustomerContactedListComponent,
         FreightComponent,
         FreightListComponent,
+        FormulaComponent,
+        FormulaListComponent,
         NavBarComponent,
         CustomerListComponent,
         CreateEventComponent,
@@ -367,8 +376,7 @@ import { Error404Component } from './errors/404.component'
     providers: [
         CustomerStatusGuard,
         CustomerStatusService,
-        CarrierService,
-       
+        CarrierService,     
         HttpUtilService,
         CustomerDefaultService,
         CdefaultService,
@@ -377,7 +385,8 @@ import { Error404Component } from './errors/404.component'
         DepartmentService,
         EventService,
         CarrierGuard,
-      
+        FormulaService,
+        FormulaGuard,
         PelletGuard,
         PelletService,
         CustomerResinService,

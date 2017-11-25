@@ -58,7 +58,7 @@ export class ColorMatchRequestComponent implements OnInit, AfterViewInit, OnDest
         private opacityService: OpacityService,
         private customerResinService: CustomerResinService,
         private packagingService: PackagingService,
-        private pelletService: PelletService,
+        //private pelletService: PelletService,
         private carrierService: CarrierService,
         private productService: ProductService) {
 
@@ -178,7 +178,7 @@ export class ColorMatchRequestComponent implements OnInit, AfterViewInit, OnDest
         this.loadOpacity();
         this.loadCustomerResin();
         this.loadPackaging();
-        this.loadPellet();
+        //this.loadPellet();
         this.loadCarrier();
         this.loadProduct();
 
@@ -373,11 +373,11 @@ export class ColorMatchRequestComponent implements OnInit, AfterViewInit, OnDest
             error => this.errorMessage = <any>error);
     }
 
-    loadPellet(): void {
-        this.pelletService.getAll()
-            .subscribe(pellets => this.pellets = pellets,
-            error => this.errorMessage = <any>error);
-    }
+    //loadPellet(): void {
+    //    this.pelletService.getAll()
+    //        .subscribe(pellets => this.pellets = pellets,
+    //        error => this.errorMessage = <any>error);
+    //}
 
     loadCarrier(): void {
         this.carrierService.getAll()
