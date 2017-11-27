@@ -6,9 +6,9 @@ import { RawMaterialComponent } from './rawMaterial.component';
 @Injectable()
 export class RawMaterialGuard implements CanDeactivate<RawMaterialComponent> {
 
-    canDeactivate(component: RawMaterialComponent): boolean {
+    canDeactivate(component:RawMaterialComponent): boolean {
         if (component.rawMaterialForm.dirty) {
-            let name = component.rawMaterialForm.get('name').value || 'New rawMaterial';
+            let name = component.rawMaterialForm.get('name').value || 'New RawMaterial';
             return confirm(`Navigate away and lose all changes to ${name}?`);
         }
         return true;

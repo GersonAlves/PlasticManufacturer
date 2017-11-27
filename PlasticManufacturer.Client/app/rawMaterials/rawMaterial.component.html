@@ -1,37 +1,133 @@
 ﻿<div class="panel spacer-20">
     <div class="panel-heading no-padding">
-        <a href="#" class="panel-expander notext fr">&nbsp;</a>
-        <h2 class="clipboard">Raw Material</h2>
+        <a class="panel-expander notext fr">&nbsp;</a>
+        <h2 class="clipboard">{{pageTitle}}</h2>
     </div>
-    <div class="panel-container">
-        <div class="options">
-            <ul>
-                <li><a class="new" href="/RawMaterials/Create?Length=0">New</a></li>
-            </ul>
-        </div>
-        <table class="form-horizontal table2 gn-table">
-            <tr>
-                <th>
-                    Code
-                </th>
-                <th>
-                    Name
-                </th>
-                <th>
-                    Description
-                </th>
-                <th>
-                    Notes
-                </th>
-                <th>
-                    Is Active?
-                </th>
-                <th>
-                    Category
-                </th>
-                <th colspan="2"></th>
-            </tr>
+    <div class="col-md-4">
+        <form (ngSubmit)="save()" [formGroup]="rawMaterialForm">
+            <div class="panel-container">
+                <div class="options">
+                    <ul>
+                        <li>
+                            <a class="post" (click)="save()">Post</a>
+                        </li>
+                        <li *ngIf="rawMaterialForm.get('id').value !==0"><a class="delete" (click)="delete()">Delete</a></li>
+                        <li><a class="cancel" (click)="cancel()">Cancel</a></li>
+                    </ul>
+                </div>
+               <div class="form-horizontal">
+                    <div class="fields-row">
+                        <div class="fields-bar">
+                            <div class="form-group">
+                                <div class="col">
+                                    <label class="control-label col-md-2" for="Code">Code</label>
+                                    <input class="form-control text-box single-line" name="Code" type="text"  />
+                                </div>
+                                <div class="col">
+                                    <label class="control-label col-md-2" for="Name">Name</label>
+                                    <input class="form-control text-box single-line"  id="Name" name="Name" type="text"  />
+                                </div>
+                                <div class="col">
+                                    <label class="control-label col-md-2" for="Description">Description</label>
+                                    <input class="form-control text-box single-line" id="Description"  name="Description" type="text"  />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-        </table>
+                    <div class="fields-row">
+                        <div class="fields-bar">
+                            <div class="form-group">
+                                <div class="col">
+                                    <label class="control-label col-md-2" for="Notes">Notes</label>
+                                    <input class="form-control text-box single-line" id="Notes" name="Notes" type="text"  />
+                                </div>
+                                <div class="col">
+                                    <label class="control-label col-md-2" for="ChemicalName">ChemicalName</label>
+                                    <input class="form-control text-box single-line" id="ChemicalName" name="ChemicalName" type="text"  />
+                                </div>
+                                <div class="col">
+                                    <label class="control-label col-md-2" for="Status">Status</label>
+                                    <select name="Status" id="Status" class="form-control" style="width:200px">
+                                        <option ></option>
+                                        <option value="true">Active</option>
+                                        <option value="false">Inactive</option>
+                                    </select>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="fields-row">
+                        <div class="fields-bar">
+                            <div class="form-group">
+                                <div class="col">
+                                    <label class="control-label col-md-2" for="MainSupplier">MainSupplier</label>
+                                    <input class="form-control text-box single-line" id="MainSupplier" formControlName="mainSupplier" name="MainSupplier" type="text"  />
+                                </div>
+                                <div class="col">
+                                    <label class="control-label col-md-2" for="MainCustomer">MainCustomer</label>
+                                    <input class="form-control text-box single-line" id="MainCustomer" formControlName="mainCustomer"name="MainCustomer" type="text"  />
+                                </div>
+                                <div class="col">
+                                    <label class="control-label col-md-2" for="Category">Category</label>
+
+                                    <select name="Category.Id" id="Category_Id" class="form-control" style="width: 200px">
+                                        <option ></option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="fields-row">
+                        <div class="fields-bar">
+                            <div class="form-group">
+                                <div class="col">
+                                    <label class="control-label col-md-2" for="HeatStability">HeatStability</label>
+                                    <input class="form-control text-box single-line" id="HeatStability" formControlName="heatStability" name="HeatStability" type="text"  />
+                                </div>
+                                <div class="col">
+                                    <label class="control-label col-md-2" for="LightSatability">LightSatability</label>
+                                    <input class="form-control text-box single-line" id="LightSatability" formControlName="lightSatability" name="LightSatability" type="text"  />
+                                </div>
+                                <div class="col">
+                                    <label class="control-label col-md-2" for="BarCode">BarCode</label>
+                                    <input class="form-control text-box single-line" id="BarCode" formControlName="barCode"name="BarCode" type="text"  />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="fields-row">
+                        <div class="fields-bar">
+                            <div class="form-group">
+                                <div class="col">
+                                    <label class="control-label col-md-2" for="QCRequired">QCRequired</label>
+                                    <div class="checkbox">
+                                        <input class="check-box"  id="QCRequired" formControlName="qcRequired" name="QCRequired" type="checkbox" value="true" />
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <label class="control-label col-md-2" for="Fda">Fda</label>
+                                    <div class="checkbox">
+                                        <input class="check-box" data-val="true" id="Fda" formControlName="fda" name="Fda" type="checkbox" value="true" /><input name="Fda" type="hidden" value="false" />
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <label class="control-label col-md-2" for="Hbfb">Hbfb</label>
+                                    <div class="checkbox">
+                                        <input class="check-box" data-val="true" id="Hbfb" formControlName="hbfb" name="Hbfb" type="checkbox" value="true" /><input name="Hbfb" type="hidden" value="false" />
+                                    </div>
+                                </div>  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <p></p>
     </div>
 </div>
+

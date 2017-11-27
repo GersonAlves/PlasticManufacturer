@@ -10,13 +10,13 @@ import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
 
 import { IRawMaterial } from './rawMaterial.model'
-import { RawMaterialService } from './RawMaterial.service'
+import {RawMaterialService } from './rawMaterial.service'
 
 import { GenericValidator } from '../shared/generic-validator';
 
 
 @Component({
-    templateUrl: 'app/RawMaterials/RawMaterial.component.html'
+    templateUrl: 'app/rawMaterials/rawMaterial.component.html'
 })
 
 export class RawMaterialComponent implements OnInit, AfterViewInit, OnDestroy {
@@ -26,7 +26,7 @@ export class RawMaterialComponent implements OnInit, AfterViewInit, OnDestroy {
     rawMaterial: IRawMaterial;
     private sub: Subscription;
     errorMessage: string;
-    pageTitle: string = 'rawMaterial';
+    pageTitle: string = 'Raw Material';
 
     // Use with the generic validation message class
     displayMessage: { [key: string]: string } = {};
@@ -39,7 +39,7 @@ export class RawMaterialComponent implements OnInit, AfterViewInit, OnDestroy {
         // These could instead be retrieved from a file or database.
         this.validationMessages = {
             name: {
-                required: 'RawMaterial name is required.'
+                required: 'Raw Material name is required.'
             }
         };
 
@@ -51,15 +51,27 @@ export class RawMaterialComponent implements OnInit, AfterViewInit, OnDestroy {
     ngOnInit(): void {
         this.rawMaterialForm = this.formBuilder.group({
             id: 0,
-            name: ['', Validators.compose([Validators.required, Validators.minLength(3)])],
-            description: ''
+            name: '',
+            description: '',
+            code: '',
+            notes: '',
+            chemicalName: '',
+            status: undefined,
+            mainSupplier: '',
+            mainCustomer: '',
+            heatStability: '',
+            lightSatability: '',
+            fda: undefined,
+            hbfb: undefined,
+            qcRequired: undefined,
+            barCode:''
         });
 
-        // Read the RawMaterial Id from the route parameter
+        // Read the rawMaterial Id from the route parameter
         this.sub = this.route.params.subscribe(
             params => {
                 let id = +params['id'];
-                this.getrawMaterial(id);
+                this.getRawMaterial(id);
             }
         );
     }
@@ -79,7 +91,7 @@ export class RawMaterialComponent implements OnInit, AfterViewInit, OnDestroy {
         });
     }
 
-    getrawMaterial(id: number): void {
+    getRawMaterial(id: number): void {
         if (id !== 0) {
             this.rawMaterialService.getById(id)
                 .subscribe(
@@ -97,24 +109,37 @@ export class RawMaterialComponent implements OnInit, AfterViewInit, OnDestroy {
         this.rawMaterial = rawMaterial;
 
         if (this.rawMaterial.id === 0) {
-            this.pageTitle = 'Add rawMaterial';
+            this.pageTitle = 'Add RawMaterial';
         } else {
-            this.pageTitle = `Edit rawMaterial  : ${this.rawMaterial.name}`;
+            this.pageTitle = `Edit RawMaterial  : ${this.rawMaterial.name}`;
         }
 
         // Update the data on the form
         this.rawMaterialForm.patchValue({
             id: this.rawMaterial.id,
             name: this.rawMaterial.name,
-            description: this.rawMaterial.description
+            description: this.rawMaterial.description,
+            code: this.rawMaterial.code,
+            notes: this.rawMaterial.notes,
+            chemicalName: this.rawMaterial.chemicalName,
+            status: this.rawMaterial.status,
+            mainSupplier: this.rawMaterial.mainSupplier,
+            mainCustomer: this.rawMaterial.mainCustomer,
+            heatStability: this.rawMaterial.heatStability,
+            lightSatability: this.rawMaterial.lightSatability,
+            fda: this.rawMaterial.fda,
+            hbfb: this.rawMaterial.hbfb,
+            qcRequired: this.rawMaterial.qcRequired,
+            barCode: this.rawMaterial.barCode
         });
     }
 
     save(): void {
+        
         if (this.rawMaterialForm.dirty && this.rawMaterialForm.valid) {
             // Copy the form values over the rawMaterial object values
             let c = (<any>Object).assign({}, this.rawMaterial, this.rawMaterialForm.value);
-
+            console.log("cheguei ate aqui");
             this.rawMaterialService.save(c)
                 .subscribe(
                 () => this.onSaveComplete(),
@@ -122,7 +147,9 @@ export class RawMaterialComponent implements OnInit, AfterViewInit, OnDestroy {
                 );
         } else if (!this.rawMaterialForm.dirty) {
             this.onSaveComplete();
+            console.log("cheguei ate aqui 2");
         }
+        
     }
 
     onSaveComplete(): void {

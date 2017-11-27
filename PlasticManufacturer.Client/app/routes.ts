@@ -163,11 +163,16 @@ import { TargetTypeComponent, TargetTypeListComponent, TargetTypeGuard } from '.
 
 import { ProductComponent, ProductListComponent, ProductGuard } from './products/index'
 
+import { RawMaterialComponent, RawMaterialListComponent, RawMaterialGuard } from './rawMaterials/index'
+
 import { Error404Component } from './errors/404.component'
 
 export const appRoutes: Routes = [
     { path: 'products', component: ProductListComponent },
     { path: 'products/:id', canDeactivate: [ProductGuard], component: ProductComponent },
+
+    { path: 'rawMaterials', component: RawMaterialListComponent },
+    { path: 'rawMaterials/:id', canDeactivate: [RawMaterialGuard], component: RawMaterialComponent },
 
     { path: 'targetTypes', component: TargetTypeListComponent },
     { path: 'targetTypes/:id', canDeactivate: [TargetTypeGuard], component: TargetTypeComponent },
