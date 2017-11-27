@@ -17,4 +17,4 @@ D:\Projects\USA\Aulus\PlasticManufacturer\PlasticManufacturer.Domain\bin\Debug\P
 D:\Projects\USA\Aulus\PlasticManufacturer\PlasticManufacturer.Domain\bin\Debug\PlasticManufacturer.Domain.pdb
 D:\Projects\USA\Aulus\PlasticManufacturer\PlasticManufacturer.Domain\obj\Debug\PlasticManufacturer.Domain.dll
 D:\Projects\USA\Aulus\PlasticManufacturer\PlasticManufacturer.Domain\obj\Debug\PlasticManufacturer.Domain.pdb
-C:\Projects\PlasticManufacturer\PlasticManufacturer.Domain\obj\Debug\PlasticManufacturer.Domain.csprojResolveAssemblyReference.cache
+D:\Projects\USA\Aulus\PlasticManufacturer\PlasticManufacturer.Domain\obj\Debug\PlasticManufacturer.Domain.csprojResolveAssemblyReference.cache
