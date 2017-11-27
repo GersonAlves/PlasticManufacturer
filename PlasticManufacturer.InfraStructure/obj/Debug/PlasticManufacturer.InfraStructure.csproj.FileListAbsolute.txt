@@ -70,3 +70,4 @@ D:\Projects\USA\Aulus\PlasticManufacturer\PlasticManufacturer.InfraStructure\obj
 D:\Projects\USA\Aulus\PlasticManufacturer\PlasticManufacturer.InfraStructure\obj\Debug\PlasticManufacturer.InfraStructure.pdb
 C:\Projects\PlasticManufacturer\PlasticManufacturer.InfraStructure\obj\Debug\PlasticManufacturer.InfraStructure.Migrations.alteracaoColorMatcNotes.resources
 C:\Projects\PlasticManufacturer\PlasticManufacturer.InfraStructure\obj\Debug\PlasticManufacturer.InfraStructure.Migrations.AlteracaoProduto.resources
+D:\Projects\USA\Aulus\PlasticManufacturer\PlasticManufacturer.InfraStructure\obj\Debug\PlasticManufacturer.InfraStructure.Migrations.AlteracaoProduto.resources

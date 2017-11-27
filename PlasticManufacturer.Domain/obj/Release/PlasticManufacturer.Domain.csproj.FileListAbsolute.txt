@@ -7,3 +7,8 @@ E:\Projects\PlasticManufacturer\PlasticManufacturer.Domain\bin\Release\PlasticMa
 E:\Projects\PlasticManufacturer\PlasticManufacturer.Domain\obj\Release\PlasticManufacturer.Domain.csproj.CoreCompileInputs.cache
 E:\Projects\PlasticManufacturer\PlasticManufacturer.Domain\obj\Release\PlasticManufacturer.Domain.dll
 E:\Projects\PlasticManufacturer\PlasticManufacturer.Domain\obj\Release\PlasticManufacturer.Domain.pdb
+D:\Projects\USA\Aulus\PlasticManufacturer\PlasticManufacturer.Domain\bin\Release\PlasticManufacturer.Domain.dll
+D:\Projects\USA\Aulus\PlasticManufacturer\PlasticManufacturer.Domain\bin\Release\PlasticManufacturer.Domain.pdb
+D:\Projects\USA\Aulus\PlasticManufacturer\PlasticManufacturer.Domain\obj\Release\PlasticManufacturer.Domain.csprojResolveAssemblyReference.cache
+D:\Projects\USA\Aulus\PlasticManufacturer\PlasticManufacturer.Domain\obj\Release\PlasticManufacturer.Domain.dll
+D:\Projects\USA\Aulus\PlasticManufacturer\PlasticManufacturer.Domain\obj\Release\PlasticManufacturer.Domain.pdb
