@@ -135,11 +135,10 @@ export class RawMaterialComponent implements OnInit, AfterViewInit, OnDestroy {
     }
 
     save(): void {
-        
         if (this.rawMaterialForm.dirty && this.rawMaterialForm.valid) {
-            // Copy the form values over the rawMaterial object values
+            // Copy the form values over the carrier object values
             let c = (<any>Object).assign({}, this.rawMaterial, this.rawMaterialForm.value);
-            console.log("cheguei ate aqui");
+
             this.rawMaterialService.save(c)
                 .subscribe(
                 () => this.onSaveComplete(),
@@ -147,9 +146,7 @@ export class RawMaterialComponent implements OnInit, AfterViewInit, OnDestroy {
                 );
         } else if (!this.rawMaterialForm.dirty) {
             this.onSaveComplete();
-            console.log("cheguei ate aqui 2");
         }
-        
     }
 
     onSaveComplete(): void {
