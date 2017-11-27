@@ -1,13 +1,16 @@
-﻿using PlasticManufacturer.API.Models.RawMaterial;
-using PlasticManufacturer.Domain.Entities.RawMaterial;
-using PlasticManufacturer.Domain.Repository;
-using PlasticManufacturer.InfraStructure.Repository;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web.Http;
+using System.Web.Http.Description;
+using PlasticManufacturer.Domain.Entities.RawMaterial;
+using PlasticManufacturer.InfraStructure.Context;
 using System.Web.Http.Cors;
 
 namespace PlasticManufacturer.API.Controllers
@@ -15,72 +18,105 @@ namespace PlasticManufacturer.API.Controllers
     [EnableCorsAttribute("*", "*", "*")]
     public class RawMaterialsController : ApiController
     {
-        IRepository<RawMaterial> repository;
+        private PlasticManufacturerContext db = new PlasticManufacturerContext();
 
-        public RawMaterialsController()
+        // GET: api/RawMaterials
+        public IQueryable<RawMaterial> GetRawMateials()
         {
-            repository = new RawMaterialRepository();   
+            return db.RawMateials;
         }
 
-        public IHttpActionResult Post(RawMaterial entity)
+        // GET: api/RawMaterials/5
+        [ResponseType(typeof(RawMaterial))]
+        public async Task<IHttpActionResult> GetRawMaterial(int id)
         {
-            repository.Add(entity);
-            return Ok();
+            RawMaterial rawMaterial = await db.RawMateials.FindAsync(id);
+            if (rawMaterial == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(rawMaterial);
         }
 
-        public IHttpActionResult Get()
+        // PUT: api/RawMaterials/5
+        [ResponseType(typeof(void))]
+        public async Task<IHttpActionResult> PutRawMaterial(int id, RawMaterial rawMaterial)
         {
-            var rawMaterials = repository.GetAll();
-            // FillRawMaterialModel(rawMaterials)
-            return Ok(rawMaterials);
-        }
-            
-        //private IList<RawMaterialModels> FillRawMaterialModel(IList<RawMaterial> rawMaterials)
-        //{
-        //    var rawMaterialsModels = new List<RawMaterialModels>();
-        //    var rawMaterialModel = new RawMaterialModels();
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
 
-        //    foreach (var rawMat in rawMaterials)
-        //    {
+            if (id != rawMaterial.Id)
+            {
+                return BadRequest();
+            }
 
-        //        rawMaterialModel.Id = rawMat.Id;
-        //        rawMaterialModel.Name = rawMat.Name;
-        //        rawMaterialModel.Description = rawMat.Description;
-        //        rawMaterialModel.CreationDate = rawMat.CreationDate;
-        //        rawMaterialModel.LastUpdate = rawMat.LastUpdate;
-        //        rawMaterialModel.Code = rawMat.Code;
-        //        rawMaterialModel.Notes = rawMat.Notes;
-        //        rawMaterialModel.ChemicalName = rawMat.ChemicalName;
-        //        rawMaterialModel.Status = rawMat.Status;
-        //        rawMaterialModel.OperationType = rawMat.OperationType;
-        //        rawMaterialModel.Category = rawMat.Category;
-        //        rawMaterialModel.MainSupplier = rawMat.MainSupplier;
-        //        rawMaterialModel.MainCustomer = rawMat.MainCustomer;
-        //        rawMaterialModel.HeatStability = rawMat.HeatStability;
-        //        rawMaterialModel.LightSatability = rawMat.LightSatability;
-        //        rawMaterialModel.Fda = rawMat.Fda;
-        //        rawMaterialModel.Hbfb = rawMat.Hbfb;
-        //        rawMaterialModel.QCRequired = rawMat.QCRequired;
-        //        rawMaterialModel.BarCode = rawMat.BarCode;
-                                 
-        //        foreach (var cost in rawMat.Costs)
-        //        {
-        //            rawMaterialModel.CostModel.Value = cost.Value;
-        //            rawMaterialModel.CostModel.Name = cost.Name;
-        //            rawMaterialModel.CostModel.Description = cost.Description;
+            db.Entry(rawMaterial).State = EntityState.Modified;
 
-        //        }
-        //        rawMaterialsModels.Add(rawMaterialModel);
-        //    }
+            try
+            {
+                await db.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!RawMaterialExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
 
-        //    return rawMaterialsModels;
-        //}
-
-        public IHttpActionResult Get(int id)
-        {
-            return Ok(repository.GetById(id));
+            return StatusCode(HttpStatusCode.NoContent);
         }
 
+        // POST: api/RawMaterials
+        [ResponseType(typeof(RawMaterial))]
+        public async Task<IHttpActionResult> PostRawMaterial(RawMaterial rawMaterial)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
 
+            db.RawMateials.Add(rawMaterial);
+            await db.SaveChangesAsync();
+
+            return CreatedAtRoute("DefaultApi", new { id = rawMaterial.Id }, rawMaterial);
+        }
+
+        // DELETE: api/RawMaterials/5
+        [ResponseType(typeof(RawMaterial))]
+        public async Task<IHttpActionResult> DeleteRawMaterial(int id)
+        {
+            RawMaterial rawMaterial = await db.RawMateials.FindAsync(id);
+            if (rawMaterial == null)
+            {
+                return NotFound();
+            }
+
+            db.RawMateials.Remove(rawMaterial);
+            await db.SaveChangesAsync();
+
+            return Ok(rawMaterial);
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        private bool RawMaterialExists(int id)
+        {
+            return db.RawMateials.Count(e => e.Id == id) > 0;
+        }
     }
 }

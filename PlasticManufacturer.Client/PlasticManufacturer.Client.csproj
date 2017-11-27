@@ -211,15 +211,8 @@
     <Content Include="app\Pellets\pellet-list.component.html" />
     <Content Include="app\products\product-list.component.html" />
     <Content Include="app\products\product.component.html" />
-    <Content Include="app\rawMaterials\index.js" />
-    <Content Include="app\rawMaterials\pellet-guard.service.js" />
-    <Content Include="app\rawMaterials\rawMaterial-guard.service.js" />
     <Content Include="app\rawMaterials\rawMaterial-list.component.html" />
-    <Content Include="app\rawMaterials\rawMaterial-list.component.js" />
     <Content Include="app\rawMaterials\rawMaterial.component.html" />
-    <Content Include="app\rawMaterials\rawMaterial.component.js" />
-    <Content Include="app\rawMaterials\rawMaterial.model.js" />
-    <Content Include="app\rawMaterials\rawMaterial.service.js" />
     <Content Include="app\salesOrders\salesOrder.component.html" />
     <Content Include="app\secondLabels\secondLabel-list.component.html" />
     <Content Include="app\secondLabels\secondLabel.component.html" />
@@ -6581,16 +6574,6 @@
     <Content Include="node_modules\zone.js\README.md" />
     <Content Include="app\css\images\facebox\Thumbs.db" />
     <Content Include="app\css\images\Thumbs.db" />
-    <Content Include="app\rawMaterials\Create.cshtml" />
-    <Content Include="app\rawMaterials\Edit.cshtml" />
-    <Content Include="app\rawMaterials\index.js.map" />
-    <Content Include="app\rawMaterials\Indexx.cshtml" />
-    <Content Include="app\rawMaterials\pellet-guard.service.js.map" />
-    <Content Include="app\rawMaterials\rawMaterial-guard.service.js.map" />
-    <Content Include="app\rawMaterials\rawMaterial-list.component.js.map" />
-    <Content Include="app\rawMaterials\rawMaterial.component.js.map" />
-    <Content Include="app\rawMaterials\rawMaterial.model.js.map" />
-    <Content Include="app\rawMaterials\rawMaterial.service.js.map" />
     <None Include="Properties\PublishProfiles\Homolog.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

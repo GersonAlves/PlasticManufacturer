@@ -11,6 +11,7 @@ export class RawMaterialService {
     constructor(private http: Http, private httpUtil: HttpUtilService) { }
 
     save(rawMaterial: IRawMaterial): Observable<IRawMaterial> {
+        console.log("Teste salvar" + rawMaterial.id);
         if (rawMaterial.id === 0) return this.create(rawMaterial);
 
         return this.update(rawMaterial);
@@ -38,6 +39,7 @@ export class RawMaterialService {
 
     getAll(): Observable<IRawMaterial[]> {
         return this.http.get(this.httpUtil.url(this.api)).map((response: Response) => {
+            console.log(<IRawMaterial[]>response.json());
             return <IRawMaterial[]>response.json();
         }).catch(this.httpUtil.processarErros);
     }

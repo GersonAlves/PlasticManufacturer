@@ -249,15 +249,13 @@ import { CustomerResinComponent, CustomerResinListComponent, CustomerResinServic
 import { TargetTypeComponent, TargetTypeListComponent, TargetTypeService, TargetTypeGuard } from './targetTypes/index'
 
 import { ProductComponent, ProductListComponent, ProductService, ProductGuard } from './products/index'
-
+import { RawMaterialComponent, RawMaterialListComponent, RawMaterialService, RawMaterialGuard } from './rawMaterials/index'
 import {
     FormulaComponent,
     FormulaListComponent,
     FormulaService,
     FormulaGuard
 } from './formulas/index'
-
-
 
 import { appRoutes } from './routes'
 import { Error404Component } from './errors/404.component'
@@ -360,10 +358,10 @@ import { Error404Component } from './errors/404.component'
         CdefaultListComponent,                                              
         PelletComponent,
         PelletListComponent,
-
         ProductComponent,
         ProductListComponent,
-
+        RawMaterialComponent,
+        RawMaterialListComponent,
         CustomerRatingComponent,
         CustomerRatingListComponent,           
         CityComponent,
@@ -395,6 +393,8 @@ import { Error404Component } from './errors/404.component'
         TargetTypeGuard,
         ProductGuard,
         ProductService,
+        RawMaterialGuard,
+        RawMaterialService,
         CustomerDefaultGuard,
         CdefaultGuard,
         CustomerRatingGuard,
