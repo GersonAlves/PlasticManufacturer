@@ -52,3 +52,4 @@ D:\Projects\USA\Aulus\PlasticManufacturer\PlasticManufacturer.InfraStructure\obj
 D:\Projects\USA\Aulus\PlasticManufacturer\PlasticManufacturer.InfraStructure\obj\Release\PlasticManufacturer.InfraStructure.csproj.GenerateResource.Cache
 D:\Projects\USA\Aulus\PlasticManufacturer\PlasticManufacturer.InfraStructure\obj\Release\PlasticManufacturer.InfraStructure.dll
 D:\Projects\USA\Aulus\PlasticManufacturer\PlasticManufacturer.InfraStructure\obj\Release\PlasticManufacturer.InfraStructure.pdb
+D:\Projects\USA\Aulus\PlasticManufacturer\PlasticManufacturer.InfraStructure\obj\Release\PlasticManufacturer.InfraStructure.Migrations.AlteracaorawMaterial.resources

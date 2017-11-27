@@ -56,7 +56,6 @@ export class RawMaterialComponent implements OnInit, AfterViewInit, OnDestroy {
             code: '',
             notes: '',
             chemicalName: '',
-            status: undefined,
             mainSupplier: '',
             mainCustomer: '',
             heatStability: '',
@@ -122,7 +121,6 @@ export class RawMaterialComponent implements OnInit, AfterViewInit, OnDestroy {
             code: this.rawMaterial.code,
             notes: this.rawMaterial.notes,
             chemicalName: this.rawMaterial.chemicalName,
-            status: this.rawMaterial.status,
             mainSupplier: this.rawMaterial.mainSupplier,
             mainCustomer: this.rawMaterial.mainCustomer,
             heatStability: this.rawMaterial.heatStability,
@@ -138,6 +136,8 @@ export class RawMaterialComponent implements OnInit, AfterViewInit, OnDestroy {
         if (this.rawMaterialForm.dirty && this.rawMaterialForm.valid) {
             // Copy the form values over the carrier object values
             let c = (<any>Object).assign({}, this.rawMaterial, this.rawMaterialForm.value);
+
+            console.log(c);
 
             this.rawMaterialService.save(c)
                 .subscribe(
