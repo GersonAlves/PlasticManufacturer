@@ -263,6 +263,7 @@
     <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\CitiesController.cs" />
     <Compile Include="Controllers\ColorMatchRequestsController.cs" />
+    <Compile Include="Controllers\CustomerAddressesController.cs" />
     <Compile Include="Controllers\CustomerContactedsController.cs" />
     <Compile Include="Controllers\CustomerDefaultsController.cs" />
     <Compile Include="Controllers\CustomerRatingsController.cs" />
@@ -276,6 +277,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MaritalStatusController.cs" />
     <Compile Include="Controllers\OpacitiesController.cs" />
+    <Compile Include="Controllers\OperationTypesController.cs" />
     <Compile Include="Controllers\PackagingsController.cs" />
     <Compile Include="Controllers\PelletsController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />

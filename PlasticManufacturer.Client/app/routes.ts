@@ -32,6 +32,15 @@ import {
     OpacityListComponent
 } from './opacities/index'
 
+
+import {
+    AddressTypeGuard,
+    AddressTypeComponent,
+    AddressTypeListComponent
+} from './addressTypes/index'
+
+
+
 import {
     MaritalStatusGuard,
     MaritalStatusComponent,
@@ -51,6 +60,15 @@ import {
     CarrierComponent,
     CarrierListComponent
 } from './carriers/index'
+
+
+import {
+    CustomerAddressGuard,
+    CustomerAddressComponent,
+    CustomerAddressListComponent
+} from './customerAddresses/index'
+
+
 
 import {
     PackagingGuard,
@@ -165,6 +183,8 @@ import { ProductComponent, ProductListComponent, ProductGuard } from './products
 
 import { RawMaterialComponent, RawMaterialListComponent, RawMaterialGuard } from './rawMaterials/index'
 
+import { OperationTypeComponent, OperationTypeListComponent, OperationTypeGuard } from './operationTypes/index'
+
 import { Error404Component } from './errors/404.component'
 
 export const appRoutes: Routes = [
@@ -173,6 +193,15 @@ export const appRoutes: Routes = [
 
     { path: 'rawMaterials', component: RawMaterialListComponent },
     { path: 'rawMaterials/:id', canDeactivate: [RawMaterialGuard], component: RawMaterialComponent },
+
+    { path: 'customerAddresses', component: CustomerAddressListComponent },
+    { path: 'customerAddresses/:id', canDeactivate: [CustomerAddressGuard], component: CustomerAddressComponent },
+
+    { path: 'addressTypes', component: AddressTypeListComponent },
+    { path: 'addressTypes/:id', canDeactivate: [AddressTypeGuard], component: AddressTypeComponent },
+
+    { path: 'operationTypes', component: OperationTypeListComponent },
+    { path: 'operationTypes/:id', canDeactivate: [OperationTypeGuard], component: OperationTypeComponent },
 
     { path: 'targetTypes', component: TargetTypeListComponent },
     { path: 'targetTypes/:id', canDeactivate: [TargetTypeGuard], component: TargetTypeComponent },

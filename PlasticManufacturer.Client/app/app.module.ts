@@ -72,6 +72,17 @@ import {
     OpacityService                           
 } from './opacities/index'
 
+
+import {
+    AddressTypeGuard,
+    AddressTypeComponent,
+    AddressTypeListComponent,
+    AddressTypeService
+} from './addressTypes/index'
+
+
+
+
 import {
     MaritalStatusListComponent,
     MaritalStatusComponent,
@@ -130,6 +141,12 @@ import {
     CarrierService
 } from './carriers/index'
 
+import {
+    CustomerAddressGuard,
+    CustomerAddressComponent,
+    CustomerAddressListComponent,
+    CustomerAddressService
+} from './customerAddresses/index'
 
 
 
@@ -250,6 +267,11 @@ import { TargetTypeComponent, TargetTypeListComponent, TargetTypeService, Target
 
 import { ProductComponent, ProductListComponent, ProductService, ProductGuard } from './products/index'
 import { RawMaterialComponent, RawMaterialListComponent, RawMaterialService, RawMaterialGuard } from './rawMaterials/index'
+
+import { OperationTypeComponent, OperationTypeListComponent, OperationTypeService, OperationTypeGuard } from './operationTypes/index'
+
+
+
 import {
     FormulaComponent,
     FormulaListComponent,
@@ -342,6 +364,10 @@ import { Error404Component } from './errors/404.component'
         MaritalStatusListComponent,
         OpacityComponent,
         OpacityListComponent,
+
+        AddressTypeComponent,
+        AddressTypeListComponent,
+
         CustomerComponent,
         SimpleModalComponent,
         ModalTriggerDirective,
@@ -352,6 +378,8 @@ import { Error404Component } from './errors/404.component'
         UpvoteComponent,
         CarrierComponent,
         CarrierListComponent,
+        CustomerAddressComponent,
+        CustomerAddressListComponent,
         CustomerDefaultComponent,                                    
         CustomerDefaultListComponent,
         CdefaultComponent,
@@ -362,6 +390,8 @@ import { Error404Component } from './errors/404.component'
         ProductListComponent,
         RawMaterialComponent,
         RawMaterialListComponent,
+        OperationTypeComponent,
+        OperationTypeListComponent,
         CustomerRatingComponent,
         CustomerRatingListComponent,           
         CityComponent,
@@ -393,8 +423,14 @@ import { Error404Component } from './errors/404.component'
         TargetTypeGuard,
         ProductGuard,
         ProductService,
+        AddressTypeGuard,
+        AddressTypeService,
+        CustomerAddressGuard,
+        CustomerAddressService,
         RawMaterialGuard,
         RawMaterialService,
+        OperationTypeGuard,
+        OperationTypeService,
         CustomerDefaultGuard,
         CdefaultGuard,
         CustomerRatingGuard,

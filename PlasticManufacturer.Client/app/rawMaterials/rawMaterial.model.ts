@@ -10,6 +10,8 @@
     mainCustomer: string
     heatStability: string
     lightSatability: string
+    operationType_Id: number
+    category_Id:number
     fda: boolean
     hbfb: boolean
     //o "Q" e o "C" mudaram para minusculo

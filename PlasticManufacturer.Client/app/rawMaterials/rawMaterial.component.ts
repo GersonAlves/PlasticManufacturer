@@ -10,7 +10,10 @@ import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
 
 import { IRawMaterial } from './rawMaterial.model'
-import {RawMaterialService } from './rawMaterial.service'
+import { RawMaterialService } from './rawMaterial.service'
+
+import { ICategory, CategoryService } from '../categories/index'
+import { IOperationType, OperationTypeService } from '../operationTypes/index'
 
 import { GenericValidator } from '../shared/generic-validator';
 
@@ -27,13 +30,21 @@ export class RawMaterialComponent implements OnInit, AfterViewInit, OnDestroy {
     private sub: Subscription;
     errorMessage: string;
     pageTitle: string = 'Raw Material';
+    categories: ICategory[];
+    operationTypes: IOperationType[];
 
     // Use with the generic validation message class
     displayMessage: { [key: string]: string } = {};
     private validationMessages: { [key: string]: { [key: string]: string } };
     private genericValidator: GenericValidator;
 
-    constructor(private router: Router, private rawMaterialService: RawMaterialService, private formBuilder: FormBuilder, private route: ActivatedRoute, ) {
+    constructor(private router: Router,
+        private rawMaterialService: RawMaterialService,
+        private formBuilder: FormBuilder,
+        private route: ActivatedRoute,
+        private categoryService: CategoryService,
+        private operationTypeService: OperationTypeService
+        ) {
 
         // Defines all of the validation messages for the form.
         // These could instead be retrieved from a file or database.
@@ -62,7 +73,10 @@ export class RawMaterialComponent implements OnInit, AfterViewInit, OnDestroy {
             lightSatability: '',
             fda: undefined,
             hbfb: undefined,
+            status: undefined,
             qcRequired: undefined,
+            category_Id: undefined,
+            operationType_Id: undefined,
             barCode:''
         });
 
@@ -73,6 +87,10 @@ export class RawMaterialComponent implements OnInit, AfterViewInit, OnDestroy {
                 this.getRawMaterial(id);
             }
         );
+
+        this.loadCategory();
+        this.loadOperationType();
+
     }
 
     ngOnDestroy(): void {
@@ -126,9 +144,13 @@ export class RawMaterialComponent implements OnInit, AfterViewInit, OnDestroy {
             heatStability: this.rawMaterial.heatStability,
             lightSatability: this.rawMaterial.lightSatability,
             fda: this.rawMaterial.fda,
+            status: this.rawMaterial.status,
             hbfb: this.rawMaterial.hbfb,
             qcRequired: this.rawMaterial.qcRequired,
-            barCode: this.rawMaterial.barCode
+            barCode: this.rawMaterial.barCode,
+            category_Id: this.rawMaterial.category_Id,
+            operationType_Id: this.rawMaterial.operationType_Id
+
         });
     }
 
@@ -175,6 +197,20 @@ export class RawMaterialComponent implements OnInit, AfterViewInit, OnDestroy {
     cancel() {
         this.router.navigate(['/rawMaterials'])
     }
+
+    loadCategory() {
+        this.categoryService.getAll()
+            .subscribe(categories => this.categories = categories,
+            error => this.errorMessage = <any>error);
+    }
+
+
+    loadOperationType() {
+        this.operationTypeService.getAll()
+            .subscribe(operationTypes => this.operationTypes =operationTypes,
+            error => this.errorMessage = <any>error);
+    }
+
 
 
 }

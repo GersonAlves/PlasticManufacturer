@@ -97,6 +97,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\addressTypes\addressType-list.component.html" />
+    <Content Include="app\addressTypes\addressType.component.html" />
     <Content Include="app\carriers\carrier-list.component.html" />
     <Content Include="app\carriers\carrier.component.html" />
     <Content Include="app\categories\category-list.component.html" />
@@ -163,6 +165,8 @@
     <Content Include="app\css\images\whitebox-bottom.png" />
     <Content Include="app\css\images\whitebox-top.png" />
     <Content Include="app\css\style.css" />
+    <Content Include="app\customerAddresses\customerAddress-list.component.html" />
+    <Content Include="app\customerAddresses\customerAddress.component.html" />
     <Content Include="app\customerContacteds\customerContacted-list.component.html" />
     <Content Include="app\customerContacteds\customerContacted.component.html" />
     <Content Include="app\customerDefaults\customerDefault-list.component.html" />
@@ -205,6 +209,8 @@
     <Content Include="app\nav\navbar.component.html" />
     <Content Include="app\opacities\opacity-list.component.html" />
     <Content Include="app\opacities\opacity.component.html" />
+    <Content Include="app\operationTypes\operationType-list.component.html" />
+    <Content Include="app\operationTypes\operationType.component.html" />
     <Content Include="app\packagings\packaging-list.component.html" />
     <Content Include="app\packagings\packaging.component.html" />
     <Content Include="app\Pellets\pellet.component.html" />
@@ -6600,6 +6606,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="app\addressTypes\addressType-guard.service.ts" />
+    <TypeScriptCompile Include="app\addressTypes\addressType-list.component.ts" />
+    <TypeScriptCompile Include="app\addressTypes\addressType.component.ts" />
+    <TypeScriptCompile Include="app\addressTypes\addressType.model.ts" />
+    <TypeScriptCompile Include="app\addressTypes\addressType.service.ts" />
+    <TypeScriptCompile Include="app\addressTypes\index.ts" />
     <TypeScriptCompile Include="app\analise.ts" />
     <TypeScriptCompile Include="app\app.module.ts" />
     <TypeScriptCompile Include="app\carriers\carrier-guard.service.ts" />
@@ -6632,6 +6644,12 @@
     <TypeScriptCompile Include="app\common\modal-trigger.directive.ts" />
     <TypeScriptCompile Include="app\common\simple-modal.component.ts" />
     <TypeScriptCompile Include="app\common\toastr.service.ts" />
+    <TypeScriptCompile Include="app\customerAddresses\customerAddress-guard.service.ts" />
+    <TypeScriptCompile Include="app\customerAddresses\customerAddress-list.component.ts" />
+    <TypeScriptCompile Include="app\customerAddresses\customerAddress.component.ts" />
+    <TypeScriptCompile Include="app\customerAddresses\customerAddress.model.ts" />
+    <TypeScriptCompile Include="app\customerAddresses\customerAddress.service.ts" />
+    <TypeScriptCompile Include="app\customerAddresses\index.ts" />
     <TypeScriptCompile Include="app\customerContacteds\customerContacted-guard.service.ts" />
     <TypeScriptCompile Include="app\customerContacteds\customerContacted-list.component.ts" />
     <TypeScriptCompile Include="app\customerContacteds\customerContacted.component.ts" />
@@ -6746,6 +6764,12 @@
     <TypeScriptCompile Include="app\opacities\opacity.component.ts" />
     <TypeScriptCompile Include="app\opacities\opacity.model.ts" />
     <TypeScriptCompile Include="app\opacities\opacity.service.ts" />
+    <TypeScriptCompile Include="app\operationTypes\index.ts" />
+    <TypeScriptCompile Include="app\operationTypes\operationType-guard.service.ts" />
+    <TypeScriptCompile Include="app\operationTypes\operationType-list.component.ts" />
+    <TypeScriptCompile Include="app\operationTypes\operationType.component.ts" />
+    <TypeScriptCompile Include="app\operationTypes\operationType.model.ts" />
+    <TypeScriptCompile Include="app\operationTypes\operationType.service.ts" />
     <TypeScriptCompile Include="app\packagings\index.ts" />
     <TypeScriptCompile Include="app\packagings\packaging-guard.service.ts" />
     <TypeScriptCompile Include="app\packagings\packaging-list.component.ts" />

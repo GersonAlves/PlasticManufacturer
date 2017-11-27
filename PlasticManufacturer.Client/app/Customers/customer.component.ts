@@ -125,6 +125,7 @@ export class CustomerComponent implements OnInit, AfterViewInit, OnDestroy {
         this.loadSecondLabels();
         this.loadCity();
         this.loadState();
+       
         
 
         // Read the customer Id from the route parameter

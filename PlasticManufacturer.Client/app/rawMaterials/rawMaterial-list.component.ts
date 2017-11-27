@@ -7,7 +7,7 @@ import { RawMaterialService } from './rawMaterial.service';
 })
 
 export class RawMaterialListComponent implements OnInit {
-    pageTitle: string = 'RawMaterial List';
+    pageTitle: string = 'Raw Material List';
     errorMessage: string;
 
     rawMaterials: IRawMaterial[];

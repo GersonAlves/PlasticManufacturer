@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,8 +14,15 @@ namespace PlasticManufacturer.Domain.Entities.RawMaterial
         public virtual string Notes { get; set; }
         public virtual string ChemicalName { get; set; }
         public virtual Boolean? Status { get; set; }
+
+        [ForeignKey("OperationType")]
+        public int? OperationType_Id { get; set; }
         public virtual OperationType OperationType { get; set; }
+
+        [ForeignKey("Category")]
+        public int? Category_Id { get; set; }
         public virtual Category Category { get; set; }
+
         public virtual string MainSupplier { get; set; }
         public virtual string MainCustomer { get; set; }
         public virtual string HeatStability { get; set; }
