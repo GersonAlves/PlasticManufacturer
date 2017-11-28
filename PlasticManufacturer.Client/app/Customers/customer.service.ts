@@ -32,6 +32,8 @@ export class CustomerService {
     }
 
     private update(customer: ICustomer): Observable<ICustomer> {
+        console.log("Update");
+        console.log(customer);
         return this.http.put(this.httpUtil.url(this.api + '/' + customer.id), customer, this.httpUtil.headers())
             .map((response: Response) => {
                 return response.json();

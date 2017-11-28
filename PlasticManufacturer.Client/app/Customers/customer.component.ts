@@ -21,6 +21,7 @@ import { IFreight, FreightService } from '../freights/index'
 import { ISecondLabel, SecondLabelService } from '../secondLabels/index'
 import { ICity, CityService } from '../cities/index'
 import { IState, StateService } from '../states/index'
+import { IAddressType, AddressTypeService } from '../addressTypes/index'
 
 
 import { GenericValidator } from '../shared/generic-validator';
@@ -45,6 +46,7 @@ export class CustomerComponent implements OnInit, AfterViewInit, OnDestroy {
     secondLabels: ISecondLabel[];
     cities: ICity[];
     states: IState[];
+    addressTypes: IAddressType[];
 
     private sub: Subscription;
     errorMessage: string;
@@ -66,7 +68,8 @@ export class CustomerComponent implements OnInit, AfterViewInit, OnDestroy {
         private freightService: FreightService,
         private cityService: CityService,
         private stateService: StateService, 
-        private secondLabelService: SecondLabelService) {
+        private secondLabelService: SecondLabelService,
+        private addressTypeService: AddressTypeService) {
 
         // Defines all of the validation messages for the form.
         // These could instead be retrieved from a file or database.
@@ -108,13 +111,42 @@ export class CustomerComponent implements OnInit, AfterViewInit, OnDestroy {
                 reference: '',
                 secondLabel_Id: undefined,
                 note: ''
-            })
+            }),
+            addresses: this.formBuilder.array([])
         });
-
+         
         //addresses: ICustomerAddress[]
         //customerDefaults_Id: number
         //shipViaAccounts: ICustomerShipViaAccount[]
+        /*
+        this.formBuilder.group({
+                id: 0,
+                name: '',
+                description: '',
+                city_Id: undefined,
+                state_Id: undefined,
+                zipCode: '',
+                phone: '',
+                fax: '',
+                street: '',
+                complement: '',
+                addressType_Id: undefined
+            })
+        */
 
+        this.Addresses.push(this.formBuilder.group({
+            id: 0,
+            name: '',
+            description: '',
+            city_Id: undefined,
+            state_Id: undefined,
+            zipCode: '',
+            phone: '',
+            fax: '',
+            street: '',
+            complement: '',
+            addressType_Id: undefined
+        }));
 
         // loads combobox
         this.loadEmployees();
@@ -125,6 +157,7 @@ export class CustomerComponent implements OnInit, AfterViewInit, OnDestroy {
         this.loadSecondLabels();
         this.loadCity();
         this.loadState();
+        this.loadAddressType();
        
         
 
@@ -201,7 +234,9 @@ export class CustomerComponent implements OnInit, AfterViewInit, OnDestroy {
             notes: this.customer.notes,
             city_Id: this.customer.city_Id,
             state_Id: this.customer.state_Id,
-            customerDefault: this.customer.customerDefault
+            customerDefault: this.customer.customerDefault,
+            addresses: this.customer.addresses
+
         });
     }
 
@@ -209,6 +244,8 @@ export class CustomerComponent implements OnInit, AfterViewInit, OnDestroy {
         if (this.customerForm.dirty && this.customerForm.valid) {
             // Copy the form values over the customer object values
             let c = (<any>Object).assign({}, this.customer, this.customerForm.value);
+
+            console.log(c);
 
             this.customerService.save(c)
                 .subscribe(
@@ -290,5 +327,15 @@ export class CustomerComponent implements OnInit, AfterViewInit, OnDestroy {
             .subscribe(states => this.states = states,
             error => this.errorMessage = <any>error);
     }
+
+    loadAddressType(): void {
+        this.addressTypeService.getAll()
+            .subscribe(addressTypes => this.addressTypes = addressTypes,
+            error => this.errorMessage = <any>error);
+    }
+
+    get Addresses(): FormArray {
+        return this.customerForm.get('addresses') as FormArray;
+    };
 
 }

@@ -92,7 +92,7 @@
                                             </div>
                                             <div class="col">
                                                 <label>Rating</label>
-                                                 
+
                                                 <select class="form-control" formControlName="rating_Id">
                                                     <option *ngFor="let rating of customerRatings" [value]="rating.id">{{ rating.name }}</option>
                                                 </select>
@@ -159,7 +159,7 @@
                                         <div class="form-group">
                                             <div class="col">
                                                 <label>Reference:</label>
-                                                <input formControlName="reference"  class="form-control" type="text" />
+                                                <input formControlName="reference" class="form-control" type="text" />
                                             </div>
                                         </div>
                                         <div class="notes-style">
@@ -172,11 +172,11 @@
                                     <div class="box">
                                         <div class="col-frm pdlft">
                                             <label><input type="checkbox" />Use Standard Terms</label>
-                                          
-                                                <label><input type="checkbox" />C.O.D</label>
-                                                <label><input type="checkbox" />Prepaid</label>
+
+                                            <label><input type="checkbox" />C.O.D</label>
+                                            <label><input type="checkbox" />Prepaid</label>
                                             <label>Discount % <input type="text" class="form-control" value="0.00" /></label>
-                                         
+
                                         </div>
                                         <div class="col-frm pdlft">
                                             <label><input type="checkbox" />Dues on Day of month</label>
@@ -188,7 +188,7 @@
                                         <div class="col-frm">
                                             <label>Net due in&nbsp; <input type="text" class="form-control" value="0" /> days</label>
                                             <label>Discount in <input type="text" class="form-control" value="0" /> days</label>
-                                            
+
                                         </div>
                                         <div class="col-frm pdlft">
                                             <label>Credit limit <input class="form-control" type="text" value="0.00" /></label>
@@ -204,128 +204,127 @@
                                     <div calss="address-box">
 
                                         <div class="fields-row">
-                                            <div class="fields-bar">
-                                                <div class="margin-adjust">
-                                                    <div class="form-group">
-                                                        <div class="col">
-                                                            <span class="label">Name:</span>
-                                                            <input  type="text" class="form-control"  />
+                                            <div formArrayName="addresses" class="fields-bar">
+                                                <div *ngFor="let address of Addresses.controls; let i=index" [formGroupName]="i">
+                                                    <div class="margin-adjust">
+                                                        <div class="form-group">
+                                                            <div class="col">
+                                                                <span class="label">Name:</span>
+                                                                <input formControlName="name" type="text" class="form-control" />
+                                                            </div>
                                                         </div>
+
+                                                        <div class="form-group">
+                                                            <div class="col small pdlft">
+                                                                <span class="label">Type:</span>
+                                                                <select class="form-control" formControlName="addressType_Id">
+                                                                    <option *ngFor="let addressType of addressTypes" [ngValue]="addressType.id">{{ addressType.name }}</option>
+                                                                </select>
+                                                            </div>
+
+                                                            <div class="col small  pdlft">
+                                                                <span class="label">Main Ship To:</span>
+                                                                <select class="form-control">
+                                                                    <option value="true">Yes</option>
+                                                                    <option value="false">No</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="col small pdlft">
+                                                                <span class="label">Quote Address:</span>
+                                                                <select class="form-control">
+                                                                    <option value="true">Yes</option>
+                                                                    <option value="false">No</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <div class="col small  pdlft">
+                                                                <span class="label">Address:</span>
+                                                                <input formControlName="street" type="text" class="form-control" />
+                                                            </div>
+
+                                                            <div class="col small  pdlft">
+                                                                <span class="label">&nbsp;</span>
+                                                                <input formControlName="complement" type="text" class="form-control" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <div class="col smallest">
+                                                                <span class="label">Zip Code:</span>
+                                                                <input formControlName="zipCode" type="text" class="form-control" />
+                                                            </div>
+
+                                                            <div class="col small  pdlft">
+                                                                <span class="label">City:</span>
+                                                                <select class="form-control" formControlName="city_Id">
+                                                                    <option *ngFor="let city of cities" [ngValue]="city.id">{{ city.name }}</option>-->
+                                                                </select>
+                                                            </div>
+
+                                                            <div class="col small  pdlft">
+                                                                <label class="control-label" for="State">State</label>
+                                                                <select class="form-control" formControlName="state_Id">
+                                                                    <option *ngFor="let state of states" [ngValue]="state.id">{{ state.name }}</option>-->
+                                                                </select>
+                                                            </div>
+
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <div class="col small  pdlft">
+                                                                <span class="label">Contact Person 1:</span>
+                                                                <input type="text" class="form-control" />
+                                                            </div>
+                                                            <div class="col small pdlft">
+                                                                <span class="label">Phone:</span>
+                                                                <input formControlName="phone" type="text" class="form-control" />
+                                                            </div>
+                                                            <div class="col smallest">
+                                                                <span class="label">Ext:</span>
+                                                                <input type="text" class="form-control" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <div class="col small  pdlft">
+                                                                <span class="label">Contact Person 2:</span>
+                                                                <input type="text" class="form-control" />
+                                                            </div>
+                                                            <div class="col small pdlft">
+                                                                <span class="label">Phone:</span>
+                                                                <input type="text" class="form-control" />
+                                                            </div>
+                                                            <div class="col smallest">
+                                                                <span class="label">Ext:</span>
+                                                                <input type="text" class="form-control" />
+                                                            </div>
+                                                        </div>
+
+
+                                                        <div class="form-group">
+                                                            <div class="col smaller pdlft">
+                                                                <span class="label">Fax:</span>
+                                                                <input formControlName="fax" type="text" class="form-control" />
+                                                            </div>
+                                                            <div class="col">
+                                                                <span class="label">Contact for Lable:</span>
+                                                                <input type="text" class="form-control" />
+                                                            </div>
+                                                            <div class="col pdlft">
+                                                                <span class="label inc-margin">E-Mail:</span>
+                                                                <input type="email" class="form-control" />
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <div class="notes-style-address">
+                                                                <label>Notes:</label>
+                                                                <textarea formControlName="description" cols="30" rows="10" class="form-control"></textarea>
+
+                                                            </div>
+                                                        </div>
+
                                                     </div>
-
-                                                    <div class="form-group">
-                                                        <div class="col small pdlft">
-                                                            <span class="label">Type:</span>
-                                                            <select class="form-control">
-                                                                <option>Both</option>
-                                                                <option>Bill To</option>
-                                                                <option>Ship To</option>
-
-                                                            </select>
-                                                        </div>
-
-                                                        <div class="col small  pdlft">
-                                                            <span class="label">Main Ship To:</span>
-                                                            <select class="form-control" >
-                                                                <option value="true">Yes</option>
-                                                                <option value="false">No</option>
-                                                            </select>
-                                                        </div>
-                                                        <div class="col small pdlft">
-                                                            <span class="label">Quote Address:</span>
-                                                            <select class="form-control" >
-                                                                <option value="true">Yes</option>
-                                                                <option value="false">No</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="form-group">
-                                                        <div class="col small  pdlft">
-                                                            <span class="label">Address:</span>
-                                                            <input  type="text" class="form-control" />
-                                                        </div>
-
-                                                        <div class="col small  pdlft">
-                                                            <span class="label">&nbsp;</span>
-                                                            <input type="text" class="form-control" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <div class="col smallest">
-                                                            <span class="label">Zip Code:</span>
-                                                            <input type="text" class="form-control" />
-                                                        </div>
-
-                                                        <div class="col small  pdlft">
-                                                            <span class="label">City:</span>
-                                                            <select class="form-control" formControlName="city_Id">
-                                                                <option *ngFor="let city of cities" [ngValue]="city.id">{{ city.name }}</option>-->
-                                                            </select>
-                                                        </div>
-
-                                                        <div class="col small  pdlft">
-                                                            <label class="control-label" for="State">State</label>
-                                                            <select class="form-control" formControlName="state_Id">
-                                                                <option *ngFor="let state of states" [ngValue]="state.id">{{ state.name }}</option>-->
-                                                            </select>
-                                                        </div>
-                                                        
-                                                    </div>
-
-                                                    <div class="form-group">
-                                                        <div class="col small  pdlft">
-                                                            <span class="label">Contact Person 1:</span>
-                                                            <input type="text" class="form-control" />
-                                                        </div>
-                                                        <div class="col small pdlft">
-                                                            <span class="label">Phone:</span>
-                                                            <input type="text" class="form-control"/>
-                                                        </div>
-                                                        <div class="col smallest">
-                                                            <span class="label">Ext:</span>
-                                                            <input type="text" class="form-control" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <div class="col small  pdlft">
-                                                            <span class="label">Contact Person 2:</span>
-                                                            <input type="text" class="form-control" />
-                                                        </div>
-                                                        <div class="col small pdlft">
-                                                            <span class="label">Phone:</span>
-                                                            <input type="text" class="form-control" />
-                                                        </div>
-                                                        <div class="col smallest">
-                                                            <span class="label">Ext:</span>
-                                                            <input type="text" class="form-control" />
-                                                        </div>
-                                                    </div>
-
-                                                                                
-                                                    <div class="form-group">
-                                                        <div class="col smaller pdlft">
-                                                            <span class="label">Fax:</span>
-                                                            <input type="text" class="form-control"/>
-                                                        </div>
-                                                        <div class="col">
-                                                            <span class="label">Contact for Lable:</span>
-                                                            <input type="text" class="form-control"  />
-                                                        </div>
-                                                        <div class="col pdlft">
-                                                            <span class="label inc-margin">E-Mail:</span>
-                                                            <input type="email" class="form-control" />
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="form-group">
-                                                        <div class="notes-style-address">
-                                                            <label>Notes:</label>
-                                                            <textarea cols="30" rows="10" class="form-control"></textarea>
-
-                                                        </div>
-                                                    </div>
-
                                                 </div>
                                             </div>
                                         </div>

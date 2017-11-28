@@ -24,8 +24,16 @@ namespace PlasticManufacturer.API
 
             Database.SetInitializer<PlasticManufacturerContext>(new DropCreateDatabaseIfModelChanges<PlasticManufacturerContext>());
 
-            GlobalConfiguration.Configuration.Formatters.JsonFormatter.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Serialize;
+            GlobalConfiguration.Configuration.Formatters.JsonFormatter.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
             GlobalConfiguration.Configuration.Formatters.Remove(GlobalConfiguration.Configuration.Formatters.XmlFormatter);
+
+
+
+            //HttpConfiguration config = GlobalConfiguration.Configuration;
+
+            //config.Formatters.JsonFormatter
+            //            .SerializerSettings
+            //            .ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
 
         }
     }

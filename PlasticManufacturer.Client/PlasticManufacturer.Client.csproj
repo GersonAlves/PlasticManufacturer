@@ -6692,6 +6692,7 @@
     <TypeScriptCompile Include="app\cdefaults\cdefault.model.ts" />
     <TypeScriptCompile Include="app\cdefaults\cdefault.service.ts" />
     <TypeScriptCompile Include="app\cdefaults\index.ts" />
+    <TypeScriptCompile Include="app\customers\teste.ts" />
     <TypeScriptCompile Include="app\departments\department-guard.service.ts" />
     <TypeScriptCompile Include="app\departments\department-list.component.ts" />
     <TypeScriptCompile Include="app\departments\department.component.ts" />

@@ -15,7 +15,7 @@ namespace PlasticManufacturer.Domain.Entities.Customers
 
         public Customer()
         {
-            
+            Addresses = new List<CustomerAddress>();
         }
 
         public virtual string LastName { get; set; }

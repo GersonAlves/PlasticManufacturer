@@ -10,6 +10,10 @@ namespace PlasticManufacturer.Domain.Entities.Customers
 {
     public class CustomerAddress : Entity
     {
+        public CustomerAddress()
+        {
+            Customers = new List<Customer>();
+        }
         [ForeignKey("AddressType")]
         public int? AddressType_Id { get; set; }
         public virtual AddressType AddressType { get; set; }
@@ -28,6 +32,8 @@ namespace PlasticManufacturer.Domain.Entities.Customers
         public string ZipCode { get; set; }
         public string Phone { get; set; }
         public string Fax { get; set; }
+
+        public virtual IList<Customer> Customers { get; private set; }
     }
 }
         
