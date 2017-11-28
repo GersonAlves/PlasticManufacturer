@@ -14,6 +14,7 @@ import { CustomerAddressService } from './customerAddress.service'
 import { ICity, CityService } from '../cities/index'
 import { IState, StateService } from '../states/index'
 import { IAddressType, AddressTypeService } from '../addressTypes/index'
+//import { ICustomer, CustomerService } from '../customerAddresses/index'
 import { GenericValidator } from '../shared/generic-validator';
 
 
@@ -32,6 +33,7 @@ export class CustomerAddressComponent implements OnInit, AfterViewInit, OnDestro
     cities: ICity[];
     states: IState[];
     addressTypes: IAddressType[];
+    //customer: ICustomer[];
 
     // Use with the generic validation message class
     displayMessage: { [key: string]: string } = {};
@@ -44,7 +46,8 @@ export class CustomerAddressComponent implements OnInit, AfterViewInit, OnDestro
         private route: ActivatedRoute,
         private cityService: CityService,
         private stateService: StateService,
-        private addressService: AddressTypeService
+        private addressService: AddressTypeService,
+       // private customerService: CustomerService
          ) {
 
         // Defines all of the validation messages for the form.
@@ -86,6 +89,7 @@ export class CustomerAddressComponent implements OnInit, AfterViewInit, OnDestro
         this.loadCity();
         this.loadState();
         this.loadAddressType();
+        //this.loadCustomer();
     }
 
     ngOnDestroy(): void {
@@ -162,8 +166,7 @@ export class CustomerAddressComponent implements OnInit, AfterViewInit, OnDestro
         this.customerAddressForm.reset();
         this.router.navigate(['/customerAddresses']);
     }
-
-
+    
     delete(): void {
         if (this.customerAddress.id === 0) {
             // Don't delete, it was never saved.
@@ -178,7 +181,6 @@ export class CustomerAddressComponent implements OnInit, AfterViewInit, OnDestro
             }
         }
     }
-
 
     cancel() {
         this.router.navigate(['/customerAddresses'])
@@ -201,4 +203,10 @@ export class CustomerAddressComponent implements OnInit, AfterViewInit, OnDestro
             .subscribe(addressTypes => this.addressTypes = addressTypes,
             error => this.errorMessage = <any>error);
     }
+
+    //loadCustomer(): void {
+    //    this.addressService.getAll()
+    //        .subscribe(customer => this.customer = customer,
+    //        error => this.errorMessage = <any>error);
+    //}
 }

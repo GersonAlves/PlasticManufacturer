@@ -23,14 +23,21 @@
                                 <div class="fields-bar">
                                     <div class="margin-adjust">
                                         <div class="form-group">
+                                             <!--<div class="col small pdlft">
+                                                <span class="label">Customer:</span>
+                                                <select class="form-control" formControlName="customer_Id">
+                                                    <option *ngFor="let addressType of addressTypes" [ngValue]="addressType.id">{{ addressType.name }}</option>
+                                                </select>
+                                            </div>-->
+
+                                        </div>
+
+                                        <div class="form-group">
+
                                             <div class="col">
                                                 <span class="label">Name:</span>
                                                 <input formControlName="name" type="text" class="form-control" />
                                             </div>
-                                           
-                                        </div>
-
-                                        <div class="form-group">
                                             <div class="col small pdlft">
                                                 <span class="label">Type:</span>
                                                 <select class="form-control" formControlName="addressType_Id">
@@ -40,18 +47,12 @@
 
                                             <div class="col small  pdlft">
                                                 <span class="label">Main Ship To:</span>
-                                                <select  class="form-control">
+                                                <select class="form-control">
                                                     <option value="true">Yes</option>
                                                     <option value="false">No</option>
                                                 </select>
                                             </div>
-                                            <div class="col small pdlft">
-                                                <span class="label">Quote Address:</span>
-                                                <select  class="form-control">
-                                                    <option value="true">Yes</option>
-                                                    <option value="false">No</option>
-                                                </select>
-                                            </div>
+
                                         </div>
 
                                         <div class="form-group">
@@ -64,6 +65,14 @@
                                                 <span class="label">&nbsp;</span>
                                                 <input formControlName="complement" type="text" class="form-control" />
                                             </div>
+                                            <div class="col small pdlft">
+                                                <span class="label">Quote Address:</span>
+                                                <select class="form-control">
+                                                    <option value="true">Yes</option>
+                                                    <option value="false">No</option>
+                                                </select>
+                                            </div>
+
                                         </div>
                                         <div class="form-group">
                                             <div class="col smallest">
