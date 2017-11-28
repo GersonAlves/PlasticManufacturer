@@ -1,0 +1,5 @@
+﻿export * from './customerAddress.service'
+export * from './customerAddress.component'
+export * from './customerAddress.model'
+export * from './customerAddress-guard.service'
+export * from './customerAddress-list.component'

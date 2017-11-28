@@ -1,0 +1,5 @@
+﻿export * from './operationType.service'
+export * from './operationType.component'
+export * from './operationType.model'
+export * from './operationType-guard.service'
+export * from './operationType-list.component'

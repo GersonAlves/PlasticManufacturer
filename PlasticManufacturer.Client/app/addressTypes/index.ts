@@ -1,0 +1,5 @@
+﻿export * from './addressType.service'
+export * from './addressType.component'
+export * from './addressType.model'
+export * from './addressType-guard.service'
+export * from './addressType-list.component'
