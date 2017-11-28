@@ -12,7 +12,6 @@ namespace PlasticManufacturer.Domain.Entities.Customers
     {
         public CustomerAddress()
         {
-            Customers = new List<Customer>();
         }
         [ForeignKey("AddressType")]
         public int? AddressType_Id { get; set; }
@@ -33,7 +32,9 @@ namespace PlasticManufacturer.Domain.Entities.Customers
         public string Phone { get; set; }
         public string Fax { get; set; }
 
-        public virtual IList<Customer> Customers { get; private set; }
+        [ForeignKey("Customers")]
+        public int? Customers_Id { get; set; }
+        public virtual Customer Customers { get; set; }
     }
 }
         

@@ -15,7 +15,7 @@ namespace PlasticManufacturer.Domain.Entities.Customers
 
         public Customer()
         {
-            Addresses = new List<CustomerAddress>();
+            Addresses = new HashSet<CustomerAddress>();
         }
 
         public virtual string LastName { get; set; }
@@ -49,11 +49,11 @@ namespace PlasticManufacturer.Domain.Entities.Customers
 
         public virtual int? FedId { get; set; }
 
-        public virtual IList<CustomerAddress> Addresses { get; private set; }
+        public virtual ICollection<CustomerAddress> Addresses { get; set; }
 
         public virtual CustomerDefault CustomerDefault { get; set; }
 
-        public virtual IList<CustomerShipViaAccount> ShipViaAccounts { get; private set; }
+        public virtual ICollection<CustomerShipViaAccount> ShipViaAccounts { get; private set; }
 
         public virtual string Notes { get; set; }
 
