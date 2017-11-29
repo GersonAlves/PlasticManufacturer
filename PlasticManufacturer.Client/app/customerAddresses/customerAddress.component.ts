@@ -14,7 +14,7 @@ import { CustomerAddressService } from './customerAddress.service'
 import { ICity, CityService } from '../cities/index'
 import { IState, StateService } from '../states/index'
 import { IAddressType, AddressTypeService } from '../addressTypes/index'
-//import { ICustomer, CustomerService } from '../customerAddresses/index'
+import { ICustomer, CustomerService } from '../customers/index' 
 import { GenericValidator } from '../shared/generic-validator';
 
 
@@ -33,7 +33,7 @@ export class CustomerAddressComponent implements OnInit, AfterViewInit, OnDestro
     cities: ICity[];
     states: IState[];
     addressTypes: IAddressType[];
-    //customer: ICustomer[];
+    customer: ICustomer[];
 
     // Use with the generic validation message class
     displayMessage: { [key: string]: string } = {};
@@ -47,7 +47,7 @@ export class CustomerAddressComponent implements OnInit, AfterViewInit, OnDestro
         private cityService: CityService,
         private stateService: StateService,
         private addressService: AddressTypeService,
-       // private customerService: CustomerService
+        private customerService: CustomerService
          ) {
 
         // Defines all of the validation messages for the form.
@@ -75,7 +75,8 @@ export class CustomerAddressComponent implements OnInit, AfterViewInit, OnDestro
             phone: '',
             fax: '',
             street: '',
-            complement:'',
+            complement: '',
+            customers_Id: undefined
         });
 
         // Read the customerAddress Id from the route parameter
@@ -89,7 +90,7 @@ export class CustomerAddressComponent implements OnInit, AfterViewInit, OnDestro
         this.loadCity();
         this.loadState();
         this.loadAddressType();
-        //this.loadCustomer();
+        this.loadCustomer();
     }
 
     ngOnDestroy(): void {
@@ -142,7 +143,8 @@ export class CustomerAddressComponent implements OnInit, AfterViewInit, OnDestro
             phone: this.customerAddress.phone,
             fax: this.customerAddress.fax,
             street: this.customerAddress.street,
-            complement: this.customerAddress.complement
+            complement: this.customerAddress.complement,
+            customers_Id: this.customerAddress.customers_Id
         });
     }
 
@@ -204,9 +206,9 @@ export class CustomerAddressComponent implements OnInit, AfterViewInit, OnDestro
             error => this.errorMessage = <any>error);
     }
 
-    //loadCustomer(): void {
-    //    this.addressService.getAll()
-    //        .subscribe(customer => this.customer = customer,
-    //        error => this.errorMessage = <any>error);
-    //}
+    loadCustomer(): void {
+        this.customerService.getAll()
+            .subscribe(customers => this.customer = customers,
+            error => this.errorMessage = <any>error);
+    }
 }

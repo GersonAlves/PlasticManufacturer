@@ -11,9 +11,12 @@ using System.Web.Http;
 using System.Web.Http.Description;
 using PlasticManufacturer.Domain.Entities.Customers;
 using PlasticManufacturer.InfraStructure.Context;
+using System.Web.Http.Cors;
 
 namespace PlasticManufacturer.API.Controllers
 {
+    [EnableCorsAttribute("*", "*", "*")]
+    [Serializable]
     public class CustomerAddressesController : ApiController
     {
         private PlasticManufacturerContext db = new PlasticManufacturerContext();

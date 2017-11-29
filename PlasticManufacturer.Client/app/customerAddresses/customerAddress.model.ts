@@ -10,5 +10,6 @@
     street: string
     complement: string
     addressType_Id: number
+    customers_Id: number
     
 }

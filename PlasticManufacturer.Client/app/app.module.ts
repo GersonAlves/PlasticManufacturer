@@ -141,6 +141,14 @@ import {
     CarrierService
 } from './carriers/index'
 
+
+import {
+    CustomerComponent,
+    CustomerGuard,
+    CustomerService,
+    CustomerListComponent
+} from './customers/index'
+
 import {
     CustomerAddressGuard,
     CustomerAddressComponent,
@@ -157,12 +165,7 @@ import {
     PackagingService
 } from './packagings/index'
 
-import {
-    CustomerComponent,
-    CustomerGuard,
-    CustomerService,
-    CustomerListComponent
-} from './customers/index'
+
 
 import {
     CustomerStatusComponent,
@@ -216,7 +219,7 @@ import {
     PelletComponent,
     PelletListComponent,
     PelletGuard,
-    PelletService
+    PelletService   
 } from './pellets/index'
 
 import {
@@ -352,6 +355,8 @@ import { Error404Component } from './errors/404.component'
         CustomerResinListComponent,
         TargetTypeComponent,
         TargetTypeListComponent,
+        PelletComponent,
+        PelletListComponent,
         ColorMatchRequestComponent,
         ColorMatchRequestListComponent,
         MarkupComponent,
@@ -384,8 +389,7 @@ import { Error404Component } from './errors/404.component'
         CustomerDefaultListComponent,
         CdefaultComponent,
         CdefaultListComponent,                                              
-        PelletComponent,
-        PelletListComponent,
+        
         ProductComponent,
         ProductListComponent,
         RawMaterialComponent,
@@ -425,6 +429,8 @@ import { Error404Component } from './errors/404.component'
         ProductService,
         AddressTypeGuard,
         AddressTypeService,
+        CustomerGuard,
+        CustomerService,
         CustomerAddressGuard,
         CustomerAddressService,
         RawMaterialGuard,
@@ -441,8 +447,6 @@ import { Error404Component } from './errors/404.component'
         AuthService,
         PackagingGuard,
         PackagingService,
-        CustomerGuard,
-        CustomerService,
         ColorMatchRequestGuard,
         ColorMatchRequestService,
         FreightGuard,
