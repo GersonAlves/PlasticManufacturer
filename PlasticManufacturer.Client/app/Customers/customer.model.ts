@@ -16,7 +16,7 @@ export interface ICustomer {
     authorizedBy_Id: number
     contactedBy_Id: number
     addresses: ICustomerAddress[]
-    shipViaAccounts: ICustomerShipViaAccount[]
+    shipViaAccounts: CustomerShipViaAccount[]
     notes: string
     customerDefault?: {
         id: number
@@ -45,7 +45,7 @@ export interface ICustomerAddress {
     addressType_Id: number
 }
 
-export interface ICustomerShipViaAccount {
+export class CustomerShipViaAccount {
     id: number
     name: string
     shippingMethod_Id: number

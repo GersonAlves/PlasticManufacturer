@@ -9,7 +9,7 @@ import 'rxjs/add/observable/merge';
 import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
 
-import { ICustomer } from './customer.model'
+import { ICustomer, CustomerShipViaAccount } from './customer.model'
 import { CustomerService } from './customer.service'
 
 //load combobox
@@ -105,7 +105,7 @@ export class CustomerComponent implements OnInit, AfterViewInit, OnDestroy {
             fedId: undefined,
             notes: '',
             city_Id: undefined,
-            
+            shippingMethod_Id: undefined,
             state_Id: undefined,
             customerDefault: this.formBuilder.group({
                 id: 0,
@@ -362,6 +362,10 @@ export class CustomerComponent implements OnInit, AfterViewInit, OnDestroy {
 
     get ShipViaAccounts(): FormArray {
         return this.customerForm.get('shipViaAccounts') as FormArray;
+    }
+
+    addLair() {
+        this.ShipViaAccounts.push(this.formBuilder.group(new CustomerShipViaAccount()))
     };
 
 }

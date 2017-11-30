@@ -82,6 +82,10 @@
     <Compile Include="Migrations\201711281739169_Correcao customer X address.Designer.cs">
       <DependentUpon>201711281739169_Correcao customer X address.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711301837536_CustomerShipViaAccount.cs" />
+    <Compile Include="Migrations\201711301837536_CustomerShipViaAccount.Designer.cs">
+      <DependentUpon>201711301837536_CustomerShipViaAccount.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\AddressTypeRepository.cs" />
@@ -125,6 +129,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711281739169_Correcao customer X address.resx">
       <DependentUpon>201711281739169_Correcao customer X address.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711301837536_CustomerShipViaAccount.resx">
+      <DependentUpon>201711301837536_CustomerShipViaAccount.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

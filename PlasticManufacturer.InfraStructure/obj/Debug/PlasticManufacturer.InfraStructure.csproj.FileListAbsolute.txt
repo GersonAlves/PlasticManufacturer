@@ -76,3 +76,4 @@ C:\Projects\PlasticManufacturer\PlasticManufacturer.InfraStructure\obj\Debug\Pla
 C:\Projects\PlasticManufacturer\PlasticManufacturer.InfraStructure\obj\Debug\PlasticManufacturer.InfraStructure.csproj.GenerateResource.Cache
 C:\Projects\PlasticManufacturer\PlasticManufacturer.InfraStructure\obj\Debug\PlasticManufacturer.InfraStructure.dll
 C:\Projects\PlasticManufacturer\PlasticManufacturer.InfraStructure\obj\Debug\PlasticManufacturer.InfraStructure.pdb
+C:\Projects\PlasticManufacturer\PlasticManufacturer.InfraStructure\obj\Debug\PlasticManufacturer.InfraStructure.Migrations.CustomerShipViaAccount.resources

@@ -7,6 +7,11 @@ namespace PlasticManufacturer.Domain.Entities.Customers
     {
         [ForeignKey("ShippingMethod")]
         public int? ShippingMethod_Id { get; set; }
-        public ShippingMethod ShippingMethod { get; set; }
+        public virtual ShippingMethod ShippingMethod { get; set; }
+
+        [ForeignKey("Customers")]
+        public int? Customers_Id { get; set; }
+        public virtual Customer Customers { get; set; }
+        
     }
 }
