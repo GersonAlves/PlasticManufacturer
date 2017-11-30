@@ -80,6 +80,12 @@ import {
     AddressTypeService
 } from './addressTypes/index'
 
+import {
+    ShippingMethodGuard,
+    ShippingMethodComponent,
+    ShippingMethodListComponent,
+    ShippingMethodService
+} from './shippingMethods/index'
 
 
 
@@ -334,6 +340,12 @@ import { Error404Component } from './errors/404.component'
         EventsListComponent,
         SecondLabelComponent,
         SecondLabelListComponent,
+
+        ShippingMethodComponent,
+        ShippingMethodListComponent,
+
+
+
         EventThumbnailComponent,
         EventDetailsComponent,
         CustomerContactedComponent,
@@ -419,6 +431,11 @@ import { Error404Component } from './errors/404.component'
         CarrierGuard,
         FormulaService,
         FormulaGuard,
+
+        ShippingMethodGuard,
+        ShippingMethodService,
+
+
         PelletGuard,
         PelletService,
         CustomerResinService,

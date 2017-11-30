@@ -222,6 +222,8 @@
     <Content Include="app\salesOrders\salesOrder.component.html" />
     <Content Include="app\secondLabels\secondLabel-list.component.html" />
     <Content Include="app\secondLabels\secondLabel.component.html" />
+    <Content Include="app\shippingMethods\shippingMethod-list.component.html" />
+    <Content Include="app\shippingMethods\shippingMethod.component.html" />
     <Content Include="app\states\state-list.component.html" />
     <Content Include="app\states\state.component.html" />
     <Content Include="app\targetTypes\targetType-list.component.html" />
@@ -6810,7 +6812,12 @@
     <TypeScriptCompile Include="app\secondLabels\secondLabel.service.ts" />
     <TypeScriptCompile Include="app\shared\generic-validator.ts" />
     <TypeScriptCompile Include="app\shared\http-util.service.ts" />
-    <TypeScriptCompile Include="app\shippingMethod\shipping-method.model.ts" />
+    <TypeScriptCompile Include="app\shippingMethods\index.ts" />
+    <TypeScriptCompile Include="app\shippingMethods\shippingMethod.model.ts" />
+    <TypeScriptCompile Include="app\shippingMethods\shippingMethod-guard.service.ts" />
+    <TypeScriptCompile Include="app\shippingMethods\shippingMethod-list.component.ts" />
+    <TypeScriptCompile Include="app\shippingMethods\shippingMethod.component.ts" />
+    <TypeScriptCompile Include="app\shippingMethods\shippingMethod.service.ts" />
     <TypeScriptCompile Include="app\states\index.ts" />
     <TypeScriptCompile Include="app\states\state-guard.service.ts" />
     <TypeScriptCompile Include="app\states\state-list.component.ts" />

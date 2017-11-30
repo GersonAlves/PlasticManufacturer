@@ -18,4 +18,3 @@ C:\Projects\PlasticManufacturer\PlasticManufacturer.Domain\bin\Debug\PlasticManu
 C:\Projects\PlasticManufacturer\PlasticManufacturer.Domain\bin\Debug\PlasticManufacturer.Domain.pdb
 C:\Projects\PlasticManufacturer\PlasticManufacturer.Domain\obj\Debug\PlasticManufacturer.Domain.dll
 C:\Projects\PlasticManufacturer\PlasticManufacturer.Domain\obj\Debug\PlasticManufacturer.Domain.pdb
-C:\Projects\PlasticManufacturer\PlasticManufacturer.Domain\obj\Debug\PlasticManufacturer.Domain.csprojResolveAssemblyReference.cache

@@ -12,6 +12,16 @@ import {
     EventResolver
 } from './events/index'
 
+
+import {
+   ShippingMethodGuard,
+    ShippingMethodComponent,
+    ShippingMethodListComponent
+} from './shippingMethods/index'
+
+
+
+
 import {
     CustomerRatingGuard,
     CustomerRatingComponent,
@@ -193,6 +203,14 @@ export const appRoutes: Routes = [
 
     { path: 'rawMaterials', component: RawMaterialListComponent },
     { path: 'rawMaterials/:id', canDeactivate: [RawMaterialGuard], component: RawMaterialComponent },
+
+
+
+    { path: 'shippingMethods', component: ShippingMethodListComponent },
+    { path: 'shippingMethods/:id', canDeactivate: [ShippingMethodGuard], component: ShippingMethodComponent },
+
+
+
 
     { path: 'customerAddresses', component: CustomerAddressListComponent },
     { path: 'customerAddresses/:id', canDeactivate: [CustomerAddressGuard], component: CustomerAddressComponent },

@@ -1,4 +1,4 @@
-﻿export interface ICustomerAddress {
+﻿   export interface ICustomerAddress {
     id: number
     name: string
     description: string

@@ -22,6 +22,8 @@ import { ISecondLabel, SecondLabelService } from '../secondLabels/index'
 import { ICity, CityService } from '../cities/index'
 import { IState, StateService } from '../states/index'
 import { IAddressType, AddressTypeService } from '../addressTypes/index'
+import { IShippingMethod, ShippingMethodService } from '../shippingMethods/index'
+
 
 
 import { GenericValidator } from '../shared/generic-validator';
@@ -45,6 +47,7 @@ export class CustomerComponent implements OnInit, AfterViewInit, OnDestroy {
     freights: IFreight[];
     secondLabels: ISecondLabel[];
     cities: ICity[];
+    shippingMethods: IShippingMethod[];
     states: IState[];
     addressTypes: IAddressType[];
 
@@ -67,6 +70,7 @@ export class CustomerComponent implements OnInit, AfterViewInit, OnDestroy {
         private customerRatingService: CustomerRatingService,
         private freightService: FreightService,
         private cityService: CityService,
+        private shippingMethodService: ShippingMethodService,
         private stateService: StateService, 
         private secondLabelService: SecondLabelService,
         private addressTypeService: AddressTypeService) {
@@ -101,6 +105,7 @@ export class CustomerComponent implements OnInit, AfterViewInit, OnDestroy {
             fedId: undefined,
             notes: '',
             city_Id: undefined,
+            
             state_Id: undefined,
             customerDefault: this.formBuilder.group({
                 id: 0,
@@ -112,7 +117,8 @@ export class CustomerComponent implements OnInit, AfterViewInit, OnDestroy {
                 secondLabel_Id: undefined,
                 note: ''
             }),
-            addresses: this.formBuilder.array([])
+            addresses: this.formBuilder.array([]),
+            shipViaAccounts: this.formBuilder.array([])
         });
          
         //addresses: ICustomerAddress[]
@@ -148,6 +154,14 @@ export class CustomerComponent implements OnInit, AfterViewInit, OnDestroy {
             addressType_Id: undefined
         }));
 
+        this.ShipViaAccounts.push(this.formBuilder.group({
+            id: 0,
+            name: '',
+            description: '',
+            shippingMethod_Id: undefined,
+           
+        }));
+
         // loads combobox
         this.loadEmployees();
         this.loadCustomerStatus();
@@ -158,6 +172,7 @@ export class CustomerComponent implements OnInit, AfterViewInit, OnDestroy {
         this.loadCity();
         this.loadState();
         this.loadAddressType();
+        this.loadShippingMethod();
        
         
 
@@ -235,7 +250,8 @@ export class CustomerComponent implements OnInit, AfterViewInit, OnDestroy {
             city_Id: this.customer.city_Id,
             state_Id: this.customer.state_Id,
             customerDefault: this.customer.customerDefault,
-            addresses: this.customer.addresses
+            addresses: this.customer.addresses,
+            shipViaAccounts: this.customer.shipViaAccounts
 
         });
     }
@@ -322,6 +338,12 @@ export class CustomerComponent implements OnInit, AfterViewInit, OnDestroy {
             error => this.errorMessage = <any>error);
     }
 
+    loadShippingMethod(): void {
+        this.shippingMethodService.getAll()
+            .subscribe(shippingMethods => this.shippingMethods = shippingMethods,
+            error => this.errorMessage = <any>error);
+    }
+    
     loadState(): void {
         this.stateService.getAll()
             .subscribe(states => this.states = states,
@@ -336,6 +358,10 @@ export class CustomerComponent implements OnInit, AfterViewInit, OnDestroy {
 
     get Addresses(): FormArray {
         return this.customerForm.get('addresses') as FormArray;
+    };
+
+    get ShipViaAccounts(): FormArray {
+        return this.customerForm.get('shipViaAccounts') as FormArray;
     };
 
 }

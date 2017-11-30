@@ -48,6 +48,7 @@ export interface ICustomerAddress {
 export interface ICustomerShipViaAccount {
     id: number
     name: string
+    shippingMethod_Id: number
 }
 
 

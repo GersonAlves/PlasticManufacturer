@@ -333,21 +333,23 @@
                             </div>
                         </mat-tab>
                         <mat-tab label="Shipping Information">
-                            <div class="customer-tab-content">
-                                <div class="shipping-method">
-                                    <div class="shipping-box">
-                                        <span class="label">Shipping Method</span>
-                                        <div class="form-group">
-                                            <select class="form-control shipping-method-box">
-                                                <option>UPS</option>
-                                            </select>
-                                        </div>
+                            <div formArrayName="shipViaAccounts" class="customer-tab-content">
+                                <div *ngFor="let shipViaAccounts of ShipViaAccounts.controls; let i=index" [formGroupName]="i">
+                                    <div class="shipping-method">
+                                        <div class="shipping-box">
+                                            <span class="label">Shipping Method</span>
+                                            <div class="form-group">
+                                                <select class="form-control" formControlName="shippingMethod_Id">
+                                                    <option *ngFor="let shippingMethod of shippingMethods" [ngValue]="shippingMethod.id">{{ shippingMethod.name }}</option>
+                                                </select>
+                                            </div>
 
-                                    </div>
-                                    <div class="shipping-box pdlft">
-                                        <span class="label">Account #</span>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" />
+                                        </div>
+                                        <div class="shipping-box pdlft">
+                                            <span class="label">Account #</span>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" />
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

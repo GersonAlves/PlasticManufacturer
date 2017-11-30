@@ -34,7 +34,7 @@ export class CustomerAddressComponent implements OnInit, AfterViewInit, OnDestro
     states: IState[];
     addressTypes: IAddressType[];
     customer: ICustomer[];
-
+    //filteredOptions: Observable<string[]>;
     // Use with the generic validation message class
     displayMessage: { [key: string]: string } = {};
     private validationMessages: { [key: string]: { [key: string]: string } };
@@ -57,7 +57,7 @@ export class CustomerAddressComponent implements OnInit, AfterViewInit, OnDestro
                 required: 'costumer address name is required.'
             }
         };
-
+        
         // Define an instance of the validator for use with this form, 
         // passing in this form's set of validation messages.
         this.genericValidator = new GenericValidator(this.validationMessages);
@@ -78,7 +78,7 @@ export class CustomerAddressComponent implements OnInit, AfterViewInit, OnDestro
             complement: '',
             customers_Id: undefined
         });
-
+      
         // Read the customerAddress Id from the route parameter
         this.sub = this.route.params.subscribe(
             params => {
